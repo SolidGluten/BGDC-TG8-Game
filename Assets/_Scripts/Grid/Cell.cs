@@ -20,7 +20,7 @@ public class Cell : MonoBehaviour
         get { return obj; }
         set {
             obj = value;
-            this.isOccupied = obj != null;
+            isOccupied = obj != null;
         }
     }   
 

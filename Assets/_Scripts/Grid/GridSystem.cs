@@ -21,6 +21,11 @@ public class GridSystem : MonoBehaviour
 
     private Cell[,] gridArr = new Cell[maxRange, maxRange];
 
+    private void Awake()
+    {
+        RegenerateGrid();
+    }
+
     [ContextMenu("Regenerate Grid")]
     public void RegenerateGrid() 
     {
@@ -52,6 +57,8 @@ public class GridSystem : MonoBehaviour
                 //change the parent transform
                 obj.transform.position = pos;
                 obj.transform.parent = transform;
+
+                gridArr[i, j] = cell;
             }
         }
     }
@@ -61,8 +68,12 @@ public class GridSystem : MonoBehaviour
         if (pos.x < 0 || pos.x > width - 1 || 
             pos.y > height - 1 || pos.y < 0)
             Debug.LogWarning("Cell's position is outside the scope of the grid");
-        else
+        
+        if (gridArr[pos.x, pos.y])
+        {
             gridArr[pos.x, pos.y].Obj = obj;
+        }
+            
     }
 
     //draws the grid
@@ -74,17 +85,14 @@ public class GridSystem : MonoBehaviour
                 var pos = (cellSize + cellGap) * new Vector2(i, j) + gridPos;
                 var val = (i * height) + j;
 
-                Gizmos.color = Color.green;
-                Handles.color = Color.green;
-
-                if (gridArr[i, j] && !gridArr[i, j].isOccupied)
+                if (gridArr[i, j])
                 {
-                    Gizmos.color = Color.red;
-                    Handles.color = Color.red;
+                    Gizmos.color = gridArr[i, j].isOccupied ? Color.red : Color.green;
+                    Handles.color = gridArr[i, j].isOccupied ? Color.red : Color.green;
                 }
-                
+
                 Handles.Label(pos, val.ToString());
-                Gizmos.DrawWireCube(pos, Vector2.one * cellSize);
+                Gizmos.DrawWireCube(pos, Vector2.one * cellSize);   
             }
         }
     }

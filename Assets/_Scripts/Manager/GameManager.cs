@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameState currentState;
     public GridSystem grid;
-    
+
+    private void Start()
+    {
+        grid.AddObj(new GameObject(), new Vector2Int(0, 1));
+    }
 
 }
