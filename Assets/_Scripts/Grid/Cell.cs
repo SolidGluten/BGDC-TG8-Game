@@ -9,7 +9,6 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    public Vector2 Pos;
     public Vector2Int Index;
     public int Value;
     public bool isOccupied;
@@ -25,8 +24,8 @@ public class Cell : MonoBehaviour
         }
     }   
 
-    public void Start()
+    public void DestroySelf()
     {
-        transform.position = Pos;
+        EditorCustomUtils.DestroyOnEdit(gameObject);
     }
 }
