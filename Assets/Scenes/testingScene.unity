@@ -244,11 +244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041fef163875f6b4cadb1d161151bb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 10
-  height: 5
+  gridSize: {x: 10, y: 5}
+  currPos: {x: -5, y: -2}
   cellSize: 1
-  cellSprite: {fileID: 0}
-  currPos: {x: -3.88, y: -1.66}
+  cellGap: 0.2
+  cellSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
 --- !u!4 &1954802878
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 1954802876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.28, y: 3.81, z: 0.12224203}
+  m_LocalPosition: {x: 0, y: 0, z: 0.12224203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
