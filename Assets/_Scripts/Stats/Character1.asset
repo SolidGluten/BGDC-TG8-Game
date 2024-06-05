@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4acd80ce9e6554f9d7eca4c79260f4, type: 3}
   m_Name: Character1
   m_EditorClassIdentifier: 
-  HP: 0
-  ATK: 0
-  MOV: 0
+  HP: 80
+  ATK: 20
+  MOV: 10

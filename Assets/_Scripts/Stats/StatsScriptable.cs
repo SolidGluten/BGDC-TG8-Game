@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Stats", menuName = "ScriptableObjects/Stats")]
 public class StatsScriptable : ScriptableObject
 {
-    public int HP;
-    public int ATK;
-    public int MOV;
+    [SerializeField] public int HP;
+    [SerializeField] public int ATK;
+    [SerializeField] public int MOV;
 }

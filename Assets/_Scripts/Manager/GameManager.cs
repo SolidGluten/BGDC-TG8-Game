@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        grid.AddObj(new GameObject(), new Vector2Int(0, 1));
+        //grid.AddObj(new GameObject(), new Vector2Int(0, 1));
     }
 
 }
