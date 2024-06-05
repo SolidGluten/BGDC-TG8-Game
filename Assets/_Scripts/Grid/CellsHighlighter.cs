@@ -8,7 +8,19 @@ public class CellsHighlighter : MonoBehaviour
 
     public List<Cell> HighlightArea(Vector2 pos, float size = 2f)
     {
-        var cols = Physics2D.OverlapBoxAll(pos, Vector2.one * size, 45); //Diamond shape
+        //Diamond shape
+        //var cols = Physics2D.OverlapBoxAll(pos, Vector2.one * size, 45); 
+
+        //Cross shape
+        //var cols_v = Physics2D.OverlapAreaAll(pos + Vector2.up * (size/2), pos + Vector2.down * (size / 2));
+        //var cols_h = Physics2D.OverlapAreaAll(pos + Vector2.left * (size / 2), pos + Vector2.right * (size / 2));
+        //var cols = new List<Collider2D>();
+        //cols.AddRange(cols_v);
+        //cols.AddRange(cols_h);
+
+        //Cirle shape
+        var cols = Physics2D.OverlapCircleAll(pos, size);
+
         List<Cell> cells = new List<Cell>();
         foreach (var col in cols)
         {

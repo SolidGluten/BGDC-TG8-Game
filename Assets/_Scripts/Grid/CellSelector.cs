@@ -37,8 +37,9 @@ public class CellSelector : MonoBehaviour
         if (cellHighlight)
         {
             var cellPos = cell.gameObject.transform.position;
-            Debug.Log(cell.gameObject + ": " + cellPos);
-            cellHighlight.HighlightArea(cellPos, 3f);
+            Debug.Log($"{cell.gameObject} : {cellPos}");
+            cellHighlight.HighlightArea(cellPos, 5f);
         }
+
     }
 }
