@@ -5,12 +5,18 @@ using UnityEngine;
 public enum GameState { PlayerTurn, EnemyTurn, Pause, Death}
 public class GameManager : MonoBehaviour
 {
-    public static GameState currentState;
-    public GridSystem grid;
+    public static GameState CurrentState;
+    public GridSystem GameGrid;
+    public static Vector2 MousePos;
+    private Camera cam;
 
     private void Start()
     {
-        //grid.AddObj(new GameObject(), new Vector2Int(0, 1));
+        cam = Camera.main;
     }
 
+    private void Update()
+    {
+        MousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+    }
 }

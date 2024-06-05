@@ -6,16 +6,10 @@ using UnityEngine;
 public class Character : Entity
 {
     [SerializeField] private bool isCharSelected;
+    [SerializeField] private float moveRange;
 
     public override bool ValidateMove(Cell cell)
     {
         return true;
-    }
-
-    [SerializeField] private float moveRange;
-
-    private void OnMouseDown()
-    {
-        
     }
 }

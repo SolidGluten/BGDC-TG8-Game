@@ -14,12 +14,14 @@ public class CardManager : MonoBehaviour
 
     public void ResetDeck()
     {
+        hand.Clear();
         drawPile.Clear();
         discardPile.Clear();
         exhaustPile.Clear();
         drawPile.AddRange(deck);
         Shuffle(drawPile);
     }
+
     public void DrawInitialHand()
     {
         for (int i = 0; i < initialDraw; i++)
