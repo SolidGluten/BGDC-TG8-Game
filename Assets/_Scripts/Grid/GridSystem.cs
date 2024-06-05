@@ -17,7 +17,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private Vector2 gridPos;
     [SerializeField] private int cellSize = 1;
     [SerializeField] private float cellGap = 0f;
-    [SerializeField] private Sprite cellBG;
+    [SerializeField] private GameObject cellObj;
 
     private Cell[,] gridArr = new Cell[maxRange, maxRange];
 
@@ -44,19 +44,13 @@ public class GridSystem : MonoBehaviour
                 var pos = (cellSize + cellGap) * (Vector2)index + gridPos;
                 var val = (i * height) + j;
 
-                var obj = gridArr[i, j] ? gridArr[i, j].Obj : new GameObject("Cell " + val, typeof(Cell));
-                var cell = obj.GetComponent<Cell>();
-
+                var obj = Instantiate(cellObj, pos, Quaternion.identity, transform);
                 //copy value from the associated element from gridArr
+                obj.name = "Cell" + val;
+
+                var cell = obj.GetComponent<Cell>();
                 cell.Index = index;
                 cell.Value = val;
-
-                //creates a new bg object
-                obj.GetComponent<SpriteRenderer>().sprite = cellBG;
-
-                //change the parent transform
-                obj.transform.position = pos;
-                obj.transform.parent = transform;
 
                 gridArr[i, j] = cell;
             }

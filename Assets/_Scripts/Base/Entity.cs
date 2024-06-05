@@ -17,6 +17,14 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] private int moveCost;
     [SerializeField] private int moveRange;
 
+    public StatsScriptable statsScriptable;
+
+    private void Awake()
+    {
+        currHealth = MaxHealth;
+        currMovePoints = MaxMovePoints;
+    }
+
     public abstract bool ValidateMove(Cell cell);
 
     public void TakeDmg(int dmg)
