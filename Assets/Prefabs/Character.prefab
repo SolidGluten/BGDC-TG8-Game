@@ -143,12 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb607093cb2d6a640b9002a4bfb2c801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currCell: {fileID: 0}
   StatsScriptable: {fileID: 11400000, guid: 9a2449321df8ee149983fdb528704338, type: 2}
-  currentCell: {fileID: 0}
   maxHealth: 0
   currHealth: 0
   maxMovePoints: 0
   currMovePoints: 0
   attackDamage: 0
-  isCharSelected: 0
-  moveRange: 0
+  currAttackDamage: 0
+  isTurn: 1

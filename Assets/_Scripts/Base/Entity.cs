@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public abstract class Entity : MonoBehaviour
+public class Entity : MonoBehaviour
 {
     public Cell currCell;
     public StatsScriptable StatsScriptable;
@@ -31,16 +31,13 @@ public abstract class Entity : MonoBehaviour
         currMovePoints = MaxMovePoints;
     }
 
-    public abstract bool ValidateMove(Cell cell);
-
     public void TakeDmg(int dmg)
     {
         currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
     }
 
-    public virtual void MoveToCell(Cell cell)
+    public void MoveToCell(Cell cell)
     {
-        if (ValidateMove(cell) == false) return;
         if(currCell) currCell.Obj = null;
         currCell = null;
 

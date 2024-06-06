@@ -22961,10 +22961,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2795626613790045187, guid: 6a4bdb7f194183a4381ac6b58f3e51c2, type: 3}
-      propertyPath: currentCell
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3724879488159274509, guid: 6a4bdb7f194183a4381ac6b58f3e51c2, type: 3}
       propertyPath: m_Name
       value: Character
