@@ -19,6 +19,10 @@ public class Cell : MonoBehaviour
     public bool isOccupied;
     public bool isHighlited;
 
+    public Cell up;
+    public Cell down;
+    public Cell left;
+    public Cell right;
 
     [SerializeField] private GameObject obj;
     public GameObject Obj
@@ -42,10 +46,5 @@ public class Cell : MonoBehaviour
     public void UnHighlight()
     {
         spriteRenderer.color = Color.red;
-    }
-
-    public void DestroySelf()
-    {
-        EditorCustomUtils.DestroyOnEdit(gameObject);
     }
 }

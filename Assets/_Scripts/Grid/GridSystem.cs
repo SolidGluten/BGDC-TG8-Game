@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
 
 public class GridSystem : MonoBehaviour
 {
@@ -27,20 +30,26 @@ public class GridSystem : MonoBehaviour
 
     private void Awake()
     {
-        
+
         RegenerateGrid();
     }
 
     [ContextMenu("Regenerate Grid")]
-    public void RegenerateGrid() 
+    public void RegenerateGrid()
     {
-        for(int i = 0; i < transform.childCount; i++)
+        //destroy previous cells
+        for (int i = 0; i < transform.childCount; i++)
         {
             var child = transform.GetChild(i).gameObject;
-            EditorCustomUtils.DestroyOnEdit(child);
+            #if UNITY_EDITOR
+                EditorCustomUtils.DestroyOnEdit(child);
+            #else
+                Destroy(child);
+            #endif
+
         }
 
-        //cells background
+        //instantiate cell objs
         for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
@@ -60,22 +69,22 @@ public class GridSystem : MonoBehaviour
                 Cells[i, j] = cell;
             }
         }
-    }
 
-    public void AddObj(GameObject obj, Vector2Int pos)
-    {
-        if (pos.x < 0 || pos.x > width - 1 || 
-            pos.y > height - 1 || pos.y < 0)
-            Debug.LogWarning("Cell's position is outside the scope of the grid");
-        
-        if (Cells[pos.x, pos.y])
+        //set references to adjacent cells
+        for (int i = 0; i < width; i++)
         {
-            Cells[pos.x, pos.y].Obj = obj;
+            for (int j = 0; j < height; j++)
+            {
+                if (j < height - 1) Cells[i, j].up = Cells[i, j + 1]; //UP
+                if (j > 0) Cells[i, j].down = Cells[i, j - 1]; //DOWN
+                if (i < width - 1) Cells[i, j].right = Cells[i + 1, j]; //RIGHT
+                if (i > 0) Cells[i, j].left = Cells[i - 1, j]; //LEFT
+            }
         }
-            
-    }
+    } 
 
     //draws the grid
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         for(int i = 0; i < width; i++)
@@ -90,11 +99,14 @@ public class GridSystem : MonoBehaviour
                     Handles.color = Cells[i, j].isOccupied ? Color.red : Color.green;
                 }
 
-                Handles.Label(pos, val.ToString());
+                
+                    Handles.Label(pos, val.ToString());
+
                 Gizmos.DrawWireCube(pos, Vector2.one * cellSize);   
             }
         }
     }
+#endif
 }
 
 

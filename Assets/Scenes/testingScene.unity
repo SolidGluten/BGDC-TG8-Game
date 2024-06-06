@@ -174,6 +174,10 @@ MonoBehaviour:
   Value: 104
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1412886
 BoxCollider2D:
@@ -323,6 +327,10 @@ MonoBehaviour:
   Value: 140
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1465011
 BoxCollider2D:
@@ -472,6 +480,10 @@ MonoBehaviour:
   Value: 70
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &25701261
 BoxCollider2D:
@@ -621,6 +633,10 @@ MonoBehaviour:
   Value: 113
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &29269260
 BoxCollider2D:
@@ -770,6 +786,10 @@ MonoBehaviour:
   Value: 125
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &43761841
 BoxCollider2D:
@@ -919,6 +939,10 @@ MonoBehaviour:
   Value: 79
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &59722778
 BoxCollider2D:
@@ -1068,6 +1092,10 @@ MonoBehaviour:
   Value: 18
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &89517622
 BoxCollider2D:
@@ -1217,6 +1245,10 @@ MonoBehaviour:
   Value: 91
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &126815479
 BoxCollider2D:
@@ -1366,6 +1398,10 @@ MonoBehaviour:
   Value: 26
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &138087751
 BoxCollider2D:
@@ -1515,6 +1551,10 @@ MonoBehaviour:
   Value: 73
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &139029110
 BoxCollider2D:
@@ -1664,6 +1704,10 @@ MonoBehaviour:
   Value: 52
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &145377392
 BoxCollider2D:
@@ -1813,6 +1857,10 @@ MonoBehaviour:
   Value: 42
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &147532842
 BoxCollider2D:
@@ -1962,6 +2010,10 @@ MonoBehaviour:
   Value: 62
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &159205748
 BoxCollider2D:
@@ -2111,6 +2163,10 @@ MonoBehaviour:
   Value: 75
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &167213062
 BoxCollider2D:
@@ -2260,6 +2316,10 @@ MonoBehaviour:
   Value: 35
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &181202305
 BoxCollider2D:
@@ -2409,6 +2469,10 @@ MonoBehaviour:
   Value: 98
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &182724113
 BoxCollider2D:
@@ -2558,6 +2622,10 @@ MonoBehaviour:
   Value: 6
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &189910327
 BoxCollider2D:
@@ -2707,6 +2775,10 @@ MonoBehaviour:
   Value: 13
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &198100381
 BoxCollider2D:
@@ -2856,6 +2928,10 @@ MonoBehaviour:
   Value: 24
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &274658127
 BoxCollider2D:
@@ -3005,6 +3081,10 @@ MonoBehaviour:
   Value: 63
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &293525807
 BoxCollider2D:
@@ -3154,6 +3234,10 @@ MonoBehaviour:
   Value: 3
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &298483851
 BoxCollider2D:
@@ -3303,6 +3387,10 @@ MonoBehaviour:
   Value: 12
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &333009819
 BoxCollider2D:
@@ -3452,6 +3540,10 @@ MonoBehaviour:
   Value: 2
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &351786987
 BoxCollider2D:
@@ -3601,6 +3693,10 @@ MonoBehaviour:
   Value: 108
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &353459763
 BoxCollider2D:
@@ -3750,6 +3846,10 @@ MonoBehaviour:
   Value: 50
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &354891116
 BoxCollider2D:
@@ -3899,6 +3999,10 @@ MonoBehaviour:
   Value: 118
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &364716800
 BoxCollider2D:
@@ -4048,6 +4152,10 @@ MonoBehaviour:
   Value: 109
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &370652447
 BoxCollider2D:
@@ -4197,6 +4305,10 @@ MonoBehaviour:
   Value: 17
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &371042386
 BoxCollider2D:
@@ -4346,6 +4458,10 @@ MonoBehaviour:
   Value: 88
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &382499553
 BoxCollider2D:
@@ -4495,6 +4611,10 @@ MonoBehaviour:
   Value: 131
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &384755564
 BoxCollider2D:
@@ -4644,6 +4764,10 @@ MonoBehaviour:
   Value: 101
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &393251395
 BoxCollider2D:
@@ -4793,6 +4917,10 @@ MonoBehaviour:
   Value: 134
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &398744587
 BoxCollider2D:
@@ -4942,6 +5070,10 @@ MonoBehaviour:
   Value: 128
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &401483639
 BoxCollider2D:
@@ -5091,6 +5223,10 @@ MonoBehaviour:
   Value: 97
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &425037723
 BoxCollider2D:
@@ -5240,6 +5376,10 @@ MonoBehaviour:
   Value: 90
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &432671014
 BoxCollider2D:
@@ -5389,6 +5529,10 @@ MonoBehaviour:
   Value: 66
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &445661550
 BoxCollider2D:
@@ -5538,6 +5682,10 @@ MonoBehaviour:
   Value: 121
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &462132145
 BoxCollider2D:
@@ -5687,6 +5835,10 @@ MonoBehaviour:
   Value: 103
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &462339206
 BoxCollider2D:
@@ -5836,6 +5988,10 @@ MonoBehaviour:
   Value: 32
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &487723434
 BoxCollider2D:
@@ -6077,6 +6233,10 @@ MonoBehaviour:
   Value: 119
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &525614886
 BoxCollider2D:
@@ -6226,6 +6386,10 @@ MonoBehaviour:
   Value: 105
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &527086099
 BoxCollider2D:
@@ -6375,6 +6539,10 @@ MonoBehaviour:
   Value: 129
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &536949980
 BoxCollider2D:
@@ -6524,6 +6692,10 @@ MonoBehaviour:
   Value: 86
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &538030937
 BoxCollider2D:
@@ -6673,6 +6845,10 @@ MonoBehaviour:
   Value: 142
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &568698392
 BoxCollider2D:
@@ -6822,6 +6998,10 @@ MonoBehaviour:
   Value: 111
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &589824254
 BoxCollider2D:
@@ -6971,6 +7151,10 @@ MonoBehaviour:
   Value: 44
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &595819814
 BoxCollider2D:
@@ -7120,6 +7304,10 @@ MonoBehaviour:
   Value: 130
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &603970979
 BoxCollider2D:
@@ -7269,6 +7457,10 @@ MonoBehaviour:
   Value: 48
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &666463966
 BoxCollider2D:
@@ -7418,6 +7610,10 @@ MonoBehaviour:
   Value: 126
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &731225852
 BoxCollider2D:
@@ -7567,6 +7763,10 @@ MonoBehaviour:
   Value: 112
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &753269765
 BoxCollider2D:
@@ -7716,6 +7916,10 @@ MonoBehaviour:
   Value: 96
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &759536317
 BoxCollider2D:
@@ -7865,6 +8069,10 @@ MonoBehaviour:
   Value: 132
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &765677429
 BoxCollider2D:
@@ -8014,6 +8222,10 @@ MonoBehaviour:
   Value: 4
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &880023815
 BoxCollider2D:
@@ -8163,6 +8375,10 @@ MonoBehaviour:
   Value: 106
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &880692953
 BoxCollider2D:
@@ -8312,6 +8528,10 @@ MonoBehaviour:
   Value: 114
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &902738525
 BoxCollider2D:
@@ -8461,6 +8681,10 @@ MonoBehaviour:
   Value: 9
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &920155564
 BoxCollider2D:
@@ -8610,6 +8834,10 @@ MonoBehaviour:
   Value: 39
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &947812212
 BoxCollider2D:
@@ -8759,6 +8987,10 @@ MonoBehaviour:
   Value: 21
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &963986894
 BoxCollider2D:
@@ -8908,6 +9140,10 @@ MonoBehaviour:
   Value: 23
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &981979995
 BoxCollider2D:
@@ -9057,6 +9293,10 @@ MonoBehaviour:
   Value: 120
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &991152678
 BoxCollider2D:
@@ -9206,6 +9446,10 @@ MonoBehaviour:
   Value: 74
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &992963524
 BoxCollider2D:
@@ -9355,6 +9599,10 @@ MonoBehaviour:
   Value: 100
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &993129133
 BoxCollider2D:
@@ -9504,6 +9752,10 @@ MonoBehaviour:
   Value: 54
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &995643609
 BoxCollider2D:
@@ -9653,6 +9905,10 @@ MonoBehaviour:
   Value: 85
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1018304160
 BoxCollider2D:
@@ -9802,6 +10058,10 @@ MonoBehaviour:
   Value: 59
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1053953832
 BoxCollider2D:
@@ -9951,6 +10211,10 @@ MonoBehaviour:
   Value: 57
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1054697488
 BoxCollider2D:
@@ -10100,6 +10364,10 @@ MonoBehaviour:
   Value: 123
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1085053414
 BoxCollider2D:
@@ -10249,6 +10517,10 @@ MonoBehaviour:
   Value: 71
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1102655778
 BoxCollider2D:
@@ -10398,6 +10670,10 @@ MonoBehaviour:
   Value: 36
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1103290315
 BoxCollider2D:
@@ -10547,6 +10823,10 @@ MonoBehaviour:
   Value: 69
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1121043261
 BoxCollider2D:
@@ -10696,6 +10976,10 @@ MonoBehaviour:
   Value: 78
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1143916695
 BoxCollider2D:
@@ -10845,6 +11129,10 @@ MonoBehaviour:
   Value: 122
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1196008796
 BoxCollider2D:
@@ -10994,6 +11282,10 @@ MonoBehaviour:
   Value: 41
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1196014924
 BoxCollider2D:
@@ -11143,6 +11435,10 @@ MonoBehaviour:
   Value: 84
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1230864738
 BoxCollider2D:
@@ -11292,6 +11588,10 @@ MonoBehaviour:
   Value: 115
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1234750305
 BoxCollider2D:
@@ -11441,6 +11741,10 @@ MonoBehaviour:
   Value: 133
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1249452185
 BoxCollider2D:
@@ -11590,6 +11894,10 @@ MonoBehaviour:
   Value: 33
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1249487810
 BoxCollider2D:
@@ -11739,6 +12047,10 @@ MonoBehaviour:
   Value: 10
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1262979921
 BoxCollider2D:
@@ -11888,6 +12200,10 @@ MonoBehaviour:
   Value: 47
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1273209360
 BoxCollider2D:
@@ -12037,6 +12353,10 @@ MonoBehaviour:
   Value: 34
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1299983823
 BoxCollider2D:
@@ -12186,6 +12506,10 @@ MonoBehaviour:
   Value: 92
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1310798959
 BoxCollider2D:
@@ -12335,6 +12659,10 @@ MonoBehaviour:
   Value: 45
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1335893437
 BoxCollider2D:
@@ -12484,6 +12812,10 @@ MonoBehaviour:
   Value: 93
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1336997741
 BoxCollider2D:
@@ -12633,6 +12965,10 @@ MonoBehaviour:
   Value: 135
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1353546615
 BoxCollider2D:
@@ -12782,6 +13118,10 @@ MonoBehaviour:
   Value: 95
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1364399773
 BoxCollider2D:
@@ -12931,6 +13271,10 @@ MonoBehaviour:
   Value: 89
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1367975642
 BoxCollider2D:
@@ -13080,6 +13424,10 @@ MonoBehaviour:
   Value: 117
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1382864138
 BoxCollider2D:
@@ -13229,6 +13577,10 @@ MonoBehaviour:
   Value: 68
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1388119902
 BoxCollider2D:
@@ -13378,6 +13730,10 @@ MonoBehaviour:
   Value: 82
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1416786563
 BoxCollider2D:
@@ -13527,6 +13883,10 @@ MonoBehaviour:
   Value: 99
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1429552110
 BoxCollider2D:
@@ -13676,6 +14036,10 @@ MonoBehaviour:
   Value: 136
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1432771443
 BoxCollider2D:
@@ -13825,6 +14189,10 @@ MonoBehaviour:
   Value: 143
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1433836990
 BoxCollider2D:
@@ -13974,6 +14342,10 @@ MonoBehaviour:
   Value: 28
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1448552557
 BoxCollider2D:
@@ -14123,6 +14495,10 @@ MonoBehaviour:
   Value: 65
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1452579091
 BoxCollider2D:
@@ -14272,6 +14648,10 @@ MonoBehaviour:
   Value: 60
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1493310099
 BoxCollider2D:
@@ -14421,6 +14801,10 @@ MonoBehaviour:
   Value: 55
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1497870633
 BoxCollider2D:
@@ -14570,6 +14954,10 @@ MonoBehaviour:
   Value: 67
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1510270429
 BoxCollider2D:
@@ -14719,6 +15107,10 @@ MonoBehaviour:
   Value: 19
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1523515582
 BoxCollider2D:
@@ -14868,6 +15260,10 @@ MonoBehaviour:
   Value: 15
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1524894996
 BoxCollider2D:
@@ -15017,6 +15413,10 @@ MonoBehaviour:
   Value: 29
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1539671455
 BoxCollider2D:
@@ -15166,6 +15566,10 @@ MonoBehaviour:
   Value: 30
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1558637039
 BoxCollider2D:
@@ -15315,6 +15719,10 @@ MonoBehaviour:
   Value: 58
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1560801106
 BoxCollider2D:
@@ -15464,6 +15872,10 @@ MonoBehaviour:
   Value: 80
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1571467603
 BoxCollider2D:
@@ -15613,6 +16025,10 @@ MonoBehaviour:
   Value: 102
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1572882909
 BoxCollider2D:
@@ -15762,6 +16178,10 @@ MonoBehaviour:
   Value: 20
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1582695741
 BoxCollider2D:
@@ -15911,6 +16331,10 @@ MonoBehaviour:
   Value: 139
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1642890319
 BoxCollider2D:
@@ -16060,6 +16484,10 @@ MonoBehaviour:
   Value: 110
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1664367273
 BoxCollider2D:
@@ -16209,6 +16637,10 @@ MonoBehaviour:
   Value: 27
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1668882769
 BoxCollider2D:
@@ -16358,6 +16790,10 @@ MonoBehaviour:
   Value: 37
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1672250836
 BoxCollider2D:
@@ -16507,6 +16943,10 @@ MonoBehaviour:
   Value: 124
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1688764945
 BoxCollider2D:
@@ -16656,6 +17096,10 @@ MonoBehaviour:
   Value: 1
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1718773371
 BoxCollider2D:
@@ -16805,6 +17249,10 @@ MonoBehaviour:
   Value: 137
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1729584891
 BoxCollider2D:
@@ -16954,6 +17402,10 @@ MonoBehaviour:
   Value: 46
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1740855912
 BoxCollider2D:
@@ -17103,6 +17555,10 @@ MonoBehaviour:
   Value: 141
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1751931039
 BoxCollider2D:
@@ -17252,6 +17708,10 @@ MonoBehaviour:
   Value: 38
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1761988176
 BoxCollider2D:
@@ -17401,6 +17861,10 @@ MonoBehaviour:
   Value: 11
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1764706426
 BoxCollider2D:
@@ -17550,6 +18014,10 @@ MonoBehaviour:
   Value: 87
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1775971426
 BoxCollider2D:
@@ -17699,6 +18167,10 @@ MonoBehaviour:
   Value: 22
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1787213924
 BoxCollider2D:
@@ -17848,6 +18320,10 @@ MonoBehaviour:
   Value: 51
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1811941090
 BoxCollider2D:
@@ -17997,6 +18473,10 @@ MonoBehaviour:
   Value: 64
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1814682441
 BoxCollider2D:
@@ -18146,6 +18626,10 @@ MonoBehaviour:
   Value: 138
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1840599917
 BoxCollider2D:
@@ -18295,6 +18779,10 @@ MonoBehaviour:
   Value: 53
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1854982835
 BoxCollider2D:
@@ -18444,6 +18932,10 @@ MonoBehaviour:
   Value: 8
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1875158396
 BoxCollider2D:
@@ -18593,6 +19085,10 @@ MonoBehaviour:
   Value: 31
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1884862569
 BoxCollider2D:
@@ -18742,6 +19238,10 @@ MonoBehaviour:
   Value: 14
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1886016523
 BoxCollider2D:
@@ -18891,6 +19391,10 @@ MonoBehaviour:
   Value: 76
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1893821951
 BoxCollider2D:
@@ -19040,6 +19544,10 @@ MonoBehaviour:
   Value: 0
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1918566286
 BoxCollider2D:
@@ -19189,6 +19697,10 @@ MonoBehaviour:
   Value: 72
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1941727246
 BoxCollider2D:
@@ -19287,17 +19799,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1954802876 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1569085253879733098, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
-  m_PrefabInstance: {fileID: 136511578068584122}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1954802877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 483270868735795900, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
   m_PrefabInstance: {fileID: 136511578068584122}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954802876}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 041fef163875f6b4cadb1d161151bb01, type: 3}
@@ -19308,33 +19815,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4460960640127103296, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
   m_PrefabInstance: {fileID: 136511578068584122}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1954802879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954802876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4cc4ce2d049b0140b60c5228b94e93e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Grid: {fileID: 1954802877}
---- !u!114 &1954802880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954802876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05bcc37df5edf846a9235be86fc2a3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedCell: {fileID: 0}
-  cellHighlight: {fileID: 1954802879}
 --- !u!1 &1965441172
 GameObject:
   m_ObjectHideFlags: 0
@@ -19386,6 +19866,10 @@ MonoBehaviour:
   Value: 43
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1965441175
 BoxCollider2D:
@@ -19535,6 +20019,10 @@ MonoBehaviour:
   Value: 127
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1985630034
 BoxCollider2D:
@@ -19684,6 +20172,10 @@ MonoBehaviour:
   Value: 107
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1985850292
 BoxCollider2D:
@@ -19833,6 +20325,10 @@ MonoBehaviour:
   Value: 116
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &1997234110
 BoxCollider2D:
@@ -19982,6 +20478,10 @@ MonoBehaviour:
   Value: 56
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2009215967
 BoxCollider2D:
@@ -20131,6 +20631,10 @@ MonoBehaviour:
   Value: 16
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2022441062
 BoxCollider2D:
@@ -20280,6 +20784,10 @@ MonoBehaviour:
   Value: 77
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2026468231
 BoxCollider2D:
@@ -20429,6 +20937,10 @@ MonoBehaviour:
   Value: 81
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2027458672
 BoxCollider2D:
@@ -20578,6 +21090,10 @@ MonoBehaviour:
   Value: 83
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2035611138
 BoxCollider2D:
@@ -20727,6 +21243,10 @@ MonoBehaviour:
   Value: 94
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2058129131
 BoxCollider2D:
@@ -20876,6 +21396,10 @@ MonoBehaviour:
   Value: 61
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2069040474
 BoxCollider2D:
@@ -21025,6 +21549,10 @@ MonoBehaviour:
   Value: 7
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2084254729
 BoxCollider2D:
@@ -21174,6 +21702,10 @@ MonoBehaviour:
   Value: 49
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2097850426
 BoxCollider2D:
@@ -21323,6 +21855,10 @@ MonoBehaviour:
   Value: 5
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2127664333
 BoxCollider2D:
@@ -21472,6 +22008,10 @@ MonoBehaviour:
   Value: 40
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2132523753
 BoxCollider2D:
@@ -21621,6 +22161,10 @@ MonoBehaviour:
   Value: 25
   isOccupied: 0
   isHighlited: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
   obj: {fileID: 0}
 --- !u!61 &2133168317
 BoxCollider2D:
@@ -21790,6 +22334,10 @@ PrefabInstance:
     - target: {fileID: 4460960640127103296, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371240215465630589, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
+      propertyPath: highlightRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -22330,13 +22878,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4460960640127103296, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1433836988}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1569085253879733098, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1954802879}
-    - targetCorrespondingSourceObject: {fileID: 1569085253879733098, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1954802880}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
 --- !u!1001 &6437632735428047608
 PrefabInstance:
