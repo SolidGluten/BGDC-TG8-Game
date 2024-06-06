@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class Entity : MonoBehaviour
 {
-    [SerializeField] public StatsScriptable StatsScriptable;
-    public Cell currentCell;
+    public Cell currCell;
+    public StatsScriptable StatsScriptable;
 
     [SerializeField] private int maxHealth;
     public int MaxHealth { get { return maxHealth; } }
@@ -19,6 +19,7 @@ public abstract class Entity : MonoBehaviour
 
     [SerializeField] private int attackDamage;
     public int AttackDamage { get {  return attackDamage; } }
+    public int currAttackDamage;
 
     private void Awake()
     {
@@ -37,11 +38,14 @@ public abstract class Entity : MonoBehaviour
         currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
     }
 
-    public void MoveToCell(Cell cell)
+    public virtual void MoveToCell(Cell cell)
     {
-        if (!ValidateMove(cell)) return;
-        currentCell.Obj = null;
-        currentCell = cell;
-        cell.Obj = gameObject;
+        if (ValidateMove(cell) == false) return;
+        if(currCell) currCell.Obj = null;
+        currCell = null;
+
+        currCell = cell;
+        currCell.Obj = gameObject;
+        transform.position = currCell.gameObject.transform.position;
     }
 }

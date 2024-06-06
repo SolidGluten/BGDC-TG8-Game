@@ -22336,8 +22336,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5371240215465630589, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
+      propertyPath: toggleHover
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371240215465630589, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
       propertyPath: highlightRange
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371240215465630589, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
+      propertyPath: highlightShape
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371240215465630589, guid: 2f9a45e4a44b42145a2bd8fcf10f790d, type: 3}
+      propertyPath: toggleHighlights
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
