@@ -6,7 +6,9 @@ public enum GameState { PlayerTurn, EnemyTurn, Pause, Death}
 public class GameManager : MonoBehaviour
 {
     public static GameState CurrentState;
-    public GridSystem GameGrid;
+    private CharacterManager characterManager;
+
+
     public static Vector2 MousePos;
     private Camera cam;
 

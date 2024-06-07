@@ -17,8 +17,6 @@ public class CharacterManager : MonoBehaviour
     private void Start()
     {
         if (!grid) Debug.LogWarning("Grid is NOT assigned.");
-        AddCharacter(firstCharStats, new Vector2Int(0, 0));
-        AddCharacter(secondCharStats, new Vector2Int(0, 1));
     }
 
     public void SetActiveChar(Character chara)
