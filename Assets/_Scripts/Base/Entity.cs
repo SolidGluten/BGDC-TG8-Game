@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
@@ -20,6 +22,9 @@ public class Entity : MonoBehaviour
     [SerializeField] private int attackDamage;
     public int AttackDamage { get {  return attackDamage; } }
     public int currAttackDamage;
+
+    public delegate void MoveEventHandler();
+    public event MoveEventHandler OnMovedCell;
 
     private void Awake()
     {
@@ -44,5 +49,7 @@ public class Entity : MonoBehaviour
         currCell = cell;
         currCell.Obj = gameObject;
         transform.position = currCell.gameObject.transform.position;
+
+        OnMovedCell?.Invoke();
     }
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Character : Entity
 {
-    [SerializeField] private bool isTurn;
+    public bool isActive;
     private Vector2 moveDir = Vector2.zero;
     private Cell cellDest;
 
     private void Update()
     {
-        if (!isTurn) return;
+        if (!isActive) return;
         if (currMovePoints > 0)
         {
             if (Input.GetButtonDown("Vertical"))
