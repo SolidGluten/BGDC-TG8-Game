@@ -8,7 +8,18 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private Character activeCharacter;
 
     [SerializeField] private bool toggleSelect;
-    public CardManager CardManager;
+    [SerializeField] private CardManager cardManager;
+    [SerializeField] private GridSystem grid;
+
+    [SerializeField] private StatsScriptable firstCharStats;
+    [SerializeField] private StatsScriptable secondCharStats;
+
+    private void Start()
+    {
+        if (!grid) Debug.LogWarning("Grid is NOT assigned.");
+        AddCharacter(firstCharStats, new Vector2Int(0, 0));
+        AddCharacter(secondCharStats, new Vector2Int(0, 1));
+    }
 
     public void SetActiveChar(Character chara)
     {
@@ -34,8 +45,21 @@ public class CharacterManager : MonoBehaviour
             SetActiveChar(chara);
     }
 
-    private void AddCharacter()
+    private void AddCharacter(StatsScriptable stats, Vector2Int cellPos)
     {
+        
+        var charObj = Instantiate(characterObject);
+
+        var cell = grid.GetCell(cellPos);
+        if (!cell)
+        {
+            Debug.LogWarning("Cell is NOT found");
+            return;
+        }
+        grid?.AddObj(charObj, cellPos);
+
+        cell.Obj = charObj;
+        charObj.GetComponent<Character>().currCell = cell; 
     }
 
     private void ResetSelection()
