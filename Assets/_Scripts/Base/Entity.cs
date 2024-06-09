@@ -36,11 +36,6 @@ public class Entity : MonoBehaviour
         currMovePoints = MaxMovePoints;
     }
 
-    public void TakeDmg(int dmg)
-    {
-        currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
-    }
-
     public void MoveToCell(Cell cell)
     {
         if(currCell) currCell.Obj = null;
@@ -49,6 +44,8 @@ public class Entity : MonoBehaviour
         currCell = cell;
         currCell.Obj = gameObject;
         transform.position = currCell.gameObject.transform.position;
+
+        currMovePoints = maxMovePoints;
 
         OnMovedCell?.Invoke();
     }

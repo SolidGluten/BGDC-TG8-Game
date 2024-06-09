@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class CellSelector : MonoBehaviour
 {
-    private const int maxRange = 6; //WARNING: DONT GO OVER MAX RANGE OR PREPARE FOR DEATH
-
     [SerializeField] private Cell selectedCell;
     public Cell SelectedCell
     {
@@ -23,27 +21,13 @@ public class CellSelector : MonoBehaviour
     [SerializeField] private CellsHighlighter cellHighlight;
     public bool toggleHover;
     public bool toggleHighlights;
-    public HighlightShape highlightShape;
 
-    [SerializeField]
-    [Range(0, maxRange)]
-    private int highlightRange;
-    public int HighlightRange {
-        get { return highlightRange; }
-        set {
-            highlightRange = Math.Clamp(value, 0, maxRange);
-        }
-    }
-
-    public List<Cell> highlightedCells;
-
+    public List<Cell> HighlightedCells;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
             SelectCell();
-        }
 
         if (toggleHover) HoverCell();
     }
@@ -73,12 +57,12 @@ public class CellSelector : MonoBehaviour
             var cellPos = cell.gameObject.transform.position;
             Debug.Log($"{cell.gameObject} : {cellPos}");
 
-            highlightedCells = cellHighlight.HighlightArea(HoveredCell, highlightRange, highlightShape);
+            HighlightedCells = cellHighlight.HighlightArea(HoveredCell);
         }
     }
 
     private void OnDisable()
     {
-        highlightedCells.Clear();
+        HighlightedCells.Clear();
     }
 }

@@ -2,11 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity, IDamageable
+public interface IDamageable
 {
-
-    public void TakeDamage()
-    {
-
-    }
+    public void TakeDamage();    
 }

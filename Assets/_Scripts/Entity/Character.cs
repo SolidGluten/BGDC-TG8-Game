@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Character : Entity
+public class Character : Entity, IDamageable
 {
     public bool isActive;
     private Vector2 moveDir = Vector2.zero;
@@ -39,14 +39,12 @@ public class Character : Entity
             if (!cellDest) return;
             MoveToCell(cellDest);
             cellDest = null;
-            currMovePoints = MaxMovePoints;
-
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            ResetMove();
-        }
+    public void TakeDamage()
+    {
+
     }
 
     public Cell GetAdjacentCell(Vector2 dir)
@@ -54,7 +52,7 @@ public class Character : Entity
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, Mathf.Infinity, 1 << 6);
         return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
     }
-
+    
     public Cell TakeStep(Cell cell)
     {
         if (cell.isOccupied) return null;
@@ -64,12 +62,6 @@ public class Character : Entity
             currMovePoints--;
             return cell;
         }
-    }
-
-    public void ResetMove()
-    {
-        transform.position = currCell.transform.position;
-        currMovePoints = MaxMovePoints;
     }
 
 #if UNITY_EDITOR

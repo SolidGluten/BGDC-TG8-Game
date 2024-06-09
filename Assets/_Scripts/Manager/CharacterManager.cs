@@ -19,13 +19,6 @@ public class CharacterManager : MonoBehaviour
         if (!grid) Debug.LogWarning("Grid is NOT assigned.");
     }
 
-    public void SetActiveChar(Character chara)
-    {
-        activeCharacter = chara;
-        activeCharacter.isActive = true;
-        activeCharacter.OnMovedCell += ResetSelection;
-    }
-
     private void Update()
     {
         if (!activeCharacter && toggleSelect && Input.GetMouseButtonDown(0))
@@ -43,9 +36,15 @@ public class CharacterManager : MonoBehaviour
             SetActiveChar(chara);
     }
 
-    private void AddCharacter(StatsScriptable stats, Vector2Int cellPos)
+    public void SetActiveChar(Character chara)
     {
-        
+        activeCharacter = chara;
+        activeCharacter.isActive = true;
+        activeCharacter.OnMovedCell += ResetSelection;
+    }
+
+    public void AddCharacter(StatsScriptable stats, Vector2Int cellPos)
+    {
         var charObj = Instantiate(characterObject);
 
         var cell = grid.GetCell(cellPos);
