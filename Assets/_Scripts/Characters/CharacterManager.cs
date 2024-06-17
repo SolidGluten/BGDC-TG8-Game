@@ -33,6 +33,11 @@ public class CharacterManager : MonoBehaviour
         if (!grid) Debug.LogWarning("Grid is NOT assigned.");
     }
 
+    private void Start()
+    {
+        InitializeCharacters();
+    }
+
     private void InitiateTurn()
     {
         var coroutine = I_InitiateTurn();
@@ -51,7 +56,7 @@ public class CharacterManager : MonoBehaviour
         yield break;
     }
 
-    [ContextMenu("Chars Init")]
+    [ContextMenu("Initialize Characters")]
     public void InitializeCharacters()
     {
         if(charStats.Length == 0)
@@ -69,6 +74,8 @@ public class CharacterManager : MonoBehaviour
     public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
     {
         var charObj = Instantiate(characterObject);
+        var chara = charObj.GetComponent<Character>();
+        chara.Stats = stats;    
 
         var cell = grid.GetCell(cellPos);
         if (!cell)
@@ -77,7 +84,6 @@ public class CharacterManager : MonoBehaviour
             return null;
         }
         grid.AddObj(charObj, cellPos);
-        var chara = charObj.GetComponent<Character>();
 
         return chara;
     }

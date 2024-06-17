@@ -12,7 +12,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Awake()
     {
-        character = GetComponent<Character>(); 
+        character = GetComponent<Character>();
+        character.OnTurnFinish += ResetMovePoints;
     }
 
     private void Update()
@@ -39,16 +40,15 @@ public class CharacterMovement : MonoBehaviour
                 if (cell) Move(cell);
             }
         }
-
     }
 
-    public Cell GetAdjacentCell(Vector2 dir)
+    private Cell GetAdjacentCell(Vector2 dir)
     {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, Mathf.Infinity, 1 << 6);
         return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
     }
 
-    public bool Move(Cell cell)
+    private bool Move(Cell cell)
     {
         if (cell.isOccupied) return false;
 
@@ -67,6 +67,16 @@ public class CharacterMovement : MonoBehaviour
         currCell.Obj = gameObject;
 
         return true;
+    }
+
+    private void OnDisable()
+    {
+        character.OnTurnFinish -= ResetMovePoints;
+    }
+
+    private void ResetMovePoints()
+    {
+        character.currMovePoints = character.Stats.MOV;
     }
 
 #if UNITY_EDITOR

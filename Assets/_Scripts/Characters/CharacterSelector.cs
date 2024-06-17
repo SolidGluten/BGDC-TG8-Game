@@ -21,16 +21,18 @@ public class CharacterSelector : MonoBehaviour
             if (hit.collider.gameObject.TryGetComponent<Character>(out chara)) break;
         }
 
-        if (chara && chara.isActive)
+        if (chara) 
         {
             SelectedCharacter = chara;
-            SelectedCharacter.isSelected = true;
+            SelectedCharacter.isActive = true;
+            SelectedCharacter.OnTurnFinish += Unselect;
         }
     }
 
     private void Unselect()
     {
-        SelectedCharacter.isSelected = false;
+        SelectedCharacter.OnTurnFinish -= Unselect;
+        SelectedCharacter.isActive = false;
         SelectedCharacter = null;
     }
 }
