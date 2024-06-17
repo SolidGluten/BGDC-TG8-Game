@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!character.isActive) return;
 
-        //Take Steps
+        // Track move points and input
         if (character.currMovePoints > 0)
         {
             if (Input.GetButtonDown("Vertical"))
@@ -39,6 +39,7 @@ public class CharacterMovement : MonoBehaviour
                 if (cell) Move(cell);
             }
         }
+
     }
 
     public Cell GetAdjacentCell(Vector2 dir)
