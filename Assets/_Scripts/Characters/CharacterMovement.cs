@@ -1,50 +1,44 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using System;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class Character : Entity, IDamageable
+public class CharacterMovement : MonoBehaviour
 {
-    public bool isActive;
+    private Character character;
     private Vector2 moveDir = Vector2.zero;
-    private Cell cellDest;
+    private Cell currCell { get; set; }
+
+    private void Awake()
+    {
+        character = GetComponent<Character>(); 
+    }
 
     private void Update()
     {
-        if (!isActive) return;
-        if (currMovePoints > 0)
+        if (!character.isActive) return;
+
+        //Take Steps
+        if (character.currMovePoints > 0)
         {
             if (Input.GetButtonDown("Vertical"))
             {
                 var y_axis = Input.GetAxisRaw("Vertical");
                 moveDir = new Vector2(0, y_axis);
-                Debug.Log(moveDir);
 
                 var cell = GetAdjacentCell(moveDir);
-                if (cell) cellDest = TakeStep(cell);
+                if (cell) Move(cell);
             }
-            else if(Input.GetButtonDown("Horizontal"))
+            else if (Input.GetButtonDown("Horizontal"))
             {
                 var x_axis = Input.GetAxisRaw("Horizontal");
                 moveDir = new Vector2(x_axis, 0);
-                Debug.Log(moveDir);
+
                 var cell = GetAdjacentCell(Vector2.right * x_axis);
-                if (cell) cellDest = TakeStep(cell);
+                if (cell) Move(cell);
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!cellDest) return;
-            MoveToCell(cellDest);
-            cellDest = null;
-        }
-    }
-
-    public void TakeDamage()
-    {
-
     }
 
     public Cell GetAdjacentCell(Vector2 dir)
@@ -52,16 +46,26 @@ public class Character : Entity, IDamageable
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, Mathf.Infinity, 1 << 6);
         return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
     }
-    
-    public Cell TakeStep(Cell cell)
+
+    public bool Move(Cell cell)
     {
-        if (cell.isOccupied) return null;
-        else
-        {
-            transform.position = cell.transform.position;
-            currMovePoints--;
-            return cell;
+        if (cell.isOccupied) return false;
+
+        // Remove ref to this obj from current cell
+        if (currCell) { 
+            currCell.Obj = null;
+            currCell = null;
         }
+        
+        // Move position and reduce move points
+        transform.position = cell.transform.position;
+        character.currMovePoints--;
+
+        // Set object reference in cell destination
+        currCell = cell;
+        currCell.Obj = gameObject;
+
+        return true;
     }
 
 #if UNITY_EDITOR

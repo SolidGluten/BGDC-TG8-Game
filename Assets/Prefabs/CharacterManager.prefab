@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2078045266729880860}
   - component: {fileID: 5470407933487054515}
+  - component: {fileID: 3003321640501706342}
   m_Layer: 0
   m_Name: CharacterManager
   m_TagString: Untagged
@@ -44,6 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa9fb29acde63845b6d59e4f6725d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCharacter: {fileID: 0}
+  grid: {fileID: 0}
+  characterObject: {fileID: 3724879488159274509, guid: 6a4bdb7f194183a4381ac6b58f3e51c2, type: 3}
   cardManager: {fileID: 0}
-  toggleSelect: 1
+  charStats:
+  - {fileID: 11400000, guid: 9e72b98f24593694584202dbbfb48c0b, type: 2}
+  - {fileID: 11400000, guid: 9a2449321df8ee149983fdb528704338, type: 2}
+  characters:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &3003321640501706342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656365344554176385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7339f4570901f4d84ba2b77a4b8533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedCharacter: {fileID: 0}
+  toggleSelect: 0

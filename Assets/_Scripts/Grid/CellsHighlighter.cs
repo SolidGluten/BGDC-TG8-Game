@@ -8,8 +8,8 @@ public enum Direction { Left, Right, Up, Down }
 
 public class CellsHighlighter : MonoBehaviour
 {
-    private const int maxRadius = 6; //WARNING: DONT GO OVER MAX RANGE OR PREPARE FOR DEATH
-    private const int maxRange = 10;
+    private const int MAX_RADIUS = 6; //WARNING: DONT GO OVER MAX RANGE OR PREPARE FOR DEATH
+    private const int MAX_RANGE = 10;
 
     public GridSystem Grid;
     private Highlighter highlighter = new HighlightSquare();
@@ -37,27 +37,27 @@ public class CellsHighlighter : MonoBehaviour
 
     //RADIUS
     [SerializeField]
-    [Range(0, maxRadius)]
+    [Range(0, MAX_RADIUS)]
     private int radius;
     public int Radius
     {
         get { return radius; }
         set
         {
-            radius = Mathf.Clamp(value, 0, maxRadius);
+            radius = Mathf.Clamp(value, 0, MAX_RADIUS);
         }
     }
 
     //RANGE
     [SerializeField]
-    [Range(0, maxRange)]
+    [Range(0, MAX_RANGE)]
     private int range;
     public int Range
     {
         get { return range; }
         set
         {
-            range = Mathf.Clamp(value, 0, maxRange);
+            range = Mathf.Clamp(value, 0, MAX_RANGE);
         }
     }
 
@@ -98,7 +98,7 @@ public class CellsHighlighter : MonoBehaviour
         {
             for(int j = 0; j < Grid.Height; j++)
             {
-                Grid.Cells[i, j].UnHighlight();
+                Grid?.Cells[i, j]?.UnHighlight();
             }
         }
     }

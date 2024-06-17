@@ -9,15 +9,15 @@ using UnityEngine;
 
 public class GridSystem : MonoBehaviour
 {
-    public const int maxRange = 30;
+    public const int MAX_RANGE = 30;
 
     //Grid width
-    [Range(1, maxRange)]
+    [Range(1, MAX_RANGE)]
     [SerializeField] private int width;
     public int Width { get { return width; } }
 
     //Grid height
-    [Range(1, maxRange)]
+    [Range(1, MAX_RANGE)]
     [SerializeField] private int height;
     public int Height { get { return height; } }
 
@@ -26,7 +26,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private float cellGap = 0f;
     [SerializeField] private GameObject cellObj;
 
-    public Cell[,] Cells { get; } = new Cell[maxRange, maxRange];
+    public Cell[,] Cells { get; } = new Cell[MAX_RANGE, MAX_RANGE];
 
     private void Awake()
     {
@@ -92,6 +92,11 @@ public class GridSystem : MonoBehaviour
     public Cell GetCell(Vector2Int index)
     {
         return Cells[index.x, index.y];
+    }
+
+    public bool ValidatePos(Vector2Int index)
+    {
+        return Cells[index.x, index.y] != null;
     }
 
     //draws the grid
