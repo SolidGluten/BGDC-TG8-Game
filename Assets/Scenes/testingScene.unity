@@ -22978,6 +22978,22 @@ PrefabInstance:
       propertyPath: enemyObject
       value: 
       objectReference: {fileID: 6375444940500128356, guid: 9d3119252763cac4689d757cb901f141, type: 3}
+    - target: {fileID: 8499505758826812784, guid: 59525afc2801be242bce401ecf28712c, type: 3}
+      propertyPath: Enemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499505758826812784, guid: 59525afc2801be242bce401ecf28712c, type: 3}
+      propertyPath: enemyStats.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499505758826812784, guid: 59525afc2801be242bce401ecf28712c, type: 3}
+      propertyPath: enemyStats.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9232931d30c5bce4dab9256afab03b54, type: 2}
+    - target: {fileID: 8499505758826812784, guid: 59525afc2801be242bce401ecf28712c, type: 3}
+      propertyPath: enemyStats.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 27a6d8c8ed4f65942983fd38340d65a8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23043,6 +23059,10 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 1954802877}
+    - target: {fileID: 5470407933487054515, guid: e1da03283da91bf41ac5093bc8b9e553, type: 3}
+      propertyPath: ActiveCharacters.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

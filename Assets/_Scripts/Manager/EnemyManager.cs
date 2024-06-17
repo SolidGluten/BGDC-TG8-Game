@@ -8,9 +8,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GridSystem grid;
     [SerializeField] private GameObject enemyObject;
 
-    public List<Enemy> Enemies = new List<Enemy>();
-
-    private List<StatsScriptable> statsScriptables = new List<StatsScriptable>();
+    [SerializeField] private List<StatsScriptable> enemyStats = new List<StatsScriptable>();
+    public List<Enemy> ActiveEnemies = new List<Enemy>();
 
     public static EnemyManager Instance;
 
@@ -31,6 +30,11 @@ public class EnemyManager : MonoBehaviour
         if (!grid) Debug.LogWarning("Grid is NOT assigned.");
     }
 
+    private void Start()
+    {
+        InitializeEnemies();
+    }
+
     public IEnumerator InitiateTurn()
     {
         OnStartTurn?.Invoke();
@@ -39,6 +43,20 @@ public class EnemyManager : MonoBehaviour
 
         OnEndTurn?.Invoke();
         yield break;
+    }
+
+    private void InitializeEnemies()
+    {
+        if(enemyStats.Count == 0)
+        {
+            Debug.LogWarning("Enemy stats not assigned.");
+            return;
+        }
+
+        for(int i = 0; i < enemyStats.Count; i++)
+        {
+            ActiveEnemies.Add(AddEnemy(enemyStats[i], new Vector2Int(0, GridSystem.Instance.Height - i - 1)));
+        }
     }
 
     private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)
@@ -56,7 +74,7 @@ public class EnemyManager : MonoBehaviour
 
         cell.SetObject(enemyObj);
 
-        Enemies.Add(enemy);
+        ActiveEnemies.Add(enemy);
 
         return enemy;
     }

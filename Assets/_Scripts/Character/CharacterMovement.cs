@@ -7,6 +7,7 @@ using System;
 public class CharacterMovement : MonoBehaviour
 {
     private Character character;
+    private Cell currCell;
     private Vector2 moveDir = Vector2.zero;
 
     private void Awake()
@@ -47,13 +48,12 @@ public class CharacterMovement : MonoBehaviour
         return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
     }
 
-    private void Move(Cell cell)
+    public void Move(Cell cell)
     {
         if (cell.isOccupied) return;
-
-        // Move position and reduce move points
-        cell.SetObject(this.gameObject);
-        character.currMovePoints--;
+        if (currCell != null) currCell.SetObject(null);// Remove ref to this obj in the prevCell
+        currCell = cell.SetObject(this.gameObject); // Move to position
+        character.currMovePoints--; // Reduce character move points
     }
 
     private void ResetMovePoints()

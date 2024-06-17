@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2872785801100282010}
   - component: {fileID: 9135676376201065710}
   - component: {fileID: 3789596852586401490}
+  - component: {fileID: 7553010638927049927}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -143,11 +144,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb919bbd00418114eb4b33d1531684eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currCell: {fileID: 0}
-  StatsScriptable: {fileID: 11400000, guid: 9232931d30c5bce4dab9256afab03b54, type: 2}
-  maxHealth: 0
+  isActive: 0
+  stats: {fileID: 11400000, guid: 9232931d30c5bce4dab9256afab03b54, type: 2}
   currHealth: 0
-  maxMovePoints: 0
-  currMovePoints: 0
-  attackDamage: 0
-  currAttackDamage: 0
+  currAttakDamage: 0
+--- !u!114 &7553010638927049927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6375444940500128356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7bfcc11b69f2e44a8a47be40d415db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRadius: 0

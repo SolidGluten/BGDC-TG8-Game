@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
@@ -11,8 +12,8 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private GameObject characterObject;
     [SerializeField] private CardManager cardManager;
 
-    [SerializeField] private StatsScriptable[] charStats = new StatsScriptable[MAX_CHARS];
-    [SerializeField] private Character[] characters = new Character[MAX_CHARS];
+    [SerializeField] private List<StatsScriptable> charStats = new List<StatsScriptable>();
+    public List<Character> ActiveCharacters = new List<Character>();
 
     public event Action OnStartTurn;
     public event Action OnEndTurn;
@@ -48,7 +49,7 @@ public class CharacterManager : MonoBehaviour
     {
         OnStartTurn?.Invoke();
 
-        foreach (var chara in characters) chara.isActive = true;
+        foreach (var chara in ActiveCharacters) chara.isActive = true;
 
         //Insert character manager logic here
 
@@ -56,10 +57,10 @@ public class CharacterManager : MonoBehaviour
         yield break;
     }
 
-    [ContextMenu("Initialize Characters")]
+    [ContextMenu("Initialize ActiveCharacters")]
     public void InitializeCharacters()
     {
-        if(charStats.Length == 0)
+        if(charStats.Count == 0)
         {
             Debug.Log("No character stats are assigned");
             return;
@@ -67,7 +68,7 @@ public class CharacterManager : MonoBehaviour
 
         for(int i = 0; i < MAX_CHARS; i++)
         {
-            characters[i] = AddCharacter(charStats[i], new Vector2Int(0, i));
+            ActiveCharacters.Add(AddCharacter(charStats[i], new Vector2Int(0, i)));
         }
     }
 

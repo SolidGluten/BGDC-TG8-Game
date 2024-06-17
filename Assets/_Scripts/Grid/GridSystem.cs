@@ -11,6 +11,8 @@ public class GridSystem : MonoBehaviour
 {
     public const int MAX_RANGE = 30;
 
+    public static GridSystem Instance;
+
     //Grid width
     [Range(1, MAX_RANGE)]
     [SerializeField] private int width;
@@ -30,6 +32,14 @@ public class GridSystem : MonoBehaviour
 
     private void Awake()
     {
+        //Singleton
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this);
+        } else
+        {
+            Instance = this;
+        }
 
         RegenerateGrid();
     }

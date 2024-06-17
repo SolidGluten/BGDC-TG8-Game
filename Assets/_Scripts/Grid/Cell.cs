@@ -39,10 +39,11 @@ public class Cell : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }   
 
-    public void SetObject(GameObject _obj)
+    public Cell SetObject(GameObject _obj)
     {
         Obj = _obj;
-        _obj.transform.position = this.transform.position;
+        if(_obj != null) _obj.transform.position = this.transform.position;
+        return this;
     }
 
     public void Highlight()
