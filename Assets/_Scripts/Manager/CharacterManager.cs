@@ -73,30 +73,19 @@ public class CharacterManager : MonoBehaviour
 
     public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
     {
-        var charObj = Instantiate(characterObject);
-        var chara = charObj.GetComponent<Character>();
-        chara.Stats = stats;    
-
         var cell = grid.GetCell(cellPos);
         if (!cell)
         {
             Debug.LogWarning("Cell is NOT found");
             return null;
         }
-        grid.AddObj(charObj, cellPos);
+
+        var charObj = Instantiate(characterObject);
+        var chara = charObj.GetComponent<Character>();
+        chara.Stats = stats;    
+
+        cell.SetObject(charObj);
 
         return chara;
-    }
-
-    public Character NearestCharFromPoint(Vector2 pos)
-    {
-        if (characters.Length == 1) return characters[0];
-        else if (characters == null) return null;
-        else
-        {
-            var dist1 = Vector2.Distance(characters[0].transform.position, pos);
-            var dist2 = Vector2.Distance(characters[1].transform.position, pos);
-            return dist1 < dist2 ? characters[0] : characters[1];
-        }
     }
 }

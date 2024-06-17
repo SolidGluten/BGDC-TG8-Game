@@ -43,20 +43,21 @@ public class EnemyManager : MonoBehaviour
 
     private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)
     {
-        var enemyObj = Instantiate(enemyObject);
-
         var cell = grid.GetCell(cellPos);
         if (!cell)
         {
             Debug.LogWarning("Cell is NOT found");
             return null;
         }
-        grid.AddObj(enemyObj, cellPos);
 
+        var enemyObj = Instantiate(enemyObject);
         var enemy = enemyObj.GetComponent<Enemy>();
-        enemy.CurrCell = cell;
+        enemy.Stats = stats;
+
+        cell.SetObject(enemyObj);
 
         Enemies.Add(enemy);
+
         return enemy;
     }
 }

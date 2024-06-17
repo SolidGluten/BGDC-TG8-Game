@@ -83,12 +83,6 @@ public class GridSystem : MonoBehaviour
         }
     } 
 
-    public void AddObj(GameObject obj, Vector2Int index)
-    {
-        Cells[index.x, index.y].Obj = obj;
-        obj.transform.position = Cells[index.x, index.y].transform.position;
-    }
-
     public Cell GetCell(Vector2Int index)
     {
         return Cells[index.x, index.y];

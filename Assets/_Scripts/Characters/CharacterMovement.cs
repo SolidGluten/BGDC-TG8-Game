@@ -8,7 +8,6 @@ public class CharacterMovement : MonoBehaviour
 {
     private Character character;
     private Vector2 moveDir = Vector2.zero;
-    private Cell currCell { get; set; }
 
     private void Awake()
     {
@@ -48,35 +47,23 @@ public class CharacterMovement : MonoBehaviour
         return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
     }
 
-    private bool Move(Cell cell)
+    private void Move(Cell cell)
     {
-        if (cell.isOccupied) return false;
+        if (cell.isOccupied) return;
 
-        // Remove ref to this obj from current cell
-        if (currCell) { 
-            currCell.Obj = null;
-            currCell = null;
-        }
-        
         // Move position and reduce move points
-        transform.position = cell.transform.position;
+        cell.SetObject(this.gameObject);
         character.currMovePoints--;
-
-        // Set object reference in cell destination
-        currCell = cell;
-        currCell.Obj = gameObject;
-
-        return true;
-    }
-
-    private void OnDisable()
-    {
-        character.OnTurnFinish -= ResetMovePoints;
     }
 
     private void ResetMovePoints()
     {
         character.currMovePoints = character.Stats.MOV;
+    }
+
+    private void OnDisable()
+    {
+        character.OnTurnFinish -= ResetMovePoints;
     }
 
 #if UNITY_EDITOR

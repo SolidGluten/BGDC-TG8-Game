@@ -33,9 +33,16 @@ public class Cell : MonoBehaviour
             isOccupied = obj != null;
         }
     }
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }   
+
+    public void SetObject(GameObject _obj)
+    {
+        Obj = _obj;
+        _obj.transform.position = this.transform.position;
     }
 
     public void Highlight()
