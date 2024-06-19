@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Character : MonoBehaviour, IDamageable
+public class Character : Entity, IDamageable
 {
     public bool isActive;
     private StatsScriptable stats;

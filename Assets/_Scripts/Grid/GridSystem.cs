@@ -98,9 +98,9 @@ public class GridSystem : MonoBehaviour
         return Cells[index.x, index.y];
     }
 
-    public bool ValidatePos(Vector2Int index)
+    public bool ValidateCell(Vector2Int index)
     {
-        return Cells[index.x, index.y] != null;
+        return Cells[index.x, index.y].isOccupied;
     }
 
     //draws the grid

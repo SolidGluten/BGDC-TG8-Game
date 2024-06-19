@@ -7,7 +7,6 @@ using System;
 public class CharacterMovement : MonoBehaviour
 {
     private Character character;
-    private Cell currCell;
     private Vector2 moveDir = Vector2.zero;
 
     private void Awake()
@@ -51,8 +50,8 @@ public class CharacterMovement : MonoBehaviour
     public void Move(Cell cell)
     {
         if (cell.isOccupied) return;
-        if (currCell != null) currCell.SetObject(null);// Remove ref to this obj in the prevCell
-        currCell = cell.SetObject(this.gameObject); // Move to position
+        if (character.CurrCell != null) character.CurrCell.SetObject(null);// Remove ref to this obj in the prevCell
+        character.CurrCell = cell.SetObject(this.gameObject); // Move to position
         character.currMovePoints--; // Reduce character move points
     }
 

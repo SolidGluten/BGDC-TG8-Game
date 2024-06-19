@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemy;
-    private Cell currCell;
     [SerializeField] private int moveRadius;
 
     private void Start()
@@ -57,8 +56,8 @@ public class EnemyMovement : MonoBehaviour
     private void Move(Cell cell)
     {
         if (cell.isOccupied) return;
-        if(currCell) currCell.SetObject(null); // Remove ref to this obj in the prevCell
-        currCell = cell.SetObject(this.gameObject); // Move to position
+        if(enemy.CurrCell) enemy.CurrCell.SetObject(null); // Remove ref to this obj in the prevCell
+        enemy.CurrCell = cell.SetObject(this.gameObject); // Move to position
     }
 
 #if UNITY_EDITOR
