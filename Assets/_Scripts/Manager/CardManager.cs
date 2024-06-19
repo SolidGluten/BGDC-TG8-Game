@@ -29,6 +29,7 @@ public class CardManager : MonoBehaviour
             DrawCard();
         }
     }
+
     public void DrawCard()
     {
         if (drawPile.Count == 0)
@@ -50,10 +51,12 @@ public class CardManager : MonoBehaviour
     {
         discardPile.Add(card);
     }
+
     public void ExhaustCard(Card card)
     {
         exhaustPile.Add(card);
     }
+
     private void ReshuffleDiscardIntoDrawPile()
     {
         drawPile.AddRange(discardPile);

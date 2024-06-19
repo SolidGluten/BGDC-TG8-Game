@@ -44,8 +44,6 @@ public class GameManager : MonoBehaviour
         MousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
-    
-
     public void PauseGame()
     {
         Time.timeScale = 0;
