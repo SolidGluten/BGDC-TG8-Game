@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     [ContextMenu("Move Towards Nearest Character")]
-    private void MoveTowardsCharacter()
+    public void Move()
     {
         var chara = GetNearestCharacter();
         if (chara == null) return;

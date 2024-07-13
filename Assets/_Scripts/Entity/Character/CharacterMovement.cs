@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!character.isActive) return;
+        if (!character.isActive || !character.isTurn) return;
 
         // Track move points and input
         if (character.currMovePoints > 0)

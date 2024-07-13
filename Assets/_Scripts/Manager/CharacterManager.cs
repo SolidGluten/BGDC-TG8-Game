@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : MonoBehaviour, ITurn
 {
     public const int MAX_CHARS = 2;
 
@@ -14,9 +14,6 @@ public class CharacterManager : MonoBehaviour
 
     [SerializeField] private List<StatsScriptable> charStats = new List<StatsScriptable>();
     public List<Character> ActiveCharacters = new List<Character>();
-
-    public event Action OnStartTurn;
-    public event Action OnEndTurn;
 
     public static CharacterManager Instance { get; private set; }
 
@@ -39,24 +36,21 @@ public class CharacterManager : MonoBehaviour
         InitializeCharacters();
     }
 
-    private void InitiateTurn()
+    public IEnumerator Turn()
     {
-        var coroutine = I_InitiateTurn();
-        StartCoroutine(coroutine);
+        foreach (var chara in ActiveCharacters)
+        {
+            chara.isTurn = true;
+        }
+
+        //wait until every character have finished their turn
+        while(ActiveCharacters.Any((chara) => chara.isTurn))
+        {
+            yield return null;
+        }
     }
 
-    public IEnumerator I_InitiateTurn()
-    {
-        OnStartTurn?.Invoke();
-
-        foreach (var chara in ActiveCharacters) chara.isActive = true;
-
-        //Insert character manager logic here
-
-        OnEndTurn?.Invoke();
-        yield break;
-    }
-
+    //Spawn Characters
     [ContextMenu("Initialize ActiveCharacters")]
     public void InitializeCharacters()
     {

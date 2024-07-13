@@ -4,23 +4,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum GameState { PlayerTurn, EnemyTurn, Pause, Death}
+public enum GameState { Pause, Play, Death}
 public class GameManager : MonoBehaviour
 {
     public static GameState CurrentState { get; private set; }
 
-    public CharacterManager characterManager;
-    public EnemyManager enemyManager;
-
     public static Vector2 MousePos;
     private Camera cam;
 
-    public bool isPaused { get; private set; }
+    [SerializeField] private TurnController turnController;
 
-    public static GameManager Instance;
+    public bool isPaused { get; private set; }
 
     public event Action OnPause;
     public event Action OnResume;
+
+    public static GameManager Instance;
 
     //Singleton
     private void Awake()

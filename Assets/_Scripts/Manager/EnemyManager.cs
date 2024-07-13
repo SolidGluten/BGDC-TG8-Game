@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour, ITurn
 {
     [SerializeField] private GridSystem grid;
     [SerializeField] private GameObject enemyObject;
@@ -12,9 +12,6 @@ public class EnemyManager : MonoBehaviour
     public List<Enemy> ActiveEnemies = new List<Enemy>();
 
     public static EnemyManager Instance;
-
-    public event Action OnStartTurn;
-    public event Action OnEndTurn;
 
     //Singleton
     private void Awake()
@@ -35,16 +32,17 @@ public class EnemyManager : MonoBehaviour
         InitializeEnemies();
     }
 
-    public IEnumerator InitiateTurn()
+    public IEnumerator Turn()
     {
-        OnStartTurn?.Invoke();
-        
-        //Insert enemy manager logic here
+        foreach (var enemy in ActiveEnemies)
+        {
+            enemy.GetComponent<EnemyMovement>()?.Move();
+        }
 
-        OnEndTurn?.Invoke();
-        yield break;
+        yield return null;
     }
 
+    //Spawn Enemies
     private void InitializeEnemies()
     {
         if(enemyStats.Count == 0)

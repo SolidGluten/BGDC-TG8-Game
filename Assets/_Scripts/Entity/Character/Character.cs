@@ -8,6 +8,7 @@ using UnityEngine;
 public class Character : Entity, IDamageable
 {
     public bool isActive;
+    public bool isTurn;
     private StatsScriptable stats;
     public StatsScriptable Stats {
         get { return stats; }
@@ -28,9 +29,10 @@ public class Character : Entity, IDamageable
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && isActive)
+        if (Input.GetMouseButtonDown(1) && isActive && isTurn)
         {
             OnTurnFinish?.Invoke();
+            isTurn = false;
         }
     }
 
