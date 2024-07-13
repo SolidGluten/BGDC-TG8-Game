@@ -26,7 +26,7 @@ public class TurnController : MonoBehaviour
 
     private void Awake()
     {
-        OnEndTurn += ChangeTurn;
+        //OnEndTurn += ChangeTurn;
     }
 
     private void Start()
@@ -36,9 +36,13 @@ public class TurnController : MonoBehaviour
         StartCoroutine(InitiateTurn());
     }
 
-    public void InitiateTurnWrap()
+    public void NextTurn()
     {
-        if(!isInTurn) StartCoroutine(InitiateTurn());
+        if(!isInTurn)
+        {
+            ChangeTurn();
+            StartCoroutine(InitiateTurn());
+        }
     }
 
     public IEnumerator InitiateTurn()

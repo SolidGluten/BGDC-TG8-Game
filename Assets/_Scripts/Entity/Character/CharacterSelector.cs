@@ -21,7 +21,7 @@ public class CharacterSelector : MonoBehaviour
             if (hit.collider.gameObject.TryGetComponent<Character>(out chara)) break;
         }
 
-        if (chara) 
+        if (chara && chara.isTurn) 
         {
             SelectedCharacter = chara;
             SelectedCharacter.isActive = true;
@@ -31,8 +31,8 @@ public class CharacterSelector : MonoBehaviour
 
     private void Unselect()
     {
-        SelectedCharacter.OnTurnFinish -= Unselect;
         SelectedCharacter.isActive = false;
+        SelectedCharacter.OnTurnFinish -= Unselect;
         SelectedCharacter = null;
     }
 }
