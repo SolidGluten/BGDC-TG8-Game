@@ -11,7 +11,6 @@ public class CellsHighlighter : MonoBehaviour
     private const int MAX_RADIUS = 6; //WARNING: DONT GO OVER MAX RANGE OR PREPARE FOR DEATH
     private const int MAX_RANGE = 10;
 
-    public GridSystem Grid;
     private Highlighter highlighter = new HighlightSquare();
 
     public Direction Direction;
@@ -79,14 +78,14 @@ public class CellsHighlighter : MonoBehaviour
     }
 #endif
 
-    public List<Cell> HighlightArea(Cell targetCell)
+    public List<Cell> HighlightArea(Vector2Int startIndex)
     {
         if (radius < 0) Debug.LogError("Highlight radius can't be negative.");
         if (range < 0) Debug.LogError("Highlight range can't be negative.");
 
-        List<Cell> cells = highlighter.Highlight(targetCell, Radius, Range, Direction);
+        List<Cell> cells = highlighter.Highlight(startIndex, Radius, Range, Direction);
 
-        foreach(var cell in cells) cell.Highlight();
+        foreach(var cell in cells) cell.SetHighlight(true);
 
         return cells;
     }
@@ -94,11 +93,12 @@ public class CellsHighlighter : MonoBehaviour
     [ContextMenu("Un-Highlight All")]
     public void ClearAll()
     {
-        for(int i = 0; i < Grid.Width; i++)
+        for(int i = 0; i < GridSystem.Instance.Height; i++)
         {
-            for(int j = 0; j < Grid.Height; j++)
+            for(int j = 0; j < GridSystem.Instance.Width; j++)
             {
-                Grid?.Cells[i, j]?.UnHighlight();
+                var cell = GridSystem.Instance.cellList[new Vector2Int(j, i)];
+                if (cell) cell.SetHighlight(false);
             }
         }
     }

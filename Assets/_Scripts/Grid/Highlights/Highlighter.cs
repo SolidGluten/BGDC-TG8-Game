@@ -4,22 +4,26 @@ using UnityEngine;
 
 public abstract class Highlighter
 {
-    public abstract List<Cell> Highlight(Cell targetCell, int width, int length, Direction dir = Direction.Right);
+    public abstract List<Cell> Highlight(Vector2Int startIndex, int width, int length, Direction dir = Direction.Right);
 
-    public void HighlightHorizontal(Cell targetCell, int length, ref List<Cell> result)
+    public void HighlightHorizontal(Vector2Int startIndex, int length, ref List<Cell> result)
     {
         if (length == 0) return;
-        result.Add(targetCell);
-        if (targetCell.right) HighlightHorizontal(targetCell.right, length - 1, ref result);
-        if (targetCell.left) HighlightHorizontal(targetCell.left, length - 1, ref result);
+        for(int i = -length/2; i <= length/2; i++)
+        {
+            var cell = GridSystem.Instance.GetCell(new Vector2Int(startIndex.x + i, startIndex.y));
+            if (cell) result.Add(cell);
+        }
     }
 
-    public void HighlightVertical(Cell targetCell, int length, ref List<Cell> result)
+    public void HighlightVertical(Vector2Int startIndex, int length, ref List<Cell> result)
     {
         if (length == 0) return;
-        result.Add(targetCell);
-        if (targetCell.up) HighlightVertical(targetCell.up, length - 1, ref result);
-        if (targetCell.down) HighlightVertical(targetCell.down, length - 1, ref result);
+        for (int i = -length / 2; i <= length / 2; i++)
+        {
+            var cell = GridSystem.Instance.GetCell(new Vector2Int(startIndex.x, startIndex.y + i));
+            if (cell) result.Add(cell);
+        }
     }
 
 }

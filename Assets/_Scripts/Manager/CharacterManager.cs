@@ -79,7 +79,7 @@ public class CharacterManager : MonoBehaviour, ITurn
         var chara = charObj.GetComponent<Character>();
         chara.Stats = stats;    
 
-        cell.SetObject(charObj);
+        cell.SetEntity(chara);
 
         return chara;
     }

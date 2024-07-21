@@ -3674,7 +3674,7 @@ MonoBehaviour:
   gridPos: {x: -8.35, y: -1.12}
   cellSize: 1
   cellGap: 0.2
-  cellObj: {fileID: 0}
+  cellObj: {fileID: 6366186914659498189, guid: 125e9d421b700964d9604dd818c20e1a, type: 3}
 --- !u!114 &1972877170179341954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3688,6 +3688,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grid: {fileID: 483270868735795900}
+  Direction: 0
+  shape: 0
+  radius: 0
+  range: 0
 --- !u!114 &5371240215465630589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3705,8 +3709,7 @@ MonoBehaviour:
   cellHighlight: {fileID: 1972877170179341954}
   toggleHover: 0
   toggleHighlights: 0
-  highlightShape: 0
-  highlightedCells: []
+  HighlightedCells: []
 --- !u!1 &1748134378707246525
 GameObject:
   m_ObjectHideFlags: 0

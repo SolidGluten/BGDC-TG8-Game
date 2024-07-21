@@ -10,49 +10,36 @@ using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public GridSystem grid;
+    private SpriteRenderer _renderer;
 
-    public Vector2Int Index;
-    public int Value;
+    public Vector2Int index; 
+    [SerializeField] private bool isHighlited;
 
-    public bool isOccupied;
-    public bool isHighlited;
+    public Entity occupiedEntity;
 
-    public Cell up;
-    public Cell down;
-    public Cell left;
-    public Cell right;
+    public Color defaultColor;
+    public Color highlightedColor;
 
-    [SerializeField] private GameObject obj;
-    public GameObject Obj
-    {
-        get { return obj; }
-        set {
-            obj = value;
-            isOccupied = obj != null;
-        }
-    }
+    public bool isOccupied => occupiedEntity != null;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _renderer = GetComponent<SpriteRenderer>();
     }   
 
-    public Cell SetObject(GameObject _obj)
+    public void SetEntity(Entity entity)
     {
-        Obj = _obj;
-        if(_obj != null) _obj.transform.position = this.transform.position;
-        return this;
+        if (entity.occupiedCell && entity.occupiedCell.occupiedEntity != null)
+            entity.occupiedCell.occupiedEntity = null;
+
+        entity.transform.position = transform.position;
+        entity.occupiedCell = this;
+        occupiedEntity = entity;
     }
 
-    public void Highlight()
+    public void SetHighlight(bool highlight)
     {
-        spriteRenderer.color = Color.green;
-    }
-    
-    public void UnHighlight()
-    {
-        spriteRenderer.color = Color.red;
+        isHighlited = highlight;
+        _renderer.color = isHighlited ? highlightedColor : defaultColor;
     }
 }

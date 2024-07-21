@@ -7,7 +7,6 @@ using System;
 public class CharacterMovement : MonoBehaviour
 {
     private Character character;
-    private Vector2 moveDir = Vector2.zero;
 
     private void Awake()
     {
@@ -25,34 +24,31 @@ public class CharacterMovement : MonoBehaviour
             if (Input.GetButtonDown("Vertical"))
             {
                 var y_axis = Input.GetAxisRaw("Vertical");
-                moveDir = new Vector2(0, y_axis);
+                var moveDir = new Vector2Int(0, (int)y_axis);
 
-                var cell = GetAdjacentCell(moveDir);
-                if (cell) Move(cell);
+                var cellIdx = character.occupiedCell.index;
+                Move(cellIdx + moveDir);
             }
             else if (Input.GetButtonDown("Horizontal"))
             {
                 var x_axis = Input.GetAxisRaw("Horizontal");
-                moveDir = new Vector2(x_axis, 0);
+                var moveDir = new Vector2Int((int)x_axis, 0);
 
-                var cell = GetAdjacentCell(Vector2.right * x_axis);
-                if (cell) Move(cell);
+                var cellIdx = character.occupiedCell.index;
+                Move(cellIdx + moveDir);
             }
         }
     }
 
-    private Cell GetAdjacentCell(Vector2 dir)
+    public void Move(Vector2Int movePos)
     {
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir, Mathf.Infinity, 1 << 6);
-        return hits.Length >= 2 ? hits[1].collider.gameObject.GetComponent<Cell>() : null;
-    }
+        var cell = GridSystem.Instance.GetCell(movePos);
+        if (!cell) {
+            Debug.LogWarning("No cell found to move to!");
+            return;
+        }
 
-    public void Move(Cell cell)
-    {
-        if (cell.isOccupied) return;
-        if (character.CurrCell != null) character.CurrCell.SetObject(null);// Remove ref to this obj in the prevCell
-        character.CurrCell = cell.SetObject(this.gameObject); // Move to position
-        character.currMovePoints--; // Reduce character move points
+        cell.SetEntity(character);
     }
 
     private void ResetMovePoints()
@@ -64,12 +60,4 @@ public class CharacterMovement : MonoBehaviour
     {
         character.OnTurnFinish -= ResetMovePoints;
     }
-
-#if UNITY_EDITOR
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)moveDir * 1f);
-    }
-#endif
 }

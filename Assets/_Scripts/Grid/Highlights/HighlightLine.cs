@@ -4,70 +4,38 @@ using UnityEngine;
 
 public class HighlightLine : Highlighter
 {
-    public override List<Cell> Highlight(Cell targetCell, int width, int length, Direction dir = Direction.Right)
+    public override List<Cell> Highlight(Vector2Int startIndex, int width, int length, Direction dir = Direction.Right)
     {
-        List<Cell> res = new List<Cell>();
-        if (dir == Direction.Left || dir == Direction.Right)
+        List<Cell> cells = new List<Cell>();
+        
+        for (int i = 0; i < length; i++)
         {
-            HighlightVertical(targetCell, width + 1, ref res);
-            List<Cell> tempRes = new List<Cell>();
-            if (dir == Direction.Left)
+            for (int j = -width / 2; j < width / 2; j++)
             {
-                foreach (var cell in res)
-                {
-                    var temp = cell.left;
-                    for (int i = 0; i < length && temp != null; i++)
-                    {
-                        tempRes.Add(temp);
-                        temp = temp.left;
+                var cellPos = Vector2Int.zero;
+                switch (dir){
+                    case Direction.Up: {
+                            cellPos += new Vector2Int(j, i);
+                            break; 
+                    }
+                    case Direction.Down: {
+                            cellPos += new Vector2Int(j, -i);
+                            break; 
+                    }
+                    case Direction.Right: {
+                            cellPos += new Vector2Int(i, j);
+                            break; 
+                    }
+                    case Direction.Left: {
+                            cellPos += new Vector2Int(-i, j);
+                            break; 
                     }
                 }
+                var cell = GridSystem.Instance.GetCell(startIndex + cellPos);
+                cells.Add(cell);
             }
-            else
-            {
-                foreach (var cell in res)
-                {
-                    var temp = cell.right;
-                    for (int i = 0; i < length && temp != null; i++)
-                    {
-                        tempRes.Add(temp);
-                        temp = temp.right;
-                    }
-                }
-            }
-            res.AddRange(tempRes);
-        }
-        else
-        {
-            List<Cell> tempRes = new List<Cell>();
-            HighlightHorizontal(targetCell, width + 1, ref res);
-            if (dir == Direction.Up)
-            {
-                foreach (var cell in res)
-                {
-                    var temp = cell.up;
-                    for (int i = 0; i < length && temp != null; i++)
-                    {
-                        tempRes.Add(temp);
-                        temp = temp.up;
-                    }
-                }
-            }
-            else
-            {
-                foreach (var cell in res)
-                {
-                    var temp = cell.down;
-                    for (int i = 0; i < length && temp != null; i++)
-                    {
-                        tempRes.Add(temp);
-                        temp = temp.down;
-                    }
-                }
-            }
-            res.AddRange(tempRes);
         }
 
-        return res;
+        return cells;
     }
 }

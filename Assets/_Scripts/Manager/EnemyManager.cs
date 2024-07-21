@@ -34,10 +34,10 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     public IEnumerator Turn()
     {
-        foreach (var enemy in ActiveEnemies)
-        {
-            enemy.GetComponent<EnemyMovement>()?.Move();
-        }
+        //foreach (var enemy in ActiveEnemies)
+        //{
+        //    enemy.GetComponent<EnemyMovement>()?.Move();
+        //}
 
         yield return null;
     }
@@ -70,7 +70,7 @@ public class EnemyManager : MonoBehaviour, ITurn
         var enemy = enemyObj.GetComponent<Enemy>();
         enemy.Stats = stats;
 
-        cell.SetObject(enemyObj);
+        cell.SetEntity(enemy);
 
         ActiveEnemies.Add(enemy);
 

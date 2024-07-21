@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public Cell CurrCell;
+    public Cell occupiedCell;
 
     public void DestroySelf()
     {
-        CurrCell.Obj = null;
+        occupiedCell.occupiedEntity = null;
         Destroy(gameObject);
     }
 }

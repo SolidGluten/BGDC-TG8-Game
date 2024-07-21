@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
 
 #if UNITY_EDITOR
-    using UnityEditor;
+using UnityEditor;
 #endif
 
 public class GridSystem : MonoBehaviour
@@ -28,7 +30,7 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private float cellGap = 0f;
     [SerializeField] private GameObject cellObj;
 
-    public Cell[,] Cells { get; } = new Cell[MAX_RANGE, MAX_RANGE];
+    public Dictionary<Vector2Int, Cell> cellList = new Dictionary<Vector2Int, Cell>();
 
     private void Awake()
     {
@@ -60,68 +62,49 @@ public class GridSystem : MonoBehaviour
         }
 
         //instantiate cell objs
-        for (int i = 0; i < width; i++)
+        for (int i = 0; i < height; i++)
         {
-            for (int j = 0; j < height; j++)
+            for (int j = 0; j < width; j++)
             {
-                var index = new Vector2Int(i, j);
+                var index = new Vector2Int(j, i);
                 var pos = (cellSize + cellGap) * (Vector2)index + gridPos;
-                var val = (i * height) + j;
+                var val = (i * width) + j;
 
                 var obj = Instantiate(cellObj, pos, Quaternion.identity, transform);
                 //copy value from the associated element from Cells
                 obj.name = "Cell" + val;
 
                 var cell = obj.GetComponent<Cell>();
-                cell.Index = index;
-                cell.Value = val;
+                cell.index = index;
 
-                Cells[i, j] = cell;
-            }
-        }
-
-        //set references to adjacent cells
-        for (int i = 0; i < width; i++)
-        {
-            for (int j = 0; j < height; j++)
-            {
-                if (j < height - 1) Cells[i, j].up = Cells[i, j + 1]; //UP
-                if (j > 0) Cells[i, j].down = Cells[i, j - 1]; //DOWN
-                if (i < width - 1) Cells[i, j].right = Cells[i + 1, j]; //RIGHT
-                if (i > 0) Cells[i, j].left = Cells[i - 1, j]; //LEFT
             }
         }
     } 
 
     public Cell GetCell(Vector2Int index)
     {
-        return Cells[index.x, index.y];
-    }
-
-    public bool ValidateCell(Vector2Int index)
-    {
-        return Cells[index.x, index.y].isOccupied;
+        if (cellList.TryGetValue(index, out Cell value))
+            return value;
+        return null;
     }
 
     //draws the grid
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        for(int i = 0; i < width; i++)
+        for(int i = 0; i < height; i++)
         {
-            for(int j = 0; j < height; j++){
-                var pos = (cellSize + cellGap) * new Vector2(i, j) + gridPos;
-                var val = (i * height) + j;
+            for(int j = 0; j < width; j++){
+                var pos = (cellSize + cellGap) * new Vector2(j, i) + gridPos;
+                var val = (i * width) + j;
 
-                if (Cells[i, j])
+                if (cellList.Any())
                 {
-                    Gizmos.color = Cells[i, j].isOccupied ? Color.red : Color.green;
-                    Handles.color = Cells[i, j].isOccupied ? Color.red : Color.green;
+                    Gizmos.color = cellList[new Vector2Int(j, i)].isOccupied ? Color.red : Color.green;
+                    Handles.color = cellList[new Vector2Int(j, i)].isOccupied ? Color.red : Color.green;
                 }
 
-                
-                    Handles.Label(pos, val.ToString());
-
+                Handles.Label(pos, val.ToString());
                 Gizmos.DrawWireCube(pos, Vector2.one * cellSize);   
             }
         }
