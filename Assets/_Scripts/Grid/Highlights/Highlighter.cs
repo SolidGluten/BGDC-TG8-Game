@@ -8,11 +8,11 @@ public abstract class Highlighter
 
     public void HighlightHorizontal(Vector2Int startIndex, int length, ref List<Cell> result)
     {
-        var cell = GridSystem.Instance.GetCell(startIndex);
-        if (!cell) return;
+        var startCell = GridSystem.Instance.GetCell(startIndex);
+        if (!startCell) return;
 
         if (length == 0) {
-            result.Add(cell);
+            result.Add(startCell);
             return;
         }
 
@@ -25,12 +25,12 @@ public abstract class Highlighter
 
     public void HighlightVertical(Vector2Int startIndex, int length, ref List<Cell> result)
     {
-        var cell = GridSystem.Instance.GetCell(startIndex);
-        if (!cell) return;
+        var startCell = GridSystem.Instance.GetCell(startIndex);
+        if (!startCell) return;
 
         if (length == 0)
         {
-            result.Add(cell);
+            result.Add(startCell);
             return;
         }
 

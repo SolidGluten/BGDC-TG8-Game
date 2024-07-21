@@ -41,21 +41,23 @@ public class CellSelector : MonoBehaviour
 
     private void HoverCell()
     {
-        if(cellHighlight && toggleHighlights) cellHighlight.ClearAll();
+        if (cellHighlight && toggleHighlights) cellHighlight.ClearAll();
 
         var pos = GameManager.MousePos;
         var hit = Physics2D.Raycast(pos, Vector3.forward);
         if (!hit) return;
 
         var cell = hit.collider.GetComponent<Cell>();
-        if (!cell) return;
-
-        hoveredCell = cell;
-
-        if (cellHighlight && toggleHighlights)
+        if (cell)
         {
-            HighlightedCells = cellHighlight.HighlightArea(cell.index);
+            hoveredCell = cell;
+
+            if (cellHighlight && toggleHighlights)
+            {
+                HighlightedCells = cellHighlight.HighlightArea(hoveredCell.index);
+            }
         }
+
     }
 
     private void OnDisable()
