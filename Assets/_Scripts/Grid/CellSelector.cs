@@ -47,16 +47,13 @@ public class CellSelector : MonoBehaviour
         var hit = Physics2D.Raycast(pos, Vector3.forward);
         if (!hit) return;
 
-        var cell = hit.collider.gameObject.GetComponent<Cell>();
+        var cell = hit.collider.GetComponent<Cell>();
         if (!cell) return;
 
         hoveredCell = cell;
 
         if (cellHighlight && toggleHighlights)
         {
-            var cellPos = cell.gameObject.transform.position;
-            Debug.Log($"{cell.gameObject} : {cellPos}");
-
             HighlightedCells = cellHighlight.HighlightArea(cell.index);
         }
     }

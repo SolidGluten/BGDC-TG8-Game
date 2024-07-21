@@ -9,9 +9,9 @@ public class HighlightSquare : Highlighter
     {
         List<Cell> cells = new List<Cell>();
 
-        for (int i = -width/2; i < width/2; i++)
+        for (int i = -width; i <= width; i++)
         {
-            for (int j = -width/2; j < width/2; j++)
+            for (int j = -width; j <= width; j++)
             {
                 var cell = GridSystem.Instance.GetCell(startIndex + new Vector2Int(j, i));
                 if (cell) cells.Add(cell);

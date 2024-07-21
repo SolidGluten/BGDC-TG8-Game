@@ -33,7 +33,7 @@ public class TurnController : MonoBehaviour
     {
         CurrTurnState = TurnState.Player;
         CurrentTurn = characterManager;
-        StartCoroutine(InitiateTurn());
+        //StartCoroutine(InitiateTurn());
     }
 
     public void NextTurn()

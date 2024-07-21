@@ -10,8 +10,8 @@ public class HighlightCross : Highlighter
         List<Cell> h_cells = new List<Cell>();
         List<Cell> v_cells = new List<Cell>();
 
-        HighlightHorizontal(startIndex, width + 1, ref h_cells);
-        HighlightVertical(startIndex, width + 1, ref v_cells);
+        HighlightHorizontal(startIndex, width, ref h_cells);
+        HighlightVertical(startIndex, width, ref v_cells);
 
         h_cells.AddRange(v_cells);
         return h_cells.Distinct().ToList();

@@ -90,14 +90,13 @@ public class CellsHighlighter : MonoBehaviour
         return cells;
     }
 
-    [ContextMenu("Un-Highlight All")]
     public void ClearAll()
     {
         for(int i = 0; i < GridSystem.Instance.Height; i++)
         {
             for(int j = 0; j < GridSystem.Instance.Width; j++)
             {
-                var cell = GridSystem.Instance.cellList[new Vector2Int(j, i)];
+                var cell = GridSystem.Instance.GetCell(new Vector2Int(j, i));
                 if (cell) cell.SetHighlight(false);
             }
         }

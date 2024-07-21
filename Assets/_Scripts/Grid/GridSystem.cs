@@ -77,6 +77,8 @@ public class GridSystem : MonoBehaviour
                 var cell = obj.GetComponent<Cell>();
                 cell.index = index;
 
+                cellList.Add(index, cell);
+
             }
         }
     } 

@@ -10,7 +10,7 @@ public class HighlightLine : Highlighter
         
         for (int i = 0; i < length; i++)
         {
-            for (int j = -width / 2; j < width / 2; j++)
+            for (int j = -width; j <= width; j++)
             {
                 var cellPos = Vector2Int.zero;
                 switch (dir){
