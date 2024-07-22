@@ -9,6 +9,8 @@ using System.Linq;
 using UnityEditor;
 #endif
 
+[RequireComponent(typeof (CellSelector))]
+[RequireComponent(typeof (CellsHighlighter))]
 public class GridSystem : MonoBehaviour
 {
     public const int MAX_RANGE = 30;
@@ -30,6 +32,8 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private float cellGap = 0f;
     [SerializeField] private GameObject cellObj;
 
+    public bool isCostShown = true;
+
     public Dictionary<Vector2Int, Cell> cellList = new Dictionary<Vector2Int, Cell>();
 
     private void Awake()
@@ -44,6 +48,7 @@ public class GridSystem : MonoBehaviour
         }
 
         RegenerateGrid();
+        ShowCost(isCostShown);
     }
 
     [ContextMenu("Regenerate Grid")]
@@ -72,7 +77,7 @@ public class GridSystem : MonoBehaviour
 
                 var obj = Instantiate(cellObj, pos, Quaternion.identity, transform);
                 //copy value from the associated element from Cells
-                obj.name = "Cell" + val;
+                obj.name = "Cell " + val;
 
                 var cell = obj.GetComponent<Cell>();
                 cell.index = index;
@@ -88,6 +93,27 @@ public class GridSystem : MonoBehaviour
         if (cellList.TryGetValue(index, out Cell value))
             return value;
         return null;
+    }
+
+    public void ResetCost()
+    {
+        foreach (KeyValuePair<Vector2Int, Cell> cell in cellList)
+        {
+            cell.Value.SetG(0);
+            cell.Value.SetH(0);
+            cell.Value.SetF();
+        }
+    }
+
+    public void ShowCost(bool isShow)
+    {
+        isCostShown = isShow;
+        foreach (KeyValuePair<Vector2Int, Cell> cell in cellList)
+        {
+            cell.Value.F_text.enabled = isCostShown;
+            cell.Value.G_text.enabled = isCostShown;
+            cell.Value.H_text.enabled = isCostShown;
+        }
     }
 
     //draws the grid

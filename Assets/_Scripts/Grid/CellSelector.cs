@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CellSelector : MonoBehaviour
 {
+    public static CellSelector Instance;
+
     [SerializeField] private Cell selectedCell;
     public Cell SelectedCell
     {
@@ -23,6 +25,17 @@ public class CellSelector : MonoBehaviour
     public bool toggleHighlights;
 
     public List<Cell> HighlightedCells;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        } else
+        {
+            Instance = this;
+        }
+    }
 
     private void Update()
     {

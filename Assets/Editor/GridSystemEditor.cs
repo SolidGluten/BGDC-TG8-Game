@@ -13,5 +13,7 @@ public class GridSystemEditor : Editor
         GridSystem gridSystem = (GridSystem)target;
         if (GUILayout.Button("Regenerate Grid"))
             gridSystem.RegenerateGrid();
+        if (GUILayout.Button("Show Cost"))
+            gridSystem.ShowCost(!gridSystem.isCostShown);
     }
 }

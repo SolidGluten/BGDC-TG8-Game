@@ -31,16 +31,6 @@ public class SceneLoader : MonoBehaviour
         currSceneIdx = SceneManager.GetActiveScene().buildIndex;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ReloadSceneAsync();
-        } else if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            LoadSceneAsync(1);
-        }
-    }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
