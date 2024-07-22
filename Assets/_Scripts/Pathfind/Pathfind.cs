@@ -64,19 +64,18 @@ public class Pathfind
                 if (closedList.Contains(child) || child.isOccupied) continue;
 
                 int newCostToChild = current.G + Heuristic(current.index, child.index);
-
-                child.SetG(current.G + Heuristic(current.index, child.index));
-                child.SetH(Heuristic(child.index, endCell.index));
-                child.SetF();
-
-                child.parent = current;
-
-                foreach (Cell cell in openList)
+                if (newCostToChild < child.G || !openList.Contains(child))
                 {
-                    if (child == cell && child.G > cell.G) continue;
-                }
+                    child.SetG(newCostToChild);
+                    child.SetH(Heuristic(child.index, endCell.index));
+                    child.SetF();
+                    child.parent = current;
 
-                openList.Add(child);
+                    if (!openList.Contains(child))
+                    {
+                        openList.Add(child);
+                    }
+                }
             }
         }
 
