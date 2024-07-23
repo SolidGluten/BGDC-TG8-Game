@@ -27,7 +27,6 @@ public class SceneLoader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-        Debug.Log("test");
         currSceneIdx = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -35,7 +34,6 @@ public class SceneLoader : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currSceneIdx = scene.buildIndex;
-        Debug.Log(currSceneIdx);
         OnSceneLoad?.Invoke();
     }
 

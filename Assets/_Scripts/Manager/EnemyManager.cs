@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour, ITurn
 {
-    [SerializeField] private GridSystem grid;
     [SerializeField] private GameObject enemyObject;
 
     [SerializeField] private List<StatsScriptable> enemyStats = new List<StatsScriptable>();
@@ -23,8 +22,6 @@ public class EnemyManager : MonoBehaviour, ITurn
         {
             Instance = this;
         }
-
-        if (!grid) Debug.LogWarning("Grid is NOT assigned.");
     }
 
     private void Start()
@@ -34,10 +31,10 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     public IEnumerator Turn()
     {
-        //foreach (var enemy in ActiveEnemies)
-        //{
-        //    enemy.GetComponent<EnemyMovement>()?.Move();
-        //}
+        foreach (var enemy in ActiveEnemies)
+        {
+            enemy.GetComponent<EnemyMovement>().Move();
+        }
 
         yield return null;
     }
@@ -51,15 +48,12 @@ public class EnemyManager : MonoBehaviour, ITurn
             return;
         }
 
-        for(int i = 0; i < enemyStats.Count; i++)
-        {
-            ActiveEnemies.Add(AddEnemy(enemyStats[i], new Vector2Int(0, GridSystem.Instance.Height - i - 1)));
-        }
+        AddEnemy(enemyStats[0], new Vector2Int(0, GridSystem.Instance.Height - 1));
     }
 
     private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)
     {
-        var cell = grid.GetCell(cellPos);
+        var cell = GridSystem.Instance.GetCell(cellPos);
         if (!cell)
         {
             Debug.LogWarning("Cell is NOT found");

@@ -62,7 +62,7 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         for(int i = 0; i < MAX_CHARS; i++)
         {
-            ActiveCharacters.Add(AddCharacter(charStats[i], new Vector2Int(0, i)));
+            AddCharacter(charStats[i], new Vector2Int(0, i));
         }
     }
 
@@ -80,6 +80,7 @@ public class CharacterManager : MonoBehaviour, ITurn
         chara.Stats = stats;    
 
         cell.SetEntity(chara);
+        ActiveCharacters.Add(chara);
 
         return chara;
     }

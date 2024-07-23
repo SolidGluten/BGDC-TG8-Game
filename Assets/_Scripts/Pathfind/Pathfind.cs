@@ -40,19 +40,9 @@ public class Pathfind
             if (current == endCell)
             {
                 var curr = current;
-                while (curr) {
-                    if (!path.Contains(curr))
-                    {
-                        path.Add(curr);
-                        if (curr == startCell)
-                        {
-                            break;
-                        }
-                        curr = curr.parent;
-                    } else
-                    {
-                        break;
-                    }
+                while (curr != startCell) {
+                    path.Add(curr);
+                    curr = curr.parent;
                 }
 
                 path.Reverse();
@@ -61,7 +51,7 @@ public class Pathfind
 
             foreach(Cell child in current.GetAdjacentCells())
             {
-                if (closedList.Contains(child) || child.isOccupied) continue;
+                if (closedList.Contains(child) || (child != endCell && child.isOccupied)) continue;
 
                 int newCostToChild = current.G + Heuristic(current.index, child.index);
                 if (newCostToChild < child.G || !openList.Contains(child))
