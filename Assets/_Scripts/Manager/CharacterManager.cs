@@ -8,7 +8,6 @@ public class CharacterManager : MonoBehaviour, ITurn
 {
     public const int MAX_CHARS = 2;
 
-    [SerializeField] private GridSystem grid;
     [SerializeField] private GameObject characterObject;
     [SerializeField] private CardManager cardManager;
 
@@ -27,8 +26,6 @@ public class CharacterManager : MonoBehaviour, ITurn
         {
             Instance = this;
         }
-
-        if (!grid) Debug.LogWarning("Grid is NOT assigned.");
     }
 
     private void Start()
@@ -50,8 +47,17 @@ public class CharacterManager : MonoBehaviour, ITurn
         }
     }
 
+    public void StartTurn()
+    {
+        Debug.Log("Player Start");
+    }
+
+    public void EndTurn()
+    {
+        Debug.Log("Player End");
+    }
+
     //Spawn Characters
-    [ContextMenu("Initialize ActiveCharacters")]
     public void InitializeCharacters()
     {
         if(charStats.Count == 0)
@@ -68,7 +74,7 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
     {
-        var cell = grid.GetCell(cellPos);
+        var cell = GridSystem.Instance.GetCell(cellPos);
         if (!cell)
         {
             Debug.LogWarning("Cell is NOT found");

@@ -57,8 +57,6 @@ public class EnemyMovement : MonoBehaviour
             int moveCount = Mathf.Clamp(pathToChara.Count, 1, enemy.Stats.MOV);
             Cell cellDst = null;
 
-            Debug.Log(moveCount);
-
             if (moveCount == 1) return;
 
             if (pathToChara[moveCount - 1].isOccupied && moveCount <= enemy.Stats.MOV)

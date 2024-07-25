@@ -16,6 +16,10 @@ public class TurnController : MonoBehaviour
     }
 
     public bool isInTurn = false;
+
+    public Action StartTurn;
+    public Action EndTurn;
+
     public event Action OnStartTurn;
     public event Action OnEndTurn;
 
@@ -24,15 +28,17 @@ public class TurnController : MonoBehaviour
 
     private ITurn CurrentTurn;
 
-    private void Awake()
-    {
-        //OnEndTurn += ChangeTurn;
-    }
-
     private void Start()
     {
         CurrTurnState = TurnState.Player;
         CurrentTurn = characterManager;
+
+        StartTurn = CurrentTurn.StartTurn;
+        EndTurn = CurrentTurn.EndTurn;
+
+        OnStartTurn += StartTurn;
+        OnEndTurn += EndTurn;
+
         StartCoroutine(InitiateTurn());
     }
 
@@ -47,8 +53,8 @@ public class TurnController : MonoBehaviour
 
     public IEnumerator InitiateTurn()
     {
-        OnStartTurn?.Invoke();
         isInTurn = true;
+        OnStartTurn?.Invoke();
         
         yield return CurrentTurn != null ? StartCoroutine(CurrentTurn.Turn()) : null;
 
@@ -58,6 +64,9 @@ public class TurnController : MonoBehaviour
 
     public void ChangeTurn()
     {
+        OnStartTurn -= StartTurn;
+        OnEndTurn -= EndTurn;
+
         if (CurrentTurnState == TurnState.Enemy)
         {
             CurrentTurnState = TurnState.Player;
@@ -68,5 +77,13 @@ public class TurnController : MonoBehaviour
             CurrTurnState = TurnState.Enemy;
             CurrentTurn = enemyManager;
         }
+
+        StartTurn = CurrentTurn.StartTurn;
+        EndTurn = CurrentTurn.EndTurn;
+
+        OnStartTurn += StartTurn;
+        OnEndTurn += EndTurn;
+
+        Debug.Log("Turn Changed");
     }
 }

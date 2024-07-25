@@ -39,6 +39,16 @@ public class EnemyManager : MonoBehaviour, ITurn
         yield return null;
     }
 
+    public void StartTurn()
+    {
+        Debug.Log("Enemy Start");
+    }
+
+    public void EndTurn()
+    {
+        Debug.Log("Enemy End");
+    }
+
     //Spawn Enemies
     private void InitializeEnemies()
     {
@@ -48,7 +58,12 @@ public class EnemyManager : MonoBehaviour, ITurn
             return;
         }
 
-        AddEnemy(enemyStats[0], new Vector2Int(0, GridSystem.Instance.Height - 1));
+        int i = 0;
+        foreach(StatsScriptable stats in enemyStats)
+        {
+            AddEnemy(stats, new Vector2Int(0, GridSystem.Instance.Height - i - 1));
+            i++;
+        }
     }
 
     private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)
