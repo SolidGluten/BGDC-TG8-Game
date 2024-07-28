@@ -54,12 +54,12 @@ public class EnemyMovement : MonoBehaviour
         if (pathToChara.Any())
         {
             foreach (Cell cell in pathToChara) cell.SetPath(true);
-            int moveCount = Mathf.Clamp(pathToChara.Count, 1, enemy.Stats.MOV);
+            int moveCount = Mathf.Clamp(pathToChara.Count, 1, enemy.stats.MOV);
             Cell cellDst = null;
 
             if (moveCount == 1) return;
 
-            if (pathToChara[moveCount - 1].isOccupied && moveCount <= enemy.Stats.MOV)
+            if (pathToChara[moveCount - 1].isOccupied && moveCount <= enemy.stats.MOV)
                 cellDst = pathToChara[moveCount - 2];
             else
                 cellDst = pathToChara[moveCount - 1];

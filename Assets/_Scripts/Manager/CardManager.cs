@@ -77,19 +77,19 @@ public class CardManager : MonoBehaviour
 
     public void PlayCard(Card card, GameObject target)
     {
-        if (hand.Contains(card))
-        {
-            hand.Remove(card);
-            if (card.exhaust)
-            {
-                ExhaustCard(card);
-            }
-            else
-            {
-                DiscardCard(card);
-            }
-            card.cardEffect();
-        }
+        //if (hand.Contains(card))
+        //{
+        //    hand.Remove(card);
+        //    if (card.exhaust)
+        //    {
+        //        ExhaustCard(card);
+        //    }
+        //    else
+        //    {
+        //        DiscardCard(card);
+        //    }
+        //    card.cardEffect();
+        //}
     }
 
     public void DiscardHand()

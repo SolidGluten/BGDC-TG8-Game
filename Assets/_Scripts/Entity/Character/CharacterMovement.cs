@@ -53,7 +53,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void ResetMovePoints()
     {
-        character.currMovePoints = character.Stats.MOV;
+        character.currMovePoints = character.stats.MOV;
     }
 
     private void OnDisable()

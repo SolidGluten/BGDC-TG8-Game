@@ -60,9 +60,10 @@ public class GridSystem : MonoBehaviour
             var child = transform.GetChild(i).gameObject;
             #if UNITY_EDITOR
                 EditorCustomUtils.DestroyOnEdit(child);
-            #else
+#else
                 Destroy(child);
-            #endif
+#endif
+            cellList.Clear();
 
         }
 

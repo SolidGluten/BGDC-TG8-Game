@@ -9,23 +9,9 @@ public class Character : Entity, IDamageable
 {
     public bool isActive;
     public bool isTurn;
-    private StatsScriptable stats;
-    public StatsScriptable Stats {
-        get { return stats; }
-        set { 
-            stats = value;
-            currHealth = stats.HP;
-            currMovePoints = stats.MOV;
-            currAttackDamage = stats.ATK;
-        }
-    }
 
     public event Action OnTakeDamage;
     public event Action OnTurnFinish;
-
-    public int currHealth;
-    public int currMovePoints;
-    public int currAttackDamage;
 
     private void Update()
     {

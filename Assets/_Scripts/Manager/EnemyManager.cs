@@ -77,7 +77,7 @@ public class EnemyManager : MonoBehaviour, ITurn
 
         var enemyObj = Instantiate(enemyObject);
         var enemy = enemyObj.GetComponent<Enemy>();
-        enemy.Stats = stats;
+        enemy.stats = stats;
 
         cell.SetEntity(enemy);
 

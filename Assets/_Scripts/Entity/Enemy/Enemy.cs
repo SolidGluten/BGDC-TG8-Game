@@ -6,16 +6,6 @@ using UnityEngine;
 public class Enemy : Entity, IDamageable
 {
     public bool isActive;
-    public StatsScriptable Stats;
-
-    private void Start()
-    {
-        currHealth = Stats.HP;
-        currAttackDamage = Stats.ATK;
-    }
-
-    public int currHealth = 0;
-    public int currAttackDamage = 0;
 
     public event Action OnTakeDamage;
     public void TakeDamage(int dmg)

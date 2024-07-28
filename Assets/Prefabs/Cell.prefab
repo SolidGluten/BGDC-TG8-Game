@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5300664098626816552
 RectTransform:
   m_ObjectHideFlags: 0
@@ -324,9 +324,6 @@ MonoBehaviour:
   defaultColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   highlightedColor: {r: 0.1846836, g: 0.6037736, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
-  F: 0
-  G: 0
-  H: 0
   F_text: {fileID: 5604436816506456556}
   G_text: {fileID: 4698947630738611019}
   H_text: {fileID: 7699049667550338417}
@@ -348,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3732648817822695503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -519,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3041339949953693188
 RectTransform:
   m_ObjectHideFlags: 0

@@ -83,7 +83,7 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         var charObj = Instantiate(characterObject);
         var chara = charObj.GetComponent<Character>();
-        chara.Stats = stats;    
+        chara.stats = stats;    
 
         cell.SetEntity(chara);
         ActiveCharacters.Add(chara);
