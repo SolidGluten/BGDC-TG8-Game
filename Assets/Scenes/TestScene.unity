@@ -81293,10 +81293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardObj: {fileID: 3310802754110361015, guid: 1f01280fc69442b48b24c76a4681f98d, type: 3}
-  cardObjInHand: []
-  fanSpread: -2.35
+  cardDisplayInHand: []
+  fanSpread: -2.5
   cardSpacing: 50
-  verticalSpacing: 27
+  verticalSpacing: 0
+  hoverLift: 50
 --- !u!1 &1779222084
 GameObject:
   m_ObjectHideFlags: 0

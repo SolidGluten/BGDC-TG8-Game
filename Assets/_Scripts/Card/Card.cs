@@ -10,14 +10,20 @@ public abstract class Card : ScriptableObject
 {
     public string cardName;
     public string description;
-    public CardType cardType;
     public int cost;
+
+    public bool exhaust;
+
+    public CardType cardType;
+
+    public int rangeFromCaster;
     public int range;
     public int width;
     public HighlightShape effectShape;
+
     public Sprite cardSprite;
     public Sprite cardBorder;
-    public bool exhaust;
+
     public StatusEffect statusEffect;
 
     public abstract void Play(Entity from, Entity target);

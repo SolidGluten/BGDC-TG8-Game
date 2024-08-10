@@ -8,4 +8,5 @@ public class StatsScriptable : ScriptableObject
     [SerializeField] public int HP;
     [SerializeField] public int ATK;
     [SerializeField] public int MOV;
+    //[SerializeField] public int DEF;
 }

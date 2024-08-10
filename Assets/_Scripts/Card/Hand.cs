@@ -5,12 +5,13 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public GameObject cardObj;
-    public List<GameObject> cardObjInHand = new List<GameObject>();
+    //public List<GameObject> cardDisplayInHand = new List<GameObject>();
+    public List<CardDisplay> cardDisplayInHand = new List<CardDisplay>();
 
     [SerializeField] private float fanSpread;
     [SerializeField] private float cardSpacing;
     [SerializeField] private float verticalSpacing;
-
+    [SerializeField] private float hoverLift = 25;
 
     private void Start()
     {
@@ -23,36 +24,33 @@ public class Hand : MonoBehaviour
     public void AddCard()
     {
         var obj = Instantiate(cardObj, transform.position, Quaternion.identity, transform);
-        cardObjInHand.Add(obj);
+        var cardDisplay = obj.GetComponent<CardDisplay>();
+        cardDisplayInHand.Add(cardDisplay);
 
         UpdateHandVisuals();
     }
 
-    //private void Update()
-    //{
-    //    UpdateHandVisuals();
-    //}
-
     public void UpdateHandVisuals()
     {
-        int cardCount = cardObjInHand.Count;
+        int cardCount = cardDisplayInHand.Count;
 
         if (cardCount == 1) {
-            cardObjInHand[0].transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            cardObjInHand[0].transform.localPosition = new Vector3(0f, 0f, 0f);
+            cardDisplayInHand[0].transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            cardDisplayInHand[0].transform.localPosition = new Vector3(0f, 0f, 0f);
             return;
         }
 
         for (int i = 0; i < cardCount; i++)
         {
-            float rotationAngle = (fanSpread * (i - (cardCount - 1) / 2f));
-            cardObjInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
+            //float rotationAngle = (fanSpread * (i - (cardCount - 1) / 2f));
+            //cardDisplayInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
 
             float horizontalOffset = (cardSpacing * (i - (cardCount - 1) / 2f));
+            cardDisplayInHand[i].hoverPos = new Vector2(horizontalOffset, hoverLift);
 
             float normalizedPosition = (2f * i / (cardCount - 1) - 1f);
             float verticalOffset = verticalSpacing * (1 - normalizedPosition * normalizedPosition);
-            cardObjInHand[i].transform.localPosition = new Vector2(horizontalOffset, verticalOffset);
+            cardDisplayInHand[i].transform.localPosition = new Vector2(horizontalOffset, verticalOffset);
         }
     }
     

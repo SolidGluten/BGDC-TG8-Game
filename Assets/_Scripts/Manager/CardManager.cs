@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
+    public List<Card> knightDeck = new List<Card>();
+    public List<Card> mageDeck = new List<Card>();
+
     public List<Card> deck = new List<Card>();
     private List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
     private List<Card> exhaustPile = new List<Card>();
+
     public List<Card> hand = new List<Card>();
+
     public int handSize = 10;
-    public int initialDraw = 5;
+    public int initialDraw = 6;
+
+    private void Start()
+    {
+        
+    }
 
     public void ResetDeck()
     {
@@ -77,19 +87,7 @@ public class CardManager : MonoBehaviour
 
     public void PlayCard(Card card, GameObject target)
     {
-        //if (hand.Contains(card))
-        //{
-        //    hand.Remove(card);
-        //    if (card.exhaust)
-        //    {
-        //        ExhaustCard(card);
-        //    }
-        //    else
-        //    {
-        //        DiscardCard(card);
-        //    }
-        //    card.cardEffect();
-        //}
+
     }
 
     public void DiscardHand()
