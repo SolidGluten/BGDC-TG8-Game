@@ -6,14 +6,14 @@ public class InventoryDisplay : MonoBehaviour
 {
     public List<Card> deckDisplay = new List<Card>();
 
-    public GameObject inventoryCard;
+    public Transform deckContainer;
 
     private void Start()
     {
         CardManager.instance.deck.ForEach((card) =>
         {
             deckDisplay.Add(card);
-            Instantiate(card, this.transform);
+            Instantiate(card, deckContainer);
         });
     }
 }

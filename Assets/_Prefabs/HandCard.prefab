@@ -258,10 +258,11 @@ GameObject:
   - component: {fileID: 9109847408379119676}
   - component: {fileID: 5478016690062370102}
   - component: {fileID: 9172723490250988055}
+  - component: {fileID: -1743992444189980271}
   - component: {fileID: 353949401891016197}
   - component: {fileID: 1900416190265699626}
   m_Layer: 5
-  m_Name: Card_UI
+  m_Name: HandCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,14 +341,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
-  hand: {fileID: 0}
   card_name: {fileID: 6998014980715997397}
   card_description: {fileID: 7864448072940351880}
   card_cost: {fileID: 7658028870858363604}
+--- !u!114 &-1743992444189980271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310802754110361015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4a575b82f07ff4e9caf335ab16a088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 0}
+  originalPos: {x: 0, y: 0}
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
+  image: {fileID: 5478016690062370102}
+  canvas: {fileID: 353949401891016197}
+  handIndex: 0
   hoverPos: {x: 0, y: 0}
   hoverSizeMultiplier: 1.5
   defaultColor: {r: 1, g: 0, b: 0, a: 1}
-  selectedColor: {r: 0.50664043, g: 0.7921569, b: 0.4, a: 1}
+  selectedColor: {r: 0.16824007, g: 1, b: 0, a: 1}
 --- !u!223 &353949401891016197
 Canvas:
   m_ObjectHideFlags: 0
