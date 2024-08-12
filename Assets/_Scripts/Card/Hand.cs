@@ -6,7 +6,6 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public GameObject cardObj;
-    //public List<GameObject> cardDisplayInHand = new List<GameObject>();
     public List<CardDisplay> cardDisplayInHand = new List<CardDisplay>();
 
     [SerializeField] private float fanSpread;
@@ -33,18 +32,25 @@ public class Hand : MonoBehaviour
         UpdateHandVisuals();
     }
 
-    public void RemoveCard(Card card)
+    public void RemoveCard(int index)
     {
-        var cardToRemove = cardDisplayInHand.First(cardInHand => cardInHand.card == card);
+        CardDisplay cardDisplay = cardDisplayInHand[index];
+        if (!cardDisplay) return;
 
-        cardDisplayInHand.Remove(cardToRemove);
-        Destroy(cardToRemove.gameObject);
+        cardDisplayInHand.Remove(cardDisplay);
+        Destroy(cardDisplay.gameObject);
 
         UpdateHandVisuals();
     }
 
+    [ContextMenu("Update Hand Visual")]
     public void UpdateHandVisuals()
     {
+        for(int i = 0; i < cardDisplayInHand.Count; i++)
+        {
+            cardDisplayInHand[i].handIndex = i;
+        }
+
         int cardCount = cardDisplayInHand.Count;
 
         if (cardCount == 1) {
@@ -63,7 +69,7 @@ public class Hand : MonoBehaviour
 
             float normalizedPosition = (2f * i / (cardCount - 1) - 1f);
             float verticalOffset = verticalSpacing * (1 - normalizedPosition * normalizedPosition);
-            cardDisplayInHand[i].transform.localPosition = new Vector2(horizontalOffset, verticalOffset);
+            cardDisplayInHand[i].originalPos = new Vector2(horizontalOffset, verticalOffset);
         }
     }
     

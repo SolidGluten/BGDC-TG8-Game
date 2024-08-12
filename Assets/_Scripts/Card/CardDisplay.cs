@@ -11,6 +11,8 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public Card card;
     public Hand hand;
 
+    public int handIndex;
+
     private bool isHovered;
     private bool isSelected;
 
@@ -21,8 +23,8 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public TextMeshProUGUI card_description;
     public TextMeshProUGUI card_cost;
 
-    private Vector2 originalPos;
-    private Quaternion originalRot;
+    public Vector2 originalPos;
+    public Quaternion originalRot;
     private Vector2 originalScale;
 
     protected static CardDisplay selectedCard;
@@ -37,14 +39,12 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         image = GetComponent<Image>();
         canvas = GetComponent<Canvas>();
         image.color = defaultColor;
+
+        originalScale = transform.localScale;
     }
 
     private void Start()
     {
-        originalPos = transform.localPosition;
-        //originalRot = transform.localRotation;
-        originalScale = transform.localScale;
-
         card_name.text = card.cardName;
         card_description.text = card.description;
         card_cost.text = card.cost.ToString();
@@ -74,9 +74,10 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public IEnumerator ApplyCard()
     {
         SelectCard();
+
         CardManager.instance.OnCancelCard += UnselectCard;
 
-        yield return CardManager.instance.PlayCard(card);
+        yield return CardManager.instance.PlayCard(handIndex);
         
         CardManager.instance.OnCancelCard -= UnselectCard;
     }
@@ -104,8 +105,7 @@ public class CardDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void OnDisable()
     {
+        if (selectedCard == this) selectedCard = null;
         CardManager.instance.OnCancelCard -= UnselectCard;
     }
-
-
 }

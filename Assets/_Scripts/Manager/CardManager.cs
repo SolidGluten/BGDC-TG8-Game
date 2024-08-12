@@ -19,7 +19,7 @@ public class CardManager : MonoBehaviour
     public List<Card> hand = new List<Card>();
 
     public event Action OnCancelCard;
-    public event Action<Card> OnPlayCard;
+    public event Action<int> OnPlayCard;
     public event Action<Card> OnDrawCard;
 
     public int handSize = 10;
@@ -51,9 +51,10 @@ public class CardManager : MonoBehaviour
         DrawInitialHand();
     }
 
-    public IEnumerator PlayCard(Card card)
+    public IEnumerator PlayCard(int index)
     {
-        if (!hand.Any(cardInHand => cardInHand == card)) yield break;
+        Card card = hand[index];
+        if (!card) yield break;
 
         Character caster = CharacterManager.Instance.ActiveCharacters[0];
         CellsHighlighter.HighlightArea(caster.occupiedCell.index, 4, HighlightShape.Diamond);
@@ -68,7 +69,7 @@ public class CardManager : MonoBehaviour
                 if (selectedCell)
                 {
                     hand.Remove(card);
-                    OnPlayCard?.Invoke(card);
+                    OnPlayCard?.Invoke(index);
                 } else //Cancel playing the card
                 {
                     OnCancelCard?.Invoke();
@@ -79,7 +80,6 @@ public class CardManager : MonoBehaviour
 
             yield return null;
         }
-
     }
 
     public void ResetDeck()
