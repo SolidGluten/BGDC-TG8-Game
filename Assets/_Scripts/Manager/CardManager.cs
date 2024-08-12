@@ -18,6 +18,11 @@ public class CardManager : MonoBehaviour
 
     public List<Card> hand = new List<Card>();
 
+    public int DrawPileCount => drawPile.Count;
+    public int DiscardPileCount => discardPile.Count;
+    public int ExhaustPileCount => exhaustPile.Count;
+
+
     public event Action OnCancelCard;
     public event Action<int> OnPlayCard;
     public event Action<Card> OnDrawCard;
@@ -69,6 +74,8 @@ public class CardManager : MonoBehaviour
                 if (selectedCell)
                 {
                     hand.Remove(card);
+                    DiscardCard(card);
+
                     OnPlayCard?.Invoke(index);
                 } else //Cancel playing the card
                 {
