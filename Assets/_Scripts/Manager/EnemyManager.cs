@@ -29,19 +29,13 @@ public class EnemyManager : MonoBehaviour, ITurn
         InitializeEnemies();
     }
 
-    public IEnumerator Turn()
-    {
-        foreach (var enemy in ActiveEnemies)
-        {
-            enemy.GetComponent<EnemyMovement>().Move();
-        }
-
-        yield return null;
-    }
-
     public void StartTurn()
     {
         Debug.Log("Enemy Start");
+        foreach(Enemy enemy in ActiveEnemies)
+        {
+            enemy.GetComponent<EnemyMovement>()?.Move();
+        }
     }
 
     public void EndTurn()

@@ -33,31 +33,24 @@ public class CharacterManager : MonoBehaviour, ITurn
         InitializeCharacters();
     }
 
-    public IEnumerator Turn()
+    public void StartTurn()
     {
         foreach (var chara in ActiveCharacters)
         {
             chara.isTurn = true;
         }
-
-        //wait until every character have finished their turn
-        while(ActiveCharacters.Any((chara) => chara.isTurn))
-        {
-            yield return null;
-        }
-    }
-
-    public void StartTurn()
-    {
         Debug.Log("Player Start");
     }
 
     public void EndTurn()
     {
+        foreach (var chara in ActiveCharacters)
+        {
+            chara.isTurn = false;
+        }
         Debug.Log("Player End");
     }
 
-    //Spawn Characters
     public void InitializeCharacters()
     {
         if(charStats.Count == 0)

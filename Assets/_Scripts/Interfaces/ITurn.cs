@@ -5,7 +5,6 @@ using UnityEngine;
 
 public interface ITurn
 {
-    public IEnumerator Turn();
     public void StartTurn();
     public void EndTurn();
 }

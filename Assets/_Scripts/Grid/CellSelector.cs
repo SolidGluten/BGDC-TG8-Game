@@ -20,9 +20,63 @@ public class CellSelector : MonoBehaviour
         private set { hoveredCell = value; }
     }
 
-    [SerializeField] private CellsHighlighter cellHighlight;
     public bool toggleHover;
     public bool toggleHighlights;
+
+    private const int MAX_RADIUS = 6; //WARNING: DONT GO OVER MAX RANGE OR PREPARE FOR DEATH
+    private const int MAX_RANGE = 10;
+
+    private Highlighter highlighter = new HighlightSquare();
+
+    public Direction Direction;
+
+    [SerializeField] private HighlightShape shape;
+    public HighlightShape Shape
+    {
+        get { return shape; }
+        set
+        {
+            switch (value)
+            {
+                case HighlightShape.Square:
+                    highlighter = new HighlightSquare(); break;
+                case HighlightShape.Cross:
+                    highlighter = new HighlightCross(); break;
+                case HighlightShape.Diamond:
+                    highlighter = new HighlightDiamond(); break;
+                case HighlightShape.Line:
+                    highlighter = new HighlightLine(); break;
+                default: break;
+            }
+            shape = value;
+        }
+    }
+
+    //RADIUS
+    [SerializeField]
+    [Range(0, MAX_RADIUS)]
+    private int radius;
+    public int Radius
+    {
+        get { return radius; }
+        set
+        {
+            radius = Mathf.Clamp(value, 0, MAX_RADIUS);
+        }
+    }
+
+    //RANGE
+    [SerializeField]
+    [Range(0, MAX_RANGE)]
+    private int range;
+    public int Range
+    {
+        get { return range; }
+        set
+        {
+            range = Mathf.Clamp(value, 0, MAX_RANGE);
+        }
+    }
 
     public List<Cell> HighlightedCells;
 
@@ -54,8 +108,6 @@ public class CellSelector : MonoBehaviour
 
     private void HoverCell()
     {
-        if (cellHighlight && toggleHighlights) cellHighlight.ClearAll();
-
         var pos = GameManager.MousePos;
         var hit = Physics2D.Raycast(pos, Vector3.forward);
         if (!hit) return;
@@ -65,9 +117,9 @@ public class CellSelector : MonoBehaviour
         {
             hoveredCell = cell;
 
-            if (cellHighlight && toggleHighlights)
+            if (toggleHighlights)
             {
-                HighlightedCells = cellHighlight.HighlightArea(hoveredCell.index);
+                HighlightedCells = CellsHighlighter.HighlightArea(hoveredCell.index, Radius, Shape, Range, Direction);
             }
         }
 

@@ -10,7 +10,11 @@ public abstract class Card : ScriptableObject
 {
     public string cardName;
     public string description;
+    public Sprite cardSprite;
+    public Sprite cardBorder;
     public int cost;
+
+    public CharacterType caster = CharacterType.Knight;
 
     public bool exhaust;
 
@@ -20,9 +24,6 @@ public abstract class Card : ScriptableObject
     public int range;
     public int width;
     public HighlightShape effectShape;
-
-    public Sprite cardSprite;
-    public Sprite cardBorder;
 
     public StatusEffect statusEffect;
 

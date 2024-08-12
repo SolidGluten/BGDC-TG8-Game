@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfda0355668c5d945b5c56920bb173ff, type: 3}
   m_Name: MagicBolt
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cost: 0
+  cardName: Magic Bolt
+  description: this  is a magic bolt.
+  cardSprite: {fileID: 0}
+  cardBorder: {fileID: 0}
+  cost: 5
+  caster: 0
   exhaust: 0
   cardType: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}

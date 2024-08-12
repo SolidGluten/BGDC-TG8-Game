@@ -2003,7 +2003,7 @@ GameObject:
   - component: {fileID: 33850538}
   - component: {fileID: 33850537}
   m_Layer: 5
-  m_Name: Btn_NextTurn
+  m_Name: Btn_EndTurn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,8 +2026,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -328}
-  m_SizeDelta: {x: 120, y: 30}
+  m_AnchoredPosition: {x: 45, y: -51}
+  m_SizeDelta: {x: 60, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33850537
 MonoBehaviour:
@@ -2075,7 +2075,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5988139388536972899}
         m_TargetAssemblyTypeName: TurnController, Assembly-CSharp
-        m_MethodName: NextTurn
+        m_MethodName: EndTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22385,7 +22385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74, y: -196}
+  m_AnchoredPosition: {x: 74, y: -40}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515633560
@@ -22435,8 +22435,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -56532,7 +56532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1230034404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -77528,7 +77528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Turn
+  m_text: End Turn
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -77555,8 +77555,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -79539,8 +79539,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1230034404}
-  - {fileID: 33850536}
   - {fileID: 515633559}
+  - {fileID: 33850536}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -81297,7 +81297,7 @@ MonoBehaviour:
   fanSpread: -2.5
   cardSpacing: 50
   verticalSpacing: 0
-  hoverLift: 50
+  hoverLift: 90
 --- !u!1 &1779222084
 GameObject:
   m_ObjectHideFlags: 0
@@ -98816,6 +98816,54 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: mageDeck.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
     - target: {fileID: 7486235371652444079, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.65678

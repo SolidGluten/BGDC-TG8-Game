@@ -16,7 +16,6 @@ public class HighlightDiamond : Highlighter
                 var cellPos = new Vector2Int(j, i);
                 var cell = GridSystem.Instance.GetCell(startIndex + cellPos);
                 if (cell) cells.Add(cell);
-                Debug.Log(cell);
             }
         }
 

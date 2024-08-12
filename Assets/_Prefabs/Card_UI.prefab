@@ -258,6 +258,8 @@ GameObject:
   - component: {fileID: 9109847408379119676}
   - component: {fileID: 5478016690062370102}
   - component: {fileID: 9172723490250988055}
+  - component: {fileID: 353949401891016197}
+  - component: {fileID: 1900416190265699626}
   m_Layer: 5
   m_Name: Card_UI
   m_TagString: Untagged
@@ -338,10 +340,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  hand: {fileID: 0}
+  card_name: {fileID: 6998014980715997397}
+  card_description: {fileID: 7864448072940351880}
+  card_cost: {fileID: 7658028870858363604}
   hoverPos: {x: 0, y: 0}
   hoverSizeMultiplier: 1.5
   defaultColor: {r: 1, g: 0, b: 0, a: 1}
   selectedColor: {r: 0.50664043, g: 0.7921569, b: 0.4, a: 1}
+--- !u!223 &353949401891016197
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310802754110361015}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &1900416190265699626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310802754110361015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &3792016613014343106
 GameObject:
   m_ObjectHideFlags: 0

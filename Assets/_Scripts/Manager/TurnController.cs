@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum TurnState { Player, Enemy }
@@ -17,11 +18,8 @@ public class TurnController : MonoBehaviour
 
     public bool isInTurn = false;
 
-    public Action StartTurn;
-    public Action EndTurn;
-
-    public event Action OnStartTurn;
-    public event Action OnEndTurn;
+    //public event Action OnStartTurn;
+    //public event Action OnEndTurn;
 
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private CharacterManager characterManager;
@@ -32,40 +30,26 @@ public class TurnController : MonoBehaviour
     {
         CurrTurnState = TurnState.Player;
         CurrentTurn = characterManager;
+        CurrentTurn.StartTurn();
 
-        StartTurn = CurrentTurn.StartTurn;
-        EndTurn = CurrentTurn.EndTurn;
-
-        OnStartTurn += StartTurn;
-        OnEndTurn += EndTurn;
-
-        StartCoroutine(InitiateTurn());
+        //OnStartTurn += CurrentTurn.StartTurn;
+        //OnEndTurn += CurrentTurn.EndTurn;
     }
 
-    public void NextTurn()
+    public void EndTurn()
     {
-        if(!isInTurn)
+        if (CurrentTurn != null)
         {
+            CurrentTurn.EndTurn();
             ChangeTurn();
-            StartCoroutine(InitiateTurn());
+            CurrentTurn.StartTurn();
         }
-    }
-
-    public IEnumerator InitiateTurn()
-    {
-        isInTurn = true;
-        OnStartTurn?.Invoke();
-        
-        yield return CurrentTurn != null ? StartCoroutine(CurrentTurn.Turn()) : null;
-
-        OnEndTurn?.Invoke();
-        isInTurn = false;
     }
 
     public void ChangeTurn()
     {
-        OnStartTurn -= StartTurn;
-        OnEndTurn -= EndTurn;
+        //OnStartTurn -= CurrentTurn.StartTurn;
+        //OnEndTurn -= CurrentTurn.EndTurn;
 
         if (CurrentTurnState == TurnState.Enemy)
         {
@@ -78,12 +62,7 @@ public class TurnController : MonoBehaviour
             CurrentTurn = enemyManager;
         }
 
-        StartTurn = CurrentTurn.StartTurn;
-        EndTurn = CurrentTurn.EndTurn;
-
-        OnStartTurn += StartTurn;
-        OnEndTurn += EndTurn;
-
-        Debug.Log("Turn Changed");
+        //OnStartTurn += CurrentTurn.StartTurn;
+        //OnEndTurn += CurrentTurn.EndTurn;
     }
 }

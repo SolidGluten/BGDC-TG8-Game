@@ -7,6 +7,6 @@ public class MagicBolt : Card
 {
     public override void Play(Entity from, Entity target)
     {
-        throw new System.NotImplementedException();
+
     }
 }

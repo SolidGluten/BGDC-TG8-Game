@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Hand : MonoBehaviour
@@ -13,19 +14,31 @@ public class Hand : MonoBehaviour
     [SerializeField] private float verticalSpacing;
     [SerializeField] private float hoverLift = 25;
 
-    private void Start()
+    private void Awake()
     {
-        for(int i = 0; i < 10; i++)
-        {
-            AddCard();
-        }
+        CardManager.instance.OnDrawCard += AddCard;
+        CardManager.instance.OnPlayCard += RemoveCard;
     }
 
-    public void AddCard()
+    public void AddCard(Card card)
     {
         var obj = Instantiate(cardObj, transform.position, Quaternion.identity, transform);
         var cardDisplay = obj.GetComponent<CardDisplay>();
+
+        cardDisplay.card = card;
+        cardDisplay.hand = this;
+
         cardDisplayInHand.Add(cardDisplay);
+
+        UpdateHandVisuals();
+    }
+
+    public void RemoveCard(Card card)
+    {
+        var cardToRemove = cardDisplayInHand.First(cardInHand => cardInHand.card == card);
+
+        cardDisplayInHand.Remove(cardToRemove);
+        Destroy(cardToRemove.gameObject);
 
         UpdateHandVisuals();
     }

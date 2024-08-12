@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b445ede4c279a46bceb0ec53ec2b6e, type: 3}
   m_Name: Slash
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
+  cardName: Slash
+  description: Uhh this slashes things
+  cardSprite: {fileID: 0}
+  cardBorder: {fileID: 0}
+  cost: 16
+  exhaust: 0
   cardType: 0
-  cost: 0
+  rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  exhaust: 0
