@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,22 +7,47 @@ using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-[RequireComponent(typeof(SpriteRenderer))]
+[Flags] public enum CellType { 
+    None = 0,
+    Range = 1, 
+    Effect = 2, 
+    Path = 4
+};
 
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class Cell : MonoBehaviour
 {
     private SpriteRenderer _renderer;
 
-    public Vector2Int index; 
-    [SerializeField] private bool isHighlited;
-    [SerializeField] private bool isPath;
+    [SerializeField] private CellType types;
+    public CellType Types {
+        get { return types; }
+        set {
+            types = value;
+            var type = EnumFlags.GetHighestSetFlag(value);
+            switch (type)
+            {
+                case CellType.Range:
+                    _renderer.color = rangeColor; break;
+                case CellType.Effect:
+                    _renderer.color = effectColor; break;
+                case CellType.Path:
+                    _renderer.color = pathColor; break;
+                case 0:
+                default:
+                    _renderer.color = defaultColor; break;
+            }
+        }
+    }
 
+    public Vector2Int index; 
     public Entity occupiedEntity;
 
-    public Color defaultColor;
-    public Color highlightedColor;
-    public Color pathColor;
+    public Color defaultColor = Color.gray;
+    public Color rangeColor = Color.green;
+    public Color effectColor = Color.red;
+    public Color pathColor = Color.blue;
 
     public bool isOccupied => occupiedEntity != null;
 
@@ -42,6 +68,7 @@ public class Cell : MonoBehaviour
 
     private void Start()
     {
+        Types = EnumFlags.SetFlag(Types, CellType.None, true);
         SetG(0);
         SetH(0);
         SetF();
@@ -86,17 +113,5 @@ public class Cell : MonoBehaviour
         entity.transform.position = transform.position;
         entity.occupiedCell = this;
         occupiedEntity = entity;
-    }
-
-    public void SetHighlight(bool highlight)
-    {
-        isHighlited = highlight;
-        _renderer.color = isHighlited ? highlightedColor : defaultColor;
-    }
-
-    public void SetPath(bool path)
-    {
-        isPath = path;
-        _renderer.color = path ? pathColor : defaultColor; 
     }
 }

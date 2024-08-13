@@ -17,14 +17,6 @@ public class EnemyMovement : MonoBehaviour
         enemy = GetComponent<Enemy>();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.F))
-    //    {
-    //        Move();
-    //    }
-    //}
-
     public Character FindNearestCharacter() {
         if (!CharacterManager.Instance.ActiveCharacters.Any()) return null;
 
@@ -48,12 +40,12 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        if (pathToChara.Any()) foreach (Cell cell in pathToChara) cell.SetPath(false);
+        if (pathToChara.Any()) foreach (Cell cell in pathToChara) EnumFlags.SetFlag(cell.Types, CellType.Path, true);
         pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, charaToMove.occupiedCell.index);
 
         if (pathToChara.Any())
         {
-            foreach (Cell cell in pathToChara) cell.SetPath(true);
+            foreach (Cell cell in pathToChara) EnumFlags.SetFlag(cell.Types, CellType.Range, true);
             int moveCount = Mathf.Clamp(pathToChara.Count, 1, enemy.stats.MOV);
             Cell cellDst = null;
 

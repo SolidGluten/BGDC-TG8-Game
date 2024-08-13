@@ -62,16 +62,62 @@ public class CardManager : MonoBehaviour
         if (!card) yield break;
 
         Character caster = CharacterManager.Instance.ActiveCharacters[0];
-        CellsHighlighter.HighlightArea(caster.occupiedCell.index, 4, HighlightShape.Diamond);
+        var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Diamond);
+        highlightedCells.ForEach((cell) =>
+        {
+            cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Range, true);
+        });
+
+        Cell prevHoveredCell = null;
+        List<Cell> cardEffectArea = new List<Cell>();
 
         while (true)
         {
-            Cell selectedCell = CellSelector.Instance.SelectedCell;
+            Vector2 normDir = (GameManager.MousePos - (Vector2)caster.transform.position).normalized;
+            int x = Math.Abs(normDir.x) > Math.Abs(normDir.y) ? (int)Math.Round(normDir.x) : 0;
+            int y = Math.Abs(normDir.x) < Math.Abs(normDir.y) ? (int)Math.Round(normDir.y) : 0;
+            Vector2Int castDirVector = new Vector2Int(x, y);
+
+            Direction castDir = Direction.Right;
+
+            if(castDirVector == Vector2Int.left)
+                castDir = Direction.Left;
+            else if(castDirVector == Vector2Int.right)
+                castDir = Direction.Right;
+            else if(castDirVector == Vector2Int.up)
+                castDir = Direction.Up;
+            else
+                castDir = Direction.Down;
+
+            Cell hoveredCell = CellSelector.Instance.HoveredCell;
+
+            //Debug.Log(hoveredCell);
+            if (prevHoveredCell != hoveredCell)
+            {
+                cardEffectArea.ForEach((cell) => {
+                    cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
+                });
+                cardEffectArea.Clear();
+
+                if(highlightedCells.Contains(hoveredCell))
+                {
+                    cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
+                    cardEffectArea.ForEach((cell) =>
+                    {
+                        cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
+                    });
+                }
+
+                prevHoveredCell = hoveredCell;
+            }
+
 
             if (Input.GetMouseButtonDown(0))
             {
+                Cell selectedCell = CellSelector.Instance.SelectedCell; 
+
                 // Plays the card
-                if (selectedCell)
+                if (selectedCell && highlightedCells.Contains(selectedCell))
                 {
                     hand.Remove(card);
                     DiscardCard(card);

@@ -17,10 +17,10 @@ MonoBehaviour:
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
   cost: 5
-  caster: 0
+  caster: 1
   exhaust: 0
   cardType: 0
-  rangeFromCaster: 0
+  rangeFromCaster: 3
   range: 0
-  width: 0
-  effectShape: 0
+  width: 2
+  effectShape: 2

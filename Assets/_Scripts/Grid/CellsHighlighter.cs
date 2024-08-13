@@ -23,7 +23,6 @@ public class CellsHighlighter : MonoBehaviour
 
         Highlighter highlighter = GetHighlighter(shape);
         List<Cell> cells = highlighter.Highlight(startIndex, radius, range, dir);
-        foreach(var cell in cells) cell.SetHighlight(true);
 
         return cells;
     }
@@ -53,7 +52,7 @@ public class CellsHighlighter : MonoBehaviour
             for (int j = 0; j < GridSystem.Instance.Width; j++)
             {
                 var cell = GridSystem.Instance.GetCell(new Vector2Int(j, i));
-                if (cell) cell.SetHighlight(false);
+                if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
             }
         }
     }

@@ -110,7 +110,11 @@ public class CellSelector : MonoBehaviour
     {
         var pos = GameManager.MousePos;
         var hit = Physics2D.Raycast(pos, Vector3.forward);
-        if (!hit) return;
+        if (!hit)
+        {
+            hoveredCell = null;
+            return;
+        }
 
         var cell = hit.collider.GetComponent<Cell>();
         if (cell)
@@ -120,7 +124,14 @@ public class CellSelector : MonoBehaviour
             if (toggleHighlights)
             {
                 HighlightedCells = CellsHighlighter.HighlightArea(hoveredCell.index, Radius, Shape, Range, Direction);
+                HighlightedCells.ForEach((cell) =>
+                {
+                    EnumFlags.SetFlag(cell.Types, CellType.Range, true);
+                });
             }
+        } else
+        { 
+            hoveredCell = null;
         }
 
     }
