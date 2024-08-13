@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CellSelector : MonoBehaviour
@@ -52,6 +53,8 @@ public class CellSelector : MonoBehaviour
         }
     }
 
+    public ContactFilter2D filter;
+
     //RADIUS
     [SerializeField]
     [Range(0, MAX_RADIUS)]
@@ -78,7 +81,7 @@ public class CellSelector : MonoBehaviour
         }
     }
 
-    public List<Cell> HighlightedCells;
+    public List<Cell> HighlightedCells = new List<Cell>();
 
     private void Awake()
     {
@@ -102,14 +105,14 @@ public class CellSelector : MonoBehaviour
     private void SelectCell()
     {
         var pos = GameManager.MousePos;
-        var hit = Physics2D.Raycast(pos, Vector3.forward);
+        var hit = Physics2D.Raycast(pos, Vector3.forward, Mathf.Infinity, filter.layerMask);
         SelectedCell = hit.collider?.gameObject.GetComponent<Cell>();
     }
 
     private void HoverCell()
     {
         var pos = GameManager.MousePos;
-        var hit = Physics2D.Raycast(pos, Vector3.forward);
+        var hit = Physics2D.Raycast(pos, Vector3.forward, Mathf.Infinity, filter.layerMask);
         if (!hit)
         {
             hoveredCell = null;
@@ -123,14 +126,21 @@ public class CellSelector : MonoBehaviour
 
             if (toggleHighlights)
             {
-                HighlightedCells = CellsHighlighter.HighlightArea(hoveredCell.index, Radius, Shape, Range, Direction);
-                HighlightedCells.ForEach((cell) =>
+                HighlightedCells?.ForEach((cell) =>
                 {
-                    EnumFlags.SetFlag(cell.Types, CellType.Range, true);
+                    if(cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
+                });
+                HighlightedCells?.Clear();
+
+                HighlightedCells = CellsHighlighter.HighlightArea(hoveredCell.index, Radius, Shape, Range, Direction);
+
+                HighlightedCells?.ForEach((cell) =>
+                {
+                    if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Range, true);
                 });
             }
         } else
-        { 
+        {
             hoveredCell = null;
         }
 

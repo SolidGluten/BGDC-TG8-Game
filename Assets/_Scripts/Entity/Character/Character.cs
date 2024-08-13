@@ -13,6 +13,8 @@ public class Character : Entity, IDamageable
     public bool isActive;
     public bool isTurn;
 
+    public CharacterType type;
+
     public event Action OnTakeDamage;
     public event Action OnTurnFinish;
 

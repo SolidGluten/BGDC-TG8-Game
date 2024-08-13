@@ -61,7 +61,8 @@ public class CardManager : MonoBehaviour
         Card card = hand[index];
         if (!card) yield break;
 
-        Character caster = CharacterManager.Instance.ActiveCharacters[0];
+        Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
+
         var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Diamond);
         highlightedCells.ForEach((cell) =>
         {
@@ -73,29 +74,13 @@ public class CardManager : MonoBehaviour
 
         while (true)
         {
-            Vector2 normDir = (GameManager.MousePos - (Vector2)caster.transform.position).normalized;
-            int x = Math.Abs(normDir.x) > Math.Abs(normDir.y) ? (int)Math.Round(normDir.x) : 0;
-            int y = Math.Abs(normDir.x) < Math.Abs(normDir.y) ? (int)Math.Round(normDir.y) : 0;
-            Vector2Int castDirVector = new Vector2Int(x, y);
-
-            Direction castDir = Direction.Right;
-
-            if(castDirVector == Vector2Int.left)
-                castDir = Direction.Left;
-            else if(castDirVector == Vector2Int.right)
-                castDir = Direction.Right;
-            else if(castDirVector == Vector2Int.up)
-                castDir = Direction.Up;
-            else
-                castDir = Direction.Down;
-
+            var castDir = CharacterManager.DirectionFromCharacter(caster);
             Cell hoveredCell = CellSelector.Instance.HoveredCell;
 
-            //Debug.Log(hoveredCell);
             if (prevHoveredCell != hoveredCell)
             {
                 cardEffectArea.ForEach((cell) => {
-                    cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
+                    if(cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
                 });
                 cardEffectArea.Clear();
 
@@ -104,7 +89,7 @@ public class CardManager : MonoBehaviour
                     cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
                     cardEffectArea.ForEach((cell) =>
                     {
-                        cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
+                        if(cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
                     });
                 }
 

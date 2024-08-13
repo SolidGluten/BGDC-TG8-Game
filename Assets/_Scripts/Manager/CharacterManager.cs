@@ -14,6 +14,8 @@ public class CharacterManager : MonoBehaviour, ITurn
     [SerializeField] private List<StatsScriptable> charStats = new List<StatsScriptable>();
     public List<Character> ActiveCharacters = new List<Character>();
 
+    public Character GetCharacterByType(CharacterType _type) => ActiveCharacters.First((chara) => chara.type == _type);
+
     public static CharacterManager Instance { get; private set; }
 
     //Singleton
@@ -63,6 +65,8 @@ public class CharacterManager : MonoBehaviour, ITurn
         {
             AddCharacter(charStats[i], new Vector2Int(0, i));
         }
+        ActiveCharacters[0].type = CharacterType.Knight;
+        ActiveCharacters[1].type = CharacterType.Mage;
     }
 
     public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
@@ -82,5 +86,26 @@ public class CharacterManager : MonoBehaviour, ITurn
         ActiveCharacters.Add(chara);
 
         return chara;
+    }
+
+    public static Direction DirectionFromCharacter(Character chara)
+    {
+        Vector2 normDir = (GameManager.MousePos - (Vector2)chara.transform.position).normalized;
+        int x = Math.Abs(normDir.x) > Math.Abs(normDir.y) ? (int)Math.Round(normDir.x) : 0;
+        int y = Math.Abs(normDir.x) < Math.Abs(normDir.y) ? (int)Math.Round(normDir.y) : 0;
+        Vector2Int dirVector = new Vector2Int(x, y);
+
+        Direction dir = Direction.Right;
+
+        if (dirVector == Vector2Int.left)
+            dir = Direction.Left;
+        else if (dirVector == Vector2Int.right)
+            dir = Direction.Right;
+        else if (dirVector == Vector2Int.up)
+            dir = Direction.Up;
+        else
+            dir = Direction.Down;
+
+        return dir;
     }
 }
