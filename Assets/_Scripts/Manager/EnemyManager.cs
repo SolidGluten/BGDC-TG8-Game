@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     public static EnemyManager Instance;
 
+    public event Action OnEnemyInitialize;
+
     //Singleton
     private void Awake()
     {
@@ -58,6 +60,8 @@ public class EnemyManager : MonoBehaviour, ITurn
             AddEnemy(stats, new Vector2Int(0, GridSystem.Instance.Height - i - 1));
             i++;
         }
+
+        OnEnemyInitialize?.Invoke();
     }
 
     private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)

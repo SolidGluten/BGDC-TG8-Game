@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameState CurrentState { get; private set; }
 
     public static Vector2 MousePos;
-    private Camera cam;
+    public static Camera mainCam;
 
     [SerializeField] private TurnController turnController;
 
@@ -35,12 +35,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        cam = Camera.main;
+        mainCam = Camera.main;
     }
 
     private void Update()
     {
-        MousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        MousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void PauseGame()

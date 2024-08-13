@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class Entity : MonoBehaviour
     public StatusEffect currStatusEffect;
 
     public bool canPlay;
+
+    public event Action OnDeath;
 
     public void Start()
     {
@@ -53,5 +56,10 @@ public class Entity : MonoBehaviour
     {
         occupiedCell.occupiedEntity = null;
         Destroy(gameObject);
+    }
+
+    public void OnDestroy()
+    {
+        OnDeath?.Invoke();
     }
 }

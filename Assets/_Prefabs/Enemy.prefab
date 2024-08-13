@@ -144,10 +144,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb919bbd00418114eb4b33d1531684eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
-  Stats: {fileID: 0}
+  occupiedCell: {fileID: 0}
+  stats: {fileID: 0}
   currHealth: 0
+  currShield: 0
+  currMovePoints: 0
   currAttackDamage: 0
+  canPlay: 0
+  isActive: 0
 --- !u!114 &7553010638927049927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,4 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bfcc11b69f2e44a8a47be40d415db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRadius: 0
+  pathToChara: []

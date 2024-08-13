@@ -18,6 +18,8 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public static CharacterManager Instance { get; private set; }
 
+    public event Action OnCharacterInitialize;
+
     //Singleton
     private void Awake()
     {
@@ -67,6 +69,8 @@ public class CharacterManager : MonoBehaviour, ITurn
         }
         ActiveCharacters[0].type = CharacterType.Knight;
         ActiveCharacters[1].type = CharacterType.Mage;
+
+        OnCharacterInitialize?.Invoke();
     }
 
     public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
