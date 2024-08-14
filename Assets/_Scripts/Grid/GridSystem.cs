@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.IO;
 
 
 #if UNITY_EDITOR
@@ -14,8 +15,9 @@ using UnityEditor;
 public class GridSystem : MonoBehaviour
 {
     public const int MAX_RANGE = 30;
-
     public static GridSystem Instance;
+
+    [SerializeField] private Vector2 gridPos;
 
     //Grid width
     [Range(1, MAX_RANGE)]
@@ -27,7 +29,9 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private int height;
     public int Height { get { return height; } }
 
-    [SerializeField] private Vector2 gridPos;
+
+    [Space(15)]
+
     [SerializeField] private int cellSize = 1;
     [SerializeField] private float cellGap = 0f;
     [SerializeField] private GameObject cellObj;
@@ -35,6 +39,14 @@ public class GridSystem : MonoBehaviour
     public bool isCostShown = true;
 
     public Dictionary<Vector2Int, Cell> cellList = new Dictionary<Vector2Int, Cell>();
+
+    public List<Vector2Int> characterSpawnPositions = new List<Vector2Int>();
+    public List<Vector2Int> enemySpawnPositions = new List<Vector2Int>();
+
+    [Space(15)]
+
+    public GridData gridData;
+    public TextAsset jsonGridData;
 
     private void Awake()
     {
@@ -84,10 +96,29 @@ public class GridSystem : MonoBehaviour
                 cell.index = index;
 
                 cellList.Add(index, cell);
-
             }
         }
-    } 
+    }
+
+    [ContextMenu("Save Grid Data")]
+    public void SaveGridData()
+    {
+        GridData data = new GridData(Width, Height, characterSpawnPositions.ToArray(), enemySpawnPositions.ToArray());
+
+        string GData = JsonUtility.ToJson(data);
+        Debug.Log(GData);
+        File.WriteAllText(Application.dataPath + "/Resources/GridData/data.json", GData);
+    }
+
+    [ContextMenu("Load Grid Data")]
+    public void LoadGridData()
+    {
+        if (jsonGridData)
+        {
+            GridData loadedData = JsonUtility.FromJson<GridData>(jsonGridData.text);
+            gridData = loadedData;
+        }
+    }
 
     public Cell GetCell(Vector2Int index)
     {
@@ -127,11 +158,12 @@ public class GridSystem : MonoBehaviour
                 var pos = (cellSize + cellGap) * new Vector2(j, i) + gridPos;
                 var val = (i * width) + j;
 
-                if (cellList.Any())
-                {
-                    Gizmos.color = cellList[new Vector2Int(j, i)].isOccupied ? Color.red : Color.green;
-                    Handles.color = cellList[new Vector2Int(j, i)].isOccupied ? Color.red : Color.green;
-                }
+                //if (cellList.Any())
+                //{
+                //    var cell = cellList[new Vector2Int(j, i)];
+                //    Gizmos.color = cell.isOccupied ? Color.red : Color.green;
+                //    Handles.color = cell.isOccupied ? Color.red : Color.green;
+                //}
 
                 Handles.Label(pos, val.ToString());
                 Gizmos.DrawWireCube(pos, Vector2.one * cellSize);   

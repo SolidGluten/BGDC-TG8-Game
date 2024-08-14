@@ -11,6 +11,16 @@ public class GridSystemEditor : Editor
     {
         base.OnInspectorGUI();
         GridSystem gridSystem = (GridSystem)target;
+
+        GUILayout.Space(10);
+
+        if (GUILayout.Button("Save Grid Data"))
+            gridSystem.SaveGridData();
+        if (GUILayout.Button("Load Grid Data"))
+            gridSystem.LoadGridData();
+
+        GUILayout.Space(10);
+
         if (GUILayout.Button("Regenerate Grid"))
             gridSystem.RegenerateGrid();
         if (GUILayout.Button("Show Cost"))
