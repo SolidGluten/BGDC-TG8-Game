@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class SelenesProtection : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }

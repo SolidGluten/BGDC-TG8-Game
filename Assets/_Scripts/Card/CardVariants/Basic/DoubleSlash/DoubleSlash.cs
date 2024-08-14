@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DoubleSlash", menuName = "ScriptableObjects/Cards/Double Slash")]
 public class DoubleSlash : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }

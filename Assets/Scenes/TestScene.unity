@@ -100643,6 +100643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5124169748366771041, guid: 14e4ea65c316c32438a5ed2576273356, type: 3}
+      propertyPath: hoverLift
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8890455974418490434, guid: 14e4ea65c316c32438a5ed2576273356, type: 3}
       propertyPath: m_Pivot.x
       value: 0

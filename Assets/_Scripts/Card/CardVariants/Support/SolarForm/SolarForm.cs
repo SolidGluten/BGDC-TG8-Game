@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SolarForm", menuName = "ScriptableObjects/Cards/Solar Form")]
 public class SolarForm : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }

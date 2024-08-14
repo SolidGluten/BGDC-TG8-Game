@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MagicBullet", menuName = "ScriptableObjects/Cards/MagicBullet")]
 public class MagicBullet : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-    
+        return true;
     }
 }

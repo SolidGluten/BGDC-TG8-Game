@@ -27,5 +27,8 @@ public abstract class Card : ScriptableObject
 
     public StatusEffect statusEffect;
 
-    public abstract void Play(Entity from, Entity target);
+    public virtual bool Play(Entity from, Entity[] target)
+    {
+        return true;
+    }
 }

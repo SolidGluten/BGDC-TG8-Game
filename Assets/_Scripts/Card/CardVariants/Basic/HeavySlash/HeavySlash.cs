@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HeavySlash", menuName = "ScriptableObjects/Cards/Heavy Slash")]
 public class HeavySlash : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }

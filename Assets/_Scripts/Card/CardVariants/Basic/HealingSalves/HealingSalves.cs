@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HealingSalves", menuName = "ScriptableObjects/Cards/Healing Salves")]
 public class HealingSalves : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }

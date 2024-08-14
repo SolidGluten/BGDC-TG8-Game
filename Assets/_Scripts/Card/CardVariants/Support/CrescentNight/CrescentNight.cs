@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CrescentNight", menuName = "ScriptableObjects/Cards/Crescent Night")]
 public class CrescentNight : Card
 {
-    public override void Play(Entity from, Entity target)
+    public override bool Play(Entity from, Entity[] target)
     {
-
+        return true;
     }
 }
