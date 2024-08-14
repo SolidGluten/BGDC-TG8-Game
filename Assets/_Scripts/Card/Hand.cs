@@ -70,7 +70,12 @@ public class Hand : MonoBehaviour
 
             float normalizedPosition = (2f * i / (cardCount - 1) - 1f);
             float verticalOffset = verticalSpacing * (1 - normalizedPosition * normalizedPosition);
-            cardsInHand[i].originalPos = new Vector2(horizontalOffset, verticalOffset);
+
+            var newPosition = new Vector2(horizontalOffset, verticalOffset);
+            cardsInHand[i].transform.localPosition = newPosition;
+            cardsInHand[i].originalPos = newPosition;
+
+            cardsInHand[i].cardDisplay.defaultSortOrder = cardCount - i + 2;
         }
     }
     

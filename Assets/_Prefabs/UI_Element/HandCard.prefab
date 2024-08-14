@@ -256,10 +256,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6126833173114203783}
   - component: {fileID: 9109847408379119676}
+  - component: {fileID: 353949401891016197}
   - component: {fileID: 5478016690062370102}
   - component: {fileID: 9172723490250988055}
   - component: {fileID: -1743992444189980271}
-  - component: {fileID: 353949401891016197}
   - component: {fileID: 1900416190265699626}
   m_Layer: 5
   m_Name: HandCard
@@ -298,6 +298,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3310802754110361015}
   m_CullTransparentMesh: 1
+--- !u!223 &353949401891016197
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310802754110361015}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!114 &5478016690062370102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 0}
+  canvas: {fileID: 353949401891016197}
+  defaultSortOrder: 0
   card_name: {fileID: 6998014980715997397}
   card_description: {fileID: 7864448072940351880}
   card_cost: {fileID: 7658028870858363604}
@@ -360,35 +385,12 @@ MonoBehaviour:
   originalPos: {x: 0, y: 0}
   originalRot: {x: 0, y: 0, z: 0, w: 0}
   image: {fileID: 5478016690062370102}
-  canvas: {fileID: 353949401891016197}
   handIndex: 0
   hoverPos: {x: 0, y: 0}
   hoverSizeMultiplier: 1.5
   defaultColor: {r: 1, g: 0, b: 0, a: 1}
-  selectedColor: {r: 0.16824007, g: 1, b: 0, a: 1}
---- !u!223 &353949401891016197
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310802754110361015}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 1
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
+  hoverColor: {r: 0, g: 1, b: 0.121171, a: 1}
+  selectedColor: {r: 0.8941393, g: 0, b: 1, a: 1}
 --- !u!114 &1900416190265699626
 MonoBehaviour:
   m_ObjectHideFlags: 0

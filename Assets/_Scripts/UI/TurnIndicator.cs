@@ -15,7 +15,7 @@ public class TurnIndicator : MonoBehaviour
 
     private void Update()
     {
-        textMP.text = "Turn : " + turnController.CurrTurnState.ToString();
+        textMP.text = "Turn : " + turnController.currTurnState.ToString();
     }
 
 }

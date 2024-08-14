@@ -42,12 +42,21 @@ public class CharacterMovement : MonoBehaviour
 
     public void Move(Vector2Int movePos)
     {
+        if (character.currMovePoints <= 0) return;
+
         var cell = GridSystem.Instance.GetCell(movePos);
         if (!cell) {
             Debug.LogWarning("No cell found to move to!");
             return;
         }
 
+        if (cell.isOccupied)
+        {
+            Debug.LogWarning("Cell is already occupied!");
+            return;
+        }
+
+        character.currMovePoints--;
         cell.SetEntity(character);
     }
 

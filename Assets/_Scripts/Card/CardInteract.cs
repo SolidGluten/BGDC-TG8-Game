@@ -9,6 +9,8 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     public Hand hand;
 
+    public CardDisplay cardDisplay { get; private set; }
+
     public Vector2 originalPos;
     public Quaternion originalRot;
     private Vector2 originalScale;
@@ -16,7 +18,6 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     protected static CardInteract selectedCard;
 
     public Image image;
-    public Canvas canvas;
 
     public int handIndex;
 
@@ -25,37 +26,28 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public Vector2 hoverPos;
     [SerializeField] private float hoverSizeMultiplier = 1;
+
     [SerializeField] private Color defaultColor;
+    [SerializeField] private Color hoverColor;
     [SerializeField] private Color selectedColor;
 
     private void Awake()
     {
-        image.color = defaultColor;
-
         image = GetComponent<Image>();
-        canvas = GetComponent<Canvas>();
+        cardDisplay = GetComponent<CardDisplay>();
 
+        image.color = defaultColor;
         originalScale = transform.localScale;
     }
 
     private void Update()
     {
-        if (isHovered && selectedCard == null || (selectedCard != null && selectedCard == this))
-        {
+        if (isSelected)
             image.color = selectedColor;
-            transform.localPosition = hoverPos;
-            //transform.localRotation = Quaternion.Euler(0, 0, 0);
-            transform.localScale = originalScale * hoverSizeMultiplier;
-            canvas.sortingOrder = 100;
-        }
+        else if (isHovered)
+            image.color = hoverColor;
         else
-        {
             image.color = defaultColor;
-            transform.localPosition = originalPos;
-            //transform.localRotation = originalRot;
-            transform.localScale = originalScale;
-            canvas.sortingOrder = 2;
-        }
     }
 
     public IEnumerator ApplyCard()
@@ -86,9 +78,22 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         if (selectedCard == null) StartCoroutine(ApplyCard());
     }
 
-    public void OnPointerEnter(PointerEventData eventData) => isHovered = true;
+    public void OnPointerEnter(PointerEventData eventData) {
+        isHovered = true;
+        transform.localPosition = hoverPos;
+        //transform.localRotation = Quaternion.Euler(0, 0, 0);
+        transform.localScale = originalScale * hoverSizeMultiplier;
+        cardDisplay.SetSortingOrder(100);
+    }
 
-    public void OnPointerExit(PointerEventData eventData) => isHovered = false;
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        isHovered = false;
+        transform.localPosition = originalPos;
+        //transform.localRotation = originalRot;
+        transform.localScale = originalScale;
+        cardDisplay.ResetSortingOrder();
+    }
 
     private void OnDisable()
     {

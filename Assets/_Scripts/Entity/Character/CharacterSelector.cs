@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class CharacterSelector : MonoBehaviour
 {
+    public static CharacterSelector instance;
+
     public Character SelectedCharacter;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        } else {
+            instance = this;
+        }
+    }
 
     private void Update() 
     {

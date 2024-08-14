@@ -8,18 +8,12 @@ public enum TurnState { Player, Enemy }
 
 public class TurnController : MonoBehaviour
 {
-    [SerializeField] private TurnState CurrentTurnState;
-    public TurnState CurrTurnState {
-        get { return CurrentTurnState; }
-        private set { 
-            CurrentTurnState = value;
-        }
-    }
+    public TurnState currTurnState;
 
-    public bool isInTurn = false;
+    //public bool isInTurn = false;
 
-    //public event Action OnStartTurn;
-    //public event Action OnEndTurn;
+    public event Action OnStartTurn;
+    public event Action OnEndTurn;
 
     [SerializeField] private EnemyManager enemyManager;
     [SerializeField] private CharacterManager characterManager;
@@ -28,7 +22,7 @@ public class TurnController : MonoBehaviour
 
     private void Start()
     {
-        CurrTurnState = TurnState.Player;
+        currTurnState = TurnState.Player;
         CurrentTurn = characterManager;
         CurrentTurn.StartTurn();
 
@@ -40,9 +34,12 @@ public class TurnController : MonoBehaviour
     {
         if (CurrentTurn != null)
         {
-            CurrentTurn.EndTurn();
-            ChangeTurn();
-            CurrentTurn.StartTurn();
+            OnStartTurn?.Invoke();
+
+            enemyManager.StartTurn();
+            characterManager.StartTurn();
+
+            OnEndTurn?.Invoke();
         }
     }
 
@@ -51,14 +48,14 @@ public class TurnController : MonoBehaviour
         //OnStartTurn -= CurrentTurn.StartTurn;
         //OnEndTurn -= CurrentTurn.EndTurn;
 
-        if (CurrentTurnState == TurnState.Enemy)
+        if (currTurnState == TurnState.Enemy)
         {
-            CurrentTurnState = TurnState.Player;
+            currTurnState = TurnState.Player;
             CurrentTurn = characterManager;
         }
-        else if (CurrentTurnState == TurnState.Player)
+        else if (currTurnState == TurnState.Player)
         {
-            CurrTurnState = TurnState.Enemy;
+            currTurnState = TurnState.Enemy;
             CurrentTurn = enemyManager;
         }
 
