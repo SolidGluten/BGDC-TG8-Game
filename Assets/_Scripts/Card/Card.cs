@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //public enum CardType { Attack, Skill, Influence }
-public enum CardType { Support, Defensive, Offensive}
+public enum CardType { Support, Defensive, Offensive, Basic}
 public enum CardRarity { Common, Uncommon, Rare }
 
 public abstract class Card : ScriptableObject

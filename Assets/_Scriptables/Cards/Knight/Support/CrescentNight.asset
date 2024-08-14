@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfda0355668c5d945b5c56920bb173ff, type: 3}
-  m_Name: MagicBolt
+  m_Script: {fileID: 11500000, guid: 26d6beb308c14a6448ace03d878d65fe, type: 3}
+  m_Name: CrescentNight
   m_EditorClassIdentifier: 
-  cardName: Magic Bolt
-  description: this  is a magic bolt.
+  cardName: 
+  description: 
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
-  cost: 5
-  caster: 1
+  cost: 0
+  caster: 0
   exhaust: 0
   cardType: 0
-  rangeFromCaster: 3
-  range: 4
-  width: 1
-  effectShape: 3
+  rangeFromCaster: 0
+  range: 0
+  width: 0
+  effectShape: 0
