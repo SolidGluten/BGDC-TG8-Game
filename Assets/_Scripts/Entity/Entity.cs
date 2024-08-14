@@ -27,39 +27,27 @@ public class Entity : MonoBehaviour
         currAttackDamage = stats.ATK;
     }
 
-
-    public void TakeDamage(Entity from, Entity Target, int damage)
+    public void TakeDamage(int damage)
     {
-        //if (Target.invincible)
-        //{
-        //    return;
-        //}
-        //else
-        //{
-        //    if (Target.currShield > 0)
-        //    {
-        //        if (Target.currShield >= from.currAttackDamage)
-        //        {
-        //            Target.currShield -= from.currAttackDamage;
-        //        }
-        //        else
-        //        {
-        //            Target.currHealth -= from.currAttackDamage - Target.currShield;
-        //            Target.currShield = 0;
-        //        }
-        //    }
-        //    Target.currHealth -= from.currAttackDamage;
-        //}
+        if (currShield > 0)
+        {
+            if (currShield >= damage) currShield -= damage;
+            else
+            {   
+                currHealth -= damage - currShield;
+                currShield = 0;
+            }
+        }
+
+        currHealth -= damage;
+
+        if (currHealth <= 0) DestroySelf();
     }
 
     public void DestroySelf()
     {
         occupiedCell.occupiedEntity = null;
-        Destroy(gameObject);
-    }
-
-    public void OnDestroy()
-    {
         OnDeath?.Invoke();
+        Destroy(gameObject);
     }
 }

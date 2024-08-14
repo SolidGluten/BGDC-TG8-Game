@@ -13,7 +13,7 @@ public class Hand : MonoBehaviour
     [SerializeField] private float verticalSpacing;
     [SerializeField] private float hoverLift = 25;
 
-    private void Awake()
+    private void Start()
     {
         CardManager.instance.OnDrawCard += AddCard;
         CardManager.instance.OnPlayCard += RemoveCard;

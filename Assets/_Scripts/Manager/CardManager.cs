@@ -63,13 +63,14 @@ public class CardManager : MonoBehaviour
 
         Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
 
-        var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Diamond);
+        var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Square);
         highlightedCells.ForEach((cell) =>
         {
             cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Range, true);
         });
 
         Cell prevHoveredCell = null;
+        Direction prevDir = Direction.Right;
         List<Cell> cardEffectArea = new List<Cell>();
 
         while (true)
@@ -77,42 +78,66 @@ public class CardManager : MonoBehaviour
             var castDir = CharacterManager.DirectionFromCharacter(caster);
             Cell hoveredCell = CellSelector.Instance.HoveredCell;
 
-            if (prevHoveredCell != hoveredCell)
+            if (card.rangeFromCaster == 0)
             {
-                cardEffectArea.ForEach((cell) => {
-                    if(cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
-                });
-                cardEffectArea.Clear();
-
-                if(highlightedCells.Contains(hoveredCell))
+                if (prevDir != castDir)
                 {
-                    cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
-                    cardEffectArea.ForEach((cell) =>
-                    {
-                        if(cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
+                    cardEffectArea.ForEach((cell) => {
+                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
                     });
+                    cardEffectArea.Clear();
+
+                    cardEffectArea = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.width, card.effectShape, card.range, castDir);
+                    cardEffectArea.ForEach((cell) => {
+                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
+                    });
+
+                    prevDir = castDir;
                 }
 
-                prevHoveredCell = hoveredCell;
-            }
+            } else
+            {
+                if (prevHoveredCell != hoveredCell)
+                {
+                    cardEffectArea.ForEach((cell) => {
+                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
+                    });
+                    cardEffectArea.Clear();
 
+                    if (highlightedCells.Contains(hoveredCell))
+                    {
+                        cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
+                        cardEffectArea.ForEach((cell) => {
+                            if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
+                        });
+                    }
+
+                    prevHoveredCell = hoveredCell;
+                }
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
-                Cell selectedCell = CellSelector.Instance.SelectedCell; 
+                Cell selectedCell = CellSelector.Instance.SelectedCell;
 
-                // Plays the card
-                if (selectedCell && highlightedCells.Contains(selectedCell))
+                var targetCells = cardEffectArea.Where((cell) => cell && cell.isOccupied);
+                Entity[] target = targetCells.Select((cell) => cell.occupiedEntity).ToArray();
+
+                if (card.Play(caster, target))
                 {
-                    hand.Remove(card);
-                    DiscardCard(card);
-
                     OnPlayCard?.Invoke(index);
-                } else //Cancel playing the card
+                } else
                 {
                     OnCancelCard?.Invoke();
                 }
-                CellsHighlighter.ClearAll();
+
+                highlightedCells.ForEach((cell) => {
+                    if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
+                });
+                cardEffectArea.ForEach((cell) => {
+                    if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
+                });
+                
                 yield break;
             }
 
