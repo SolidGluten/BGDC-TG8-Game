@@ -18,6 +18,8 @@ public class GridSystemEditor : Editor
             gridSystem.SaveGridData();
         if (GUILayout.Button("Load Grid Data"))
             gridSystem.LoadGridData();
+        if (GUILayout.Button("Random Grid Data"))
+            gridSystem.GetRandomGridData();
 
         GUILayout.Space(10);
 

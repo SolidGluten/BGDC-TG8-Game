@@ -113,11 +113,25 @@ public class GridSystem : MonoBehaviour
     [ContextMenu("Load Grid Data")]
     public void LoadGridData()
     {
-        if (jsonGridData)
+        if (!jsonGridData)
         {
-            GridData loadedData = JsonUtility.FromJson<GridData>(jsonGridData.text);
-            gridData = loadedData;
+            Debug.LogWarning("No data to load from.");
+            return;
         }
+        GridData loadedData = JsonUtility.FromJson<GridData>(jsonGridData.text);
+        gridData = loadedData;
+    }
+
+    [ContextMenu("Get Random GridData")]
+    public void GetRandomGridData()
+    {
+        var jsonDatas = Resources.LoadAll("GridData", typeof(TextAsset)).ToList();
+        if (jsonDatas == null || !jsonDatas.Any()) {
+            Debug.LogWarning("No Grid Data found!");
+            return;
+        }
+        var randomIdx = UnityEngine.Random.Range(0, jsonDatas.Count);
+        jsonGridData = jsonDatas[randomIdx] as TextAsset;
     }
 
     public Cell GetCell(Vector2Int index)
