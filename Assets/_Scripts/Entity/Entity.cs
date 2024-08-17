@@ -47,7 +47,7 @@ public class Entity : MonoBehaviour
     public void DestroySelf()
     {
         occupiedCell.occupiedEntity = null;
+        Destroy(this.gameObject);
         OnDeath?.Invoke();
-        Destroy(gameObject);
     }
 }

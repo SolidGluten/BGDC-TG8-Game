@@ -47,9 +47,9 @@ public class CellsHighlighter : MonoBehaviour
 
     public static void ClearAll()
     {
-        for (int i = 0; i < GridSystem.Instance.Height; i++)
+        for (int i = 0; i < GridSystem.Instance.height; i++)
         {
-            for (int j = 0; j < GridSystem.Instance.Width; j++)
+            for (int j = 0; j < GridSystem.Instance.width; j++)
             {
                 var cell = GridSystem.Instance.GetCell(new Vector2Int(j, i));
                 if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);

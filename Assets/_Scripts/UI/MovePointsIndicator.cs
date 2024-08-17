@@ -18,6 +18,8 @@ public class MovePointsIndicator : MonoBehaviour
     private void Update()
     {
         var chara = CharacterSelector.instance.SelectedCharacter;
-        if (chara) moveIndicatorText.text = chara.currMovePoints.ToString();
+        if (chara) {
+            moveIndicatorText.text = "Move Left : " + chara.currMovePoints.ToString();
+        };
     }
 }

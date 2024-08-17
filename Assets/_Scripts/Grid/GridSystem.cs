@@ -17,18 +17,16 @@ public class GridSystem : MonoBehaviour
     public const int MAX_RANGE = 30;
     public static GridSystem Instance;
 
-    [SerializeField] private Vector2 gridPos;
+    [SerializeField] 
+    public Vector2 gridPos;
 
     //Grid width
-    [Range(1, MAX_RANGE)]
-    [SerializeField] private int width;
-    public int Width { get { return width; } }
+    [SerializeField]
+    public int width;
 
     //Grid height
-    [Range(1, MAX_RANGE)]
-    [SerializeField] private int height;
-    public int Height { get { return height; } }
-
+    [SerializeField]
+    public int height;
 
     [Space(15)]
 
@@ -37,16 +35,12 @@ public class GridSystem : MonoBehaviour
     [SerializeField] private GameObject cellObj;
 
     public bool isCostShown = true;
-
     public Dictionary<Vector2Int, Cell> cellList = new Dictionary<Vector2Int, Cell>();
-
-    public List<Vector2Int> characterSpawnPositions = new List<Vector2Int>();
-    public List<Vector2Int> enemySpawnPositions = new List<Vector2Int>();
 
     [Space(15)]
 
-    public GridData gridData;
-    public TextAsset jsonGridData;
+    public Vector2Int[] characterSpawnPositions;
+    public Vector2Int[] enemySpawnPositions;
 
     private void Awake()
     {
@@ -100,40 +94,6 @@ public class GridSystem : MonoBehaviour
         }
     }
 
-    [ContextMenu("Save Grid Data")]
-    public void SaveGridData()
-    {
-        GridData data = new GridData(Width, Height, characterSpawnPositions.ToArray(), enemySpawnPositions.ToArray());
-
-        string GData = JsonUtility.ToJson(data);
-        Debug.Log(GData);
-        File.WriteAllText(Application.dataPath + "/Resources/GridData/data.json", GData);
-    }
-
-    [ContextMenu("Load Grid Data")]
-    public void LoadGridData()
-    {
-        if (!jsonGridData)
-        {
-            Debug.LogWarning("No data to load from.");
-            return;
-        }
-        GridData loadedData = JsonUtility.FromJson<GridData>(jsonGridData.text);
-        gridData = loadedData;
-    }
-
-    [ContextMenu("Get Random GridData")]
-    public void GetRandomGridData()
-    {
-        var jsonDatas = Resources.LoadAll("GridData", typeof(TextAsset)).ToList();
-        if (jsonDatas == null || !jsonDatas.Any()) {
-            Debug.LogWarning("No Grid Data found!");
-            return;
-        }
-        var randomIdx = UnityEngine.Random.Range(0, jsonDatas.Count);
-        jsonGridData = jsonDatas[randomIdx] as TextAsset;
-    }
-
     public Cell GetCell(Vector2Int index)
     {
         if (cellList.TryGetValue(index, out Cell value))
@@ -141,6 +101,7 @@ public class GridSystem : MonoBehaviour
         return null;
     }
 
+    //path finding stuffs
     public void ResetCost()
     {
         foreach (KeyValuePair<Vector2Int, Cell> cell in cellList)
@@ -171,13 +132,6 @@ public class GridSystem : MonoBehaviour
             for(int j = 0; j < width; j++){
                 var pos = (cellSize + cellGap) * new Vector2(j, i) + gridPos;
                 var val = (i * width) + j;
-
-                //if (cellList.Any())
-                //{
-                //    var cell = cellList[new Vector2Int(j, i)];
-                //    Gizmos.color = cell.isOccupied ? Color.red : Color.green;
-                //    Handles.color = cell.isOccupied ? Color.red : Color.green;
-                //}
 
                 Handles.Label(pos, val.ToString());
                 Gizmos.DrawWireCube(pos, Vector2.one * cellSize);   

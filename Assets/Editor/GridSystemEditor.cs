@@ -14,18 +14,15 @@ public class GridSystemEditor : Editor
 
         GUILayout.Space(10);
 
-        if (GUILayout.Button("Save Grid Data"))
-            gridSystem.SaveGridData();
-        if (GUILayout.Button("Load Grid Data"))
-            gridSystem.LoadGridData();
-        if (GUILayout.Button("Random Grid Data"))
-            gridSystem.GetRandomGridData();
-
-        GUILayout.Space(10);
-
         if (GUILayout.Button("Regenerate Grid"))
+        {
             gridSystem.RegenerateGrid();
+            EditorUtility.SetDirty(gridSystem);
+        }
         if (GUILayout.Button("Show Cost"))
+        {
             gridSystem.ShowCost(!gridSystem.isCostShown);
+            EditorUtility.SetDirty(gridSystem);
+        }
     }
 }

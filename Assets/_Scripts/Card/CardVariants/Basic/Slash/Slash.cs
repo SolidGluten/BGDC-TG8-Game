@@ -8,7 +8,9 @@ public class Slash : Card
 {
     public override bool Play(Entity from, Entity[] target)
     {
-        var targetList = target.ToList();
+        if (!target.Any()) return false;
+        var targetList = target?.ToList();
+
         var enemy = targetList.Select((target) => target.GetComponent<Enemy>())?.First();
         if (!enemy) return false;
 

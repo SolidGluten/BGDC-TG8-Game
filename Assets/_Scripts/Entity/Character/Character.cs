@@ -8,14 +8,13 @@ public enum CharacterType { Knight, Mage };
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 
-public class Character : Entity, IDamageable
+public class Character : Entity
 {
     public bool isActive;
     public bool isTurn;
 
     public CharacterType type;
 
-    public event Action OnTakeDamage;
     public event Action OnTurnFinish;
 
     private void Update()
@@ -25,11 +24,5 @@ public class Character : Entity, IDamageable
             OnTurnFinish?.Invoke();
             isTurn = false;
         }
-    }
-
-    public void TakeDamage(int dmg)
-    {
-        currHealth -= dmg;
-        OnTakeDamage?.Invoke();
     }
 }

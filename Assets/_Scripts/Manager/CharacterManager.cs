@@ -65,7 +65,7 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         for(int i = 0; i < MAX_CHARS; i++)
         {
-            AddCharacter(charStats[i], new Vector2Int(0, i));
+            AddCharacter(charStats[i], GridSystem.Instance.characterSpawnPositions[i]);
         }
         ActiveCharacters[0].type = CharacterType.Knight;
         ActiveCharacters[1].type = CharacterType.Mage;

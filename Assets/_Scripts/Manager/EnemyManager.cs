@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour, ITurn
 {
+    public static EnemyManager Instance;
+
     [SerializeField] private GameObject enemyObject;
 
-    [SerializeField] private List<StatsScriptable> enemyStats = new List<StatsScriptable>();
+    [SerializeField] private List<SpawnableEnemy> enemySpawnList = new List<SpawnableEnemy>();
+    //[SerializeField] private List<StatsScriptable> enemySpawnList = new List<StatsScriptable>();
     public List<Enemy> ActiveEnemies = new List<Enemy>();
-
-    public static EnemyManager Instance;
 
     public event Action OnEnemyInitialize;
 
@@ -48,23 +49,21 @@ public class EnemyManager : MonoBehaviour, ITurn
     //Spawn Enemies
     private void InitializeEnemies()
     {
-        if(enemyStats.Count == 0)
+        if(enemySpawnList.Count == 0)
         {
             Debug.LogWarning("Enemy stats not assigned.");
             return;
         }
 
-        int i = 0;
-        foreach(StatsScriptable stats in enemyStats)
+        for(int i = 0; i < enemySpawnList.Count; i++)
         {
-            AddEnemy(stats, new Vector2Int(0, GridSystem.Instance.Height - i - 1));
-            i++;
+            AddEnemy(enemySpawnList[i].stats, enemySpawnList[i].enemy, GridSystem.Instance.enemySpawnPositions[i]);
         }
 
         OnEnemyInitialize?.Invoke();
     }
 
-    private Enemy AddEnemy(StatsScriptable stats, Vector2Int cellPos)
+    private Enemy AddEnemy(StatsScriptable stats, EnemyScriptable enemyScript, Vector2Int cellPos)
     {
         var cell = GridSystem.Instance.GetCell(cellPos);
         if (!cell)
@@ -76,11 +75,18 @@ public class EnemyManager : MonoBehaviour, ITurn
         var enemyObj = Instantiate(enemyObject);
         var enemy = enemyObj.GetComponent<Enemy>();
         enemy.stats = stats;
+        enemy.enemyScriptable = enemyScript;
 
         cell.SetEntity(enemy);
-
         ActiveEnemies.Add(enemy);
 
         return enemy;
     }
+}
+
+[Serializable]
+public class SpawnableEnemy {
+    public int cost;
+    public StatsScriptable stats;
+    public EnemyScriptable enemy;
 }

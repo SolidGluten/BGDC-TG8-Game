@@ -125,6 +125,7 @@ public class CardManager : MonoBehaviour
 
                 if (card.Play(caster, target))
                 {
+                    hand.Remove(card);
                     OnPlayCard?.Invoke(index);
                 } else
                 {

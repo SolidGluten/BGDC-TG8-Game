@@ -6,13 +6,16 @@ using UnityEngine;
 [Serializable]
 public class GridData
 {
-    public GridData(int _width, int _height, Vector2Int[] _characterSpawnPos, Vector2Int[] _enemySpawnPos)
+    public GridData(int _width, int _height, Vector2Int[] _characterSpawnPos, Vector2Int[] _enemySpawnPos, Vector2 gridPos)
     {
         width = _width;
         height = _height;
         characterSpawnPos = _characterSpawnPos;
         enemySpawnPos = _enemySpawnPos;
+        this.gridPos = gridPos;
     }
+
+    public Vector2 gridPos;
 
     public int width;
     public int height;

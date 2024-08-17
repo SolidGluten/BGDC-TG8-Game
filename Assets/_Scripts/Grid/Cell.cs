@@ -8,10 +8,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Flags] public enum CellType { 
-    None = 0,
-    Range = 1, 
-    Effect = 2, 
-    Path = 4
+    None            = 0,
+    Range           = 1 << 0, 
+    Effect          = 1 << 1, 
+    Enemy_Detection = 1 << 2,
+    Enemy_Range     = 1 << 3,
+    Enemy_Attack    = 1 << 4,
+    Path            = 1 << 5,
 };
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -34,6 +37,12 @@ public class Cell : MonoBehaviour
                     _renderer.color = effectColor; break;
                 case CellType.Path:
                     _renderer.color = pathColor; break;
+                case CellType.Enemy_Detection:
+                    _renderer.color = enemyDetectionColor; break;
+                case CellType.Enemy_Range:
+                    _renderer.color = enemyRangeColor; break;
+                case CellType.Enemy_Attack:
+                    _renderer.color = enemyAttackColor; break;
                 case 0:
                 default:
                     _renderer.color = defaultColor; break;
@@ -45,9 +54,12 @@ public class Cell : MonoBehaviour
     public Entity occupiedEntity;
 
     public Color defaultColor = Color.gray;
-    public Color rangeColor = Color.green;
+    public Color rangeColor = Color.green; 
     public Color effectColor = Color.red;
     public Color pathColor = Color.blue;
+    public Color enemyDetectionColor = Color.cyan;
+    public Color enemyRangeColor = Color.magenta;
+    public Color enemyAttackColor = Color.yellow;
 
     public bool isOccupied => occupiedEntity != null;
 
