@@ -9,8 +9,10 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     [SerializeField] private GameObject enemyObject;
 
+    public bool showEnemyRange = true;
+    public bool showDetectionRange = true;
+
     [SerializeField] private List<SpawnableEnemy> enemySpawnList = new List<SpawnableEnemy>();
-    //[SerializeField] private List<StatsScriptable> enemySpawnList = new List<StatsScriptable>();
     public List<Enemy> ActiveEnemies = new List<Enemy>();
 
     public event Action OnEnemyInitialize;
@@ -30,14 +32,26 @@ public class EnemyManager : MonoBehaviour, ITurn
     private void Start()
     {
         InitializeEnemies();
+
+        foreach (Enemy enemy in ActiveEnemies)
+        {
+            if (showDetectionRange) enemy.HighlightDetectionArea();
+            if (showEnemyRange) enemy.HighlightRangeArea();
+        }
     }
 
     public void StartTurn()
     {
-        Debug.Log("Enemy Start");
+        ActiveEnemies.RemoveAll(x => x == null);
+
+        CellsHighlighter.ClearAllType(CellType.Enemy_Detection);
+        CellsHighlighter.ClearAllType(CellType.Enemy_Range);
+
         foreach(Enemy enemy in ActiveEnemies)
         {
             enemy.GetComponent<EnemyMovement>()?.Move();
+            if (showDetectionRange) enemy.HighlightDetectionArea();
+            if (showEnemyRange) enemy.HighlightRangeArea();
         }
     }
 

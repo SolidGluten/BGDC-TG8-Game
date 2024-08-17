@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum HighlightShape { Square, Cross, Diamond, Line}
+public enum HighlightShape { Square, Cross, Diamond, Line, Circle}
 public enum Direction { Left, Right, Up, Down }
 
 public class CellsHighlighter : MonoBehaviour
@@ -40,6 +40,8 @@ public class CellsHighlighter : MonoBehaviour
                 highlighter = new HighlightDiamond(); break;
             case HighlightShape.Line:
                 highlighter = new HighlightLine(); break;
+            case HighlightShape.Circle:
+                highlighter = new HighlightCircle(); break;
             default: break;
         }
         return highlighter;
@@ -47,14 +49,17 @@ public class CellsHighlighter : MonoBehaviour
 
     public static void ClearAll()
     {
-        for (int i = 0; i < GridSystem.Instance.height; i++)
+        foreach(var cell in GridSystem.Instance.cellList.Values)
         {
-            for (int j = 0; j < GridSystem.Instance.width; j++)
-            {
-                var cell = GridSystem.Instance.GetCell(new Vector2Int(j, i));
-                if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
-            }
+            if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
         }
     }
 
+    public static void ClearAllType(CellType type)
+    {
+        foreach (var cell in GridSystem.Instance.cellList.Values)
+        {
+            if (cell) cell.Types = EnumFlags.LowerFlag(cell.Types, type);
+        }
+    }
 }

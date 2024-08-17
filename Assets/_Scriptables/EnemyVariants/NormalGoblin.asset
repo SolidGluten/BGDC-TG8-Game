@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abe4be5b3f9be946becfe0342e11e57, type: 3}
   m_Name: NormalGoblin
   m_EditorClassIdentifier: 
-  detectionRange: 3
-  maxRangeFromTarget: 0
+  detectionRange: 7
+  maxRangeFromTarget: 3
   attackRange: 2
   attackShape: 0

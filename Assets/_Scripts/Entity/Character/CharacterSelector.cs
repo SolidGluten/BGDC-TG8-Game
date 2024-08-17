@@ -5,7 +5,6 @@ using UnityEngine;
 public class CharacterSelector : MonoBehaviour
 {
     public static CharacterSelector instance;
-
     public Character SelectedCharacter;
 
     private void Awake()
@@ -20,7 +19,7 @@ public class CharacterSelector : MonoBehaviour
 
     private void Update() 
     {
-        if (!SelectedCharacter && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             Select();
     }
 
@@ -33,18 +32,18 @@ public class CharacterSelector : MonoBehaviour
             if (hit.collider.gameObject.TryGetComponent<Character>(out chara)) break;
         }
 
-        if (chara && chara.isTurn) 
+        if (SelectedCharacter) Unselect();
+
+        if (chara) 
         {
             SelectedCharacter = chara;
-            SelectedCharacter.isActive = true;
-            SelectedCharacter.OnTurnFinish += Unselect;
+            SelectedCharacter.isSelected = true;
         }
     }
 
     private void Unselect()
     {
-        SelectedCharacter.isActive = false;
-        SelectedCharacter.OnTurnFinish -= Unselect;
+        SelectedCharacter.isSelected = false;
         SelectedCharacter = null;
     }
 }

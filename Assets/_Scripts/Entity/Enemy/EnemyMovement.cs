@@ -20,20 +20,13 @@ public class EnemyMovement : MonoBehaviour
 
     public Character FindNearestCharacter() {
 
-        if (detectionArea.Any())
-        {
-            foreach (var _cell in detectionArea)
-                _cell.Types = EnumFlags.LowerFlag(_cell.Types, CellType.Enemy_Detection);
-        }
-
         detectionArea = CellsHighlighter.HighlightArea(enemy.occupiedCell.index, enemy.enemyScriptable.detectionRange, HighlightShape.Square);
 
-        foreach (var _cell in detectionArea)
-            _cell.Types = EnumFlags.RaiseFlag(_cell.Types, CellType.Enemy_Detection);
-
         var entities = detectionArea
-            .Where((cell) => cell.isOccupied)
-            .Select((cell) => cell.occupiedEntity);
+            ?.Where((cell) => cell.isOccupied && cell != enemy.occupiedCell)
+            ?.Select((cell) => cell.occupiedEntity);
+        if (!entities.Any()) return null;
+
         var character = entities?.Select((entity) => entity.GetComponent<Character>())?.First();
 
         return character;
@@ -55,15 +48,18 @@ public class EnemyMovement : MonoBehaviour
         {
             //foreach (Cell cell in pathToChara) EnumFlags.SetFlag(cell.Types, CellType.Range, true);
             int moveCount = Mathf.Clamp(pathToChara.Count - enemy.enemyScriptable.maxRangeFromTarget, 1, enemy.stats.MOV);
-            Cell cellDst = null;
 
-            if (moveCount == 1) return;
+            if (moveCount == 1) {
+                enemy.isTargetInRange = true;
+                return;
+            } else
+            {
+                enemy.isTargetInRange = false;
+            }
 
-            if (pathToChara[moveCount - 1].isOccupied && moveCount <= enemy.stats.MOV)
-                cellDst = pathToChara[moveCount - 2];
-            else
-                cellDst = pathToChara[moveCount - 1];
+            while (pathToChara[moveCount].isOccupied && moveCount > 0) moveCount--;
 
+            var cellDst = pathToChara[moveCount];
             cellDst.SetEntity(enemy);
         }
     }

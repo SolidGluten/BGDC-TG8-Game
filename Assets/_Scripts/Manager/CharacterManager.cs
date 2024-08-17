@@ -19,6 +19,7 @@ public class CharacterManager : MonoBehaviour, ITurn
     public static CharacterManager Instance { get; private set; }
 
     public event Action OnCharacterInitialize;
+    public event Action OnTurn;
 
     //Singleton
     private void Awake()
@@ -39,19 +40,12 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public void StartTurn()
     {
-        foreach (var chara in ActiveCharacters)
-        {
-            chara.isTurn = true;
-        }
+        OnTurn?.Invoke();
         Debug.Log("Player Start");
     }
 
     public void EndTurn()
     {
-        foreach (var chara in ActiveCharacters)
-        {
-            chara.isTurn = false;
-        }
         Debug.Log("Player End");
     }
 

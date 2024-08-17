@@ -10,19 +10,10 @@ public enum CharacterType { Knight, Mage };
 
 public class Character : Entity
 {
-    public bool isActive;
-    public bool isTurn;
+    public bool isSelected;
 
     public CharacterType type;
 
     public event Action OnTurnFinish;
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(1) && isActive && isTurn)
-        {
-            OnTurnFinish?.Invoke();
-            isTurn = false;
-        }
-    }
 }
