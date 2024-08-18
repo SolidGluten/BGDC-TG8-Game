@@ -64,10 +64,7 @@ public class CardManager : MonoBehaviour
         Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
 
         var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Square);
-        highlightedCells.ForEach((cell) =>
-        {
-            cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Range, true);
-        });
+        CellsHighlighter.RaiseLayerType(highlightedCells, CellType.Range);
 
         Cell prevHoveredCell = null;
         Direction prevDir = Direction.Right;
@@ -82,12 +79,12 @@ public class CardManager : MonoBehaviour
             {
                 if (prevDir != castDir)
                 {
-                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
+                    CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
                     cardEffectArea.Clear();
 
                     cardEffectArea = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.width, card.effectShape, card.range, castDir);
 
-                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, true);
+                    CellsHighlighter.RaiseLayerType(cardEffectArea, CellType.Effect);
 
                     prevDir = castDir;
                 }
@@ -96,13 +93,14 @@ public class CardManager : MonoBehaviour
             {
                 if (prevHoveredCell != hoveredCell)
                 {
-                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
+                    CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
                     cardEffectArea.Clear();
+
 
                     if (highlightedCells.Contains(hoveredCell))
                     {
                         cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
-                        CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, true);
+                        CellsHighlighter.RaiseLayerType(cardEffectArea, CellType.Effect);
                     }
 
                     prevHoveredCell = hoveredCell;
@@ -125,8 +123,8 @@ public class CardManager : MonoBehaviour
                     OnCancelCard?.Invoke();
                 }
 
-                CellsHighlighter.SetTypes(highlightedCells, CellType.Range, false);
-                CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
+                CellsHighlighter.LowerLayerType(highlightedCells, CellType.Enemy_Attack);
+                CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
                 
                 yield break;
             }

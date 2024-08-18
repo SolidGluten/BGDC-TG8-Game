@@ -13,7 +13,7 @@ public class Enemy : Entity
     public bool isTargetInRange = false;
     public bool isAttackReady = false;
 
-    public Character[] target;
+    public Character target;
 
     private List<Cell> _detectionArea = new List<Cell>();
     private List<Cell> _maxRangeArea = new List<Cell>();
@@ -28,35 +28,28 @@ public class Enemy : Entity
             return;
         }
 
-        target = enemyScriptable.PrepareAttack(this, out _attackArea, out _rangeArea);
-
-        if (isAttackReady) { 
-            enemyScriptable.Attack(this, target, _attackArea);
+        if (!isAttackReady)
+        {
+            target = enemyScriptable.PrepareAttack(this, out _attackArea, out _rangeArea);
+            if (!target) return;
+            CellsHighlighter.RaiseLayerType(_attackArea, CellType.Enemy_Attack);
+            CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
+            isAttackReady = true;
+        } else { 
+            enemyScriptable.Attack(this, _attackArea);
             isAttackReady = false;
-            return;
         }
-        
-        isAttackReady = true;
-
-        CellsHighlighter.RaiseLayerType(_attackArea, CellType.Enemy_Attack);
-        CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
     }
 
     public void HighlightDetectionArea()
     {
         _detectionArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.detectionRange, HighlightShape.Circle);
-
-        foreach (var cell in _detectionArea)
-            cell.Types = EnumFlags.RaiseFlag(cell.Types, CellType.Enemy_Detection);
+        CellsHighlighter.RaiseLayerType(_detectionArea, CellType.Enemy_Detection);
     }
 
     public void HighlightMaxRangeArea()
     {
         _maxRangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
-
-        foreach (var cell in _maxRangeArea)
-            cell.Types = EnumFlags.RaiseFlag(cell.Types, CellType.Enemy_MaxRange);
-
-        _maxRangeArea = _detectionArea;
+        CellsHighlighter.RaiseLayerType(_maxRangeArea, CellType.Enemy_MaxRange);
     }
 }

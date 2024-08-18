@@ -19,12 +19,15 @@ public abstract class EnemyScriptable : ScriptableObject
     public int attackWidth = 2;
     public HighlightShape attackShape;
 
-    public virtual Character[] PrepareAttack(Enemy caster, out List<Cell> attackArea, out List<Cell> rangeArea)
+    public void OnValidate()
+    {
+        maxRangeFromTarget = Mathf.Max(maxRangeFromTarget, 1);
+    }
+
+    public virtual Character PrepareAttack(Enemy caster, out List<Cell> attackArea, out List<Cell> rangeArea)
     {
         attackArea = new List<Cell>();
         rangeArea = new List<Cell>();
-
-        Character[] target = Array.Empty<Character>();
 
         rangeArea = CellsHighlighter.HighlightArea(caster.occupiedCell.index, rangeFromCaster, HighlightShape.Diamond);
 
@@ -36,19 +39,11 @@ public abstract class EnemyScriptable : ScriptableObject
 
         var mainTarget = characters.Any() ? characters.First() : null;
 
-        if (mainTarget)
-        {
-            var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
-            attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, attackWidth, attackShape, attackRange, dir);
-            target = attackArea
-                .Where((cell) => cell.isOccupied)
-                .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
-                .Where((cell) => cell != null)
-                .ToArray();
-        }
+        var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
+        attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, attackWidth, attackShape, attackRange, dir);
 
-        return target;
+        return mainTarget;
     }
 
-    public abstract void Attack(Enemy from, Character[] targets, List<Cell> attackArea = null);
+    public abstract bool Attack(Enemy from, List<Cell> attackArea);
 }

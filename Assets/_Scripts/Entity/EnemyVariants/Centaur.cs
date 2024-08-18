@@ -6,14 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Centaur", menuName = "ScriptableObjects/Enemies/Centaur")]
 public class Centaur : EnemyScriptable
 {
-    public override void Attack(Enemy from, Character[] targets, List<Cell> attackArea = null)
+    private new void OnValidate()
     {
-        if (!targets.Any()) return;
+        maxRangeFromTarget = Mathf.Max(maxRangeFromTarget, 1);
+        attackWidth = 0;
+        attackShape = HighlightShape.Line;
+    }
 
-        foreach (Character chara in targets)
-            chara?.TakeDamage(from.stats.ATK);
+    public override bool Attack(Enemy from, List<Cell> attackArea)
+    {
+        var characters = attackArea?
+            .Where((cell) => cell && cell.isOccupied)?
+            .Select((cell) => cell.occupiedEntity.GetComponent<Character>())?
+            .Where((chara) => chara != null);
 
-        var endOfLine = attackArea.Aggregate(attackArea.First(), (acc, x) => Mathf.Abs(x.index.x) > Mathf.Abs(acc.index.x) ? x : acc);
+        if (!characters.Any()) return false;
+
+        foreach (var chara in characters)
+            chara.TakeDamage(from.stats.ATK);
+
+        var endOfLine = attackArea.Last();
         endOfLine.SetEntity(from);
+
+        return true;
     }
 }

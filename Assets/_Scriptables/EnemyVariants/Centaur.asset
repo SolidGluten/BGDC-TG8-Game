@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426746d205349fe44b4e88ee94116d81, type: 3}
   m_Name: Centaur
   m_EditorClassIdentifier: 
-  enemyName: 
+  enemyName: Centaur
   sprite: {fileID: 0}
   cost: 0
-  detectionRange: 3
+  detectionRange: 5
   maxRangeFromTarget: 1
-  rangeFromCaster: 2
+  rangeFromCaster: 1
   attackRange: 4
-  attackWidth: 1
+  attackWidth: 0
   attackShape: 3

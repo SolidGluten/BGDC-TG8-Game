@@ -25,6 +25,8 @@ public class CellsHighlighter : MonoBehaviour
         Highlighter highlighter = GetHighlighter(shape);
         List<Cell> cells = highlighter.Highlight(startIndex, radius, range, dir);
 
+        cells.RemoveAll(cell => cell == null);
+
         return cells;
     }
 
@@ -74,18 +76,17 @@ public class CellsHighlighter : MonoBehaviour
     // NEW
     public static void RaiseLayerType(List<Cell> cells, CellType type)
     {
-        foreach (var cell in cells) cell.RaiseType(type);
+        foreach (var cell in cells) cell?.RaiseType(type);
     }
 
     public static void LowerLayerType(List<Cell> cells, CellType type)
     {
-        foreach (var cell in cells) cell.LowerType(type);
+        foreach (var cell in cells) cell?.LowerType(type);
     }
 
     public static void ResetLayerType()
     {
-        foreach (var cell in GridSystem.Instance.cellList.Values)
-            cell.ResetType();
+        foreach (var cell in GridSystem.Instance.cellList.Values) cell?.ResetType();
     }
 
     public static Direction GetDirection(Vector2 from, Vector2 to)
