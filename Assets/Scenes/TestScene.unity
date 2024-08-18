@@ -180,7 +180,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1693142199}
   G_text: {fileID: 93047530}
@@ -853,7 +854,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 826254629}
   G_text: {fileID: 187331260}
@@ -1868,7 +1870,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 59050737}
   G_text: {fileID: 911532589}
@@ -2199,7 +2202,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1672562104}
   G_text: {fileID: 788994430}
@@ -2872,7 +2876,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2103966965}
   G_text: {fileID: 391464051}
@@ -4271,7 +4276,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 22370737}
   G_text: {fileID: 1506238129}
@@ -4602,7 +4608,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1744378817}
   G_text: {fileID: 1469943414}
@@ -4762,7 +4769,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 166144356}
   G_text: {fileID: 653064933}
@@ -5093,7 +5101,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2000516736}
   G_text: {fileID: 1525136574}
@@ -5253,7 +5262,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 492360560}
   G_text: {fileID: 136853881}
@@ -5584,7 +5594,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1073927304}
   G_text: {fileID: 1906774287}
@@ -7112,7 +7123,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 972862603}
   G_text: {fileID: 871264576}
@@ -7863,7 +7875,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1798757052}
   G_text: {fileID: 705355852}
@@ -9225,7 +9238,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 85978968}
   G_text: {fileID: 1017983035}
@@ -9385,7 +9399,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1137150862}
   G_text: {fileID: 1242964626}
@@ -10991,7 +11006,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 905815792}
   G_text: {fileID: 1092972016}
@@ -11322,7 +11338,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1325278041}
   G_text: {fileID: 1083661173}
@@ -12850,7 +12867,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1556211636}
   G_text: {fileID: 431460834}
@@ -13010,7 +13028,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2135377193}
   G_text: {fileID: 600044844}
@@ -14955,7 +14974,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1319434853}
   G_text: {fileID: 1208807142}
@@ -16312,7 +16332,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 265073292}
   G_text: {fileID: 570623215}
@@ -18711,7 +18732,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1804657744}
   G_text: {fileID: 645957999}
@@ -20752,7 +20774,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1737523235}
   G_text: {fileID: 2107735050}
@@ -21083,7 +21106,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 808495750}
   G_text: {fileID: 943585741}
@@ -21243,7 +21267,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 185171088}
   G_text: {fileID: 666866297}
@@ -21574,7 +21599,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 989922940}
   G_text: {fileID: 1590785057}
@@ -22418,7 +22444,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1494436258}
   G_text: {fileID: 224029586}
@@ -24209,7 +24236,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 321538789}
   G_text: {fileID: 2058666038}
@@ -24711,7 +24739,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1985193816}
   G_text: {fileID: 628893758}
@@ -25555,7 +25584,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1636160552}
   G_text: {fileID: 2101877106}
@@ -25715,7 +25745,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1850459109}
   G_text: {fileID: 215719092}
@@ -27927,7 +27958,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1698036402}
   G_text: {fileID: 1648039899}
@@ -28087,7 +28119,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1160426002}
   G_text: {fileID: 1127939971}
@@ -28247,7 +28280,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 244698102}
   G_text: {fileID: 1490771394}
@@ -29516,7 +29550,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1647581269}
   G_text: {fileID: 265869150}
@@ -30018,7 +30053,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1402389605}
   G_text: {fileID: 2068398427}
@@ -31204,7 +31240,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 643862079}
   G_text: {fileID: 135555669}
@@ -31535,7 +31572,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1160846469}
   G_text: {fileID: 1546410647}
@@ -32037,7 +32075,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 148738568}
   G_text: {fileID: 801323393}
@@ -32539,7 +32578,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 651144133}
   G_text: {fileID: 1170062047}
@@ -33290,7 +33330,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 540227823}
   G_text: {fileID: 1839981793}
@@ -33621,7 +33662,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 142627603}
   G_text: {fileID: 1394096577}
@@ -34812,7 +34854,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1877592281}
   G_text: {fileID: 1276019978}
@@ -35314,7 +35357,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2120817256}
   G_text: {fileID: 438381134}
@@ -35816,7 +35860,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1038709649}
   G_text: {fileID: 920419869}
@@ -36831,7 +36876,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 338775759}
   G_text: {fileID: 983204170}
@@ -38017,7 +38063,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1051645692}
   G_text: {fileID: 1709500472}
@@ -38861,7 +38908,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1791785508}
   G_text: {fileID: 639030656}
@@ -39363,7 +39411,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 546665836}
   G_text: {fileID: 809495377}
@@ -40549,7 +40598,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 917259417}
   G_text: {fileID: 1146253765}
@@ -40880,7 +40930,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 581036153}
   G_text: {fileID: 314404733}
@@ -42071,7 +42122,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1410828328}
   G_text: {fileID: 1811863848}
@@ -43926,7 +43978,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1498223364}
   G_text: {fileID: 248467573}
@@ -46309,7 +46362,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1154058635}
   G_text: {fileID: 999012497}
@@ -46811,7 +46865,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 148836078}
   G_text: {fileID: 1222509470}
@@ -47220,7 +47275,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 918627063}
   G_text: {fileID: 204778610}
@@ -48235,7 +48291,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2048823091}
   G_text: {fileID: 266823412}
@@ -48908,7 +48965,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1074717451}
   G_text: {fileID: 1312223704}
@@ -49068,7 +49126,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1343051845}
   G_text: {fileID: 560338919}
@@ -51109,7 +51168,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1511787626}
   G_text: {fileID: 311527577}
@@ -52124,7 +52184,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1766725980}
   G_text: {fileID: 325637085}
@@ -52968,7 +53029,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 614711703}
   G_text: {fileID: 460893496}
@@ -53128,7 +53190,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 861976474}
   G_text: {fileID: 1098220903}
@@ -53288,7 +53351,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 976104681}
   G_text: {fileID: 1397660755}
@@ -53790,7 +53854,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1539893266}
   G_text: {fileID: 1702047459}
@@ -54121,7 +54186,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1539455424}
   G_text: {fileID: 1833874525}
@@ -54996,7 +55062,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1877725170}
   G_text: {fileID: 1325492113}
@@ -55327,7 +55394,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 2068988674}
   G_text: {fileID: 898892941}
@@ -55658,7 +55726,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1978755539}
   G_text: {fileID: 586266749}
@@ -56409,7 +56478,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 90744128}
   G_text: {fileID: 415729791}
@@ -56569,7 +56639,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 722152848}
   G_text: {fileID: 1847603986}
@@ -56729,7 +56800,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1528189934}
   G_text: {fileID: 706982151}
@@ -58086,7 +58158,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 346560167}
   G_text: {fileID: 1577224113}
@@ -58417,7 +58490,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1545510208}
   G_text: {fileID: 410997216}
@@ -59090,7 +59164,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 156638123}
   G_text: {fileID: 987232353}
@@ -60276,7 +60351,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 235222920}
   G_text: {fileID: 1288161931}
@@ -60436,7 +60512,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1183438822}
   G_text: {fileID: 456604980}
@@ -60627,7 +60704,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1546736940}
   G_text: {fileID: 603672591}
@@ -61129,7 +61207,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 297508057}
   G_text: {fileID: 647640488}
@@ -61460,7 +61539,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1001271333}
   G_text: {fileID: 446758098}
@@ -61620,7 +61700,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1342054366}
   G_text: {fileID: 380484752}
@@ -61780,7 +61861,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 921737618}
   G_text: {fileID: 719492150}
@@ -61940,7 +62022,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 989301543}
   G_text: {fileID: 2037027811}
@@ -62100,7 +62183,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 681844489}
   G_text: {fileID: 387707593}
@@ -62602,7 +62686,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 962470784}
   G_text: {fileID: 1576523622}
@@ -62933,7 +63018,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1381735846}
   G_text: {fileID: 1283646945}
@@ -63093,7 +63179,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1620672640}
   G_text: {fileID: 963153711}
@@ -63253,7 +63340,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 691570477}
   G_text: {fileID: 182843236}
@@ -63755,7 +63843,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1144394416}
   G_text: {fileID: 1976752663}
@@ -65112,7 +65201,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1134118952}
   G_text: {fileID: 890908675}
@@ -65272,7 +65362,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1537407771}
   G_text: {fileID: 1379304985}
@@ -65603,7 +65694,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1110279437}
   G_text: {fileID: 1038319939}
@@ -65934,7 +66026,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1565218888}
   G_text: {fileID: 1983051295}
@@ -66846,7 +66939,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1573616551}
   G_text: {fileID: 1801706832}
@@ -67011,7 +67105,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 733193652}
   G_text: {fileID: 933708608}
@@ -67171,7 +67266,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 34977394}
   G_text: {fileID: 1664679530}
@@ -67704,7 +67800,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 736143189}
   G_text: {fileID: 82392970}
@@ -68051,7 +68148,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1733811134}
   G_text: {fileID: 1569911596}
@@ -68382,7 +68480,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 75482218}
   G_text: {fileID: 1824597872}
@@ -68889,7 +68988,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1100392285}
   G_text: {fileID: 1926311907}
@@ -69391,7 +69491,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 427724619}
   G_text: {fileID: 584022145}
@@ -69893,7 +69994,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 350548484}
   G_text: {fileID: 1072833351}
@@ -71592,7 +71694,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 822239132}
   G_text: {fileID: 1547743011}
@@ -72778,7 +72881,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1212635521}
   G_text: {fileID: 1631508282}
@@ -72938,7 +73042,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 348581984}
   G_text: {fileID: 142495144}
@@ -74979,7 +75084,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 91938416}
   G_text: {fileID: 1817828008}
@@ -75652,7 +75758,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1202131654}
   G_text: {fileID: 118154153}
@@ -75812,7 +75919,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1226228862}
   G_text: {fileID: 21486506}
@@ -75972,7 +76080,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 283605844}
   G_text: {fileID: 777458891}
@@ -76308,7 +76417,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 412136537}
   G_text: {fileID: 1552595539}
@@ -76468,7 +76578,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 883715905}
   G_text: {fileID: 1744196611}
@@ -76799,7 +76910,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1486329715}
   G_text: {fileID: 320194786}
@@ -78498,7 +78610,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1455432424}
   G_text: {fileID: 1861652478}
@@ -78658,7 +78771,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1320601245}
   G_text: {fileID: 309478131}
@@ -79160,7 +79274,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1392690740}
   G_text: {fileID: 91395328}
@@ -79320,7 +79435,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1867412462}
   G_text: {fileID: 438999988}
@@ -79822,7 +79938,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 52687105}
   G_text: {fileID: 1878907868}
@@ -80495,7 +80612,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1937342188}
   G_text: {fileID: 656744039}
@@ -81510,7 +81628,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1431603677}
   G_text: {fileID: 523345208}
@@ -82012,7 +82131,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1846647912}
   G_text: {fileID: 516507967}
@@ -82856,7 +82976,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 507930170}
   G_text: {fileID: 1417915105}
@@ -84555,7 +84676,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1924264360}
   G_text: {fileID: 217103882}
@@ -84886,7 +85008,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1703160670}
   G_text: {fileID: 442517625}
@@ -85217,7 +85340,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 54870708}
   G_text: {fileID: 1749496317}
@@ -86310,7 +86434,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1320239751}
   G_text: {fileID: 828465008}
@@ -86470,7 +86595,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 400347920}
   G_text: {fileID: 534905315}
@@ -86972,7 +87098,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 799981776}
   G_text: {fileID: 497084149}
@@ -87132,7 +87259,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 231135624}
   G_text: {fileID: 1689500757}
@@ -87292,7 +87420,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1019977961}
   G_text: {fileID: 1687378706}
@@ -88136,7 +88265,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 402575357}
   G_text: {fileID: 1663631956}
@@ -88809,7 +88939,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1116140259}
   G_text: {fileID: 150196883}
@@ -89528,7 +89659,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1320563959}
   G_text: {fileID: 826581419}
@@ -90030,7 +90162,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 238827994}
   G_text: {fileID: 1674966574}
@@ -91050,7 +91183,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 913133244}
   G_text: {fileID: 1043931743}
@@ -91381,7 +91515,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 172817529}
   G_text: {fileID: 1924562598}
@@ -92225,7 +92360,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 420580996}
   G_text: {fileID: 1719607078}
@@ -93240,7 +93376,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1346619762}
   G_text: {fileID: 763507113}
@@ -95052,7 +95189,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1974329559}
   G_text: {fileID: 439417012}
@@ -95388,7 +95526,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1826778110}
   G_text: {fileID: 596229969}
@@ -96232,7 +96371,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 159309436}
   G_text: {fileID: 734899290}
@@ -96392,7 +96532,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 532211476}
   G_text: {fileID: 1569491570}
@@ -98853,7 +98994,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 619330781}
   G_text: {fileID: 302024054}
@@ -99596,7 +99738,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 1954107282}
   G_text: {fileID: 249979975}
@@ -99756,7 +99899,8 @@ MonoBehaviour:
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
   enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 1, b: 1, a: 1}
   enemyAttackColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   F_text: {fileID: 516697205}
   G_text: {fileID: 662805568}

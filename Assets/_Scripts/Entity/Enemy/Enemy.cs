@@ -21,10 +21,11 @@ public class Enemy : Entity
 
     public void PrepareAttack()
     {
-        if (!isTargetInRange) return;
-
         CellsHighlighter.SetTypes(rangeArea, CellType.Enemy_TargetRange, false);
-        rangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.attackWidth, HighlightShape.Square);
+        attackArea.Clear();
+
+        if (!isTargetInRange) return;
+        rangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.rangeFromCaster, HighlightShape.Square);
         CellsHighlighter.SetTypes(rangeArea, CellType.Enemy_TargetRange, true);
 
         var characters = rangeArea
@@ -32,12 +33,19 @@ public class Enemy : Entity
             .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
             .ToList();
 
+        characters.RemoveAll(x => x == null);
+
+        foreach(var chara in characters)
+        {
+            Debug.Log(chara);
+        }
+
         var mainTarget = characters.Any() ? characters.First() : null;
 
         if (mainTarget)
         {
             CellsHighlighter.SetTypes(attackArea, CellType.Enemy_Attack, false);
-            attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, enemyScriptable.attackWidth, enemyScriptable.attackShape);
+            attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, enemyScriptable.attackWidth, enemyScriptable.attackShape, enemyScriptable.attackRange);
             CellsHighlighter.SetTypes(attackArea, CellType.Enemy_Attack, true);
 
             target = attackArea

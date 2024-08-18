@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10
   ATK: 2
-  MOV: 2
+  MOV: 3
