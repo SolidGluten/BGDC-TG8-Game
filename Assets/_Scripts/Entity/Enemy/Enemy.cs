@@ -23,25 +23,23 @@ public class Enemy : Entity
 
     public void PrepareAttack()
     {
-        target = enemyScriptable.PrepareAttack(this, out List<Cell> attackArea, out List<Cell> rangeArea);
-        if (!target.Any()) {
+        if (!isTargetInRange) {
             isAttackReady = false;
             return;
         }
 
-        isAttackReady = true;
+        target = enemyScriptable.PrepareAttack(this, out _attackArea, out _rangeArea);
 
-        _attackArea = new List<Cell>(attackArea);
-        _rangeArea = new List<Cell>(rangeArea);
+        if (isAttackReady) { 
+            enemyScriptable.Attack(this, target, _attackArea);
+            isAttackReady = false;
+            return;
+        }
+        
+        isAttackReady = true;
 
         CellsHighlighter.RaiseLayerType(_attackArea, CellType.Enemy_Attack);
         CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
-    }
-
-    public void Attack()
-    {
-        enemyScriptable.Attack(this, target, _attackArea);
-        isAttackReady = false;
     }
 
     public void HighlightDetectionArea()

@@ -43,15 +43,12 @@ public class EnemyManager : MonoBehaviour, ITurn
     public void StartTurn()
     {
         ActiveEnemies.RemoveAll(x => x == null);
-
         CellsHighlighter.ResetLayerType();
 
         foreach(Enemy enemy in ActiveEnemies)
         {
             enemy.GetComponent<EnemyMovement>().Move();
-
-            if (!enemy.isAttackReady) enemy.PrepareAttack();
-            else enemy.Attack();
+            enemy.PrepareAttack();
 
             if (showDetectionRange) enemy.HighlightDetectionArea();
             if (showEnemyRange) enemy.HighlightMaxRangeArea();
