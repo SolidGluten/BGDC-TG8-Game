@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoblinStats
   m_EditorClassIdentifier: 
   HP: 10
-  ATK: 20
+  ATK: 2
   MOV: 2

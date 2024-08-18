@@ -324,6 +324,10 @@ MonoBehaviour:
   rangeColor: {r: 0, g: 1, b: 0, a: 1}
   effectColor: {r: 1, g: 0, b: 0, a: 1}
   pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
+  enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
+  enemyTargetRangeColor: {r: 1, g: 0.82950985, b: 0, a: 1}
+  enemyAttackColor: {r: 1, g: 0.37818137, b: 0.015686274, a: 1}
   F_text: {fileID: 5604436816506456556}
   G_text: {fileID: 4698947630738611019}
   H_text: {fileID: 7699049667550338417}

@@ -7,7 +7,8 @@ public abstract class EnemyScriptable : ScriptableObject
     public int detectionRange = 3;
     public int maxRangeFromTarget = 0;
     public int attackRange = 2;
+    public int attackWidth = 2;
     public HighlightShape attackShape;
 
-    public abstract void Attack(Enemy from, Character[] targets);
+    public abstract bool Attack(Enemy from, Character[] targets);
 }

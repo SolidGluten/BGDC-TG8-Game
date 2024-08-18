@@ -62,4 +62,10 @@ public class CellsHighlighter : MonoBehaviour
             if (cell) cell.Types = EnumFlags.LowerFlag(cell.Types, type);
         }
     }
+
+    public static void SetTypes(List<Cell> cells, CellType type, bool set)
+    {
+        foreach (var cell in cells)
+            if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, type, set);
+    }
 }

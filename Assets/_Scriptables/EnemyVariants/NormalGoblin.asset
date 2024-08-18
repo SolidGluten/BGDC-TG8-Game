@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: NormalGoblin
   m_EditorClassIdentifier: 
   detectionRange: 7
-  maxRangeFromTarget: 3
-  attackRange: 2
-  attackShape: 0
+  maxRangeFromTarget: 0
+  attackRange: 1
+  attackWidth: 1
+  attackShape: 2

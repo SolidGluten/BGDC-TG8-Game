@@ -45,11 +45,15 @@ public class EnemyManager : MonoBehaviour, ITurn
         ActiveEnemies.RemoveAll(x => x == null);
 
         CellsHighlighter.ClearAllType(CellType.Enemy_Detection);
-        CellsHighlighter.ClearAllType(CellType.Enemy_Range);
+        CellsHighlighter.ClearAllType(CellType.Enemy_MaxRange);
 
         foreach(Enemy enemy in ActiveEnemies)
         {
-            enemy.GetComponent<EnemyMovement>()?.Move();
+            enemy.GetComponent<EnemyMovement>().Move();
+
+            if (!enemy.isAttackReady) enemy.PrepareAttack();
+            else enemy.Attack();
+
             if (showDetectionRange) enemy.HighlightDetectionArea();
             if (showEnemyRange) enemy.HighlightRangeArea();
         }

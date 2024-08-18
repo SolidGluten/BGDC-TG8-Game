@@ -20,16 +20,17 @@ public class EnemyMovement : MonoBehaviour
 
     public Character FindNearestCharacter() {
 
-        detectionArea = CellsHighlighter.HighlightArea(enemy.occupiedCell.index, enemy.enemyScriptable.detectionRange, HighlightShape.Square);
+        detectionArea = CellsHighlighter.HighlightArea(enemy.occupiedCell.index, enemy.enemyScriptable.detectionRange, HighlightShape.Circle);
 
-        var entities = detectionArea
-            ?.Where((cell) => cell.isOccupied && cell != enemy.occupiedCell)
-            ?.Select((cell) => cell.occupiedEntity);
-        if (!entities.Any()) return null;
+        var characters = detectionArea
+            .Where((cell) => cell.isOccupied)
+            .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
+            .ToList();
 
-        var character = entities?.Select((entity) => entity.GetComponent<Character>())?.First();
+        characters.RemoveAll(x => x == null);
 
-        return character;
+        if (!characters.Any()) return null;
+        else return characters.First();
     }
 
     public void Move()
@@ -41,26 +42,26 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        //if (pathToChara.Any()) foreach (Cell cell in pathToChara) EnumFlags.SetFlag(cell.Types, CellType.Path, true);
+        enemy.isTargetInRange = false;
+
+        //if (pathToChara.Any()) CellsHighlighter.SetTypes(pathToChara, CellType.Path, false);
         pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, charaToMove.occupiedCell.index);
 
-        if (pathToChara.Any())
+        if (!pathToChara.Any()) return;
+        //CellsHighlighter.SetTypes(pathToChara, CellType.Path, true);
+
+        pathToChara.Remove(pathToChara.Last()); // Remove character cell from path
+
+        if (pathToChara.Count >= enemy.enemyScriptable.maxRangeFromTarget)
         {
-            //foreach (Cell cell in pathToChara) EnumFlags.SetFlag(cell.Types, CellType.Range, true);
-            int moveCount = Mathf.Clamp(pathToChara.Count - enemy.enemyScriptable.maxRangeFromTarget, 1, enemy.stats.MOV);
+            for(int i = 0; i < enemy.enemyScriptable.maxRangeFromTarget - 1; i++)
+                pathToChara.Remove(pathToChara.Last());
 
-            if (moveCount == 1) {
-                enemy.isTargetInRange = true;
-                return;
-            } else
-            {
-                enemy.isTargetInRange = false;
-            }
-
-            while (pathToChara[moveCount].isOccupied && moveCount > 0) moveCount--;
-
-            var cellDst = pathToChara[moveCount];
-            cellDst.SetEntity(enemy);
+            int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
+            pathToChara[moveCount - 1]?.SetEntity(enemy);
+            return;
         }
+            
+        enemy.isTargetInRange = true;
     }
 }
