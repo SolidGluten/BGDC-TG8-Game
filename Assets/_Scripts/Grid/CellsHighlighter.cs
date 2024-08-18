@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,9 +64,48 @@ public class CellsHighlighter : MonoBehaviour
         }
     }
 
+    // OLD
     public static void SetTypes(List<Cell> cells, CellType type, bool set)
     {
         foreach (var cell in cells)
             if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, type, set);
+    }
+
+    // NEW
+    public static void RaiseLayerType(List<Cell> cells, CellType type)
+    {
+        foreach (var cell in cells) cell.RaiseType(type);
+    }
+
+    public static void LowerLayerType(List<Cell> cells, CellType type)
+    {
+        foreach (var cell in cells) cell.LowerType(type);
+    }
+
+    public static void ResetLayerType()
+    {
+        foreach (var cell in GridSystem.Instance.cellList.Values)
+            cell.ResetType();
+    }
+
+    public static Direction GetDirection(Vector2 from, Vector2 to)
+    {
+        Vector2 normDir = (to - from).normalized;
+        int x = Math.Abs(normDir.x) > Math.Abs(normDir.y) ? (int)Math.Round(normDir.x) : 0;
+        int y = Math.Abs(normDir.x) < Math.Abs(normDir.y) ? (int)Math.Round(normDir.y) : 0;
+        Vector2Int dirVector = new Vector2Int(x, y);
+
+        Direction dir = Direction.Right;
+
+        if (dirVector == Vector2Int.left)
+            dir = Direction.Left;
+        else if (dirVector == Vector2Int.right)
+            dir = Direction.Right;
+        else if (dirVector == Vector2Int.up)
+            dir = Direction.Up;
+        else
+            dir = Direction.Down;
+
+        return dir;
     }
 }

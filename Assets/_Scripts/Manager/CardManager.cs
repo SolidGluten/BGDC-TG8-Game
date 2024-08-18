@@ -82,15 +82,12 @@ public class CardManager : MonoBehaviour
             {
                 if (prevDir != castDir)
                 {
-                    cardEffectArea.ForEach((cell) => {
-                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
-                    });
+                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
                     cardEffectArea.Clear();
 
                     cardEffectArea = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.width, card.effectShape, card.range, castDir);
-                    cardEffectArea.ForEach((cell) => {
-                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
-                    });
+
+                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, true);
 
                     prevDir = castDir;
                 }
@@ -99,17 +96,13 @@ public class CardManager : MonoBehaviour
             {
                 if (prevHoveredCell != hoveredCell)
                 {
-                    cardEffectArea.ForEach((cell) => {
-                        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
-                    });
+                    CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
                     cardEffectArea.Clear();
 
                     if (highlightedCells.Contains(hoveredCell))
                     {
                         cardEffectArea = CellsHighlighter.HighlightArea(hoveredCell.index, card.width, card.effectShape, card.range, castDir);
-                        cardEffectArea.ForEach((cell) => {
-                            if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Effect, true);
-                        });
+                        CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, true);
                     }
 
                     prevHoveredCell = hoveredCell;
@@ -132,12 +125,8 @@ public class CardManager : MonoBehaviour
                     OnCancelCard?.Invoke();
                 }
 
-                highlightedCells.ForEach((cell) => {
-                    if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
-                });
-                cardEffectArea.ForEach((cell) => {
-                    if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
-                });
+                CellsHighlighter.SetTypes(highlightedCells, CellType.Range, false);
+                CellsHighlighter.SetTypes(cardEffectArea, CellType.Effect, false);
                 
                 yield break;
             }

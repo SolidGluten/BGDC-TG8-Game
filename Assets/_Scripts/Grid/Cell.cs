@@ -2,19 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using TMPro;
 using Unity.Collections;
 using Unity.VisualScripting;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 [Flags] public enum CellType { 
     None                = 0,
-    Range               = 1 << 0, 
-    Effect              = 1 << 1, 
-    Enemy_Detection     = 1 << 2,
-    Enemy_MaxRange      = 1 << 3,
-    Enemy_TargetRange   = 1 << 4,
-    Enemy_Attack        = 1 << 5,
+    Enemy_Detection     = 1 << 0,
+    Enemy_MaxRange      = 1 << 1,
+    Enemy_TargetRange   = 1 << 2,
+    Enemy_Attack        = 1 << 3,
+    Range               = 1 << 4, 
+    Effect              = 1 << 5, 
     Path                = 1 << 6,
 };
 
@@ -23,6 +25,9 @@ using UnityEngine;
 public class Cell : MonoBehaviour
 {
     private SpriteRenderer _renderer;
+
+    public SpriteRenderer highlightRenderer;
+    public float highlightTransparency;
 
     [SerializeField] private CellType types;
     public CellType Types {
@@ -52,6 +57,19 @@ public class Cell : MonoBehaviour
             }
         }
     }
+
+    public Dictionary<CellType, int> layerTypes = new Dictionary<CellType, int>
+    {
+        { CellType.Enemy_Detection, 0 },
+        { CellType.Enemy_MaxRange, 0 },
+        { CellType.Enemy_TargetRange, 0 },
+        { CellType.Enemy_Attack, 0 },
+        { CellType.Range, 0 },
+        { CellType.Effect, 0 },
+        { CellType.Path, 0 },
+    };
+
+    public float overlapColorDifference = 0f;
 
     public Vector2Int index; 
     public Entity occupiedEntity;
@@ -129,5 +147,73 @@ public class Cell : MonoBehaviour
         entity.transform.position = transform.position;
         entity.occupiedCell = this;
         occupiedEntity = entity;
+    }
+
+    public void RaiseType(CellType type)
+    {
+        layerTypes[type]++;
+        UpdateStyle();
+    }
+
+    public void LowerType(CellType type)
+    {
+        if (layerTypes[type] != 0)
+        {
+            layerTypes[type]--;
+        }
+        UpdateStyle();
+    }
+    
+    public void ResetType()
+    {
+        var keys = new List<CellType>(layerTypes.Keys);
+        foreach (var key in keys)
+            layerTypes[key] = 0;
+        UpdateStyle();
+    }
+
+    public void UpdateStyle()
+    {
+        var enabledTypes = layerTypes.Where(x => x.Value > 0);
+
+        if (!enabledTypes.Any()) {
+            highlightRenderer.gameObject.SetActive(false);
+            return;
+        }
+
+        highlightRenderer.gameObject.SetActive(true);
+
+        var highestOrder = enabledTypes.Last();
+
+        var type = highestOrder.Key;
+        var color = defaultColor;
+
+        switch (type)
+        {
+            case CellType.Range:
+                color = rangeColor; break;
+            case CellType.Effect:
+                color = effectColor; break;
+            case CellType.Path:
+                color = pathColor; break;
+            case CellType.Enemy_Detection:
+                color = enemyDetectionColor; break;
+            case CellType.Enemy_MaxRange:
+                color = enemyMaxRangeColor; break;
+            case CellType.Enemy_TargetRange:
+                color = enemyTargetRangeColor; break;
+            case CellType.Enemy_Attack:
+                color = enemyAttackColor; break;
+            default:
+                color = defaultColor; break;
+        }
+
+        float H, S, V;
+        Color.RGBToHSV(color, out H, out S, out V);
+        V -= (highestOrder.Value - 1) * overlapColorDifference;
+        var newColor = Color.HSVToRGB(H, S, V);
+        newColor.a = highlightTransparency;
+        highlightRenderer.color = newColor;
+        
     }
 }

@@ -15,70 +15,50 @@ public class Enemy : Entity
 
     public Character[] target;
 
-    private List<Cell> detectionArea = new List<Cell>(); 
-    private List<Cell> attackArea = new List<Cell>();
-    private List<Cell> rangeArea = new List<Cell>();
+    private List<Cell> _detectionArea = new List<Cell>();
+    private List<Cell> _maxRangeArea = new List<Cell>();
+
+    private List<Cell> _attackArea = new List<Cell>();
+    private List<Cell> _rangeArea = new List<Cell>();
 
     public void PrepareAttack()
     {
-        CellsHighlighter.SetTypes(rangeArea, CellType.Enemy_TargetRange, false);
-        attackArea.Clear();
-
-        if (!isTargetInRange) return;
-        rangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.rangeFromCaster, HighlightShape.Square);
-        CellsHighlighter.SetTypes(rangeArea, CellType.Enemy_TargetRange, true);
-
-        var characters = rangeArea
-            .Where((cell) => cell.isOccupied)
-            .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
-            .ToList();
-
-        characters.RemoveAll(x => x == null);
-
-        foreach(var chara in characters)
-        {
-            Debug.Log(chara);
+        target = enemyScriptable.PrepareAttack(this, out List<Cell> attackArea, out List<Cell> rangeArea);
+        if (!target.Any()) {
+            isAttackReady = false;
+            return;
         }
 
-        var mainTarget = characters.Any() ? characters.First() : null;
+        isAttackReady = true;
 
-        if (mainTarget)
-        {
-            CellsHighlighter.SetTypes(attackArea, CellType.Enemy_Attack, false);
-            attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, enemyScriptable.attackWidth, enemyScriptable.attackShape, enemyScriptable.attackRange);
-            CellsHighlighter.SetTypes(attackArea, CellType.Enemy_Attack, true);
+        _attackArea = new List<Cell>(attackArea);
+        _rangeArea = new List<Cell>(rangeArea);
 
-            target = attackArea
-                .Where((cell) => cell.isOccupied)
-                .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
-                .ToArray();
-
-            isAttackReady = true;
-        }
+        CellsHighlighter.RaiseLayerType(_attackArea, CellType.Enemy_Attack);
+        CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
     }
 
     public void Attack()
     {
-        enemyScriptable.Attack(this, target);
-        CellsHighlighter.SetTypes(attackArea, CellType.Enemy_Attack, false);
+        enemyScriptable.Attack(this, target, _attackArea);
         isAttackReady = false;
     }
 
     public void HighlightDetectionArea()
     {
-        detectionArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.detectionRange, HighlightShape.Circle);
+        _detectionArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.detectionRange, HighlightShape.Circle);
 
-        foreach (var cell in detectionArea)
+        foreach (var cell in _detectionArea)
             cell.Types = EnumFlags.RaiseFlag(cell.Types, CellType.Enemy_Detection);
     }
 
-    public void HighlightRangeArea()
+    public void HighlightMaxRangeArea()
     {
-        rangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
+        _maxRangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
 
-        foreach (var cell in rangeArea)
+        foreach (var cell in _maxRangeArea)
             cell.Types = EnumFlags.RaiseFlag(cell.Types, CellType.Enemy_MaxRange);
 
-        rangeArea = detectionArea;
+        _maxRangeArea = _detectionArea;
     }
 }

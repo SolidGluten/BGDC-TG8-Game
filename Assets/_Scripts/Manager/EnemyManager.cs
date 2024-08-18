@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour, ITurn
         foreach (Enemy enemy in ActiveEnemies)
         {
             if (showDetectionRange) enemy.HighlightDetectionArea();
-            if (showEnemyRange) enemy.HighlightRangeArea();
+            if (showEnemyRange) enemy.HighlightMaxRangeArea();
         }
     }
 
@@ -44,8 +44,7 @@ public class EnemyManager : MonoBehaviour, ITurn
     {
         ActiveEnemies.RemoveAll(x => x == null);
 
-        CellsHighlighter.ClearAllType(CellType.Enemy_Detection);
-        CellsHighlighter.ClearAllType(CellType.Enemy_MaxRange);
+        CellsHighlighter.ResetLayerType();
 
         foreach(Enemy enemy in ActiveEnemies)
         {
@@ -55,7 +54,7 @@ public class EnemyManager : MonoBehaviour, ITurn
             else enemy.Attack();
 
             if (showDetectionRange) enemy.HighlightDetectionArea();
-            if (showEnemyRange) enemy.HighlightRangeArea();
+            if (showEnemyRange) enemy.HighlightMaxRangeArea();
         }
     }
 
