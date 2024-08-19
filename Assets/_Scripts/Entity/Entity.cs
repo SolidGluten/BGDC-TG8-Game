@@ -43,6 +43,21 @@ public class Entity : MonoBehaviour
 
         if (currHealth <= 0) DestroySelf();
     }
+    public void GainShield(int shield)
+    {
+        //Reminder to add Sturdy
+        currShield += shield;
+
+    }
+    public void GainHealth(int heals)
+    {
+        currHealth += heals;
+
+        if (currHealth > stats.HP)
+        {
+            currHealth = stats.HP;
+        }
+    }
 
     public void DestroySelf()
     {

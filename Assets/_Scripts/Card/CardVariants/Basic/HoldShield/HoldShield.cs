@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class HoldShield : Card
 {
+    float atkMultiplier = 175;
     public override bool Play(Entity from, Entity[] target)
     {
+        from.GainShield(from.currAttackDamage * (int)atkMultiplier / 100);
         return true;
     }
 }

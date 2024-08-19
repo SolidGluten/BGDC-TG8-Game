@@ -16,7 +16,7 @@ MonoBehaviour:
   description: Uhh this slashes things
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
-  cost: 16
+  cost: 1
   caster: 0
   exhaust: 0
   cardType: 3
