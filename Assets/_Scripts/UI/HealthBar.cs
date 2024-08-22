@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private int currHealthValue;
     [SerializeField] private int maxHealthValue;
 
-    public float Y_OffsetMultiplier = 5f;
+    public float Y_OffsetMultiplier = 3f;
 
     private void Awake()
     {
@@ -33,8 +33,8 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        var halfHeight = entity.GetComponent<Collider2D>().bounds.extents.y / 2;
-        var newPosition = RectTransformUtility.WorldToScreenPoint(GameManager.mainCam, entity.transform.position + Vector3.up * halfHeight * Y_OffsetMultiplier);
+        var halfHeight = entity.GetComponent<SpriteRenderer>().bounds.extents.y / 2;
+        var newPosition = RectTransformUtility.WorldToScreenPoint(GameManager.mainCam, entity.transform.position + Vector3.up * (halfHeight + Y_OffsetMultiplier));
 
         transform.position = newPosition;
 

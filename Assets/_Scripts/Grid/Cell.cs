@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using TMPro;
-using Unity.Collections;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
 [Flags] public enum CellType { 
