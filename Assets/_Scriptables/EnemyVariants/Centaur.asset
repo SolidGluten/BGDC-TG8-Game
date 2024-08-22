@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Centaur
   m_EditorClassIdentifier: 
   enemyName: Centaur
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: e9c4326b063025b43901c8ca37e70a5f, type: 3}
   cost: 0
   detectionRange: 5
   maxRangeFromTarget: 1

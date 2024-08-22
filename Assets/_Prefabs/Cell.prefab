@@ -294,9 +294,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 0.09803922}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -324,14 +324,14 @@ MonoBehaviour:
   overlapColorDifference: 0.5
   index: {x: 0, y: 0}
   occupiedEntity: {fileID: 0}
-  defaultColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-  rangeColor: {r: 0, g: 1, b: 0, a: 1}
-  effectColor: {r: 1, g: 0, b: 0, a: 1}
-  pathColor: {r: 0, g: 0.83451176, b: 1, a: 1}
-  enemyDetectionColor: {r: 0, g: 1, b: 1, a: 1}
-  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 1}
-  enemyTargetRangeColor: {r: 1, g: 0.82950985, b: 0, a: 1}
-  enemyAttackColor: {r: 1, g: 0.37818137, b: 0.015686274, a: 1}
+  defaultColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 0.4627451}
+  rangeColor: {r: 0, g: 1, b: 0, a: 0.5019608}
+  effectColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+  pathColor: {r: 0, g: 0.83451176, b: 1, a: 0.5019608}
+  enemyDetectionColor: {r: 0, g: 1, b: 1, a: 0.5019608}
+  enemyMaxRangeColor: {r: 1, g: 0, b: 1, a: 0.5019608}
+  enemyTargetRangeColor: {r: 1, g: 0.82950985, b: 0, a: 0.5019608}
+  enemyAttackColor: {r: 1, g: 0.37818137, b: 0.015686274, a: 0.5019608}
   F_text: {fileID: 5604436816506456556}
   G_text: {fileID: 4698947630738611019}
   H_text: {fileID: 7699049667550338417}
@@ -750,7 +750,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.09803922}
   m_FlipX: 0

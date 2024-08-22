@@ -30,6 +30,8 @@ public class CardManager : MonoBehaviour
     public int handSize = 10;
     public int initialDraw = 6;
 
+    private List<Cell> highlightedCells = new List<Cell>();
+
     private void Awake()
     {
         if(instance != null && instance != this)
@@ -63,7 +65,10 @@ public class CardManager : MonoBehaviour
 
         Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
 
-        var highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Square);
+        if(highlightedCells.Any())
+            CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
+
+        highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Square);
         CellsHighlighter.RaiseLayerType(highlightedCells, CellType.Range);
 
         Cell prevHoveredCell = null;
@@ -123,7 +128,8 @@ public class CardManager : MonoBehaviour
                     OnCancelCard?.Invoke();
                 }
 
-                CellsHighlighter.LowerLayerType(highlightedCells, CellType.Enemy_Attack);
+
+                CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
                 CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
                 
                 yield break;

@@ -15,11 +15,19 @@ public class Enemy : Entity
 
     public Character target;
 
+    private SpriteRenderer _renderer; 
+
     private List<Cell> _detectionArea = new List<Cell>();
     private List<Cell> _maxRangeArea = new List<Cell>();
 
     private List<Cell> _attackArea = new List<Cell>();
     private List<Cell> _rangeArea = new List<Cell>();
+
+    private void Start()
+    {
+        _renderer = GetComponent<SpriteRenderer>();
+        _renderer.sprite = enemyScriptable.sprite;
+    }
 
     public void PrepareAttack()
     {

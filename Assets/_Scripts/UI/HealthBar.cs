@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private int currHealthValue;
     [SerializeField] private int maxHealthValue;
 
-    public float Y_OffsetMultiplier = 1.5f;
+    public float Y_OffsetMultiplier = 5f;
 
     private void Awake()
     {

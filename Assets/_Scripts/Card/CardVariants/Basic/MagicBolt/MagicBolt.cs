@@ -11,7 +11,8 @@ public class MagicBolt : Card
         if (target.Length > 0)
         {
             var targetList = target.ToList();
-            var enemies = targetList.Select((target) => target.GetComponent<Enemy>());
+            var enemies = targetList.Select((target) => target.GetComponent<Enemy>()).ToList();
+            enemies.RemoveAll(x => x == null);
 
             if (!enemies.Any()) return false;
 

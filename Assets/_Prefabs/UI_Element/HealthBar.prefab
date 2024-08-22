@@ -219,7 +219,7 @@ MonoBehaviour:
   textMesh: {fileID: 771961869881008179}
   currHealthValue: 0
   maxHealthValue: 100
-  Y_OffsetMultiplier: 3
+  Y_OffsetMultiplier: 5
 --- !u!1 &5513389998137530339
 GameObject:
   m_ObjectHideFlags: 0
