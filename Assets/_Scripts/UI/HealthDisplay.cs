@@ -5,18 +5,19 @@ using UnityEngine;
 public class HealthDisplay : MonoBehaviour
 {
     public GameObject healthBarObj;
-
     public List<HealthBar> healthBarList = new List<HealthBar>();
+    public EnemyManager enemyManager;
+    public CharacterManager characterManager;
 
-    private void Start()
+    private void OnEnable()
     {
-        CharacterManager.Instance.OnCharacterInitialize += InitCharacterHealth;
-        EnemyManager.Instance.OnEnemyInitialize += InitEnemyHealth;
+        characterManager.OnCharacterInitialize += InitCharacterHealth;
+        enemyManager.OnEnemyInitialize += InitEnemyHealth;
     }
 
     private void InitCharacterHealth()
     {
-        foreach (var chara in CharacterManager.Instance.ActiveCharacters)
+        foreach (var chara in characterManager.ActiveCharacters)
         {
             var obj = Instantiate(healthBarObj, this.transform);
             var healthBar = obj.GetComponent<HealthBar>();
@@ -28,7 +29,7 @@ public class HealthDisplay : MonoBehaviour
 
     private void InitEnemyHealth()
     {
-        foreach (var enemy in EnemyManager.Instance.ActiveEnemies)
+        foreach (var enemy in enemyManager.ActiveEnemies)
         {
             var obj = Instantiate(healthBarObj, this.transform);
             var healthBar = obj.GetComponent<HealthBar>();
@@ -40,7 +41,7 @@ public class HealthDisplay : MonoBehaviour
 
     private void OnDisable()
     {
-        CharacterManager.Instance.OnCharacterInitialize -= InitCharacterHealth;
-        EnemyManager.Instance.OnEnemyInitialize -= InitEnemyHealth;
+        characterManager.OnCharacterInitialize -= InitCharacterHealth;
+        enemyManager.OnEnemyInitialize -= InitEnemyHealth;
     }
 }

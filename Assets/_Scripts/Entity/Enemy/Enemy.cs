@@ -41,7 +41,7 @@ public class Enemy : Entity
             target = enemyScriptable.PrepareAttack(this, out _attackArea, out _rangeArea);
             if (!target) return;
             CellsHighlighter.RaiseLayerType(_attackArea, CellType.Enemy_Attack);
-            CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
+            //CellsHighlighter.RaiseLayerType(_rangeArea, CellType.Enemy_TargetRange);
             isAttackReady = true;
         } else { 
             enemyScriptable.Attack(this, _attackArea);

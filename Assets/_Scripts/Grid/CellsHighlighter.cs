@@ -50,28 +50,28 @@ public class CellsHighlighter : MonoBehaviour
         return highlighter;
     }
 
-    public static void ClearAll()
-    {
-        foreach(var cell in GridSystem.Instance.cellList.Values)
-        {
-            if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
-        }
-    }
+    //public static void ClearAll()
+    //{
+    //    foreach(var cell in GridSystem.Instance.cellList.Values)
+    //    {
+    //        if (cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
+    //    }
+    //}
 
-    public static void ClearAllType(CellType type)
-    {
-        foreach (var cell in GridSystem.Instance.cellList.Values)
-        {
-            if (cell) cell.Types = EnumFlags.LowerFlag(cell.Types, type);
-        }
-    }
+    //public static void ClearAllType(CellType type)
+    //{
+    //    foreach (var cell in GridSystem.Instance.cellList.Values)
+    //    {
+    //        if (cell) cell.Types = EnumFlags.LowerFlag(cell.Types, type);
+    //    }
+    //}
 
     // OLD
-    public static void SetTypes(List<Cell> cells, CellType type, bool set)
-    {
-        foreach (var cell in cells)
-            if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, type, set);
-    }
+    //public static void SetTypes(List<Cell> cells, CellType type, bool set)
+    //{
+    //    foreach (var cell in cells)
+    //        if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, type, set);
+    //}
 
     // NEW
     public static void RaiseLayerType(List<Cell> cells, CellType type)

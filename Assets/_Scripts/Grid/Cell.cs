@@ -31,7 +31,7 @@ public class Cell : MonoBehaviour
         get { return types; }
         set {
             types = value;
-            var type = EnumFlags.GetHighestSetFlag(value);
+            var type = CellType.None;
             switch (type)
             {
                 case CellType.Range:
@@ -99,7 +99,7 @@ public class Cell : MonoBehaviour
 
     private void Start()
     {
-        Types = EnumFlags.SetFlag(Types, CellType.None, true);
+        //Types = EnumFlags.SetFlag(Types, CellType.None, true);
         SetG(0);
         SetH(0);
         SetF();

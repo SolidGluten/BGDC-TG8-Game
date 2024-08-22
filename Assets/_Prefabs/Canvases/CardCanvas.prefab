@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardObj: {fileID: 3310802754110361015, guid: 1f01280fc69442b48b24c76a4681f98d, type: 3}
-  cardDisplayInHand: []
+  cardsInHand: []
   fanSpread: -2.5
   cardSpacing: 50
   verticalSpacing: 0

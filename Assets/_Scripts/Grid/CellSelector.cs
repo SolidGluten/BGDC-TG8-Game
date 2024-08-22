@@ -126,18 +126,13 @@ public class CellSelector : MonoBehaviour
 
             if (toggleHighlights)
             {
-                HighlightedCells?.ForEach((cell) =>
-                {
-                    if(cell) cell.Types = EnumFlags.ClearFlags(cell.Types);
-                });
+                CellsHighlighter.LowerLayerType(HighlightedCells, CellType.Range);
                 HighlightedCells?.Clear();
 
                 HighlightedCells = CellsHighlighter.HighlightArea(hoveredCell.index, Radius, Shape, Range, Direction);
 
-                HighlightedCells?.ForEach((cell) =>
-                {
-                    if (cell) cell.Types = EnumFlags.SetFlag(cell.Types, CellType.Range, true);
-                });
+                CellsHighlighter.RaiseLayerType(HighlightedCells, CellType.Range);
+
             }
         } else
         {

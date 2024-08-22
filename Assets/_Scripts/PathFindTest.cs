@@ -13,25 +13,23 @@ public class PathFindTest : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (startCell) EnumFlags.SetFlag(startCell.Types, CellType.Effect, false);
+            if (startCell) startCell.RaiseType(CellType.Effect);
             startCell = CellSelector.Instance.HoveredCell;
-            if (startCell) EnumFlags.SetFlag(startCell.Types, CellType.Effect, false);
+            if (startCell) startCell.LowerType(CellType.Effect);
         } else if (Input.GetMouseButtonDown(1))
         {
-            if (endCell) EnumFlags.SetFlag(endCell.Types, CellType.Effect, false);
+            if (endCell) endCell.RaiseType(CellType.Effect);
             endCell = CellSelector.Instance.HoveredCell;
-            if (endCell) EnumFlags.SetFlag(endCell.Types, CellType.Effect, false);
+            if (endCell) endCell.LowerType(CellType.Effect);
         } 
 
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (path.Any())
-            {
-                foreach(Cell cell in path) EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
-            }
+                CellsHighlighter.RaiseLayerType(path, CellType.Effect);
 
             path = Pathfind.FindPath(startCell.index, endCell.index);
-            foreach (Cell cell in path) EnumFlags.SetFlag(cell.Types, CellType.Effect, false);
+            CellsHighlighter.LowerLayerType(path, CellType.Effect);
         }
     }
 }
