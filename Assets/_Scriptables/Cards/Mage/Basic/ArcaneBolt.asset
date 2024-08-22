@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a697366d39324c44be321fa40ab0c31, type: 3}
   m_Name: ArcaneBolt
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
+  cardName: Arcane Bolt
+  description: Magic bombardment
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
+  cost: 2
+  caster: 1
   exhaust: 0
-  cardType: 0
-  rangeFromCaster: 0
-  range: 0
+  cardType: 3
+  rangeFromCaster: 3
+  range: 2
   width: 0
-  effectShape: 0
+  effectShape: 2

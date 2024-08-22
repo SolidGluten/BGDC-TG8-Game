@@ -21,6 +21,6 @@ MonoBehaviour:
   exhaust: 0
   cardType: 3
   rangeFromCaster: 3
-  range: 4
-  width: 1
+  range: 0
+  width: 0
   effectShape: 0

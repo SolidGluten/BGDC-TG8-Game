@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3424bbd74830d694eada8ee321e3b365, type: 3}
   m_Name: MagicShield
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
+  cardName: Magic Shield
+  description: Shield but magical
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
+  cost: 1
+  caster: 1
   exhaust: 0
-  cardType: 0
-  rangeFromCaster: 0
+  cardType: 3
+  rangeFromCaster: 3
   range: 0
   width: 0
   effectShape: 0

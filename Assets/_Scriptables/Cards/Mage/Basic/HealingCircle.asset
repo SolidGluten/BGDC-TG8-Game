@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08fb9c2a18c357418dc660dc912d75e, type: 3}
   m_Name: HealingCircle
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
+  cardName: Healing Square
+  description: Ignore the name
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
   cost: 0
-  caster: 0
+  caster: 1
   exhaust: 0
-  cardType: 0
+  cardType: 3
   rangeFromCaster: 0
-  range: 0
+  range: 3
   width: 0
   effectShape: 0

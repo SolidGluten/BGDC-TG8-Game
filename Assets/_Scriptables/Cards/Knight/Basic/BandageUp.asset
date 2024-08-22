@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fa5408388fbb9409c64ed3d3e3d065, type: 3}
   m_Name: BandageUp
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
+  cardName: Bandage Up
+  description: Just random cloth
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
-  cost: 0
+  cost: 1
   caster: 0
-  exhaust: 0
-  cardType: 0
-  rangeFromCaster: 0
+  exhaust: 1
+  cardType: 3
+  rangeFromCaster: 1
   range: 0
   width: 0
   effectShape: 0

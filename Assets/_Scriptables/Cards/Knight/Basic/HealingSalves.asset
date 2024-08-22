@@ -18,9 +18,9 @@ MonoBehaviour:
   cardBorder: {fileID: 0}
   cost: 0
   caster: 0
-  exhaust: 0
+  exhaust: 1
   cardType: 3
-  rangeFromCaster: 0
+  rangeFromCaster: 1
   range: 0
   width: 0
   effectShape: 0
