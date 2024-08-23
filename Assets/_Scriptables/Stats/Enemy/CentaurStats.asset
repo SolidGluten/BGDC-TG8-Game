@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e4acd80ce9e6554f9d7eca4c79260f4, type: 3}
-  m_Name: GoblinStats
+  m_Name: CentaurStats
   m_EditorClassIdentifier: 
-  HP: 100
-  ATK: 25
+  HP: 500
+  ATK: 50
   MOV: 5

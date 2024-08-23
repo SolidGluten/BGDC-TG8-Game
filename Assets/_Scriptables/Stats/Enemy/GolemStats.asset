@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e4acd80ce9e6554f9d7eca4c79260f4, type: 3}
-  m_Name: Mage
+  m_Name: GolemStats
   m_EditorClassIdentifier: 
   HP: 10
-  ATK: 5
-  MOV: 2
+  ATK: 2
+  MOV: 3
