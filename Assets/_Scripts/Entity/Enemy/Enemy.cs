@@ -32,7 +32,7 @@ public class Enemy : Entity
         _renderer = GetComponent<SpriteRenderer>();
         _renderer.sprite = enemyScriptable.sprite;
 
-        name = enemyScriptable.name;
+        entityName = enemyScriptable.name;
     }
 
     public void PrepareAttack()
