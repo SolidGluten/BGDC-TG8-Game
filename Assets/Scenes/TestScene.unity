@@ -1911,11 +1911,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!224 &23190316 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6759779942805744934, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
-  m_PrefabInstance: {fileID: 7612376005808732421}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &25743515
 GameObject:
   m_ObjectHideFlags: 0
@@ -37796,6 +37791,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!224 &740673931 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5779802518723208095, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+  m_PrefabInstance: {fileID: 7612376005808732421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &741268191
 GameObject:
   m_ObjectHideFlags: 0
@@ -50181,12 +50181,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991588885}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 23190316}
+  m_Father: {fileID: 740673931}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54724,16 +54724,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118009096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 23190316}
+  m_Father: {fileID: 740673931}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328, y: 139.9}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 1.3999939, y: -85.100006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118009098
@@ -103540,6 +103540,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 96818101831669721, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+      propertyPath: m_Name
+      value: Container
+      objectReference: {fileID: 0}
+    - target: {fileID: 2226471916997191537, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -272270499, guid: fee12313d1fe80c4faef82dc6fb159eb, type: 3}
+    - target: {fileID: 5779802518723208095, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779802518723208095, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 6070061908027454466, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
       propertyPath: m_Name
       value: SideBarCanvas
@@ -103627,10 +103643,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6759779942805744934, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5779802518723208095, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1118009097}
-    - targetCorrespondingSourceObject: {fileID: 6759779942805744934, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5779802518723208095, guid: 7bce2976ce5d8a643bc3d5d13fdfea7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 991588886}
     m_AddedComponents: []
