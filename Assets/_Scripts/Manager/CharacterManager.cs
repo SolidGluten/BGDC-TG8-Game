@@ -11,7 +11,10 @@ public class CharacterManager : MonoBehaviour, ITurn
     [SerializeField] private GameObject characterObject;
     [SerializeField] private CardManager cardManager;
 
-    [SerializeField] private List<StatsScriptable> charStats = new List<StatsScriptable>();
+    [SerializeField] private Sprite knightSprite;
+    [SerializeField] private Sprite mageSprite;
+
+    [SerializeField] private List<PlayableCharacters> playableCharacters = new List<PlayableCharacters>();
     public List<Character> ActiveCharacters = new List<Character>();
 
     public Character GetCharacterByType(CharacterType _type) => ActiveCharacters.First((chara) => chara.type == _type);
@@ -51,23 +54,21 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public void InitializeCharacters()
     {
-        if(charStats.Count == 0)
+        if(playableCharacters.Count == 0)
         {
             Debug.Log("No character stats are assigned");
             return;
         }
 
-        for(int i = 0; i < MAX_CHARS; i++)
+        for(int i = 0; i < playableCharacters.Count; i++)
         {
-            AddCharacter(charStats[i], GridSystem.Instance.characterSpawnPositions[i]);
+            AddCharacter(playableCharacters[i], GridSystem.Instance.characterSpawnPositions[i]);
         }
-        ActiveCharacters[0].type = CharacterType.Knight;
-        ActiveCharacters[1].type = CharacterType.Mage;
 
         OnCharacterInitialize?.Invoke();
     }
 
-    public Character AddCharacter(StatsScriptable stats, Vector2Int cellPos)
+    public Character AddCharacter(PlayableCharacters characterDetails, Vector2Int cellPos)
     {
         var cell = GridSystem.Instance.GetCell(cellPos);
         if (!cell)
@@ -78,7 +79,10 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         var charObj = Instantiate(characterObject);
         var chara = charObj.GetComponent<Character>();
-        chara.stats = stats;    
+        chara.stats = characterDetails.stats;
+        chara.entityName = characterDetails.name;
+        chara.GetComponent<SpriteRenderer>().sprite = characterDetails.sprite;
+        chara.type = characterDetails.characterType;
 
         cell.SetEntity(chara);
         ActiveCharacters.Add(chara);
@@ -106,4 +110,12 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         return dir;
     }
+}
+
+[Serializable]
+public class PlayableCharacters {
+    public string name;
+    public Sprite sprite;
+    public StatsScriptable stats;
+    public CharacterType characterType;
 }
