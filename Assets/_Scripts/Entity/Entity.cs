@@ -6,6 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Entity : MonoBehaviour
 {
+    public string entityName;
+
     public Cell occupiedCell;
     public StatsScriptable stats;
 

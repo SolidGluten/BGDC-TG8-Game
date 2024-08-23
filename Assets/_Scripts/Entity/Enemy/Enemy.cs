@@ -23,10 +23,16 @@ public class Enemy : Entity
     private List<Cell> _attackArea = new List<Cell>();
     private List<Cell> _rangeArea = new List<Cell>();
 
-    private void Start()
+    private new void Start()
     {
+        currHealth = stats.HP;
+        currMovePoints = stats.MOV;
+        currAttackDamage = stats.ATK;
+
         _renderer = GetComponent<SpriteRenderer>();
         _renderer.sprite = enemyScriptable.sprite;
+
+        name = enemyScriptable.name;
     }
 
     public void PrepareAttack()
