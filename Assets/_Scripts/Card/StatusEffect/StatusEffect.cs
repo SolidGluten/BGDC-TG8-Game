@@ -23,5 +23,8 @@ public enum StatusEffectType {
 
 public abstract class StatusEffect
 {
+    public int stack;
+    public int currentStack;
+
     public abstract void ApplyEffect(Entity entity);
 }

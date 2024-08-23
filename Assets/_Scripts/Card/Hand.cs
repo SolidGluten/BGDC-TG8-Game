@@ -8,15 +8,17 @@ public class Hand : MonoBehaviour
     public GameObject cardObj;
     public List<CardInteract> cardsInHand = new List<CardInteract>();
 
+    public CardManager cardManager;
+
     [SerializeField] private float fanSpread;
     [SerializeField] private float cardSpacing;
     [SerializeField] private float verticalSpacing;
     [SerializeField] private float hoverLift = 25;
 
-    private void OnEnable()
+    private void Awake()
     {
-        CardManager.instance.OnDrawCard += AddCard;
-        CardManager.instance.OnPlayCard += RemoveCard;
+        cardManager.OnDrawCard += AddCard;
+        cardManager.OnPlayCard += RemoveCard;
     }
 
     public void AddCard(Card card)
@@ -78,5 +80,10 @@ public class Hand : MonoBehaviour
             cardsInHand[i].cardDisplay.defaultSortOrder = cardCount - i + 2;
         }
     }
-    
+
+    private void OnDisable()
+    {
+        cardManager.OnDrawCard -= AddCard;
+        cardManager.OnPlayCard -= RemoveCard;
+    }
 }

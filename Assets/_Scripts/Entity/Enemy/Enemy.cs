@@ -66,4 +66,10 @@ public class Enemy : Entity
         _maxRangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
         CellsHighlighter.RaiseLayerType(_maxRangeArea, CellType.Enemy_MaxRange);
     }
+
+    private void OnDestroy()
+    {
+        CellsHighlighter.LowerLayerType(_attackArea, CellType.Enemy_Attack);
+        EnemyManager.Instance.ActiveEnemies.Remove(this);
+    }
 }

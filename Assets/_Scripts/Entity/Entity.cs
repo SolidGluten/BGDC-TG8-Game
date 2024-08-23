@@ -16,7 +16,15 @@ public class Entity : MonoBehaviour
     public int currMovePoints;
     public int currAttackDamage;
 
-    public StatusEffect currStatusEffect;
+    public bool canMove = false;
+
+    private StatusEffectType currStatusType;
+
+    private StatusEffect currStatusEffect;
+    public StatusEffect CurrStatusEffect { 
+        get { return currStatusEffect; }
+        set { currStatusEffect = value; }
+    }
 
     public bool canPlay;
 
@@ -60,7 +68,6 @@ public class Entity : MonoBehaviour
             currHealth = stats.HP;
         }
     }
-
     public void DestroySelf()
     {
         occupiedCell.occupiedEntity = null;

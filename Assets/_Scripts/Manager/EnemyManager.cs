@@ -17,6 +17,9 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     public event Action OnEnemyInitialize;
 
+    public int maxEnemyCost = 5 + GameManager.currentRound * 3;
+    public int currEnemyCost = 0;
+
     //Singleton
     private void Awake()
     {
@@ -31,6 +34,9 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     private void Start()
     {
+        maxEnemyCost = 5 + GameManager.currentRound * 3;
+        currEnemyCost = maxEnemyCost;
+
         InitializeEnemies();
 
         foreach (Enemy enemy in ActiveEnemies)
@@ -69,10 +75,30 @@ public class EnemyManager : MonoBehaviour, ITurn
             return;
         }
 
-        for(int i = 0; i < enemySpawnList.Count; i++)
+        var limiter = 0;
+        do
         {
-            AddEnemy(enemySpawnList[i].stats, enemySpawnList[i].enemy, GridSystem.Instance.enemySpawnPositions[i]);
-        }
+            var randIdx = UnityEngine.Random.Range(0, enemySpawnList.Count);
+            var enemy = enemySpawnList[randIdx];
+
+            if(currEnemyCost >= enemy.cost)
+            {
+                var randPosIdx = UnityEngine.Random.Range(0, GridSystem.Instance.enemySpawnPositions.Length);
+                var randPos = GridSystem.Instance.enemySpawnPositions[randIdx];
+                var cell = GridSystem.Instance.GetCell(randPos);
+
+                if (cell && !cell.isOccupied)
+                {
+                    AddEnemy(enemy.stats, enemy.enemy, randPos);
+                }
+                
+                currEnemyCost -= enemy.cost;
+            }
+
+            limiter++;
+            if (limiter > 20) break;
+
+        } while (currEnemyCost > 0);
 
         OnEnemyInitialize?.Invoke();
     }

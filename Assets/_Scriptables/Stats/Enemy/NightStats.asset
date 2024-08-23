@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e4acd80ce9e6554f9d7eca4c79260f4, type: 3}
   m_Name: NightStats
   m_EditorClassIdentifier: 
-  HP: 40
-  ATK: 10
-  MOV: 5
+  HP: 150
+  ATK: 20
+  MOV: 4

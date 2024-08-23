@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState { Pause, Play, Death}
 public class GameManager : MonoBehaviour
@@ -12,14 +14,14 @@ public class GameManager : MonoBehaviour
     public static Vector2 MousePos;
     public static Camera mainCam;
 
-    [SerializeField] private TurnController turnController;
-
     public bool isPaused { get; private set; }
 
     public event Action OnPause;
     public event Action OnResume;
 
     public static GameManager Instance;
+
+    public static int currentRound = 1;
 
     //Singleton
     private void Awake()
@@ -35,12 +37,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(currentRound);
         mainCam = Camera.main;
     }
 
     private void Update()
     {
         MousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+
+        if (!EnemyManager.Instance.ActiveEnemies.Any())
+        {
+            // Player win
+            SceneLoader.Instance.ReloadScene();
+            currentRound++;
+        } else if (!CharacterManager.Instance.ActiveCharacters.Any())
+        {
+            // Player lost
+            SceneLoader.Instance.ReloadScene();
+            currentRound = 1;
+        }
+
     }
 
     public void PauseGame()

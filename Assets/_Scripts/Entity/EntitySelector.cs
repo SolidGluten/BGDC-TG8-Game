@@ -48,7 +48,7 @@ public class EntitySelector : MonoBehaviour
     private void Unselect()
     {
         var chara = selectedEntity.GetComponent<Character>();
-        if (chara) chara.isSelected = true;
+        if (chara) chara.isSelected = false;
         selectedEntity = null;
     }
 }
