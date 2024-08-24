@@ -8,9 +8,9 @@ public enum TurnState { Player, Enemy }
 
 public class TurnController : MonoBehaviour
 {
-    public TurnState currTurnState;
+    public static TurnController instance;
 
-    //public bool isInTurn = false;
+    public TurnState currTurnState;
 
     public event Action OnStartTurn;
     public event Action OnEndTurn;
@@ -20,12 +20,24 @@ public class TurnController : MonoBehaviour
 
     private ITurn CurrentTurn;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        } else
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
         currTurnState = TurnState.Player;
         CurrentTurn = characterManager;
-        CurrentTurn.StartTurn();
+        //CurrentTurn.StartTurn();
 
+        characterManager.StartTurn();
         //OnStartTurn += CurrentTurn.StartTurn;
         //OnEndTurn += CurrentTurn.EndTurn;
     }
@@ -34,12 +46,14 @@ public class TurnController : MonoBehaviour
     {
         if (CurrentTurn != null)
         {
-            OnStartTurn?.Invoke();
+            OnEndTurn?.Invoke();
 
             enemyManager.StartTurn();
+
+            OnStartTurn?.Invoke();
+
             characterManager.StartTurn();
 
-            OnEndTurn?.Invoke();
         }
     }
 

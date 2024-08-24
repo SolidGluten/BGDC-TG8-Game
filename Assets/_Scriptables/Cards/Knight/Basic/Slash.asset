@@ -24,3 +24,7 @@ MonoBehaviour:
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - stacks: 4
+    effect: {fileID: 11400000, guid: 046b156bbb291574087423125bbb149d, type: 2}
+    type: 0

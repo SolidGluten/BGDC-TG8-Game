@@ -35,6 +35,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void Move()
     {
+        if (!enemy.canMove) return;
+
         Character charaToMove = FindNearestCharacter();
 
         if (!charaToMove) {

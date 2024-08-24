@@ -15,6 +15,11 @@ public class Slash : Card
         var enemy = targetList.Select((target) => target.GetComponent<Enemy>())?.First();
         if (!enemy) return false;
 
+        foreach(var effect in statusEffectToApply)
+        {
+            enemy.ApplyStatusEffect(from, effect);
+        }
+
         enemy.TakeDamage(from.currAttackDamage * (int)atkMultiplier/100);
         return true;
     }

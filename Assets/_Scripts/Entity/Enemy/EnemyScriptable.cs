@@ -39,8 +39,12 @@ public abstract class EnemyScriptable : ScriptableObject
 
         var mainTarget = characters.Any() ? characters.First() : null;
 
-        var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
-        attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, attackWidth, attackShape, attackRange, dir);
+        if (mainTarget)
+        {
+            var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
+            attackArea = CellsHighlighter.HighlightArea(mainTarget.occupiedCell.index, attackWidth, attackShape, attackRange, dir);
+        }
+
 
         return mainTarget;
     }

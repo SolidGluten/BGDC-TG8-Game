@@ -144,12 +144,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb919bbd00418114eb4b33d1531684eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityName: 
   occupiedCell: {fileID: 0}
   stats: {fileID: 0}
+  appliedStatusEffects: []
   currHealth: 0
   currShield: 0
   currMovePoints: 0
   currAttackDamage: 0
+  canMove: 1
   canPlay: 0
   enemyScriptable: {fileID: 0}
   isTargetInRange: 0
