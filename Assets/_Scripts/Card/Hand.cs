@@ -77,7 +77,7 @@ public class Hand : MonoBehaviour
             cardsInHand[i].transform.localPosition = newPosition;
             cardsInHand[i].originalPos = newPosition;
 
-            cardsInHand[i].cardDisplay.defaultSortOrder = cardCount - i + 2;
+            cardsInHand[i].cardDisplay.defaultSortOrder = i + 2;
         }
     }
 
