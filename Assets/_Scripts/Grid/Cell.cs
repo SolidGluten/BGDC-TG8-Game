@@ -173,6 +173,12 @@ public class Cell : MonoBehaviour
     {
         var enabledTypes = layerTypes.Where(x => x.Value > 0);
 
+        if (!highlightRenderer)
+        {
+            Debug.LogWarning("Highlight Renderer Not Assigned.");
+            return;
+        }
+
         if (!enabledTypes.Any()) {
             highlightRenderer?.gameObject.SetActive(false);
             return;

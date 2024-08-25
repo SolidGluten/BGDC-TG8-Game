@@ -149,6 +149,12 @@ public class CardManager : MonoBehaviour
         Shuffle(drawPile);
     }
 
+    public void AddCardToHand(Card card)
+    {
+        hand.Add(card);
+        OnDrawCard?.Invoke(card);
+    }
+
     public void DrawInitialHand()
     {
         for (int i = 0; i < initialDraw; i++)
@@ -167,9 +173,9 @@ public class CardManager : MonoBehaviour
 
         Card drawnCard = drawPile[0];
         drawPile.RemoveAt(0);
-        hand.Add(drawnCard);
-        OnDrawCard?.Invoke(drawnCard);
+        AddCardToHand(drawnCard);
     }
+
 
     public void DiscardCard(Card card)
     {

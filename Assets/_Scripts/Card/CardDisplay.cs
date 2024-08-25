@@ -16,10 +16,13 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI card_description;
     public TextMeshProUGUI card_cost;
 
-    private void Start()
+    private void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
+    }
 
+    private void Start()
+    {
         card_name.text = card.cardName;
         card_description.text = card.description;
         card_cost.text = card.cost.ToString();

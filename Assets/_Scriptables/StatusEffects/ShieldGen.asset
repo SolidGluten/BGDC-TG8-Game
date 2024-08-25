@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a07f80e1a13f9246b04554aa55b4955, type: 3}
   m_Name: ShieldGen
   m_EditorClassIdentifier: 
-  stacks: 0
-  type: 0
-  isStackable: 0
+  stacks: 2
+  type: 12
+  isStackable: 1
   isPermanent: 0
   isAppliedOnStart: 0
-  isAppliedInstant: 0
+  isAppliedInstant: 1
   isReducedOnHit: 0
-  isAppliedOnce: 0
+  isAppliedOnce: 1
   shieldGenPercentMultip: 25

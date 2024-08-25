@@ -24,5 +24,4 @@ MonoBehaviour:
   range: 0
   width: 0
   effectShape: 0
-  statusEffectToApply:
-  - {fileID: 11400000, guid: e90dd74f66ad71447960458655d14089, type: 2}
+  statusEffectToApply: []
