@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb86c02f6022601459b26f706a85dcc3, type: 3}
   m_Name: Fragile
   m_EditorClassIdentifier: 
+  stacks: 2
+  type: 3
+  isStackable: 1
+  isPermanent: 0
+  isAppliedOnStart: 0
+  isAppliedInstant: 1
+  isReducedOnHit: 0
+  isAppliedOnce: 1
   fragilePercentMultip: 50

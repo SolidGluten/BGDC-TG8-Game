@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e1677f908c15a49a8d99491e73efe6, type: 3}
   m_Name: Frozen
   m_EditorClassIdentifier: 
-  isStackable: 1
+  stacks: 2
+  type: 0
+  isStackable: 0
   isPermanent: 0
   isAppliedOnStart: 0
+  isAppliedInstant: 1
+  isReducedOnHit: 0
+  isAppliedOnce: 1

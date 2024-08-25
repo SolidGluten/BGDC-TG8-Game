@@ -9,11 +9,13 @@ public class Weaken : Effect
 
     public override void ApplyEffect(Entity caster, Entity target)
     {
-        target.currAttackDamage = target.stats.ATK * weakenPercentMultip / 100;
+        var weakenedDmg = target.currAttackDamage * weakenPercentMultip / 100;
+        target.currAttackDamage -= weakenedDmg;
     }
 
     public override void RemoveEffect(Entity caster, Entity target)
     {
-        target.currAttackDamage = target.stats.ATK;
+        var weakenedDmg = target.currAttackDamage * weakenPercentMultip / 100;
+        target.currAttackDamage += weakenedDmg;
     }
 }

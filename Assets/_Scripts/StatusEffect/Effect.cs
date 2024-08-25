@@ -9,9 +9,10 @@ public abstract class Effect : ScriptableObject
 
     public bool isStackable;
     public bool isPermanent;
-    public bool isAppliedOnStart;
+    public bool isAppliedOnStart; // false => applied on end of turn
     public bool isAppliedInstant;
     public bool isReducedOnHit;
+    public bool isAppliedOnce; // false => applied on every turn 
 
     public abstract void ApplyEffect(Entity caster, Entity target);
 

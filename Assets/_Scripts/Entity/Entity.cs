@@ -27,11 +27,10 @@ public class Entity : MonoBehaviour
     public int currAttackDamage;
 
     public bool canMove = true;
-
-    public bool canPlay;
+    public bool isInvincible = false;
 
     public event Action OnDeath;
-    public event Action OnDamage;
+    public event Action OnHit;
 
     public int dmgPercentMultip = 0;
     public int shieldGainPercentMultip = 0;
@@ -45,22 +44,26 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        damage = Math.Max(0, damage + damage * dmgPercentMultip / 100);
-
-        if (currShield > 0)
+        if (!isInvincible)
         {
-            if (currShield >= damage) currShield -= damage;
-            else
-            {   
-                currHealth -= damage - currShield;
-                currShield = 0;
+            damage = Math.Max(0, damage + damage * dmgPercentMultip / 100);
+
+            if (currShield > 0)
+            {
+                if (currShield >= damage) currShield -= damage;
+                else
+                {   
+                    currHealth -= damage - currShield;
+                    currShield = 0;
+                }
             }
+
+            currHealth -= damage;
+
+            if (currHealth <= 0) DestroySelf();
         }
 
-        currHealth -= damage;
-        OnDamage?.Invoke();
-
-        if (currHealth <= 0) DestroySelf();
+        OnHit?.Invoke();
     }
     public void GainShield(int shield)
     {
@@ -95,15 +98,20 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void RemoveStatusEffect(StatusEffect effect) { 
-        appliedStatusEffects.Remove(effect);
+    public StatusEffect GetStatusEffect(Effect effect)
+    {
+        return appliedStatusEffects.Find(x => x.effect == effect);
+    }
+
+    public void RemoveStatusEffect(StatusEffect effect) {
+        var effectToRemove = appliedStatusEffects.Find(x => x == effect);
+        appliedStatusEffects.Remove(effectToRemove);
     }
 
     public void DestroySelf()
     {
         occupiedCell.occupiedEntity = null;
         Destroy(this.gameObject);
-
         OnDeath?.Invoke();
     }
 }

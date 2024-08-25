@@ -9,11 +9,13 @@ public class Empowered : Effect
 
     public override void ApplyEffect(Entity caster, Entity target)
     {
-        target.currAttackDamage = target.stats.ATK * empoweredPercentMultip / 100;
+        var empoweredDamage = target.currAttackDamage * empoweredPercentMultip / 100;
+        target.currAttackDamage += empoweredDamage;
     }
 
     public override void RemoveEffect(Entity caster, Entity target)
     {
-        target.currAttackDamage = target.stats.ATK;
+        var empoweredDamage = target.currAttackDamage * empoweredPercentMultip / 100;
+        target.currAttackDamage -= empoweredDamage;
     }
 }

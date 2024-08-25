@@ -14,11 +14,11 @@ public abstract class Card : ScriptableObject
     public Sprite cardBorder;
     public int cost;
 
-    public CharacterType caster = CharacterType.Knight;
-
     public bool exhaust;
 
     public CardType cardType;
+
+    public CharacterType caster = CharacterType.Knight;
 
     public int rangeFromCaster;
     public int range;

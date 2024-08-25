@@ -19,6 +19,10 @@ public class MagicBolt : Card
             foreach(var enemy in enemies)
             {
                 enemy.TakeDamage(from.stats.ATK);
+                foreach(var effects in statusEffectToApply)
+                {
+                    enemy.ApplyStatusEffect(from, effects);
+                }
             }
 
             return true;

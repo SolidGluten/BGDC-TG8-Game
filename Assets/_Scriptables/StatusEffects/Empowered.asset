@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69168d34d1b8b0c428c82275a07e6830, type: 3}
   m_Name: Empowered
   m_EditorClassIdentifier: 
+  stacks: 2
+  type: 5
+  isStackable: 1
+  isPermanent: 0
+  isAppliedOnStart: 0
+  isAppliedInstant: 1
+  isReducedOnHit: 0
+  isAppliedOnce: 1
   empoweredPercentMultip: 25
