@@ -174,7 +174,7 @@ public class Cell : MonoBehaviour
         var enabledTypes = layerTypes.Where(x => x.Value > 0);
 
         if (!enabledTypes.Any()) {
-            highlightRenderer.gameObject.SetActive(false);
+            highlightRenderer?.gameObject.SetActive(false);
             return;
         }
 

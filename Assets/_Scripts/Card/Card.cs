@@ -25,7 +25,7 @@ public abstract class Card : ScriptableObject
     public int width;
     public HighlightShape effectShape;
 
-    public List<StatusEffect> statusEffectToApply = new List<StatusEffect>();
+    public List<Effect> statusEffectToApply = new List<Effect>();
 
     public virtual bool Play(Entity from, Entity[] target)
     {

@@ -19,7 +19,7 @@ public class Entity : MonoBehaviour
     public Cell occupiedCell;
     public StatsScriptable stats;
 
-    public List<AppliedStatusEffect> appliedStatusEffects = new List<AppliedStatusEffect>();
+    public List<StatusEffect> appliedStatusEffects = new List<StatusEffect>();
 
     public int currHealth;
     public int currShield = 0;
@@ -31,12 +31,10 @@ public class Entity : MonoBehaviour
     public bool canPlay;
 
     public event Action OnDeath;
+    public event Action OnDamage;
 
-    public void Awake()
-    {
-        TurnController.instance.OnStartTurn += UpdateStatusEffect_OnStart;
-        TurnController.instance.OnEndTurn += UpdateStatusEffect_OnEnd;
-    }
+    public int dmgPercentMultip = 0;
+    public int shieldGainPercentMultip = 0;
 
     public void Start()
     {
@@ -47,6 +45,8 @@ public class Entity : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        damage = Math.Max(0, damage + damage * dmgPercentMultip / 100);
+
         if (currShield > 0)
         {
             if (currShield >= damage) currShield -= damage;
@@ -58,12 +58,14 @@ public class Entity : MonoBehaviour
         }
 
         currHealth -= damage;
+        OnDamage?.Invoke();
 
         if (currHealth <= 0) DestroySelf();
     }
     public void GainShield(int shield)
     {
-        //Reminder to add Sturdy
+        shield = Math.Max(0, shield + shield * shieldGainPercentMultip / 100);
+
         currShield += shield;
 
     }
@@ -77,60 +79,24 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void ApplyStatusEffect(Entity from, StatusEffect statusEffect)
+    public void ApplyStatusEffect(Entity from, Effect effect)
     {
-        var appEffect = appliedStatusEffects.Find((x) => x.statusEffect.effect == statusEffect.effect);
+        var appEffect = appliedStatusEffects.Find((x) => x.effect == effect);
         if (appEffect != null)
         {
-            if (statusEffect.effect.isStackable) return;
-            appEffect.statusEffect.stacks += 1;
+            if (!effect.isStackable) return;
+            appEffect.stacks += effect.stacks;
         }
         else
         {
-            appliedStatusEffects.Add(new AppliedStatusEffect(statusEffect.Clone(), from, this));
+            var newEffect = new StatusEffect(effect, from, this);
+            appliedStatusEffects.Add(newEffect);
+            newEffect.OnClearEffect += RemoveStatusEffect;
         }
     }
 
-    public void UpdateStatusEffect_OnStart()
-    {
-        List<AppliedStatusEffect> appEffects = appliedStatusEffects.Where(x => x.statusEffect.effect.isAppliedOnStart).ToList();
-        for (int i = 0; i < appEffects.Count; i++)
-        {
-            // Apply effect again!
-            appEffects[i].UseEffect();
-            //Debug.Log(appEffects[i].statusEffect.effect.name + "Effect applied");
-
-            if (appEffects[i].statusEffect.effect.isPermanent) return;
-
-            appEffects[i].statusEffect.stacks -= 1;
-            if (appEffects[i].statusEffect.stacks == 0)
-            {
-                // Remove effect
-                appliedStatusEffects[i].RemoveEffect();
-                appliedStatusEffects.Remove(appEffects[i]);
-            }
-        }
-    }
-
-    public void UpdateStatusEffect_OnEnd()
-    {
-        List<AppliedStatusEffect> appEffects = appliedStatusEffects.Where(x => !x.statusEffect.effect.isAppliedOnStart).ToList();
-        for (int i = 0; i < appEffects.Count; i++)
-        {
-            // Apply effect again!
-            appEffects[i].UseEffect();
-            //Debug.Log(appEffects[i].statusEffect.effect.name + "Effect applied");
-
-            if (appEffects[i].statusEffect.effect.isPermanent) return;
-
-            appEffects[i].statusEffect.stacks -= 1;
-            if (appEffects[i].statusEffect.stacks == 0)
-            {
-                // Remove effect
-                appliedStatusEffects[i].RemoveEffect();
-                appliedStatusEffects.Remove(appEffects[i]);
-            }
-        }
+    public void RemoveStatusEffect(StatusEffect effect) { 
+        appliedStatusEffects.Remove(effect);
     }
 
     public void DestroySelf()
@@ -138,34 +104,6 @@ public class Entity : MonoBehaviour
         occupiedCell.occupiedEntity = null;
         Destroy(this.gameObject);
 
-        TurnController.instance.OnStartTurn -= UpdateStatusEffect_OnStart;
-        TurnController.instance.OnEndTurn -= UpdateStatusEffect_OnEnd;
-
         OnDeath?.Invoke();
-    }
-}
-
-[Serializable]
-public class AppliedStatusEffect
-{
-    public AppliedStatusEffect(StatusEffect effect, Entity caster, Entity target)
-    {
-        this.statusEffect = effect;
-        this.caster = caster;
-        this.target = target;
-    }
-
-    [SerializeField] private Entity caster;
-    [SerializeField] private Entity target;
-    public StatusEffect statusEffect;
-
-    public void UseEffect()
-    {
-        statusEffect.effect.ApplyEffect(caster, target);
-    }
-
-    public void RemoveEffect()
-    {
-        statusEffect.effect.RemoveEffect(caster, target);
     }
 }

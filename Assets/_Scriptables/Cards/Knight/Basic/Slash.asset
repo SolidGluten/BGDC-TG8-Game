@@ -26,5 +26,8 @@ MonoBehaviour:
   effectShape: 0
   statusEffectToApply:
   - stacks: 4
-    effect: {fileID: 11400000, guid: 046b156bbb291574087423125bbb149d, type: 2}
-    type: 0
+    effect: {fileID: 11400000, guid: 50f0cd72262990a409366d4add7d7777, type: 2}
+    type: 2
+    isStackable: 1
+    isPermanent: 0
+    isAppliedOnStart: 0

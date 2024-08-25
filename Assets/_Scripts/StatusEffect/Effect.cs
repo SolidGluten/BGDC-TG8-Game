@@ -4,9 +4,14 @@ using UnityEngine;
 
 public abstract class Effect : ScriptableObject
 {
+    public int stacks;
+    public StatusEffectType type;
+
     public bool isStackable;
     public bool isPermanent;
-    public bool isAppliedOnStart; //false => applied on end of turn
+    public bool isAppliedOnStart;
+    public bool isAppliedInstant;
+    public bool isReducedOnHit;
 
     public abstract void ApplyEffect(Entity caster, Entity target);
 
