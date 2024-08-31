@@ -8,6 +8,9 @@ public class CardManager : MonoBehaviour
 {
     public static CardManager instance;
 
+    public const int MAX_ENERGY = 5;
+    public int currentEnergy;
+
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
 
@@ -55,6 +58,7 @@ public class CardManager : MonoBehaviour
             drawPile.Add(card);
         }
 
+        ResetEnergy();
         DrawInitialHand();
     }
 
@@ -212,5 +216,9 @@ public class CardManager : MonoBehaviour
             DiscardCard(card);
         }
         hand.Clear();
+    }
+
+    public void ResetEnergy() {
+        currentEnergy = MAX_ENERGY;
     }
 }
