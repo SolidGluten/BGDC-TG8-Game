@@ -110,6 +110,11 @@ public class CharacterManager : MonoBehaviour, ITurn
 
         return dir;
     }
+
+    private void OnDestroy()
+    {
+        ActiveCharacters.Clear();
+    }
 }
 
 [Serializable]

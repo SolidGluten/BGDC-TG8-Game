@@ -99747,11 +99747,11 @@ PrefabInstance:
     - target: {fileID: 5470407933487054515, guid: e1da03283da91bf41ac5093bc8b9e553, type: 3}
       propertyPath: playableCharacters.Array.data[0].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 415a2d448161da34dad20e07b4b16815, type: 3}
+      objectReference: {fileID: 797093039, guid: 415a2d448161da34dad20e07b4b16815, type: 3}
     - target: {fileID: 5470407933487054515, guid: e1da03283da91bf41ac5093bc8b9e553, type: 3}
       propertyPath: playableCharacters.Array.data[1].sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d86863847e21cf140b654503f1dfafc5, type: 3}
+      objectReference: {fileID: 1004732718, guid: d86863847e21cf140b654503f1dfafc5, type: 3}
     - target: {fileID: 5470407933487054515, guid: e1da03283da91bf41ac5093bc8b9e553, type: 3}
       propertyPath: playableCharacters.Array.data[1].characterType
       value: 1
@@ -99774,12 +99774,16 @@ PrefabInstance:
       value: CardManager
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: initialDraw
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[0]
@@ -99819,6 +99823,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+    - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
+      propertyPath: knightDeck.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
     - target: {fileID: 7486235371652444079, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
@@ -100130,6 +100138,10 @@ PrefabInstance:
     - target: {fileID: 7828737713873736826, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
       propertyPath: m_Name
       value: CheatCardCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828737713873736826, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8167994818757664574, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
       propertyPath: m_AnchorMax.y

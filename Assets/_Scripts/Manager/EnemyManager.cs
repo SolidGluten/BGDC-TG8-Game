@@ -122,6 +122,11 @@ public class EnemyManager : MonoBehaviour, ITurn
 
         return enemy;
     }
+
+    private void OnDestroy()
+    {
+        ActiveEnemies?.Clear();
+    }
 }
 
 [Serializable]
