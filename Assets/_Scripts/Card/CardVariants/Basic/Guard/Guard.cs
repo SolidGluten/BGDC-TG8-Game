@@ -12,14 +12,13 @@ public class Guard : Card
         if (target.Length > 0)
         {
             var targetList = target.ToList();
-            var ally = targetList.Select((target) => target.GetComponent<Character>());
+            var characters = targetList.Select((target) => target.GetComponent<Character>()).ToList();
+            characters.RemoveAll(x => x == null || x == from);
 
-            if (!ally.Any()) return false;
+            if (!characters.Any()) return false;
 
-            foreach (var character in ally)
-            {
-                character.GainShield(from.stats.ATK * (int)atkMultiplier / 100);
-            }
+            var ally = characters.First();
+            ally.GainShield(from.stats.ATK * (int)atkMultiplier / 100);
 
             return true;
         }

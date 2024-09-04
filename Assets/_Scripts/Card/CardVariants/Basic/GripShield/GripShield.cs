@@ -7,7 +7,8 @@ public class GripShield : Card
 {
     public override bool Play(Entity from, Entity[] target)
     {
-        from.ApplyStatusEffect(from, statusEffectToApply[0]);
+        foreach(Effect effect in statusEffectToApply)
+            from.ApplyStatusEffect(from, effect);
         CardManager.instance.DrawCard();
         return true;
     }

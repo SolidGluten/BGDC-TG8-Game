@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8562f3f0f917e4148a50c54c7a0303ec, type: 3}
   m_Name: Guard
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
+  cardName: Guard
+  description: Grant 225% Shield to an ally.
+  cardSprite: {fileID: 21300000, guid: 7a9b121cbed81e64191eeec8b0d2e6d8, type: 3}
   cost: 2
-  caster: 0
   exhaust: 0
   cardType: 0
+  caster: 0
   rangeFromCaster: 1
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply: []

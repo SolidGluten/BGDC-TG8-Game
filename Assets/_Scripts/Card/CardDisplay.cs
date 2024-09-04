@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CardDisplay : MonoBehaviour
@@ -16,9 +17,12 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI card_description;
     public TextMeshProUGUI card_cost;
 
+    public Image card_image;
+
     private void Awake()
     {
         canvas = GetComponentInChildren<Canvas>();
+        card_image = GetComponentInChildren<Image>();
     }
 
     private void Start()
@@ -26,6 +30,7 @@ public class CardDisplay : MonoBehaviour
         card_name.text = card.cardName;
         card_description.text = card.description;
         card_cost.text = card.cost.ToString();
+        card_image.sprite = card.cardSprite;
 
         ResetSortingOrder();
     }

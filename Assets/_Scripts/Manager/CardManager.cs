@@ -169,6 +169,7 @@ public class CardManager : MonoBehaviour
     {
         if (hand.Count >= maxHandSize) return;
         if (drawPile.Count == 0) ReshuffleDiscardIntoDrawPile();
+        if (drawPile.Count == 0) return;
         
         Card drawnCard = drawPile[0];
         if (!drawnCard) return;

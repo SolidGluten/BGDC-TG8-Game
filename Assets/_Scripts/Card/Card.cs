@@ -12,7 +12,6 @@ public abstract class Card : ScriptableObject
     [TextArea]
     public string description;
     public Sprite cardSprite;
-    public Sprite cardBorder;
     public int cost;
 
     public bool exhaust;

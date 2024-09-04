@@ -99779,7 +99779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.size
@@ -99808,15 +99808,15 @@ PrefabInstance:
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+      objectReference: {fileID: 11400000, guid: a6f33c15df19f5848a7704f8bf50f55f, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: bf974300978e3aa409b59bf7fef28b25, type: 2}
+      objectReference: {fileID: 11400000, guid: 64b3aa5eeb6a0e04d8983f57f0a0403a, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 2837c6a9a0b9dbd4189f4ce6170f0e68, type: 2}
+      objectReference: {fileID: 11400000, guid: b085832ca57d2ef49b14a2de03a6d847, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[3]
       value: 

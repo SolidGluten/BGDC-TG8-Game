@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Double Slash
   description: Deal 100% to an enemy twice.
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 868d9f0e1aa2845449e0b4c011fcc7c8, type: 3}
   cost: 1
   exhaust: 0
   cardType: 3
