@@ -19,6 +19,8 @@ public class Hand : MonoBehaviour
     {
         cardManager.OnDrawCard += AddCard;
         cardManager.OnPlayCard += RemoveCard;
+        //cardManager.OnDiscardCard += RemoveCard;
+        cardManager.OnDiscardHand += RemoveAll;
     }
 
     public void AddCard(Card card)
@@ -44,6 +46,17 @@ public class Hand : MonoBehaviour
         Destroy(card.gameObject);
 
         UpdateHandVisuals();
+    }
+
+    public void RemoveAll()
+    {
+        var cardObjs = cardsInHand.Select(x => x.gameObject).ToArray();
+        foreach(var card in cardObjs) {
+            if (card) {
+                cardsInHand.Remove(card.GetComponent<CardInteract>());
+                Destroy(card); 
+            }
+        }
     }
 
     [ContextMenu("Update Hand Visual")]
@@ -85,5 +98,13 @@ public class Hand : MonoBehaviour
     {
         cardManager.OnDrawCard -= AddCard;
         cardManager.OnPlayCard -= RemoveCard;
+        //cardManager.OnDiscardCard -= RemoveCard;
+        cardManager.OnDiscardHand -= RemoveAll;
     }
+
+    private void OnDestroy()
+    {
+        RemoveAll();
+    }
+
 }

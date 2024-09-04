@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
@@ -27,11 +28,13 @@ public class CardManager : MonoBehaviour
 
 
     public event Action OnCancelCard;
+    public event Action OnDiscardHand;
+    public event Action<int> OnDiscardCard;
     public event Action<int> OnPlayCard;
     public event Action<Card> OnDrawCard;
 
-    public int handSize = 10;
-    public int initialDraw = 6;
+    public int maxHandSize = 10;
+    public int initialDraw = 7;
 
     private List<Cell> highlightedCells = new List<Cell>();
 
@@ -48,24 +51,29 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (Card card in knightDeck)
-        {
-            drawPile.Add(card);
-        }
-
-        foreach (Card card in mageDeck)
-        {
-            drawPile.Add(card);
-        }
+        foreach (Card card in knightDeck) drawPile.Add(card);
+        foreach (Card card in mageDeck) drawPile.Add(card);
 
         ResetEnergy();
-        DrawInitialHand();
+        DrawHand();
+
+        TurnController.instance.OnEndTurn += ResetHand;
     }
+
+    public void ResetHand()
+    {
+        ResetEnergy();
+        DiscardHand();
+        DrawHand();
+    }
+
+    public void ResetEnergy() => currentEnergy = MAX_ENERGY;
 
     public IEnumerator PlayCard(int index)
     {
         Card card = hand[index];
         if (!card) yield break;
+        if (currentEnergy < card.cost) yield break;
 
         Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
 
@@ -116,22 +124,30 @@ public class CardManager : MonoBehaviour
                 }
             }
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.anyKeyDown)
             {
-                Cell selectedCell = CellSelector.Instance.SelectedCell;
-
-                var targetCells = cardEffectArea.Where((cell) => cell && cell.isOccupied);
-                Entity[] target = targetCells.Select((cell) => cell.occupiedEntity).ToArray();
-
-                if (card.Play(caster, target))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    hand.Remove(card);
-                    OnPlayCard?.Invoke(index);
-                } else
-                {
-                    OnCancelCard?.Invoke();
+                    Cell selectedCell = CellSelector.Instance.SelectedCell;
+
+                    var targetCells = cardEffectArea.Where((cell) => cell && cell.isOccupied);
+                    Entity[] target = targetCells.Select((cell) => cell.occupiedEntity).ToArray();
+
+                    if (card.Play(caster, target))
+                    {
+                        currentEnergy -= card.cost;
+                        DiscardCard(index);
+                        OnPlayCard?.Invoke(index);
+                    }
+                    else
+                    {
+                        OnCancelCard?.Invoke();
+                    }
                 }
-
+                else
+                {
+                    OnCancelCard();
+                }
 
                 CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
                 CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
@@ -143,14 +159,22 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    public void ResetDeck()
+    public void DrawHand()
     {
-        hand.Clear();
-        drawPile.Clear();
-        discardPile.Clear();
-        exhaustPile.Clear();
-        drawPile.AddRange(deck);
-        Shuffle(drawPile);
+        for (int i = 0; i < initialDraw; i++) 
+            DrawCard();
+    }
+
+    public void DrawCard()
+    {
+        if (hand.Count >= maxHandSize) return;
+        if (drawPile.Count == 0) ReshuffleDiscardIntoDrawPile();
+        
+        Card drawnCard = drawPile[0];
+        if (!drawnCard) return;
+
+        drawPile.RemoveAt(0);
+        AddCardToHand(drawnCard);
     }
 
     public void AddCardToHand(Card card)
@@ -159,36 +183,28 @@ public class CardManager : MonoBehaviour
         OnDrawCard?.Invoke(card);
     }
 
-    public void DrawInitialHand()
+    // Discard
+    [ContextMenu("Discard Hand")]
+    public void DiscardHand()
     {
-        for (int i = 0; i < initialDraw; i++)
-        {
-            DrawCard();
-        }
+        OnDiscardHand?.Invoke();
+        for(int i = hand.Count - 1; i >= 0; i--)
+            DiscardCard(i);
     }
-
-    public void DrawCard()
-    {
-        if (drawPile.Count == 0)
-        {
-            ReshuffleDiscardIntoDrawPile();
-            return;
-        }
-
-        Card drawnCard = drawPile[0];
-        drawPile.RemoveAt(0);
-        AddCardToHand(drawnCard);
-    }
-
-
-    public void DiscardCard(Card card)
-    {
+    public void DiscardCard(int index) {
+        if (index < 0 || index > hand.Count - 1) return;
+        var card = hand[index];
         discardPile.Add(card);
+        hand.RemoveAt(index);
+        OnDiscardCard?.Invoke(index);
     }
-
-    public void ExhaustCard(Card card)
+    public void ExhaustCard(int index)
     {
+        if (index < 0 || index > hand.Count - 1) return;
+        var card = hand[index];
         exhaustPile.Add(card);
+        hand.RemoveAt(index);
+        OnDiscardCard?.Invoke(index);
     }
 
     private void ReshuffleDiscardIntoDrawPile()
@@ -209,16 +225,27 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    public void DiscardHand()
+    public void ResetDeck()
     {
-        foreach (Card card in hand)
-        {
-            DiscardCard(card);
-        }
         hand.Clear();
+        drawPile.Clear();
+        discardPile.Clear();
+        exhaustPile.Clear();
+        drawPile.AddRange(deck);
+        Shuffle(drawPile);
     }
 
-    public void ResetEnergy() {
-        currentEnergy = MAX_ENERGY;
+    public void OnDisable()
+    {
+        TurnController.instance.OnEndTurn -= ResetHand;
+    }
+
+    public void OnDestroy()
+    {
+        deck.Clear();
+        hand.Clear();
+        exhaustPile.Clear();
+        discardPile.Clear();
+        drawPile.Clear();
     }
 }
