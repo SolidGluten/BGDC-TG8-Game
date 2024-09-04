@@ -9,7 +9,7 @@ public class Regen : Effect
 
     public override void ApplyEffect(Entity caster, Entity target)
     {
-        target.currHealth += caster.stats.ATK * regenPercentMultip / 100;
+        target.GainHealth(caster.stats.ATK * regenPercentMultip / 100);
     }
 
     public override void RemoveEffect(Entity caster, Entity target)

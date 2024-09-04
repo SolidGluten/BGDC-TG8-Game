@@ -99808,15 +99808,15 @@ PrefabInstance:
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a6f33c15df19f5848a7704f8bf50f55f, type: 2}
+      objectReference: {fileID: 11400000, guid: dd30cee3eda999645a22815ed3b301ec, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 64b3aa5eeb6a0e04d8983f57f0a0403a, type: 2}
+      objectReference: {fileID: 11400000, guid: 6bf6f160f8ce628408b2cc95a9f69aff, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: b085832ca57d2ef49b14a2de03a6d847, type: 2}
+      objectReference: {fileID: 11400000, guid: e8ea3b0e049a86e45a9c38900f54c451, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.data[3]
       value: 

@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5091a8d5727fa44a0270d8c3dca3de, type: 3}
   m_Name: QuickRest
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
+  cardName: Quick Rest
+  description: Knight gains 2 Slow for 2 turns and 100% Regen for 2 turns. Draw 1.
+  cardSprite: {fileID: 21300000, guid: db4a3f5f5b2f48145a9e2a374c127f42, type: 3}
+  cost: 1
   exhaust: 0
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: dabd23269d413f44989d2077b1c68054, type: 2}
+  - {fileID: 11400000, guid: 4b32ff377c279034a95348b01c35dc37, type: 2}

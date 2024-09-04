@@ -9,11 +9,13 @@ public class BandageUp : Card
     float atkMultiplier = 250;
     public override bool Play(Entity from, Entity[] target)
     {
-        if (!target.Any()) return false;
-        var targetList = target?.ToList();
+        var targetList = target.ToList();
+        var characters = targetList.Select((target) => target.GetComponent<Character>()).ToList();
+        characters.RemoveAll(x => x == null || x == from);
 
-        var ally = targetList.Select((target) => target.GetComponent<Character>())?.First();
-        if (!ally) return false;
+        if (!characters.Any()) return false;
+
+        var ally = characters.First();
 
         ally.GainHealth(from.stats.ATK * (int)atkMultiplier / 100);
         return true;
