@@ -7,6 +7,9 @@ public class QuickRest : Card
 {
     public override bool Play(Entity from, Entity[] target)
     {
+        from.ApplyStatusEffect(from, statusEffectToApply[0]);
+        from.ApplyStatusEffect(from, statusEffectToApply[1]);
+        CardManager.instance.DrawCard();
         return true;
     }
 }
