@@ -70,9 +70,10 @@ public class Entity : MonoBehaviour
                     currHealth -= damage - currShield;
                     currShield = 0;
                 }
+            } else
+            {
+                currHealth -= damage;
             }
-
-            currHealth -= damage;
 
             if (currHealth <= 0) DestroySelf();
         }
