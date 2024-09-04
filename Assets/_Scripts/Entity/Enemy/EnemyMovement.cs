@@ -46,6 +46,10 @@ public class EnemyMovement : MonoBehaviour
 
         enemy.isTargetInRange = false;
 
+        var dir = CellsHighlighter.GetDirection(Vector3.right * this.transform.position.x, Vector3.right * charaToMove.transform.position.x);
+        if (dir == Direction.Left) enemy.Flip(false);
+        if (dir == Direction.Right) enemy.Flip(true);
+
         //if (pathToChara.Any()) CellsHighlighter.SetTypes(pathToChara, CellType.Path, false);
         pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, charaToMove.occupiedCell.index);
 

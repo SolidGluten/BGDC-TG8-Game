@@ -15,8 +15,6 @@ public class Enemy : Entity
 
     public Character target;
 
-    private SpriteRenderer _renderer; 
-
     private List<Cell> _detectionArea = new List<Cell>();
     private List<Cell> _maxRangeArea = new List<Cell>();
 
@@ -29,8 +27,8 @@ public class Enemy : Entity
         currMovePoints = stats.MOV;
         currAttackDamage = stats.ATK;
 
-        _renderer = GetComponent<SpriteRenderer>();
-        _renderer.sprite = enemyScriptable.sprite;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer.sprite = enemyScriptable.sprite;
 
         entityName = enemyScriptable.name;
     }

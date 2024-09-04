@@ -16,6 +16,10 @@ public class Entity : MonoBehaviour
         }
     }
 
+    protected SpriteRenderer _spriteRenderer;
+
+    public bool isFacingRight = false;
+
     public Cell occupiedCell;
     public StatsScriptable stats;
 
@@ -40,6 +44,16 @@ public class Entity : MonoBehaviour
         currHealth = stats.HP;
         currMovePoints = stats.MOV;
         currAttackDamage = stats.ATK;
+
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void Flip(bool toRight)
+    {
+        if (_spriteRenderer) {
+            isFacingRight = toRight;
+            _spriteRenderer.flipX = isFacingRight ? true : false;
+        }
     }
 
     public void TakeDamage(int damage)

@@ -14,6 +14,11 @@ public class CharacterMovement : MonoBehaviour
         CharacterManager.Instance.OnTurn += ResetMovePoints;
     }
 
+    private void Start()
+    {
+        character.Flip(true);        
+    }
+
     private void Update()
     {
         if (!character.isSelected) return;
@@ -33,6 +38,11 @@ public class CharacterMovement : MonoBehaviour
             {
                 var x_axis = Input.GetAxisRaw("Horizontal");
                 var moveDir = new Vector2Int((int)x_axis, 0);
+
+                if(x_axis > 0)
+                    character.Flip(true);
+                if (x_axis < 0)
+                    character.Flip(false);
 
                 var cellIdx = character.occupiedCell.index;
                 Move(cellIdx + moveDir);

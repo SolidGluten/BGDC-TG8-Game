@@ -89,7 +89,7 @@ public class CellsHighlighter : MonoBehaviour
         foreach (var cell in GridSystem.Instance.cellList.Values) cell?.ResetType();
     }
 
-    public static Direction GetDirection(Vector2 from, Vector2 to)
+    public static Direction GetDirection(Vector3 from, Vector3 to)
     {
         Vector2 normDir = (to - from).normalized;
         int x = Math.Abs(normDir.x) > Math.Abs(normDir.y) ? (int)Math.Round(normDir.x) : 0;
