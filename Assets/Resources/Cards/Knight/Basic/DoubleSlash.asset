@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: DoubleSlash
   m_EditorClassIdentifier: 
   cardName: Double Slash
-  description: Slash but two
+  description: Deal 100% to an enemy twice.
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
   cost: 1
-  caster: 0
   exhaust: 0
   cardType: 3
+  caster: 0
   rangeFromCaster: 1
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply: []

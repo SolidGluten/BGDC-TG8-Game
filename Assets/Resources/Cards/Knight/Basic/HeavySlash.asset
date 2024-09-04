@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: HeavySlash
   m_EditorClassIdentifier: 
   cardName: Heavy Slash
-  description: Slash but heavy
+  description: Deal 225% to all enemies in range.
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
   cost: 2
-  caster: 0
   exhaust: 0
   cardType: 3
+  caster: 0
   rangeFromCaster: 0
   range: 2
   width: 1
   effectShape: 3
+  statusEffectToApply: []

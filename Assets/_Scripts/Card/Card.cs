@@ -9,6 +9,7 @@ public enum CardRarity { Common, Uncommon, Rare }
 public abstract class Card : ScriptableObject
 {
     public string cardName;
+    [TextArea]
     public string description;
     public Sprite cardSprite;
     public Sprite cardBorder;

@@ -6,13 +6,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Slash", menuName = "ScriptableObjects/Cards/Slash")]
 public class Slash : Card
 {
-    float atkMultiplier = 125;
+    public float atkMultiplier = 125;
     public override bool Play(Entity from, Entity[] target)
     {
         if (!target.Any()) return false;
         var targetList = target?.ToList();
 
-        var enemy = targetList.Select((target) => target.GetComponent<Enemy>())?.First();
+        var enemies = targetList.Select((target) => target.GetComponent<Enemy>()).ToList();
+        enemies.RemoveAll(x => x == null);
+        var enemy = enemies.First();
+
         if (!enemy) return false;
 
         enemy.TakeDamage(from.currAttackDamage * (int)atkMultiplier/100);

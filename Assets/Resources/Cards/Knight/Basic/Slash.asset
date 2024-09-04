@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   cardName: Slash
-  description: Uhh this slashes things
+  description: Deal 125% to an enemy.
   cardSprite: {fileID: 0}
   cardBorder: {fileID: 0}
   cost: 1
