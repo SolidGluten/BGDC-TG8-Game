@@ -21,7 +21,7 @@ public class HealthDisplay : MonoBehaviour
         {
             var obj = Instantiate(healthBarObj, this.transform);
             var healthBar = obj.GetComponent<HealthBar>();
-            healthBar.entity = chara;
+            healthBar.SetEntity(chara);
 
             healthBarList.Add(healthBar);
         }
@@ -33,7 +33,7 @@ public class HealthDisplay : MonoBehaviour
         {
             var obj = Instantiate(healthBarObj, this.transform);
             var healthBar = obj.GetComponent<HealthBar>();
-            healthBar.entity = enemy;
+            healthBar.SetEntity(enemy);
 
             healthBarList.Add(healthBar);
         }

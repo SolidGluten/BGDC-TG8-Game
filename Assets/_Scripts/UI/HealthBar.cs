@@ -8,46 +8,58 @@ public class HealthBar : MonoBehaviour
 {
     public Entity entity;
 
-    public Slider slider;
+    public Slider healthSlider;
+    public Slider shieldSlider;
     public TextMeshProUGUI textMesh;
 
     [SerializeField] private int currHealthValue;
+    [SerializeField] private int currShieldValue;
     [SerializeField] private int maxHealthValue;
 
     public float Y_OffsetMultiplier = 3f;
 
+    private float halfHeight = 0;
+
     private void Awake()
     {
-        slider = GetComponentInChildren<Slider>();
         textMesh = GetComponentInChildren<TextMeshProUGUI>();
-    }
-
-    private void Start()
-    {
-        this.name = entity.name + "-HealthBar";
-        entity.OnDeath += DestroySelf;
-
-        maxHealthValue = entity.stats.HP;
-        slider.maxValue = maxHealthValue;
     }
 
     private void Update()
     {
-        var halfHeight = entity.GetComponent<SpriteRenderer>().bounds.size.y;
+        if (!entity) return;
+
         var newPosition = RectTransformUtility.WorldToScreenPoint(GameManager.mainCam, entity.transform.position + Vector3.up * (halfHeight + Y_OffsetMultiplier));
 
         transform.position = newPosition;
 
         currHealthValue = entity.currHealth;
+        currShieldValue = entity.currShield;
 
-        slider.value = currHealthValue;
+        healthSlider.value = currHealthValue;
+        shieldSlider.value = currShieldValue;
+
         textMesh.text = currHealthValue.ToString();
+    }
+
+    public void SetEntity(Entity _entity)
+    {
+        entity = _entity;
+
+        this.name = entity.name + "-HealthBar";
+        entity.OnDeath += DestroySelf;
+
+        halfHeight = entity.GetComponent<SpriteRenderer>().bounds.size.y;
+
+        maxHealthValue = entity.stats.HP;
+        healthSlider.maxValue = maxHealthValue;
+        shieldSlider.maxValue = maxHealthValue * 2;
     }
 
     private void DestroySelf() => Destroy(this.gameObject);
 
     private void OnDisable()
     {
-        entity.OnDeath -= DestroySelf;
+        if (entity) entity.OnDeath -= DestroySelf;
     }
 }
