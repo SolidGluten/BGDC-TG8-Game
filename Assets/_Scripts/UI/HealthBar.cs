@@ -33,7 +33,7 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        var halfHeight = entity.GetComponent<SpriteRenderer>().bounds.extents.y / 2;
+        var halfHeight = entity.GetComponent<SpriteRenderer>().bounds.size.y;
         var newPosition = RectTransformUtility.WorldToScreenPoint(GameManager.mainCam, entity.transform.position + Vector3.up * (halfHeight + Y_OffsetMultiplier));
 
         transform.position = newPosition;
