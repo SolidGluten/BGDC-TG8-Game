@@ -15,13 +15,17 @@ MonoBehaviour:
   cardName: Regen Spell
   description: Grant 100% Regen for 2 turns to an ally.
   cardSprite: {fileID: 21300000, guid: 37b19610a97f6a64d9e728a75363e703, type: 3}
-  cost: 1
   exhaust: 0
+  cost: 1
   cardType: 3
   caster: 1
-  rangeFromCaster: 0
-  range: 3
+  rangeFromCaster: 3
+  range: 0
   width: 0
   effectShape: 0
   statusEffectToApply:
   - {fileID: 11400000, guid: 34eebb1b6834ad84db5e3b8636f62cd3, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

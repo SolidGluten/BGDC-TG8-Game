@@ -18,7 +18,7 @@ public class HealSpell : Card
 
             foreach (var ally in allies)
             {
-                ally.GainHealth(from.stats.ATK);
+                ally.GainHealth(from.stats.ATK * healMultiplier / 100);
             }
 
             return true;

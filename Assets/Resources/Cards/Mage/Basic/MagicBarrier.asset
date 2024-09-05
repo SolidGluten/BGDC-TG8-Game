@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: MagicBarrier
   m_EditorClassIdentifier: 
   cardName: Magic Barrier
-  description: Grant 200% Shield to all allies in range.
+  description: Grant 175% Shield to all allies in range.
   cardSprite: {fileID: 21300000, guid: aa3abb8d0c66c34408510bd9b3ac4265, type: 3}
-  cost: 2
   exhaust: 0
+  cost: 2
   cardType: 3
   caster: 1
   rangeFromCaster: 0
@@ -24,4 +24,7 @@ MonoBehaviour:
   width: 3
   effectShape: 0
   statusEffectToApply: []
-  effectMultiplier: 175
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 175
+  nextUpgrade: {fileID: 0}

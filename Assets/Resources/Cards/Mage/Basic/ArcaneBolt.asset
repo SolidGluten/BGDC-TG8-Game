@@ -15,12 +15,16 @@ MonoBehaviour:
   cardName: Arcane Bolt
   description: Deal 150% to all enemies in range.
   cardSprite: {fileID: 21300000, guid: 7f07f6802b34df042961e71b4f588e0e, type: 3}
-  cost: 2
   exhaust: 0
+  cost: 2
   cardType: 3
   caster: 1
   rangeFromCaster: 3
-  range: 2
-  width: 0
+  range: 0
+  width: 2
   effectShape: 2
   statusEffectToApply: []
+  baseDamageMultiplier: 150
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

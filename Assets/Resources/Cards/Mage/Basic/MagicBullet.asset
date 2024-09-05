@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Magic Bullet
   description: Deal 125% to an enemy.
   cardSprite: {fileID: 21300000, guid: 397276418abb1ab429fd1d100e5aea0b, type: 3}
-  cost: 1
   exhaust: 0
+  cost: 1
   cardType: 3
   caster: 1
   rangeFromCaster: 4
@@ -24,3 +24,7 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
+  baseDamageMultiplier: 125
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

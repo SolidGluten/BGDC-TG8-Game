@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Heal Spell
   description: Heal 100% to an ally.
   cardSprite: {fileID: 21300000, guid: 8d0b7000f45e0ca4b8fce42cdab3f541, type: 3}
-  cost: 1
   exhaust: 0
+  cost: 1
   cardType: 3
   caster: 1
   rangeFromCaster: 3
@@ -24,3 +24,7 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 100
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

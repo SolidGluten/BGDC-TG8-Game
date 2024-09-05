@@ -6,20 +6,18 @@ using System.Linq;
 [CreateAssetMenu(fileName = "MagicShield", menuName = "ScriptableObjects/Cards/MagicShield")]
 public class MagicShield : Card
 {
-    public float effectMultiplier = 150;
     public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (target.Length > 0)
         {
             var targetList = target.ToList();
-            var ally = targetList.Select((target) => target.GetComponent<Character>());
+            var characters = targetList.Select((target) => target.GetComponent<Character>()).ToList();
+            characters.RemoveAll(x => x == null);
 
-            if (!ally.Any()) return false;
+            if (!characters.Any()) return false;
 
-            foreach (var character in ally)
-            {
-                character.GainShield(from.stats.ATK * (int)effectMultiplier / 100);
-            }
+            var ally = characters.First();
+            ally.GainShield(from.stats.ATK * gainShieldMultiplier / 100);
 
             return true;
         }

@@ -18,7 +18,7 @@ public class ArcaneBolt : Card
 
             foreach (var enemy in enemies)
             {
-                enemy.TakeDamage(from.stats.ATK * (int)atkMultiplier / 100);
+                enemy.TakeDamage(from.stats.ATK * dmgMultiplier / 100);
             }
 
             return true;
