@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6d41851e132e4096c0135a1163cce, type: 3}
   m_Name: RegenSpell
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
+  cardName: Regen Spell
+  description: Grant 100% Regen for 2 turns to an ally.
+  cardSprite: {fileID: 21300000, guid: 37b19610a97f6a64d9e728a75363e703, type: 3}
+  cost: 1
   exhaust: 0
-  cardType: 0
+  cardType: 3
+  caster: 1
   rangeFromCaster: 0
-  range: 0
+  range: 3
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 34eebb1b6834ad84db5e3b8636f62cd3, type: 2}

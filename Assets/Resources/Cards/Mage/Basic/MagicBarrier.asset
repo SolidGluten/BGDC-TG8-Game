@@ -24,4 +24,4 @@ MonoBehaviour:
   width: 3
   effectShape: 0
   statusEffectToApply: []
-  effectMultiplier: 15
+  effectMultiplier: 175

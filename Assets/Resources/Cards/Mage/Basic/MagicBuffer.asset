@@ -16,11 +16,12 @@ MonoBehaviour:
   description: Grant an ally 1 Buffer. Draw 1.
   cardSprite: {fileID: 21300000, guid: c9653f257bdc1c946a9dcd937d27dda6, type: 3}
   cost: 2
-  exhaust: 0
-  cardType: 0
-  caster: 0
+  exhaust: 1
+  cardType: 3
+  caster: 1
   rangeFromCaster: 3
   range: 0
   width: 0
   effectShape: 0
-  statusEffectToApply: []
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 12d233dd9a9f7f1409d1669109372df3, type: 2}
