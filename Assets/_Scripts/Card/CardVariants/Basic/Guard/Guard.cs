@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Guard", menuName = "ScriptableObjects/Cards/Guard")]
 public class Guard : Card
 {
-    float atkMultiplier = 225;
+    float effectMultiplier = 225;
     public override bool Play(Entity from, Entity[] target)
     {
         if (target.Length > 0)
@@ -18,7 +18,7 @@ public class Guard : Card
             if (!characters.Any()) return false;
 
             var ally = characters.First();
-            ally.GainShield(from.stats.ATK * (int)atkMultiplier / 100);
+            ally.GainShield(from.stats.ATK * (int)effectMultiplier / 100);
 
             return true;
         }

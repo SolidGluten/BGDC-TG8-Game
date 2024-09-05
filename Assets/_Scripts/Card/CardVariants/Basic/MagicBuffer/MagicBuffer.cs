@@ -7,7 +7,7 @@ using System.Linq;
 
 public class MagicBuffer : Card
 {
-        public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target)
     {
         if (target.Length > 0)
         {

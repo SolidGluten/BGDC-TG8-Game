@@ -6,7 +6,7 @@ using System.Linq;
 [CreateAssetMenu(fileName = "MagicShield", menuName = "ScriptableObjects/Cards/MagicShield")]
 public class MagicShield : Card
 {
-    float atkMultiplier = 150;
+    public float effectMultiplier = 150;
     public override bool Play(Entity from, Entity[] target)
     {
         if (target.Length > 0)
@@ -18,7 +18,7 @@ public class MagicShield : Card
 
             foreach (var character in ally)
             {
-                character.GainShield(from.stats.ATK * (int)atkMultiplier / 100);
+                character.GainShield(from.stats.ATK * (int)effectMultiplier / 100);
             }
 
             return true;

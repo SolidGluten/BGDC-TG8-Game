@@ -99788,15 +99788,15 @@ PrefabInstance:
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: da2274ceb83702f44a0a0fcd36ff9ba2, type: 2}
+      objectReference: {fileID: 11400000, guid: ffb9242779900c743a1d58092e24184a, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: df7a27d1146d8a14484647bb510568a8, type: 2}
+      objectReference: {fileID: 11400000, guid: 3d142e2dfde4d274a9d4c57680bb3639, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+      objectReference: {fileID: 11400000, guid: 573c63cd5d597374e887663417a626ed, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[3]
       value: 
