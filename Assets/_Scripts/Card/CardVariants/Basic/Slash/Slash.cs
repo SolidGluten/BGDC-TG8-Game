@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Slash", menuName = "ScriptableObjects/Cards/Slash")]
 public class Slash : Card
 {
-    public float atkMultiplier = 125;
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (!target.Any()) return false;
         var targetList = target?.ToList();
@@ -18,7 +17,7 @@ public class Slash : Card
 
         if (!enemy) return false;
 
-        enemy.TakeDamage(from.currAttackDamage * (int)atkMultiplier/100);
+        enemy.TakeDamage(from.currAttackDamage * (int)dmgMultiplier/100);
 
         if (enemy)
         {

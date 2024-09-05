@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Healing Salves
   description: Heal 150% to an ally. Exhaust
   cardSprite: {fileID: 21300000, guid: 91b968e63725f754d99b409dc842cc49, type: 3}
-  cost: 0
   exhaust: 1
+  cost: 0
   cardType: 3
   caster: 0
   rangeFromCaster: 1
@@ -24,3 +24,7 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 150
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

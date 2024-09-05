@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Double Slash
   description: Deal 100% to an enemy twice.
   cardSprite: {fileID: 21300000, guid: 868d9f0e1aa2845449e0b4c011fcc7c8, type: 3}
-  cost: 1
   exhaust: 0
+  cost: 1
   cardType: 3
   caster: 0
   rangeFromCaster: 1
@@ -24,3 +24,6 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
+  baseDamageMultiplier: 100
+  baseHealMultiplier: 0
+  nextUpgrade: {fileID: 0}

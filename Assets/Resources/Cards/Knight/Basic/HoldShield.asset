@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Hold Shield
   description: Knight gains 175% Shield.
   cardSprite: {fileID: 21300000, guid: 388090234098ce24a98b9b7dd6f9aaf3, type: 3}
-  cost: 1
   exhaust: 0
+  cost: 1
   cardType: 3
   caster: 0
   rangeFromCaster: 0
@@ -24,3 +24,7 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 175
+  nextUpgrade: {fileID: 0}

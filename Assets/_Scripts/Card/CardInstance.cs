@@ -10,8 +10,9 @@ public class CardInstance
     public Character caster { get; private set; }
 
     public int cost;
-    public float cardDamageMultiplier;
-    public float cardHealMultiplier;
+    public int cardDamageMultiplier;
+    public int cardHealMultiplier;
+    public int cardGainShieldMultiplier;
 
     //public bool isUpgradable = false;
 
@@ -27,6 +28,7 @@ public class CardInstance
         cost = cardScriptable.cost;
         cardDamageMultiplier = cardScriptable.baseDamageMultiplier;
         cardHealMultiplier = cardScriptable.baseHealMultiplier;
+        cardGainShieldMultiplier = cardScriptable.baseGainShieldMultiplier;
         //isUpgradable = cardScriptable.nextUpgrade != null;
     }
 
@@ -38,7 +40,7 @@ public class CardInstance
             return false;
         }
 
-        return cardScriptable.Play(caster, target);
+        return cardScriptable.Play(caster, target, cardDamageMultiplier, cardHealMultiplier, cardGainShieldMultiplier);
     }
 
     //public void UpgradeCard()

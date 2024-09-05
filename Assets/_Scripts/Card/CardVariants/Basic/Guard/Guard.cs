@@ -6,19 +6,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Guard", menuName = "ScriptableObjects/Cards/Guard")]
 public class Guard : Card
 {
-    float effectMultiplier = 225;
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (target.Length > 0)
         {
             var targetList = target.ToList();
             var characters = targetList.Select((target) => target.GetComponent<Character>()).ToList();
-            characters.RemoveAll(x => x == null || x == from);
+            characters.RemoveAll(x => x == null);
 
             if (!characters.Any()) return false;
 
             var ally = characters.First();
-            ally.GainShield(from.stats.ATK * (int)effectMultiplier / 100);
+            ally.GainShield(from.stats.ATK * gainShieldMultiplier / 100);
 
             return true;
         }

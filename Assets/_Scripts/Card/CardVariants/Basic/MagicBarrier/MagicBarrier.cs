@@ -7,7 +7,7 @@ using System.Linq;
 public class MagicBarrier : Card
 {
     public float effectMultiplier = 200;
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (target.Length > 0)
         {

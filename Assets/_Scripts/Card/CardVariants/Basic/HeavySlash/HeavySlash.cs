@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HeavySlash", menuName = "ScriptableObjects/Cards/Heavy Slash")]
 public class HeavySlash : Card
 {
-    public float atkMultiplier = 225;
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (target.Length > 0)
         {
@@ -19,7 +18,7 @@ public class HeavySlash : Card
 
             foreach (var enemy in enemies)
             {
-                enemy.TakeDamage(from.stats.ATK * (int)atkMultiplier / 100);
+                enemy.TakeDamage(from.stats.ATK * (int)dmgMultiplier / 100);
             }
 
             return true;

@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MagicBolt", menuName = "ScriptableObjects/Cards/Magic Bolt")]
 public class MagicBolt : Card
 {
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (target.Length > 0)
         {

@@ -240,7 +240,6 @@ public class CardManager : MonoBehaviour
         Shuffle(drawPile);
     }
 
-    [ContextMenu("Add Deck To DrawPile")]
     public void AddDeckToDrawPile()
     {
         foreach (Card card in deck)

@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "HealingSalves", menuName = "ScriptableObjects/Cards/Healing Salves")]
 public class HealingSalves : Card
 {
-    float atkMultiplier = 150;
-    public override bool Play(Entity from, Entity[] target)
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         if (!target.Any()) return false;
         var targetList = target?.ToList();
@@ -15,7 +14,7 @@ public class HealingSalves : Card
         var ally = targetList.Select((target) => target.GetComponent<Character>())?.First();
         if (!ally) return false;
 
-        ally.GainHealth(from.stats.ATK * (int)atkMultiplier / 100);
+        ally.GainHealth(from.stats.ATK * (int)healMultiplier / 100);
         return true;
     }
 }

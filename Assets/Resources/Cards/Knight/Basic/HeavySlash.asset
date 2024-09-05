@@ -15,8 +15,8 @@ MonoBehaviour:
   cardName: Heavy Slash
   description: Deal 225% to all enemies in range.
   cardSprite: {fileID: 21300000, guid: a776a90dcc930b242919367efa240935, type: 3}
-  cost: 2
   exhaust: 0
+  cost: 2
   cardType: 3
   caster: 0
   rangeFromCaster: 0
@@ -24,4 +24,7 @@ MonoBehaviour:
   width: 1
   effectShape: 3
   statusEffectToApply: []
+  baseDamageMultiplier: 225
+  baseHealMultiplier: 0
+  nextUpgrade: {fileID: 0}
   atkMultiplier: 225

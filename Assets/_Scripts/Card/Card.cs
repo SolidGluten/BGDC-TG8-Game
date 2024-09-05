@@ -27,13 +27,14 @@ public abstract class Card : ScriptableObject
     public List<Effect> statusEffectToApply = new List<Effect>();
 
     [Space(15)]
-    public float baseDamageMultiplier;
-    public float baseHealMultiplier;
+    public int baseDamageMultiplier;
+    public int baseHealMultiplier;
+    public int baseGainShieldMultiplier;
 
     [Space(15)]
     public Card nextUpgrade;
 
-    public virtual bool Play(Entity from, Entity[] target)
+    public virtual bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         return true;
     }
