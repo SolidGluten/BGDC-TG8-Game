@@ -17,7 +17,7 @@ MonoBehaviour:
   isStackable: 1
   isPermanent: 0
   isAppliedOnStart: 0
-  isAppliedInstant: 1
+  isAppliedInstant: 0
   isReducedOnHit: 0
-  isAppliedOnce: 1
+  isAppliedOnce: 0
   regenPercentMultip: 100

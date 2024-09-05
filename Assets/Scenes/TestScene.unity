@@ -99779,20 +99779,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: knightDeck.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+      objectReference: {fileID: 11400000, guid: da2274ceb83702f44a0a0fcd36ff9ba2, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 926553c3470f8754fb39f974b7a9c753, type: 2}
+      objectReference: {fileID: 11400000, guid: df7a27d1146d8a14484647bb510568a8, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[2]
       value: 

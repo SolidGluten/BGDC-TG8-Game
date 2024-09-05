@@ -9,6 +9,7 @@ public class ShieldGen : Effect
 
     public override void ApplyEffect(Entity caster, Entity target)
     {
+
     }
 
     public override void RemoveEffect(Entity caster, Entity target)

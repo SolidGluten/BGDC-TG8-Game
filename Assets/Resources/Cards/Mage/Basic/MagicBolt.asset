@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: MagicBolt
   m_EditorClassIdentifier: 
   cardName: Magic Bolt
-  description: this  is a magic bolt.
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
+  description: Deal 100% to an enemy.
+  cardSprite: {fileID: 21300000, guid: 988e63b45be03fd4e8d3073f47c2ddbd, type: 3}
   cost: 1
   exhaust: 0
   cardType: 3
