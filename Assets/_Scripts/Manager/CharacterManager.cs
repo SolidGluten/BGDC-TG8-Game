@@ -8,6 +8,8 @@ public class CharacterManager : MonoBehaviour, ITurn
 {
     public const int MAX_CHARS = 2;
 
+    public GridSystem gridSystem;
+
     [SerializeField] private GameObject characterObject;
     [SerializeField] private CardManager cardManager;
 
@@ -19,7 +21,7 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public Character GetCharacterByType(CharacterType _type) => ActiveCharacters.First((chara) => chara.type == _type);
 
-    public static CharacterManager Instance { get; private set; }
+    public static CharacterManager instance { get; private set; }
 
     public event Action OnCharacterInitialize;
     public event Action OnTurn;
@@ -27,12 +29,12 @@ public class CharacterManager : MonoBehaviour, ITurn
     //Singleton
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if(instance != null && instance != this)
         {
             Destroy(this);
         } else
         {
-            Instance = this;
+            instance = this;
         }
     }
 
@@ -54,38 +56,34 @@ public class CharacterManager : MonoBehaviour, ITurn
 
     public void InitializeCharacters()
     {
-        if(playableCharacters.Count == 0)
-        {
-            Debug.Log("No character stats are assigned");
-            return;
-        }
-
         for(int i = 0; i < playableCharacters.Count; i++)
         {
-            AddCharacter(playableCharacters[i], GridSystem.Instance.characterSpawnPositions[i]);
+            var chara = NewCharacter(playableCharacters[i], gridSystem.characterSpawnPositions[i]);
+            ActiveCharacters.Add(chara);
         }
 
         OnCharacterInitialize?.Invoke();
     }
 
-    public Character AddCharacter(PlayableCharacters characterDetails, Vector2Int cellPos)
+    public Character NewCharacter(PlayableCharacters characterDetails, Vector2Int cellPos)
     {
-        var cell = GridSystem.Instance.GetCell(cellPos);
+        var cell = gridSystem.GetCell(cellPos);
+
         if (!cell)
         {
-            Debug.LogWarning("Cell is NOT found");
+            Debug.Log("Cell is NOT found");
             return null;
         }
 
         var charObj = Instantiate(characterObject);
         var chara = charObj.GetComponent<Character>();
+
         chara.stats = characterDetails.stats;
         chara.entityName = characterDetails.name;
         chara.GetComponent<SpriteRenderer>().sprite = characterDetails.sprite;
         chara.type = characterDetails.characterType;
 
         cell.SetEntity(chara);
-        ActiveCharacters.Add(chara);
 
         return chara;
     }

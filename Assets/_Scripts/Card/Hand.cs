@@ -23,13 +23,13 @@ public class Hand : MonoBehaviour
         cardManager.OnDiscardHand += RemoveAll;
     }
 
-    public void AddCard(Card card)
+    public void AddCard(CardInstance cardInstance)
     {
         var obj = Instantiate(cardObj, transform.position, Quaternion.identity, transform);
         var cardDisplay = obj.GetComponent<CardDisplay>();
         var cardInteract = obj.GetComponent<CardInteract>();
 
-        cardDisplay.card = card;
+        cardDisplay.cardInstance = cardInstance;
         cardInteract.hand = this;
 
         cardsInHand.Add(cardInteract);

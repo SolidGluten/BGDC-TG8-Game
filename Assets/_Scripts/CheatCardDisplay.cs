@@ -7,7 +7,7 @@ public class CheatCardDisplay : MonoBehaviour
 {
     public GameObject cheatCardObj;
     public Transform cheatCardParent;
-    public List<Card> cardList = new List<Card>();
+    private List<Card> cardList = new List<Card>();
 
     private void Start()
     {
@@ -17,7 +17,10 @@ public class CheatCardDisplay : MonoBehaviour
         {
             var obj = Instantiate(cheatCardObj, cheatCardParent);
             var cardDisplay = obj.GetComponentInChildren<CardDisplay>();
-            cardDisplay.card = card;
+
+            var caster = CharacterManager.instance.GetCharacterByType(card.caster);
+            var cardInstance = new CardInstance(card, caster);
+            cardDisplay.cardInstance = cardInstance;
         }
     }
 

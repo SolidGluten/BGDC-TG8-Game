@@ -31,6 +31,7 @@ public class Entity : MonoBehaviour
     public int currAttackDamage;
 
     public bool canMove = true;
+    public bool canGainShield = true;
     public bool isInvincible = false;
 
     public event Action OnDeath;
@@ -82,10 +83,9 @@ public class Entity : MonoBehaviour
     }
     public void GainShield(int shield)
     {
+        if (!canGainShield) return;
         shield = Math.Max(0, shield + shield * shieldGainPercentMultip / 100);
-
         currShield += shield;
-
     }
     public void GainHealth(int heals)
     {

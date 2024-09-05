@@ -14,24 +14,23 @@ public class CardManager : MonoBehaviour
 
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
-
     public List<Card> deck = new List<Card>();
-    [SerializeField] private List<Card> drawPile = new List<Card>();
-    [SerializeField] private List<Card> discardPile = new List<Card>();
-    [SerializeField] private List<Card> exhaustPile = new List<Card>();
 
-    public List<Card> hand = new List<Card>();
+    private List<CardInstance> drawPile = new List<CardInstance>();
+    private List<CardInstance> discardPile = new List<CardInstance>();
+    private List<CardInstance> exhaustPile = new List<CardInstance>();
+
+    private List<CardInstance> hand = new List<CardInstance>();
 
     public int DrawPileCount => drawPile.Count;
     public int DiscardPileCount => discardPile.Count;
     public int ExhaustPileCount => exhaustPile.Count;
 
-
     public event Action OnCancelCard;
     public event Action OnDiscardHand;
     public event Action<int> OnDiscardCard;
     public event Action<int> OnPlayCard;
-    public event Action<Card> OnDrawCard;
+    public event Action<CardInstance> OnDrawCard;
 
     public int maxHandSize = 10;
     public int initialDraw = 7;
@@ -40,7 +39,7 @@ public class CardManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
         } else
@@ -51,12 +50,11 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (Card card in knightDeck) drawPile.Add(card);
-        foreach (Card card in mageDeck) drawPile.Add(card);
+        foreach (Card card in knightDeck) deck.Add(card);
+        foreach (Card card in mageDeck) deck.Add(card);
 
-        ResetEnergy();
-        DrawHand();
 
+        CharacterManager.instance.OnCharacterInitialize += AddDeckToDrawPile;
         TurnController.instance.OnEndTurn += ResetHand;
     }
 
@@ -71,13 +69,15 @@ public class CardManager : MonoBehaviour
 
     public IEnumerator PlayCard(int index)
     {
-        Card card = hand[index];
-        if (!card) yield break;
+        CardInstance cardInstance = hand[index];
+        Character caster = cardInstance.caster;
+        Card card = cardInstance.cardScriptable;
+
+        if (cardInstance == null) yield break;
         if (currentEnergy < card.cost) yield break;
 
-        Character caster = CharacterManager.Instance.GetCharacterByType(card.caster);
 
-        if(highlightedCells.Any())
+        if (highlightedCells.Any())
             CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
 
         highlightedCells = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.rangeFromCaster, HighlightShape.Square);
@@ -99,7 +99,12 @@ public class CardManager : MonoBehaviour
                     CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
                     cardEffectArea.Clear();
 
-                    cardEffectArea = CellsHighlighter.HighlightArea(caster.occupiedCell.index, card.width, card.effectShape, card.range, castDir);
+                    cardEffectArea = CellsHighlighter.HighlightArea(
+                        caster.occupiedCell.index,
+                        card.width,
+                        card.effectShape,
+                        card.range,
+                        castDir);
 
                     CellsHighlighter.RaiseLayerType(cardEffectArea, CellType.Effect);
 
@@ -133,7 +138,7 @@ public class CardManager : MonoBehaviour
                     var targetCells = cardEffectArea.Where((cell) => cell && cell.isOccupied);
                     Entity[] target = targetCells.Select((cell) => cell.occupiedEntity).ToArray();
 
-                    if (card.Play(caster, target))
+                    if (cardInstance.PlayCard(target))
                     {
                         currentEnergy -= card.cost;
                         DiscardCard(index);
@@ -151,7 +156,7 @@ public class CardManager : MonoBehaviour
 
                 CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
                 CellsHighlighter.LowerLayerType(cardEffectArea, CellType.Effect);
-                
+
                 yield break;
             }
 
@@ -161,8 +166,7 @@ public class CardManager : MonoBehaviour
 
     public void DrawHand()
     {
-        for (int i = 0; i < initialDraw; i++) 
-            DrawCard();
+        for (int i = 0; i < initialDraw; i++) DrawCard();
     }
 
     public void DrawCard()
@@ -170,15 +174,15 @@ public class CardManager : MonoBehaviour
         if (hand.Count >= maxHandSize) return;
         if (drawPile.Count == 0) ReshuffleDiscardIntoDrawPile();
         if (drawPile.Count == 0) return;
-        
-        Card drawnCard = drawPile[0];
-        if (!drawnCard) return;
+
+        CardInstance drawnCard = drawPile[0];
+        if (drawnCard == null) return;
 
         drawPile.RemoveAt(0);
         AddCardToHand(drawnCard);
     }
 
-    public void AddCardToHand(Card card)
+    public void AddCardToHand(CardInstance card)
     {
         hand.Add(card);
         OnDrawCard?.Invoke(card);
@@ -189,7 +193,7 @@ public class CardManager : MonoBehaviour
     public void DiscardHand()
     {
         OnDiscardHand?.Invoke();
-        for(int i = hand.Count - 1; i >= 0; i--)
+        for (int i = hand.Count - 1; i >= 0; i--)
             DiscardCard(i);
     }
     public void DiscardCard(int index) {
@@ -215,11 +219,11 @@ public class CardManager : MonoBehaviour
         Shuffle(drawPile);
     }
 
-    private void Shuffle(List<Card> list)
+    private void Shuffle(List<CardInstance> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
-            Card temp = list[i];
+            CardInstance temp = list[i];
             int randomIndex = UnityEngine.Random.Range(i, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
@@ -232,13 +236,27 @@ public class CardManager : MonoBehaviour
         drawPile.Clear();
         discardPile.Clear();
         exhaustPile.Clear();
-        drawPile.AddRange(deck);
+        AddDeckToDrawPile();
         Shuffle(drawPile);
+    }
+
+    [ContextMenu("Add Deck To DrawPile")]
+    public void AddDeckToDrawPile()
+    {
+        foreach (Card card in deck)
+        {
+            var caster = CharacterManager.instance.GetCharacterByType(card.caster);
+            var cardInstance = new CardInstance(card, caster);
+            drawPile.Add(cardInstance);
+        }
+
+        ResetHand();
     }
 
     public void OnDisable()
     {
         TurnController.instance.OnEndTurn -= ResetHand;
+        CharacterManager.instance.OnCharacterInitialize -= AddDeckToDrawPile;
     }
 
     public void OnDestroy()

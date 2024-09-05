@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25d2a53d67e2ff4683713714c6b8d98, type: 3}
   m_Name: MoonsFavor
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Moon's Favor
+  description: Grant Haste 1 for 2 turns to an ally. Exhaust.
+  cardSprite: {fileID: 21300000, guid: a550329c7196a244498b897c2eb0f7fa, type: 3}
+  exhaust: 1
+  cost: 1
   cardType: 0
-  rangeFromCaster: 0
+  caster: 0
+  rangeFromCaster: 3
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 3fab36d03259e67448b9a3626604d5ed, type: 2}
+  nextUpgrade: {fileID: 0}

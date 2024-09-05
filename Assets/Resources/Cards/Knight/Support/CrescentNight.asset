@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d6beb308c14a6448ace03d878d65fe, type: 3}
   m_Name: CrescentNight
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Crescent Night
+  description: All your Knight's cards deal double damage for this turn. Knight gains
+    2 Fragile. Exhaust.
+  cardSprite: {fileID: 21300000, guid: 0ed1d56ee1672964f84e27a4b3ed6c88, type: 3}
+  exhaust: 1
+  cost: 2
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 69c326e3676073549878d16c655ca041, type: 2}
+  nextUpgrade: {fileID: 0}

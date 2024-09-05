@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
-    public Card card;
+    public CardInstance cardInstance;
 
     public Canvas canvas;
     [HideInInspector] public int defaultSortOrder = 0;
@@ -27,10 +27,10 @@ public class CardDisplay : MonoBehaviour
 
     private void Start()
     {
-        card_name.text = card.cardName;
-        card_description.text = card.description;
-        card_cost.text = card.cost.ToString();
-        card_image.sprite = card.cardSprite;
+        card_name.text = cardInstance.cardScriptable.name;
+        card_description.text = cardInstance.cardScriptable.description;
+        card_cost.text = cardInstance.cost.ToString();
+        card_image.sprite = cardInstance.cardScriptable.cardSprite;
 
         ResetSortingOrder();
     }

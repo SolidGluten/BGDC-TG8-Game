@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         character = GetComponent<Character>();
-        CharacterManager.Instance.OnTurn += ResetMovePoints;
+        TurnController.instance.OnEndTurn += ResetMovePoints;
     }
 
     private void Start()
@@ -72,11 +72,15 @@ public class CharacterMovement : MonoBehaviour
 
     private void ResetMovePoints()
     {
+        if(character.currMovePoints < character.stats.MOV)
+        {
+
+        }
         character.currMovePoints = character.stats.MOV;
     }
 
     private void OnDisable()
     {
-        CharacterManager.Instance.OnTurn -= ResetMovePoints;
+        TurnController.instance.OnEndTurn -= ResetMovePoints;
     }
 }

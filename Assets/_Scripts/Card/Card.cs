@@ -12,20 +12,26 @@ public abstract class Card : ScriptableObject
     [TextArea]
     public string description;
     public Sprite cardSprite;
-    public int cost;
 
+    [Space(15)]
     public bool exhaust;
-
+    public int cost;
     public CardType cardType;
-
     public CharacterType caster = CharacterType.Knight;
 
+    [Space(15)]
     public int rangeFromCaster;
     public int range;
     public int width;
     public HighlightShape effectShape;
-
     public List<Effect> statusEffectToApply = new List<Effect>();
+
+    [Space(15)]
+    public float baseDamageMultiplier;
+    public float baseHealMultiplier;
+
+    [Space(15)]
+    public Card nextUpgrade;
 
     public virtual bool Play(Entity from, Entity[] target)
     {

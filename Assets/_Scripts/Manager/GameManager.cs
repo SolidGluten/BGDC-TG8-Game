@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(currentRound);
+        //Debug.Log(currentRound);
         mainCam = Camera.main;
     }
 
@@ -48,12 +48,12 @@ public class GameManager : MonoBehaviour
         if (!EnemyManager.Instance.ActiveEnemies.Any())
         {
             // Player win
-            SceneLoader.Instance.ReloadScene();
+            //SceneLoader.Instance.ReloadScene();
             currentRound++;
-        } else if (!CharacterManager.Instance.ActiveCharacters.Any())
+        } else if (!CharacterManager.instance.ActiveCharacters.Any())
         {
             // Player lost
-            SceneLoader.Instance.ReloadScene();
+            //SceneLoader.Instance.ReloadScene();
             currentRound = 1;
         }
 

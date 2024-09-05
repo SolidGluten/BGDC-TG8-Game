@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d794e7f0ea73da94b89be7689c374616, type: 3}
-  m_Name: Haste
+  m_Script: {fileID: 11500000, guid: eb86c02f6022601459b26f706a85dcc3, type: 3}
+  m_Name: CrescentNight_Fragile
   m_EditorClassIdentifier: 
   stacks: 2
-  type: 10
+  type: 3
   isStackable: 1
   isPermanent: 0
-  isAppliedOnStart: 1
-  isAppliedInstant: 0
+  isAppliedOnStart: 0
+  isAppliedInstant: 1
   isReducedOnHit: 0
-  isAppliedOnce: 0
-  addMovePoints: 2
+  isAppliedOnce: 1
+  fragilePercentMultip: 50

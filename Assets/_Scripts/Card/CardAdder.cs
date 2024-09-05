@@ -24,7 +24,7 @@ public class CardAdder : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        CardManager.instance.AddCardToHand(cardDisplay.card);
+        CardManager.instance.AddCardToHand(cardDisplay.cardInstance);
     } 
 
     public void OnPointerEnter(PointerEventData eventData)
