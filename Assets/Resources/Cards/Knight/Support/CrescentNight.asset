@@ -26,4 +26,8 @@ MonoBehaviour:
   effectShape: 0
   statusEffectToApply:
   - {fileID: 11400000, guid: 69c326e3676073549878d16c655ca041, type: 2}
+  - {fileID: 11400000, guid: 1b961f36491b07544977127794d01638, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
   nextUpgrade: {fileID: 0}

@@ -17,7 +17,8 @@ public enum StatusEffectType {
     Haste,
     Regen,
     ShieldGen,
-    Charged
+    Charged,
+    DamageCardMultiplier
 }
 
 [Serializable]

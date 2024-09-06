@@ -27,42 +27,41 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public Vector2 hoverPos;
     [SerializeField] private float hoverSizeMultiplier = 1;
 
-    [SerializeField] private Color defaultColor;
-    [SerializeField] private Color hoverColor;
-    [SerializeField] private Color selectedColor;
+    //[SerializeField] private Color defaultColor;
+    //[SerializeField] private Color hoverColor;
+    //[SerializeField] private Color selectedColor;
 
     private void Awake()
     {
         image = GetComponent<Image>();
         cardDisplay = GetComponent<CardDisplay>();
 
-        image.color = defaultColor;
+        //image.color = defaultColor;
         originalScale = transform.localScale;
     }
 
     private void Update()
     {
-        if (isSelected)
-            image.color = selectedColor;
-        else if (isHovered)
-            image.color = hoverColor;
-        else
-            image.color = defaultColor;
+        //if (isSelected)
+        //    image.color = selectedColor;
+        //else if (isHovered)
+        //    image.color = hoverColor;
+        //else
+        //    image.color = defaultColor;
     }
 
     public IEnumerator ApplyCard()
     {
-        SelectCard();
-
         CardManager.instance.OnCancelCard += UnselectCard;
 
-        yield return CardManager.instance.PlayCard(handIndex);
+        yield return CardManager.instance.PlayCard(cardDisplay.cardInstance);
 
         CardManager.instance.OnCancelCard -= UnselectCard;
     }
 
     public void SelectCard()
     {
+        Debug.Log(cardDisplay.cardInstance.cardScriptable.cardName + "is Selected");
         isSelected = true;
         selectedCard = this;
     }
@@ -75,7 +74,9 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (selectedCard == null) StartCoroutine(ApplyCard());
+        SelectCard();
+        if (selectedCard == this) 
+            StartCoroutine(ApplyCard());
     }
 
     public void OnPointerEnter(PointerEventData eventData) {

@@ -22,14 +22,16 @@ public class CardManager : MonoBehaviour
 
     private List<CardInstance> hand = new List<CardInstance>();
 
+    public bool isPlaying = false;
+
     public int DrawPileCount => drawPile.Count;
     public int DiscardPileCount => discardPile.Count;
     public int ExhaustPileCount => exhaustPile.Count;
 
     public event Action OnCancelCard;
     public event Action OnDiscardHand;
-    public event Action<int> OnDiscardCard;
-    public event Action<int> OnPlayCard;
+    public event Action<CardInstance> OnDiscardCard;
+    public event Action<CardInstance> OnPlayCard;
     public event Action<CardInstance> OnDrawCard;
 
     public int maxHandSize = 10;
@@ -67,14 +69,23 @@ public class CardManager : MonoBehaviour
 
     public void ResetEnergy() => currentEnergy = MAX_ENERGY;
 
-    public IEnumerator PlayCard(int index)
+    public IEnumerator PlayCard(CardInstance cardInstance)
     {
-        CardInstance cardInstance = hand[index];
+        isPlaying = true;
+
         Character caster = cardInstance.caster;
         Card card = cardInstance.cardScriptable;
 
-        if (cardInstance == null) yield break;
-        if (currentEnergy < card.cost) yield break;
+        if (cardInstance == null)
+        {
+            Debug.Log("No card to play");
+            yield break;
+        }
+        if (currentEnergy < card.cost)
+        {
+            Debug.Log("Not enough energy");
+            yield break;
+        }
 
 
         if (highlightedCells.Any())
@@ -141,17 +152,21 @@ public class CardManager : MonoBehaviour
                     if (cardInstance.PlayCard(target))
                     {
                         currentEnergy -= card.cost;
-                        DiscardCard(index);
-                        OnPlayCard?.Invoke(index);
+                        if (card.exhaust) ExhaustCard(cardInstance);
+                        else DiscardCard(cardInstance);
+                        OnPlayCard?.Invoke(cardInstance);
                     }
                     else
                     {
                         OnCancelCard?.Invoke();
                     }
+
+                    isPlaying = false;
                 }
                 else
                 {
                     OnCancelCard();
+                    isPlaying = false;
                 }
 
                 CellsHighlighter.LowerLayerType(highlightedCells, CellType.Range);
@@ -166,7 +181,8 @@ public class CardManager : MonoBehaviour
 
     public void DrawHand()
     {
-        for (int i = 0; i < initialDraw; i++) DrawCard();
+        for (int i = 0; i < initialDraw; i++) 
+            DrawCard();
     }
 
     public void DrawCard()
@@ -193,23 +209,23 @@ public class CardManager : MonoBehaviour
     public void DiscardHand()
     {
         OnDiscardHand?.Invoke();
-        for (int i = hand.Count - 1; i >= 0; i--)
-            DiscardCard(i);
+        for(int i = hand.Count - 1; i >= 0; i--)
+        {
+            var cardInstance = hand[i];
+            if(cardInstance != null) 
+                DiscardCard(cardInstance);
+        }
     }
-    public void DiscardCard(int index) {
-        if (index < 0 || index > hand.Count - 1) return;
-        var card = hand[index];
-        discardPile.Add(card);
-        hand.RemoveAt(index);
-        OnDiscardCard?.Invoke(index);
+    public void DiscardCard(CardInstance cardInstance) {
+        discardPile.Add(cardInstance);
+        hand.Remove(cardInstance);
+        OnDiscardCard?.Invoke(cardInstance);
     }
-    public void ExhaustCard(int index)
+    public void ExhaustCard(CardInstance cardInstance)
     {
-        if (index < 0 || index > hand.Count - 1) return;
-        var card = hand[index];
-        exhaustPile.Add(card);
-        hand.RemoveAt(index);
-        OnDiscardCard?.Invoke(index);
+        exhaustPile.Add(cardInstance);
+        hand.Remove(cardInstance);
+        OnDiscardCard?.Invoke(cardInstance);
     }
 
     private void ReshuffleDiscardIntoDrawPile()
@@ -250,6 +266,16 @@ public class CardManager : MonoBehaviour
         }
 
         ResetHand();
+    }
+
+    public List<CardInstance> GetAllPlayingCards()
+    {
+        var cards = new List<CardInstance>();
+        cards.AddRange(hand);
+        cards.AddRange(drawPile);
+        cards.AddRange(discardPile);
+        cards.AddRange(exhaustPile);
+        return cards;
     }
 
     public void OnDisable()

@@ -37,9 +37,9 @@ public class Hand : MonoBehaviour
         UpdateHandVisuals();
     }
 
-    public void RemoveCard(int index)
+    public void RemoveCard(CardInstance cardInstance)
     {
-        CardInteract card = cardsInHand[index];
+        CardInteract card = cardsInHand.Find((x) => x.cardDisplay.cardInstance == cardInstance);
         if (!card) return;
 
         cardsInHand.Remove(card);

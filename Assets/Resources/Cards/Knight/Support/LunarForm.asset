@@ -29,4 +29,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e324cc1acbdcee442a50c61e1c6e5f73, type: 2}
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
   nextUpgrade: {fileID: 0}
