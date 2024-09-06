@@ -149,9 +149,11 @@ public class CardManager : MonoBehaviour
                     var targetCells = cardEffectArea.Where((cell) => cell && cell.isOccupied);
                     Entity[] target = targetCells.Select((cell) => cell.occupiedEntity).ToArray();
 
+                    var originalCost = cardInstance.cost;
+
                     if (cardInstance.PlayCard(target))
                     {
-                        currentEnergy -= card.cost;
+                        currentEnergy -= originalCost;
                         if (card.exhaust) ExhaustCard(cardInstance);
                         else DiscardCard(cardInstance);
                         OnPlayCard?.Invoke(cardInstance);

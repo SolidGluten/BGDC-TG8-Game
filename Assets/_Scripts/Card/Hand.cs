@@ -106,5 +106,4 @@ public class Hand : MonoBehaviour
     {
         RemoveAll();
     }
-
 }

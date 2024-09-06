@@ -14,6 +14,7 @@ public class MagesMercy : Effect
         {
             card.ReduceCost(1);
         }
+        CardDisplay.RerenderAll();
     }
 
     public override void RemoveEffect(Entity caster, Entity target)
@@ -24,5 +25,6 @@ public class MagesMercy : Effect
         {
             card.AddCost(1);
         }
+        CardDisplay.RerenderAll();
     }
 }

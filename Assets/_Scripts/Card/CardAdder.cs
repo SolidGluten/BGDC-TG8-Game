@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class CardAdder : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public CardDisplay cardDisplay { get; private set; }
+
     [SerializeField] private float hoverSizeMultiplier = 2;
     private Vector3 originalScale;
 
