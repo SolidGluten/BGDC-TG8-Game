@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4929299274eac1458a808fae00ae471, type: 3}
+  m_Name: DarkEmbrace
+  m_EditorClassIdentifier: 
+  cardName: Dark Embrace
+  description: Knight gains 5 Buffer and 1 Haste for 4 turns. Knight can no longer
+    gain Shield for the rest of combat.
+  cardSprite: {fileID: 21300000, guid: f70d88538f51aca42963caac339de56e, type: 3}
+  exhaust: 0
+  cost: 3
+  cardType: 1
+  caster: 0
+  rangeFromCaster: 0
+  range: 0
+  width: 0
+  effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 544b31c5141adb94bb2a8ebe4148378d, type: 2}
+  - {fileID: 11400000, guid: f37425223895c2b41a00461e63804d8a, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 0

@@ -25,7 +25,8 @@ MonoBehaviour:
   width: 0
   effectShape: 0
   statusEffectToApply: []
-  baseDamageMultiplier: 0
+  baseDamageMultiplier: 10
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 250
-  nextUpgrade: {fileID: 0}
+  nextUpgrade: {fileID: 11400000, guid: c1821086fcf7b474dbc8733e0c0ea79e, type: 2}
+  reduceCostOnTurn: 0

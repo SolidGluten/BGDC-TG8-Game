@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da74bfd73a7bf3c4dbf222448bf15c78, type: 3}
+  m_Name: Fortify
+  m_EditorClassIdentifier: 
+  cardName: Fortify
+  description: Double Knight's Shield. Gain 2 Slow for 1 turn.
+  cardSprite: {fileID: 21300000, guid: 8d394a1aad73ead4ab7127d81d391fba, type: 3}
+  exhaust: 0
+  cost: 3
+  cardType: 1
+  caster: 0
+  rangeFromCaster: 0
+  range: 0
+  width: 0
+  effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 27e13c914afd66541b9170c88c9daa87, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 200
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 0

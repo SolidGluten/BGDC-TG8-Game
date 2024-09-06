@@ -29,4 +29,5 @@ MonoBehaviour:
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0
-  nextUpgrade: {fileID: 0}
+  nextUpgrade: {fileID: 11400000, guid: b2757add3dfe99c4ca601eb16462c305, type: 2}
+  reduceCostOnTurn: 0
