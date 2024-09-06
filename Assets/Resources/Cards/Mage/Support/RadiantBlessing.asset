@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 446deea49a795634a982dcd1b3111fe4, type: 3}
   m_Name: RadiantBlessing
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: RadiantBlessing
+  description: All Mage's cards 1 Cost less next turn. Exhaust.
+  cardSprite: {fileID: 21300000, guid: e96043ba30a0dd447814a0400bf9a979, type: 3}
+  exhaust: 1
+  cost: 2
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply: []
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 0

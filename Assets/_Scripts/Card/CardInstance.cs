@@ -30,7 +30,7 @@ public class CardInstance
         cardHealMultiplier = cardScriptable.baseHealMultiplier;
         cardGainShieldMultiplier = cardScriptable.baseGainShieldMultiplier;
         //isUpgradable = cardScriptable.nextUpgrade != null;
-        if(card.reduceCostOnTurn) TurnController.instance.OnEndTurn += ReduceCost;
+        if(card.reduceCostOnTurn) TurnController.instance.OnEndTurn += ReduceCostOne;
     }
 
     public bool PlayCard(Entity[] target)
@@ -44,9 +44,19 @@ public class CardInstance
         return cardScriptable.Play(caster, target, cardDamageMultiplier, cardHealMultiplier, cardGainShieldMultiplier);
     }
 
-    public void ReduceCost()
+    public void ReduceCostOne()
     {
-        cost = Math.Max(0, cost - 1);
+        ReduceCost(1);
+    }
+
+    public void ReduceCost(int _cost)
+    {
+        cost = Math.Max(0, cost - _cost);
+    }
+
+    public void AddCost(int _cost)
+    {
+        cost += _cost;
     }
 
     //public void UpgradeCard()

@@ -19,7 +19,8 @@ public enum StatusEffectType {
     ShieldGen,
     Charged,
     DamageCardMultiplier,
-    LastingShield
+    LastingShield,
+    MagesMercy
 }
 
 [Serializable]

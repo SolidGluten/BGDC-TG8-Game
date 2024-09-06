@@ -268,7 +268,7 @@ public class CardManager : MonoBehaviour
         ResetHand();
     }
 
-    public List<CardInstance> GetAllPlayingCards()
+    public List<CardInstance> GetAllPlayingCards() 
     {
         var cards = new List<CardInstance>();
         cards.AddRange(hand);

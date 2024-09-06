@@ -8,20 +8,13 @@ public class MagicBarrier : Card
 {
     public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
-        if (target.Length > 0)
+        var characters = GetAllTargetCharacters(target);
+        if (!characters.Any()) return false;
+
+        foreach (var chara in characters)
         {
-            var targetList = target.ToList();
-            var ally = targetList.Select((target) => target.GetComponent<Character>());
-
-            if (!ally.Any()) return false;
-
-            foreach (var character in ally)
-            {
-                character.GainShield(from.stats.ATK * (int)gainShieldMultiplier / 100);
-            }
-
-            return true;
+            chara.GainShield(from.stats.ATK * (int)gainShieldMultiplier / 100);
         }
-        else return false;
+        return true;
     }
 }

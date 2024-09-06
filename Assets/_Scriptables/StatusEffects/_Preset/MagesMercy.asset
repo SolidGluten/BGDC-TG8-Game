@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd765951a54973742a85ca5f64f3bd9b, type: 3}
-  m_Name: SelenesProtection_LastingShield
+  m_Script: {fileID: 11500000, guid: aeeaf1c981ef5e64a99a83423c68aca2, type: 3}
+  m_Name: MagesMercy
   m_EditorClassIdentifier: 
   stacks: 2
-  type: 15
-  isStackable: 0
+  type: 16
+  isStackable: 1
   isPermanent: 0
   isAppliedOnStart: 0
-  isAppliedInstant: 0
+  isAppliedInstant: 1
   isReducedOnHit: 0
-  isAppliedOnce: 1
+  isAppliedOnce: 0
   isBuff: 1
