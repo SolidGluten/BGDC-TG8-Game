@@ -18,12 +18,13 @@ MonoBehaviour:
   exhaust: 1
   cost: 2
   cardType: 0
-  caster: 0
+  caster: 1
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
-  statusEffectToApply: []
+  statusEffectToApply:
+  - {fileID: 11400000, guid: a6a217240f832d54ab0a2decbcf418f1, type: 2}
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0

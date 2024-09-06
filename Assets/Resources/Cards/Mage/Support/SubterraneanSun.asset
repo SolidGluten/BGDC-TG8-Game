@@ -9,23 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c6272e661762334ea0adf6cf05d2b55, type: 3}
-  m_Name: SunsGrace
+  m_Script: {fileID: 11500000, guid: ffd9be3a75bf7e04a8b533183c6adf4e, type: 3}
+  m_Name: SubterraneanSun
   m_EditorClassIdentifier: 
-  cardName: SunsGrace
-  description: Grant 1 Fortified and 1 Empowered to an ally. Draw 1.
-  cardSprite: {fileID: 21300000, guid: 742843caff190184c9e833328b95b5de, type: 3}
-  exhaust: 0
-  cost: 3
+  cardName: Subterranean Sun
+  description: Grant 5 Weaken and 5 Fragile to all enemies. Exhaust.
+  cardSprite: {fileID: 21300000, guid: 523a1a997c4c6d445aac001665043d76, type: 3}
+  exhaust: 1
+  cost: 5
   cardType: 0
   caster: 1
-  rangeFromCaster: 3
+  rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
   statusEffectToApply:
-  - {fileID: 11400000, guid: d6a9222e915b5264a89049a3bd58b691, type: 2}
-  - {fileID: 11400000, guid: 1952c444176ed0e459e7ba2a68510e44, type: 2}
+  - {fileID: 11400000, guid: 15972cb1716229a499225b69e0a70e48, type: 2}
+  - {fileID: 11400000, guid: ffb21ffd3a48b5541935fcc794bfcae1, type: 2}
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0

@@ -144,6 +144,15 @@ public class Entity : MonoBehaviour
         return appliedStatusEffects.Where(x => x.effect.isBuff).ToArray();
     }
 
+    public void RemoveDebuffs()
+    {
+        var debuffs = GetDebuffs();
+        for(int i = debuffs.Length - 1; i >= 0; i--)
+        {
+            RemoveStatusEffect(debuffs[i]);
+        }
+    }
+
     public void RemoveStatusEffect(StatusEffect effect) {
         var effectToRemove = appliedStatusEffects.Find(x => x == effect);
         appliedStatusEffects.Remove(effectToRemove);

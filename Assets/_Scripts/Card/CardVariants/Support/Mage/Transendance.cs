@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transendance : MonoBehaviour
+[CreateAssetMenu(fileName = "Transendance", menuName = "ScriptableObjects/Cards/Mage/Support/Transendance")]
+public class Transendance : Card
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
-        
-    }
+        var characters = CharacterManager.instance.ActiveCharacters;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Character chara in characters)
+        {
+            ApplyCardEffects(from, chara);
+        }
+
+        foreach (Character chara in characters)
+        {
+            chara.RemoveDebuffs();
+        }
+
+        return true;
     }
 }

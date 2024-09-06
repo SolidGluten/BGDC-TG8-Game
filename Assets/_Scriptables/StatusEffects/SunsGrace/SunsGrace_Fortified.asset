@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16741f209495d54438142ed475a3ea8d, type: 3}
   m_Name: SunsGrace_Fortified
   m_EditorClassIdentifier: 
-  stacks: 2
+  stacks: 1
   type: 4
   isStackable: 1
   isPermanent: 0
@@ -20,4 +20,5 @@ MonoBehaviour:
   isAppliedInstant: 1
   isReducedOnHit: 0
   isAppliedOnce: 1
+  isBuff: 1
   fortifiedPercentMultip: -50

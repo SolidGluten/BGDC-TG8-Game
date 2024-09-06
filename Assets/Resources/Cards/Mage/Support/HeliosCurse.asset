@@ -9,23 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c6272e661762334ea0adf6cf05d2b55, type: 3}
-  m_Name: SunsGrace
+  m_Script: {fileID: 11500000, guid: 335125337fa6ba942a658815c0724f80, type: 3}
+  m_Name: HeliosCurse
   m_EditorClassIdentifier: 
-  cardName: SunsGrace
-  description: Grant 1 Fortified and 1 Empowered to an ally. Draw 1.
-  cardSprite: {fileID: 21300000, guid: 742843caff190184c9e833328b95b5de, type: 3}
-  exhaust: 0
+  cardName: Helios' Curse
+  description: Grant 2 Weaken and 2 Fragile to all enemies in range. Exhaust.
+  cardSprite: {fileID: 21300000, guid: 9f500341273f1c14d9371e8f8e2b0aa5, type: 3}
+  exhaust: 1
   cost: 3
   cardType: 0
   caster: 1
   rangeFromCaster: 3
   range: 0
-  width: 0
-  effectShape: 0
+  width: 2
+  effectShape: 2
   statusEffectToApply:
-  - {fileID: 11400000, guid: d6a9222e915b5264a89049a3bd58b691, type: 2}
-  - {fileID: 11400000, guid: 1952c444176ed0e459e7ba2a68510e44, type: 2}
+  - {fileID: 11400000, guid: f2fa1240b582fe94aa2803a995802205, type: 2}
+  - {fileID: 11400000, guid: c038a2a937a020f4091dfade22552163, type: 2}
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0

@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class SubterraneanSun : MonoBehaviour
+[CreateAssetMenu(fileName = "SubterraneanSun", menuName = "ScriptableObjects/Cards/Mage/Support/SubterraneanSun")]
+public class SubterraneanSun : Card
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
-        
-    }
+        var enemies = EnemyManager.Instance.ActiveEnemies;
+        if (!enemies.Any()) return false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Enemy enemy in enemies)
+        {
+            ApplyCardEffects(from, enemy);
+        }
+        return true;
     }
 }

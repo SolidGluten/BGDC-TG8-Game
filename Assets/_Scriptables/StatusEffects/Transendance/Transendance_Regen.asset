@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69168d34d1b8b0c428c82275a07e6830, type: 3}
-  m_Name: SunsGrace_Empowered
+  m_Script: {fileID: 11500000, guid: 04a275595d826024eb348a0859759466, type: 3}
+  m_Name: Transendance_Regen
   m_EditorClassIdentifier: 
-  stacks: 1
-  type: 5
+  stacks: 3
+  type: 11
   isStackable: 1
   isPermanent: 0
   isAppliedOnStart: 0
-  isAppliedInstant: 1
+  isAppliedInstant: 0
   isReducedOnHit: 0
-  isAppliedOnce: 1
+  isAppliedOnce: 0
   isBuff: 1
-  empoweredPercentMultip: 25
+  regenPercentMultip: 100

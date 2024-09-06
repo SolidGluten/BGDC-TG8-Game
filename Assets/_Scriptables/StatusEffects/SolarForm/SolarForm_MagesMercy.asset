@@ -15,9 +15,9 @@ MonoBehaviour:
   stacks: 2
   type: 16
   isStackable: 1
-  isPermanent: 0
+  isPermanent: 1
   isAppliedOnStart: 0
   isAppliedInstant: 1
   isReducedOnHit: 0
-  isAppliedOnce: 0
+  isAppliedOnce: 1
   isBuff: 1
