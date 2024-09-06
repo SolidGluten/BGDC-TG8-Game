@@ -13,9 +13,9 @@ public class Slash : Card
 
         var enemies = targetList.Select((target) => target.GetComponent<Enemy>()).ToList();
         enemies.RemoveAll(x => x == null);
+        if (!enemies.Any()) return false;
         var enemy = enemies.First();
 
-        if (!enemy) return false;
 
         enemy.TakeDamage(from.currAttackDamage * (int)dmgMultiplier/100);
 

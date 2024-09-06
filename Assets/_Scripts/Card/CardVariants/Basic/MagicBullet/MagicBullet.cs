@@ -11,13 +11,18 @@ public class MagicBullet : Card
         if (target.Length > 0)
         {
             var targetList = target.ToList();
-            var enemies = targetList.Select((target) => target.GetComponent<Enemy>());
+            var enemies = targetList.Select((target) => target.GetComponent<Enemy>()).ToList();
+            enemies.RemoveAll(x => x == null);
 
             if (!enemies.Any()) return false;
 
             foreach (var enemy in enemies)
             {
                 enemy.TakeDamage(from.stats.ATK * dmgMultiplier / 100);
+                foreach (var effects in statusEffectToApply)
+                {
+                    enemy.ApplyStatusEffect(from, effects);
+                }
             }
 
             return true;

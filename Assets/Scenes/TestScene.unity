@@ -99800,19 +99800,19 @@ PrefabInstance:
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 3d142e2dfde4d274a9d4c57680bb3639, type: 2}
+      objectReference: {fileID: 11400000, guid: f983f50e8bdb0a64c953e65d544fab90, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: ffb9242779900c743a1d58092e24184a, type: 2}
+      objectReference: {fileID: 11400000, guid: f983f50e8bdb0a64c953e65d544fab90, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 6d7b6eceaa54a80428f8d41a72b74352, type: 2}
+      objectReference: {fileID: 11400000, guid: f983f50e8bdb0a64c953e65d544fab90, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 1724794748a988d44a4b576ef50483ef, type: 2}
+      objectReference: {fileID: 11400000, guid: f983f50e8bdb0a64c953e65d544fab90, type: 2}
     - target: {fileID: 7098142498442935726, guid: c28e5b02710ebe548aa5fab1409eca10, type: 3}
       propertyPath: mageDeck.Array.data[4]
       value: 
@@ -100138,6 +100138,14 @@ PrefabInstance:
     - target: {fileID: 5150100355744747986, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018448266783041882, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43.180054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018448266783041882, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.910034
       objectReference: {fileID: 0}
     - target: {fileID: 7132425290647197841, guid: bcda9b0ea7019e64c901a4a473e7cf38, type: 3}
       propertyPath: m_AnchoredPosition.y
