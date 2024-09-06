@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc05682423006146b21747e64de3c1a, type: 3}
   m_Name: ImperishableNight
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Imperishable Night
+  description: All allies don't lose Shield at the start of turn for the rest of
+    this combat. Exhaust.
+  cardSprite: {fileID: 21300000, guid: 89efb3647e8f5a34a91ff8f98d194848, type: 3}
+  exhaust: 1
+  cost: 5
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 41c0e42ba72437c4b8f3b5647069d984, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 0

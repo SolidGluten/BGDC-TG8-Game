@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 //public enum CardType { Attack, Skill, Influence }
@@ -48,5 +49,27 @@ public abstract class Card : ScriptableObject
         {
             target.ApplyStatusEffect(from, effect);
         }
+    }
+
+    public List<Character> GetAllTargetCharacters(Entity[] entities, Character excludedCharacter)
+    {
+        var _entities = entities.ToList();
+        var characters = _entities.Select((entity) => entity.GetComponent<Character>()).ToList();
+
+        characters.RemoveAll(x => x == null);
+        if (excludedCharacter) characters.Remove(excludedCharacter);
+
+        return characters;
+    }
+
+    public List<Enemy> GetAllTargetEnemies(Entity[] entities, Enemy excludedEnemy)
+    {
+        var _entities = entities.ToList();
+        var enemies = _entities.Select((entity) => entity.GetComponent<Enemy>()).ToList();
+
+        enemies.RemoveAll(x => x == null);
+        if (excludedEnemy) enemies.Remove(excludedEnemy);
+
+        return enemies;
     }
 }

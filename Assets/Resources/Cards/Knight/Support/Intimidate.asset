@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d7ccea2f24c3741b25f75893d641fb, type: 3}
   m_Name: Intimidate
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Intimidate
+  description: All enemies in range gain 1 Weaken. Exhaust.
+  cardSprite: {fileID: 21300000, guid: fdaab506bdcede14cba6cda2c9ec05a1, type: 3}
+  exhaust: 1
+  cost: 2
   cardType: 0
-  rangeFromCaster: 0
+  caster: 0
+  rangeFromCaster: 2
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 76c25ff181f78754c83448db6b829307, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 0

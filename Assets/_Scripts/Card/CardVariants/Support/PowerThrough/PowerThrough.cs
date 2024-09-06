@@ -9,6 +9,7 @@ public class PowerThrough : Card
     {
         from.GainHealth(from.stats.ATK * healMultiplier / 100);
         ApplyCardEffects(from, from);
+
         return true;
     }
 }

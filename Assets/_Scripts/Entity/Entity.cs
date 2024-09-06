@@ -34,6 +34,15 @@ public class Entity : MonoBehaviour
     public bool canGainShield = true;
     public bool isInvincible = false;
 
+    private bool isShieldPermanent = false;
+    public bool IsShieldPermanent {
+        get { return isShieldPermanent; }
+        set {
+            if (!isShieldPermanent) TurnController.instance.OnStartTurn += RemoveShield;
+            else TurnController.instance.OnStartTurn -= RemoveShield;
+        }
+    }
+        
     public event Action OnDeath;
     public event Action OnHit;
 
@@ -45,6 +54,8 @@ public class Entity : MonoBehaviour
         currHealth = stats.HP;
         currMovePoints = stats.MOV;
         currAttackDamage = stats.ATK;
+
+        IsShieldPermanent = false;
 
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -97,6 +108,10 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public void RemoveShield()
+    {
+        currShield = 0;
+    }
     public void ApplyStatusEffect(Entity from, Effect effect)
     {
         var appEffect = appliedStatusEffects.Find((x) => x.effect == effect);
