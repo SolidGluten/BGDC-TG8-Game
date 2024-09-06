@@ -38,6 +38,7 @@ public class Entity : MonoBehaviour
     public bool IsShieldPermanent {
         get { return isShieldPermanent; }
         set {
+            isShieldPermanent = value;
             if (!isShieldPermanent) TurnController.instance.OnStartTurn += RemoveShield;
             else TurnController.instance.OnStartTurn -= RemoveShield;
         }

@@ -16,7 +16,7 @@ MonoBehaviour:
   description: All allies in range don't lose Shield at the start of the next turn.
   cardSprite: {fileID: 21300000, guid: 4c58a9153dc04fd44aa72c0839d95af6, type: 3}
   exhaust: 0
-  cost: 2
+  cost: 1
   cardType: 0
   caster: 0
   rangeFromCaster: 0

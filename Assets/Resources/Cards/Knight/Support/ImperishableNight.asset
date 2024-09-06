@@ -22,7 +22,7 @@ MonoBehaviour:
   caster: 0
   rangeFromCaster: 0
   range: 0
-  width: 0
+  width: 1
   effectShape: 0
   statusEffectToApply:
   - {fileID: 11400000, guid: 41c0e42ba72437c4b8f3b5647069d984, type: 2}

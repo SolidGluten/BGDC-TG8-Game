@@ -7,11 +7,11 @@ public class LastingShield : Effect
 {
     public override void ApplyEffect(Entity caster, Entity target)
     {
-
+        target.IsShieldPermanent = true;
     }
 
     public override void RemoveEffect(Entity caster, Entity target)
     {
-
+        target.IsShieldPermanent = false;
     }
 }

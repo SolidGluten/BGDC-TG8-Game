@@ -51,7 +51,7 @@ public abstract class Card : ScriptableObject
         }
     }
 
-    public List<Character> GetAllTargetCharacters(Entity[] entities, Character excludedCharacter)
+    public List<Character> GetAllTargetCharacters(Entity[] entities, Character excludedCharacter = null)
     {
         var _entities = entities.ToList();
         var characters = _entities.Select((entity) => entity.GetComponent<Character>()).ToList();
@@ -62,7 +62,7 @@ public abstract class Card : ScriptableObject
         return characters;
     }
 
-    public List<Enemy> GetAllTargetEnemies(Entity[] entities, Enemy excludedEnemy)
+    public List<Enemy> GetAllTargetEnemies(Entity[] entities, Enemy excludedEnemy = null)
     {
         var _entities = entities.ToList();
         var enemies = _entities.Select((entity) => entity.GetComponent<Enemy>()).ToList();
