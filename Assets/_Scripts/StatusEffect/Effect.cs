@@ -13,6 +13,8 @@ public abstract class Effect : ScriptableObject
     public bool isAppliedInstant;
     public bool isReducedOnHit;
     public bool isAppliedOnce; // false => applied on every turn 
+    public bool isBuff = true; // false => Debuff
+
 
     public abstract void ApplyEffect(Entity caster, Entity target);
 

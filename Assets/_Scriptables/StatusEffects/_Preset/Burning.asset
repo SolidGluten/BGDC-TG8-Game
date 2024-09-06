@@ -20,4 +20,5 @@ MonoBehaviour:
   isAppliedInstant: 0
   isReducedOnHit: 0
   isAppliedOnce: 0
+  isBuff: 0
   burningPercentMultip: 25

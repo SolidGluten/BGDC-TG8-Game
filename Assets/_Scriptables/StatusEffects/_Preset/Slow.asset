@@ -20,4 +20,5 @@ MonoBehaviour:
   isAppliedInstant: 1
   isReducedOnHit: 0
   isAppliedOnce: 1
-  slowPercentMultip: 25
+  isBuff: 0
+  reduceMovePoints: 2

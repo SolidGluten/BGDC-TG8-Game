@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c805a861514f5b54e857e7f5de25d9cf, type: 3}
   m_Name: UberCharged
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Uber-Charged
+  description: Knight gains 2 Invincible. This costs 1 less for each time you lose
+    HP this combat. Exhaust.
+  cardSprite: {fileID: 21300000, guid: 2a07e665f81b5bc4d94ad54e9d7d562b, type: 3}
+  exhaust: 1
+  cost: 10
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: b22a6672801e6e34798cad4f54f4c8a9, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}
+  reduceCostOnTurn: 1

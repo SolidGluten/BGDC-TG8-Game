@@ -118,6 +118,16 @@ public class Entity : MonoBehaviour
         return appliedStatusEffects.Find(x => x.effect == effect);
     }
 
+    public StatusEffect[] GetDebuffs()
+    {
+        return appliedStatusEffects.Where(x => !x.effect.isBuff).ToArray();
+    }
+
+    public StatusEffect[] GetBuffs()
+    {
+        return appliedStatusEffects.Where(x => x.effect.isBuff).ToArray();
+    }
+
     public void RemoveStatusEffect(StatusEffect effect) {
         var effectToRemove = appliedStatusEffects.Find(x => x == effect);
         appliedStatusEffects.Remove(effectToRemove);

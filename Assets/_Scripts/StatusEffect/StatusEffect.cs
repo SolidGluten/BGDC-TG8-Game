@@ -44,6 +44,7 @@ public class StatusEffect
         this.isAppliedInstant = effect.isAppliedInstant;
         this.isReducedOnHit = effect.isReducedOnHit;
         this.isAppliedOnce = effect.isAppliedOnce;
+        this.isBuff = effect.isBuff;
 
         this.caster = caster;
         this.target = target;
@@ -64,6 +65,7 @@ public class StatusEffect
     public bool isAppliedInstant { get; private set; }
     public bool isReducedOnHit { get; private set; }
     public bool isAppliedOnce { get; private set; }
+    public bool isBuff { get; private set; }
 
     public void UseEffect()
     {

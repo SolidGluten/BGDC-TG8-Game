@@ -20,3 +20,4 @@ MonoBehaviour:
   isAppliedInstant: 1
   isReducedOnHit: 0
   isAppliedOnce: 1
+  isBuff: 0

@@ -81,7 +81,7 @@ public class CardManager : MonoBehaviour
             Debug.Log("No card to play");
             yield break;
         }
-        if (currentEnergy < card.cost)
+        if (currentEnergy < cardInstance.cost)
         {
             Debug.Log("Not enough energy");
             yield break;

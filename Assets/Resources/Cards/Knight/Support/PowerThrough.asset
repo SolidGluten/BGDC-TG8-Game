@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6209dc94877fc3342a8291462cd5e989, type: 3}
   m_Name: PowerThrough
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
-  exhaust: 0
+  cardName: Power Through
+  description: Knight gains 1 Invincible, loses HP equal to 25% of Knight's Max HP,
+    and gains Haste 1 for 2 turns. Exhaust
+  cardSprite: {fileID: 21300000, guid: e433071ee4e98c64faa989e4deb51fa0, type: 3}
+  exhaust: 1
+  cost: 3
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 21b5ddec16fb6044b9cfb86b098d630a, type: 2}
+  - {fileID: 11400000, guid: ee8c484fbd94dbd4d8dab236300ee01b, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

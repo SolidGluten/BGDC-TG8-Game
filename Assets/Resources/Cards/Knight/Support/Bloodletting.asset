@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e281dd5e1d95d49ad4104d765f20aa, type: 3}
   m_Name: Bloodletting
   m_EditorClassIdentifier: 
-  cardName: 
-  description: 
-  cardSprite: {fileID: 0}
-  cardBorder: {fileID: 0}
-  cost: 0
-  caster: 0
+  cardName: Bloodletting
+  description: Knight loses 5% of Knight's Max HP and dispel all debuffs from Knight.
+    Draw 2.
+  cardSprite: {fileID: 21300000, guid: 7c1d4392c6c8e97499a01c7d3a6a194c, type: 3}
   exhaust: 0
+  cost: 1
   cardType: 0
+  caster: 0
   rangeFromCaster: 0
   range: 0
   width: 0
   effectShape: 0
+  statusEffectToApply: []
+  baseDamageMultiplier: 0
+  baseHealMultiplier: -5
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 0}

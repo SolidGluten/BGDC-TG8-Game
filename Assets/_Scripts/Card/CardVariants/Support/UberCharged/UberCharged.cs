@@ -8,6 +8,7 @@ public class UberCharged : Card
 {
     public override bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
+        ApplyCardEffects(from, from);
         return true;
     }
 }

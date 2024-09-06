@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2701511d5a45bdb41a3d0a496d00d79e, type: 3}
-  m_Name: QuickRest_Slow
+  m_Script: {fileID: 11500000, guid: 7a3a1ea0896c58c499691bd3e5937c59, type: 3}
+  m_Name: UberCharge_Invincible
   m_EditorClassIdentifier: 
   stacks: 2
-  type: 9
+  type: 8
   isStackable: 1
   isPermanent: 0
-  isAppliedOnStart: 0
+  isAppliedOnStart: 1
   isAppliedInstant: 1
   isReducedOnHit: 0
-  isAppliedOnce: 1
-  isBuff: 0
-  reduceMovePoints: 2
+  isAppliedOnce: 0
+  isBuff: 1

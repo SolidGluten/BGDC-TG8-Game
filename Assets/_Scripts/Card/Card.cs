@@ -34,8 +34,19 @@ public abstract class Card : ScriptableObject
     [Space(15)]
     public Card nextUpgrade;
 
+    [Space(15)]
+    public bool reduceCostOnTurn = false;
+
     public virtual bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
         return true;
+    }
+
+    public void ApplyCardEffects(Entity from, Entity target)
+    {
+        foreach (Effect effect in statusEffectToApply)
+        {
+            target.ApplyStatusEffect(from, effect);
+        }
     }
 }
