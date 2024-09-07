@@ -16,7 +16,7 @@ public class Enemy : Entity
     public Character target;
 
     //private List<Cell> _detectionArea = new List<Cell>();
-    private List<Cell> _maxRangeArea = new List<Cell>();
+    private List<Cell> _attackRangeArea = new List<Cell>();
 
     private List<Cell> _attackArea = new List<Cell>();
     private List<Cell> _rangeArea = new List<Cell>();
@@ -59,10 +59,10 @@ public class Enemy : Entity
     //    CellsHighlighter.RaiseLayerType(_detectionArea, CellType.Enemy_Detection);
     //}
 
-    public void HighlightMaxRangeArea()
+    public void HighlightAttackRange()
     {
-        _maxRangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
-        CellsHighlighter.RaiseLayerType(_maxRangeArea, CellType.Enemy_MaxRange);
+        _attackRangeArea = CellsHighlighter.HighlightArea(occupiedCell.index, enemyScriptable.maxRangeFromTarget, HighlightShape.Diamond);
+        CellsHighlighter.RaiseLayerType(_attackRangeArea, CellType.Enemy_MaxRange);
     }
 
     private void OnDestroy()

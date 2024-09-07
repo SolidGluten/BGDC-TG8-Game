@@ -77,6 +77,6 @@ public class Pathfind
         int dstX = Mathf.Abs(B.x - A.x);
         int dstY = Mathf.Abs(B.y - A.y);
 
-        return Mathf.Abs(dstX - dstY);
+        return 10 * Mathf.Abs(dstX - dstY);
     }
 }

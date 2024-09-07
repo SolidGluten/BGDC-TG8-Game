@@ -25,8 +25,22 @@ public class Centaur : EnemyScriptable
         foreach (var chara in characters)
             chara.TakeDamage(from.stats.ATK);
 
-        var endOfLine = attackArea.Last();
-        endOfLine.SetEntity(from);
+        var cell = attackArea.First();
+
+        if (cell.isOccupied)
+        {
+            return true;
+        }
+
+        for (int i = 0; i < attackArea.Count; i++)
+        {
+            if (attackArea[i].isOccupied && i != 0)
+            {
+                cell.SetEntity(from);
+                break;
+            }
+            cell = attackArea[i];
+        }
 
         return true;
     }

@@ -54,28 +54,69 @@ public class EnemyMovement : MonoBehaviour
 
         enemy.isTargetInRange = false;
 
-        var dir = CellsHighlighter.GetDirection(Vector3.right * this.transform.position.x, Vector3.right * charaToMove.transform.position.x);
-        if (dir == Direction.Left) enemy.Flip(false);
-        if (dir == Direction.Right) enemy.Flip(true);
+        var cellToMove = charaToMove.occupiedCell;
+
+        var flipDir = CellsHighlighter.GetDirection(Vector3.right * this.transform.position.x, Vector3.right * charaToMove.transform.position.x);
+        if (flipDir == Direction.Left) enemy.Flip(false);
+        if (flipDir == Direction.Right) enemy.Flip(true);
+
+        var moveDir = CellsHighlighter.GetDirection(this.transform.position, charaToMove.transform.position);
+
+        if (enemy.enemyScriptable.isPerpendicularToTarget)
+        {
+            var characterPerpendicularArea = CellsHighlighter.HighlightArea(cellToMove.index, enemy.enemyScriptable.maxRangeFromTarget, HighlightShape.Cross);
+
+            //CellsHighlighter.RaiseLayerType(characterPerpendicularArea, CellType.Effect);
+
+            var closestCell = characterPerpendicularArea[0];
+            var closestDist = Vector2.Distance(this.transform.position, closestCell.transform.position);
+
+            foreach(Cell cell in characterPerpendicularArea)
+            {
+                if (!cell) continue;
+                var dist = Vector2.Distance(cell.transform.position, this.transform.position);
+                if(dist < closestDist)
+                {
+                    closestCell = cell;
+                    closestDist = dist;
+                }
+            }
+
+            if (closestCell)  cellToMove = closestCell;
+
+            //closestCell.RaiseType(CellType.Path);
+        }
 
         //if (pathToChara.Any()) CellsHighlighter.SetTypes(pathToChara, CellType.Path, false);
-        pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, charaToMove.occupiedCell.index);
 
-        if (!pathToChara.Any()) return;
-        //CellsHighlighter.SetTypes(pathToChara, CellType.Path, true);
+        // Find closest path to character
+        pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, cellToMove.index);
 
-        pathToChara.Remove(pathToChara.Last()); // Remove character cell from path
-
-        if (pathToChara.Count >= enemy.enemyScriptable.maxRangeFromTarget)
+        if (!pathToChara.Any())
         {
-            for(int i = 0; i < enemy.enemyScriptable.maxRangeFromTarget - 1; i++)
-                pathToChara.Remove(pathToChara.Last());
-
-            int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
-            pathToChara[moveCount - 1]?.SetEntity(enemy);
+            enemy.isTargetInRange = true;
             return;
         }
-            
-        enemy.isTargetInRange = true;
+
+        // Remove character cell from path
+        pathToChara.Remove(charaToMove.occupiedCell);
+
+        if (!enemy.enemyScriptable.isPerpendicularToTarget)
+        {
+            // Stop enemy from moving when in max range
+            if (pathToChara.Count >= enemy.enemyScriptable.maxRangeFromTarget)
+            {
+                for (int i = 0; i < enemy.enemyScriptable.maxRangeFromTarget - 1; i++)
+                    pathToChara.Remove(pathToChara.Last());
+
+            }
+        }
+
+        int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
+        if (moveCount > 0)
+        {
+            pathToChara[moveCount - 1]?.SetEntity(enemy);
+            return;
+        } 
     }
 }

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class EnemyManager : MonoBehaviour, ITurn
 {
@@ -9,8 +11,10 @@ public class EnemyManager : MonoBehaviour, ITurn
 
     [SerializeField] private GameObject enemyObject;
 
-    public bool showEnemyRange = true;
+    public bool showAttackRange = true;
     //public bool showDetectionRange = true;
+
+    public bool spawnRandom = true;
 
     [SerializeField] private List<SpawnableEnemy> enemySpawnList = new List<SpawnableEnemy>();
     public List<Enemy> ActiveEnemies = new List<Enemy>();
@@ -42,7 +46,7 @@ public class EnemyManager : MonoBehaviour, ITurn
         foreach (Enemy enemy in ActiveEnemies)
         {
             //if (showDetectionRange) enemy.HighlightDetectionArea();
-            if (showEnemyRange) enemy.HighlightMaxRangeArea();
+            if (showAttackRange) enemy.HighlightAttackRange();
         }
     }
 
@@ -57,7 +61,7 @@ public class EnemyManager : MonoBehaviour, ITurn
             enemy.PrepareAttack();
 
             //if (showDetectionRange) enemy.HighlightDetectionArea();
-            if (showEnemyRange) enemy.HighlightMaxRangeArea();
+            if (showAttackRange) enemy.HighlightAttackRange();
         }
     }
 
@@ -75,30 +79,48 @@ public class EnemyManager : MonoBehaviour, ITurn
             return;
         }
 
-        var limiter = 0;
-        do
+        if (spawnRandom)
         {
-            var randIdx = UnityEngine.Random.Range(0, enemySpawnList.Count);
-            var enemy = enemySpawnList[randIdx];
-
-            if(currEnemyCost >= enemy.cost)
+            var limiter = 0;
+            do
             {
-                var randPosIdx = UnityEngine.Random.Range(0, GridSystem.Instance.enemySpawnPositions.Length);
-                var randPos = GridSystem.Instance.enemySpawnPositions[randIdx];
-                var cell = GridSystem.Instance.GetCell(randPos);
+                var randIdx = UnityEngine.Random.Range(0, enemySpawnList.Count);
+                var enemy = enemySpawnList[randIdx];
+
+                if (currEnemyCost >= enemy.enemyScriptable.cost)
+                {
+                    var randPosIdx = UnityEngine.Random.Range(0, GridSystem.Instance.enemySpawnPositions.Length);
+                    var randPos = GridSystem.Instance.enemySpawnPositions[randIdx];
+                    var cell = GridSystem.Instance.GetCell(randPos);
+
+                    if (cell && !cell.isOccupied)
+                    {
+                        AddEnemy(enemy.stats, enemy.enemyScriptable, randPos);
+                    }
+
+                    currEnemyCost -= enemy.enemyScriptable.cost;
+                }
+
+                limiter++;
+                if (limiter > 20) break;
+
+            } while (currEnemyCost > 0);
+        }
+        else
+        {
+            for(int i = 0; i < enemySpawnList.Count; i++)
+            {
+                var spawnPos = GridSystem.Instance.enemySpawnPositions[i];
+                var cell = GridSystem.Instance.GetCell(spawnPos);
 
                 if (cell && !cell.isOccupied)
                 {
-                    AddEnemy(enemy.stats, enemy.enemy, randPos);
+                    var enemy = enemySpawnList[i];
+                    if(enemy != null) AddEnemy(enemy.stats, enemy.enemyScriptable, spawnPos);
                 }
-                
-                currEnemyCost -= enemy.cost;
             }
-
-            limiter++;
-            if (limiter > 20) break;
-
-        } while (currEnemyCost > 0);
+        }
+        
 
         OnEnemyInitialize?.Invoke();
     }
@@ -131,7 +153,6 @@ public class EnemyManager : MonoBehaviour, ITurn
 
 [Serializable]
 public class SpawnableEnemy {
-    public int cost;
     public StatsScriptable stats;
-    public EnemyScriptable enemy;
+    public EnemyScriptable enemyScriptable;
 }
