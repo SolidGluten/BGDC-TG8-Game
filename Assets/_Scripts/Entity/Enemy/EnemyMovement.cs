@@ -86,20 +86,19 @@ public class EnemyMovement : MonoBehaviour
 
             //closestCell.RaiseType(CellType.Path);
         }
-
-        //if (pathToChara.Any()) CellsHighlighter.SetTypes(pathToChara, CellType.Path, false);
-
+        
+        
         // Find closest path to character
         pathToChara = Pathfind.FindPath(enemy.occupiedCell.index, cellToMove.index);
+
+        // Remove character cell from path
+        pathToChara.Remove(charaToMove.occupiedCell);
 
         if (!pathToChara.Any())
         {
             enemy.isTargetInRange = true;
             return;
         }
-
-        // Remove character cell from path
-        pathToChara.Remove(charaToMove.occupiedCell);
 
         if (!enemy.enemyScriptable.isPerpendicularToTarget)
         {
@@ -109,14 +108,16 @@ public class EnemyMovement : MonoBehaviour
                 for (int i = 0; i < enemy.enemyScriptable.maxRangeFromTarget - 1; i++)
                     pathToChara.Remove(pathToChara.Last());
 
+                int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
+                pathToChara[moveCount - 1]?.SetEntity(enemy);
+                return;
             }
-        }
 
-        int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
-        if (moveCount > 0)
+            enemy.isTargetInRange = true;
+        } else
         {
+            int moveCount = Mathf.Min(pathToChara.Count, enemy.stats.MOV);
             pathToChara[moveCount - 1]?.SetEntity(enemy);
-            return;
-        } 
+        }
     }
 }

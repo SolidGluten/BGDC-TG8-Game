@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Shaman
   sprite: {fileID: 1239664124, guid: d68c18e1189b11b46a0aa60feda7d18e, type: 3}
-  cost: 0
-  detectionRange: 7
-  maxRangeFromTarget: 5
-  rangeFromCaster: 5
-  attackRange: 0
+  cost: 3
+  maxRangeFromTarget: 4
+  rangeFromCaster: 0
+  attackRange: 4
   attackWidth: 2
   attackShape: 2
+  isPerpendicularToTarget: 0

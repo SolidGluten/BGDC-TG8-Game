@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Golem
   sprite: {fileID: -1294907975, guid: f05c6324635c240459dd1c5ec1df2a05, type: 3}
-  cost: 0
-  detectionRange: 5
-  maxRangeFromTarget: 1
-  rangeFromCaster: 1
-  attackRange: 0
+  cost: 7
+  maxRangeFromTarget: 2
+  rangeFromCaster: 0
+  attackRange: 2
   attackWidth: 4
   attackShape: 2
+  isPerpendicularToTarget: 0

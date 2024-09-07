@@ -47,6 +47,8 @@ public abstract class EnemyScriptable : ScriptableObject
 
         var mainTarget = characters.Any() ? characters.First() : null;
 
+        Debug.Log(mainTarget);
+
         if (mainTarget)
         {
             var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
@@ -54,8 +56,10 @@ public abstract class EnemyScriptable : ScriptableObject
                 rangeFromCaster ? caster.occupiedCell.index : mainTarget.occupiedCell.index, 
                 attackWidth, attackShape, attackRange, dir
                 );
-            attackArea.Remove(caster.occupiedCell);
+            if(rangeFromCaster) attackArea.Remove(caster.occupiedCell);
         }
+
+        Debug.Log(mainTarget);
 
         return mainTarget;
     }

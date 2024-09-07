@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Centaur
   sprite: {fileID: 425130955, guid: e9c4326b063025b43901c8ca37e70a5f, type: 3}
-  cost: 0
-  detectionRange: 5
-  maxRangeFromTarget: 1
-  rangeFromCaster: 1
-  attackRange: 4
+  cost: 5
+  maxRangeFromTarget: 4
+  rangeFromCaster: 2
+  attackRange: 5
   attackWidth: 0
   attackShape: 3
+  isPerpendicularToTarget: 1

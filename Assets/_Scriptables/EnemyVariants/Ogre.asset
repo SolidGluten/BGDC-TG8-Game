@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Ogre
   sprite: {fileID: 1812666161, guid: e6c0a652a51a29e4ba30d020dabda250, type: 3}
-  cost: 0
-  detectionRange: 5
+  cost: 2
   maxRangeFromTarget: 2
-  rangeFromCaster: 2
-  attackRange: 0
+  rangeFromCaster: 0
+  attackRange: 2
   attackWidth: 1
   attackShape: 0
+  isPerpendicularToTarget: 0

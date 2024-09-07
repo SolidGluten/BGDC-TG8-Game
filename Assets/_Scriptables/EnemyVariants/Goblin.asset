@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Goblin
   sprite: {fileID: 1478498136, guid: daebdbeb2a2388a4880765dcfebd1b56, type: 3}
-  cost: 0
-  detectionRange: 5
+  cost: 1
   maxRangeFromTarget: 1
-  rangeFromCaster: 1
-  attackRange: 0
+  rangeFromCaster: 0
+  attackRange: 1
   attackWidth: 1
   attackShape: 2
+  isPerpendicularToTarget: 0
