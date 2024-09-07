@@ -47,6 +47,8 @@ public class CardInstance
         {
             if (cardScriptable.resetCostOnPlay)
                 cost = cardScriptable.cost;
+            if (cardScriptable.addCostOnPlay)
+                AddCost(1);
             return true;
         } else
         {

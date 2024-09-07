@@ -41,6 +41,9 @@ public abstract class Card : ScriptableObject
     public bool reduceCostOnKnightCard = false;
 
     [Space(15)]
+    public bool addCostOnPlay = false;
+
+    [Space(15)]
     public bool resetCostOnPlay = false;
 
     public virtual bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)

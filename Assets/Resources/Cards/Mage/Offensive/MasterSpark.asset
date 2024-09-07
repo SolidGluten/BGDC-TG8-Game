@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Master Spark
   description: Deal 250% to all enemies in range. This costs 1 less each time you
     play a "Magic" Card. Reset cost back to 10 when played.
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 5c2ab9a30214d2543965ee9e36f13832, type: 3}
   exhaust: 0
   cost: 10
   cardType: 2

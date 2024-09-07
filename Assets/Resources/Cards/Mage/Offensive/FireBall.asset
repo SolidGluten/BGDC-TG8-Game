@@ -23,9 +23,13 @@ MonoBehaviour:
   range: 3
   width: 0
   effectShape: 0
-  statusEffectToApply: []
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 9cdd9715ed46dfc4f9cc1acefad6dc77, type: 2}
   baseDamageMultiplier: 125
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0
   nextUpgrade: {fileID: 0}
   reduceCostOnTurn: 0
+  reduceCostOnMagicCard: 0
+  reduceCostOnKnightCard: 0
+  resetCostOnPlay: 0
