@@ -69,6 +69,11 @@ public class CardManager : MonoBehaviour
 
     public void ResetEnergy() => currentEnergy = MAX_ENERGY;
 
+    public void AddEnergy(int extraEnergy)
+    {
+        currentEnergy = currentEnergy + extraEnergy;
+    }
+
     public IEnumerator PlayCard(CardInstance cardInstance)
     {
         isPlaying = true;

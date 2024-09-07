@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93df40f00915de545a8411162623457b, type: 3}
+  m_Name: BlazingBuckler
+  m_EditorClassIdentifier: 
+  cardName: Blazing Buckler
+  description: Mage gains 100% Shield. Grant 100% Burning to an enemy.
+  cardSprite: {fileID: 21300000, guid: c0ddf09bd13ea1e47bbdd731a966bb39, type: 3}
+  exhaust: 0
+  cost: 1
+  cardType: 1
+  caster: 1
+  rangeFromCaster: 2
+  range: 0
+  width: 0
+  effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: 1e9ee5b62cf3fa1409fe7dab88f2d38d, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 100
+  nextUpgrade: {fileID: 11400000, guid: 9e35292f26f32ac49b26c0f65ee4c4b9, type: 2}
+  reduceCostOnTurn: 0
