@@ -10,7 +10,7 @@ public class EnemyManager : MonoBehaviour, ITurn
     [SerializeField] private GameObject enemyObject;
 
     public bool showEnemyRange = true;
-    public bool showDetectionRange = true;
+    //public bool showDetectionRange = true;
 
     [SerializeField] private List<SpawnableEnemy> enemySpawnList = new List<SpawnableEnemy>();
     public List<Enemy> ActiveEnemies = new List<Enemy>();
@@ -41,7 +41,7 @@ public class EnemyManager : MonoBehaviour, ITurn
 
         foreach (Enemy enemy in ActiveEnemies)
         {
-            if (showDetectionRange) enemy.HighlightDetectionArea();
+            //if (showDetectionRange) enemy.HighlightDetectionArea();
             if (showEnemyRange) enemy.HighlightMaxRangeArea();
         }
     }
@@ -56,7 +56,7 @@ public class EnemyManager : MonoBehaviour, ITurn
             enemy.GetComponent<EnemyMovement>().Move();
             enemy.PrepareAttack();
 
-            if (showDetectionRange) enemy.HighlightDetectionArea();
+            //if (showDetectionRange) enemy.HighlightDetectionArea();
             if (showEnemyRange) enemy.HighlightMaxRangeArea();
         }
     }

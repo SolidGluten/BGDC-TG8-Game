@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private Enemy enemy;
     private List<Cell> pathToChara = new List<Cell>();
-    private List<Cell> detectionArea = new List<Cell>();
+    //private List<Cell> detectionArea = new List<Cell>();
 
     private void Start()
     {
@@ -20,17 +20,25 @@ public class EnemyMovement : MonoBehaviour
 
     public Character FindNearestCharacter() {
 
-        detectionArea = CellsHighlighter.HighlightArea(enemy.occupiedCell.index, enemy.enemyScriptable.detectionRange, HighlightShape.Circle);
-
-        var characters = detectionArea
-            .Where((cell) => cell.isOccupied)
-            .Select((cell) => cell.occupiedEntity.GetComponent<Character>())
-            .ToList();
-
-        characters.RemoveAll(x => x == null);
-
+        var characters = CharacterManager.instance.ActiveCharacters;
         if (!characters.Any()) return null;
-        else return characters.First();
+
+        Character nearestChara = characters[0];
+        var closestDist = Vector2.Distance(this.transform.position, nearestChara.transform.position);
+
+        foreach (Character chara in characters)
+        {
+            if (!chara) continue;
+
+            var dist = Vector2.Distance(this.transform.position, chara.transform.position);
+            if (dist < closestDist)
+            {
+                nearestChara = chara;
+                closestDist = dist;
+            }
+        }
+
+        return nearestChara;
     }
 
     public void Move()
