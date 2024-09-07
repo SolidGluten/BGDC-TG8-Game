@@ -9,22 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb61beda7a283f459d277cc85a52d37, type: 3}
-  m_Name: Purification
+  m_Script: {fileID: 11500000, guid: bbffee1fd3f63bd4595e75a8f6afca64, type: 3}
+  m_Name: FireBall
   m_EditorClassIdentifier: 
-  cardName: Purification
-  description: Dispel all debuffs from all allies in range. Draw 2.
-  cardSprite: {fileID: 21300000, guid: 2334a0c3e9305fe49b07039309b93163, type: 3}
+  cardName: Fire Ball
+  description: Grant 125% Burning to an enemy.
+  cardSprite: {fileID: 0}
   exhaust: 0
   cost: 2
-  cardType: 0
-  caster: 0
-  rangeFromCaster: 3
-  range: 0
+  cardType: 2
+  caster: 1
+  rangeFromCaster: 0
+  range: 3
   width: 0
   effectShape: 0
   statusEffectToApply: []
-  baseDamageMultiplier: 0
+  baseDamageMultiplier: 125
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0
   nextUpgrade: {fileID: 0}

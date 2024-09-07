@@ -30,7 +30,9 @@ public class CardInstance
         cardHealMultiplier = cardScriptable.baseHealMultiplier;
         cardGainShieldMultiplier = cardScriptable.baseGainShieldMultiplier;
         //isUpgradable = cardScriptable.nextUpgrade != null;
-        if(card.reduceCostOnTurn) TurnController.instance.OnEndTurn += ReduceCostOne;
+        if (card.reduceCostOnTurn) TurnController.instance.OnEndTurn += ReduceCostOne;
+        if (card.reduceCostOnMagicCard) CardManager.instance.OnPlayCard += ReduceCostOnMagicCard;
+        if (card.reduceCostOnKnightCard) CardManager.instance.OnPlayCard += ReduceCostOnKnightCard;
     }
 
     public bool PlayCard(Entity[] target)
@@ -41,7 +43,16 @@ public class CardInstance
             return false;
         }
 
-        return cardScriptable.Play(caster, target, cardDamageMultiplier, cardHealMultiplier, cardGainShieldMultiplier);
+        if (cardScriptable.Play(caster, target, cardDamageMultiplier, cardHealMultiplier, cardGainShieldMultiplier))
+        {
+            if (cardScriptable.resetCostOnPlay)
+                cost = cardScriptable.cost;
+            return true;
+        } else
+        {
+            return false;
+        }
+
     }
 
     public void ReduceCostOne()
@@ -52,12 +63,28 @@ public class CardInstance
     public void ReduceCost(int _cost)
     {
         cost = Math.Max(0, cost - _cost);
+        CardDisplay.RerenderAll();
+    }
+
+    public void ReduceCostOnMagicCard(CardInstance card)
+    {
+        if (card == null) return;
+        if (card.cardScriptable.caster == CharacterType.Mage) ReduceCost(1);
+    }
+
+    public void ReduceCostOnKnightCard(CardInstance card)
+    {
+        if (card == null) return;
+        if (card.cardScriptable.caster == CharacterType.Knight) ReduceCost(1);
     }
 
     public void AddCost(int _cost)
     {
         cost += _cost;
+        CardDisplay.RerenderAll();
     }
+
+    
 
     //public void UpgradeCard()
     //{

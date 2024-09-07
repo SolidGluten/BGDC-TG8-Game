@@ -187,17 +187,34 @@ public class CardManager : MonoBehaviour
             DrawCard();
     }
 
-    public void DrawCard()
+    public CardInstance DrawCard()
     {
-        if (hand.Count >= maxHandSize) return;
+        if (hand.Count >= maxHandSize) return null;
         if (drawPile.Count == 0) ReshuffleDiscardIntoDrawPile();
-        if (drawPile.Count == 0) return;
+        if (drawPile.Count == 0) return null;
 
         CardInstance drawnCard = drawPile[0];
-        if (drawnCard == null) return;
+        if (drawnCard == null) return null;
 
         drawPile.RemoveAt(0);
         AddCardToHand(drawnCard);
+
+        return drawnCard;
+    }
+
+    public CardInstance DrawCharacterCard(CharacterType charaType)
+    {
+        if (hand.Count >= maxHandSize) return null;
+        if (drawPile.Count == 0) ReshuffleDiscardIntoDrawPile();
+        if (drawPile.Count == 0) return null;
+
+        var drawnCard = drawPile.Where(x => x.cardScriptable.caster == charaType).First();
+        if (drawnCard == null) return null;
+
+        drawPile.RemoveAt(0);
+        AddCardToHand(drawnCard);
+
+        return drawnCard;
     }
 
     public void AddCardToHand(CardInstance card)

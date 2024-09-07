@@ -9,23 +9,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb61beda7a283f459d277cc85a52d37, type: 3}
-  m_Name: Purification
+  m_Script: {fileID: 11500000, guid: 64e16ea7a3a330a4fb50ccbe14ae7437, type: 3}
+  m_Name: MagicMissle
   m_EditorClassIdentifier: 
-  cardName: Purification
-  description: Dispel all debuffs from all allies in range. Draw 2.
-  cardSprite: {fileID: 21300000, guid: 2334a0c3e9305fe49b07039309b93163, type: 3}
+  cardName: Magic Missle
+  description: Deal 125% to an enemy. Draw 1.
+  cardSprite: {fileID: 21300000, guid: bed1d51faded80a4f9d8ed1a7b8308db, type: 3}
   exhaust: 0
   cost: 2
-  cardType: 0
-  caster: 0
-  rangeFromCaster: 3
+  cardType: 2
+  caster: 1
+  rangeFromCaster: 4
   range: 0
   width: 0
   effectShape: 0
   statusEffectToApply: []
-  baseDamageMultiplier: 0
+  baseDamageMultiplier: 125
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0
   nextUpgrade: {fileID: 0}
   reduceCostOnTurn: 0
+  reduceCostOnMagicCard: 0
+  reduceCostOnKnightCard: 0
+  resetCostOnPlay: 0

@@ -37,6 +37,11 @@ public abstract class Card : ScriptableObject
 
     [Space(15)]
     public bool reduceCostOnTurn = false;
+    public bool reduceCostOnMagicCard = false;
+    public bool reduceCostOnKnightCard = false;
+
+    [Space(15)]
+    public bool resetCostOnPlay = false;
 
     public virtual bool Play(Entity from, Entity[] target, int dmgMultiplier = 0, int healMultiplier = 0, int gainShieldMultiplier = 0)
     {
