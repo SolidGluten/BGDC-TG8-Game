@@ -6,7 +6,7 @@ using UnityEngine;
 public class DamageCardMultiplier : Effect
 {
     public int dmgMultiplier = 2;
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         var cards = CardManager.instance.GetAllPlayingCards();
         foreach (var card in cards)
@@ -15,7 +15,7 @@ public class DamageCardMultiplier : Effect
         }
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         var cards = CardManager.instance.GetAllPlayingCards();
         foreach (var card in cards)

@@ -7,13 +7,13 @@ public class Weaken : Effect
 {
     public int weakenPercentMultip = 25;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         var weakenedDmg = target.currAttackDamage * weakenPercentMultip / 100;
         target.currAttackDamage -= weakenedDmg;
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         var weakenedDmg = target.currAttackDamage * weakenPercentMultip / 100;
         target.currAttackDamage += weakenedDmg;

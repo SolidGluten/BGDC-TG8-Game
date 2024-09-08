@@ -7,12 +7,12 @@ public class Sturdy : Effect
 {
     public int sturdyPercentMultip = 50;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         target.shieldGainPercentMultip += sturdyPercentMultip;
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         target.shieldGainPercentMultip -= sturdyPercentMultip; 
     }

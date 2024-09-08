@@ -7,12 +7,12 @@ public class Fortified : Effect
 {
     public int fortifiedPercentMultip = -50;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         target.dmgPercentMultip = fortifiedPercentMultip;
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         target.dmgPercentMultip = 0;
     }

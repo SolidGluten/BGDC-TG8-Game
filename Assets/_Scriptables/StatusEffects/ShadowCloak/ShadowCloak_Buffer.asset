@@ -14,9 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stacks: 1
   type: 7
+  isBuff: 1
   isStackable: 1
-  isPermanent: 0
+  newInstance_OnStack: 0
+  increaseDuration_OnStack: 0
+  increaseEffectMultip_OnStack: 1
   isAppliedOnStart: 0
   isAppliedInstant: 1
   isReducedOnHit: 1
   isAppliedOnce: 0
+  isPermanent: 0
+  takeDmgAsEffectMultip: 0

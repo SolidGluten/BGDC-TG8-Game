@@ -115,18 +115,32 @@ public class Entity : MonoBehaviour
     }
     public void ApplyStatusEffect(Entity from, Effect effect)
     {
-        var appEffect = appliedStatusEffects.Find((x) => x.effect == effect);
-        if (appEffect != null)
+        var duplicateEffect = appliedStatusEffects.Find((x) => x.effect.type == effect.type);
+        var newEffect = new StatusEffect(effect, from, this);
+
+        if (duplicateEffect != null)
         {
-            if (!effect.isStackable) return;
-            appEffect.stacks += effect.stacks;
+            if (duplicateEffect.effect.isStackable)
+            {
+                if (duplicateEffect.effect.increaseDuration_OnStack) 
+                    duplicateEffect.stacks += newEffect.stacks;
+                if (duplicateEffect.effect.increaseEffectMultip_OnStack) 
+                    duplicateEffect.effectMultiplier += newEffect.effectMultiplier;
+                if (duplicateEffect.effect.newInstance_OnStack)
+                {
+                    appliedStatusEffects.Add(newEffect);
+                    newEffect.OnClearEffect += RemoveStatusEffect;
+                }
+            }
         }
         else
         {
-            var newEffect = new StatusEffect(effect, from, this);
             appliedStatusEffects.Add(newEffect);
             newEffect.OnClearEffect += RemoveStatusEffect;
         }
+
+        appliedStatusEffects.Sort((x, y) => y.stacks - x.stacks);
+        appliedStatusEffects.Sort((x, y) => y.effect.isPermanent ? 1 : -1);
     }
 
     public StatusEffect GetStatusEffect(Effect effect)

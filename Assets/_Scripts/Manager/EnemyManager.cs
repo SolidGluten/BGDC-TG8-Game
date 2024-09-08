@@ -87,7 +87,7 @@ public class EnemyManager : MonoBehaviour, ITurn
                 var randIdx = UnityEngine.Random.Range(0, enemySpawnList.Count);
                 var enemy = enemySpawnList[randIdx];
 
-                if (currEnemyCost >= enemy.enemyScriptable.cost)
+                if (enemy.isSpawnable && currEnemyCost >= enemy.enemyScriptable.cost)
                 {
                     var randPosIdx = UnityEngine.Random.Range(0, GridSystem.Instance.enemySpawnPositions.Length);
                     var randPos = GridSystem.Instance.enemySpawnPositions[randIdx];
@@ -104,7 +104,7 @@ public class EnemyManager : MonoBehaviour, ITurn
                 limiter++;
                 if (limiter > 20) break;
 
-            } while (currEnemyCost > 0);
+            } while (currEnemyCost > 0); 
         }
         else
         {
@@ -116,6 +116,7 @@ public class EnemyManager : MonoBehaviour, ITurn
                 if (cell && !cell.isOccupied)
                 {
                     var enemy = enemySpawnList[i];
+                    if (!enemy.isSpawnable) continue;
                     if(enemy != null) AddEnemy(enemy.stats, enemy.enemyScriptable, spawnPos);
                 }
             }
@@ -153,6 +154,7 @@ public class EnemyManager : MonoBehaviour, ITurn
 
 [Serializable]
 public class SpawnableEnemy {
+    public bool isSpawnable;
     public StatsScriptable stats;
     public EnemyScriptable enemyScriptable;
 }

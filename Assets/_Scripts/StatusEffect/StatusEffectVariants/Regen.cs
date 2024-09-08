@@ -7,12 +7,12 @@ public class Regen : Effect
 {
     public int regenPercentMultip = 25;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
-        target.GainHealth(caster.stats.ATK * regenPercentMultip / 100);
+        target.GainHealth(effectMultip * regenPercentMultip / 100);
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
 
     }

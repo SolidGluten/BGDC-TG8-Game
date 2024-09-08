@@ -7,12 +7,12 @@ public class ShieldGen : Effect
 {
     public int shieldGenPercentMultip = 25;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
 
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         throw new System.NotImplementedException();
     }

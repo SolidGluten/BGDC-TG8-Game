@@ -7,12 +7,12 @@ public class Slow : Effect
 {
     public int reduceMovePoints = 2;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         target.currMovePoints -= reduceMovePoints;
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
 
     }

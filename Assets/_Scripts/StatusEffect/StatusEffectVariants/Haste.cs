@@ -6,12 +6,12 @@ using UnityEngine;
 public class Haste : Effect
 {
     public int addMovePoints = 2;
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         target.currMovePoints += Mathf.Max(0, addMovePoints);
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         //throw new System.NotImplementedException();
     }

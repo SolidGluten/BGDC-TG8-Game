@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "MagesMercy", menuName = "ScriptableObjects/StatusEffect/MagesMercy")]
 public class MagesMercy : Effect
 {
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
         var allMageCards = CardManager.instance.GetAllPlayingCards().Where(x => x.cardScriptable.caster == CharacterType.Mage);
 
@@ -17,7 +17,7 @@ public class MagesMercy : Effect
         CardDisplay.RerenderAll();
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         var allMageCards = CardManager.instance.GetAllPlayingCards().Where(x => x.cardScriptable.caster == CharacterType.Mage);
 

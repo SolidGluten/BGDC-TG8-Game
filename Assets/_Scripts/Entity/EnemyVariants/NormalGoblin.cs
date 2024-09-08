@@ -17,7 +17,7 @@ public class NormalGoblin : EnemyScriptable
             
         foreach(var chara in characters)
         {
-            chara.TakeDamage(from.stats.ATK);
+            chara.TakeDamage(from.currAttackDamage);
         }
 
         return true;

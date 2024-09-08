@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Blazing Star
   description: Grant 50% burning to all enemies in range. Double their burning.
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 994bf47334f470c4398295386ac392de, type: 3}
   exhaust: 0
   cost: 4
   cardType: 2
@@ -32,4 +32,5 @@ MonoBehaviour:
   reduceCostOnTurn: 0
   reduceCostOnMagicCard: 0
   reduceCostOnKnightCard: 0
+  addCostOnPlay: 0
   resetCostOnPlay: 0

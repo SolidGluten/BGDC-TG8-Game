@@ -7,16 +7,16 @@ public class Burning : Effect
 {
     public int burningPercentMultip = 25;
 
-    public override void ApplyEffect(Entity caster, Entity target)
+    public override void ApplyEffect(Entity target, int effectMultip = 0)
     {
-        var burningDamage = caster.currAttackDamage * burningPercentMultip / 100;
+        var burningDamage = effectMultip * burningPercentMultip / 100;
         var effects = target.GetStatusEffect(this);
         var stacks = effects.stacks;
 
         target.TakeDamage(burningDamage * stacks);
     }
 
-    public override void RemoveEffect(Entity caster, Entity target)
+    public override void RemoveEffect(Entity target)
     {
         
     }

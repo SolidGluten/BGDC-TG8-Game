@@ -27,9 +27,10 @@ public enum StatusEffectType {
 public class StatusEffect
 {
     public int stacks;
+    public int effectMultiplier = 0;
     public Effect effect;
 
-    public Entity caster;
+    //public Entity caster;
     public Entity target;
 
     private bool hasAppliedOnce = false;
@@ -37,47 +38,29 @@ public class StatusEffect
     public StatusEffect(Effect effect, Entity caster, Entity target)
     {
         this.effect = effect;
-        this.type = effect.type;
         this.stacks = effect.stacks;
 
-        this.isStackable = effect.isStackable;
-        this.isPermanent = effect.isPermanent;
-        this.isAppliedOnStart = effect.isAppliedOnStart;
-        this.isAppliedInstant = effect.isAppliedInstant;
-        this.isReducedOnHit = effect.isReducedOnHit;
-        this.isAppliedOnce = effect.isAppliedOnce;
-        this.isBuff = effect.isBuff;
-
-        this.caster = caster;
         this.target = target;
 
-        if (isAppliedInstant) UseEffect();
+        if (effect.takeDmgAsEffectMultip) effectMultiplier = caster.stats.ATK;
+        if (effect.isAppliedInstant) UseEffect();
 
-        if (isReducedOnHit) target.OnHit += UpdateEffect;
-        else if (isAppliedOnStart) TurnController.instance.OnStartTurn += UpdateEffect;
+        if (effect.isReducedOnHit) target.OnHit += UpdateEffect;
+        else if (effect.isAppliedOnStart) TurnController.instance.OnStartTurn += UpdateEffect;
         else TurnController.instance.OnEndTurn += UpdateEffect;
     }
 
     public event Action<StatusEffect> OnClearEffect;
 
-    public StatusEffectType type { get; private set; }
-    public bool isStackable { get; private set; }
-    public bool isPermanent { get; private set; }
-    public bool isAppliedOnStart { get; private set; }
-    public bool isAppliedInstant { get; private set; }
-    public bool isReducedOnHit { get; private set; }
-    public bool isAppliedOnce { get; private set; }
-    public bool isBuff { get; private set; }
-
     public void UseEffect()
     {
         hasAppliedOnce = true;
-        effect.ApplyEffect(caster, target);
+        effect.ApplyEffect(target, effectMultiplier);
     }
 
     public void UpdateEffect()
     {
-        if (isAppliedOnce)
+        if (effect.isAppliedOnce)
         {
             if (!hasAppliedOnce) UseEffect();
         } else
@@ -86,10 +69,10 @@ public class StatusEffect
             UseEffect();
         }
 
-        if (isPermanent) return;
+        if (effect.isPermanent) return;
 
         stacks -= 1;
-        if (stacks <= 0)
+        if (stacks < 0)
         {
             ClearEffect(); //Remove Effect
             OnClearEffect?.Invoke(this);
@@ -98,9 +81,9 @@ public class StatusEffect
 
     public void ClearEffect()
     {
-        effect.RemoveEffect(caster, target);
-        if (isAppliedOnStart) TurnController.instance.OnStartTurn -= UpdateEffect;
+        effect.RemoveEffect(target);
+        if (effect.isAppliedOnStart) TurnController.instance.OnStartTurn -= UpdateEffect;
         else TurnController.instance.OnEndTurn -= UpdateEffect;
-        if (isReducedOnHit) target.OnHit -= UpdateEffect;
+        if (effect.isReducedOnHit) target.OnHit -= UpdateEffect;
     }
 }
