@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46282854791064f4abb76c2106e58d88, type: 3}
+  m_Name: FreezeAtmosphere
+  m_EditorClassIdentifier: 
+  cardName: Freeze Atmosphere
+  description: Gain 150% Shield-gen for 3 turns. Exhaust.
+  cardSprite: {fileID: 21300000, guid: d966fc953609d37449476b02836454ef, type: 3}
+  exhaust: 1
+  cost: 2
+  cardType: 1
+  caster: 1
+  rangeFromCaster: 0
+  range: 0
+  width: 0
+  effectShape: 0
+  statusEffectToApply:
+  - {fileID: 11400000, guid: f72a87524fbd5fc40abb195eaaa15c1c, type: 2}
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseGainShieldMultiplier: 0
+  nextUpgrade: {fileID: 11400000, guid: 33c60cea56bf5724b9d8ded7f95833b2, type: 2}
+  reduceCostOnTurn: 0
+  reduceCostOnMagicCard: 0
+  reduceCostOnKnightCard: 0
+  addCostOnPlay: 0
+  resetCostOnPlay: 0

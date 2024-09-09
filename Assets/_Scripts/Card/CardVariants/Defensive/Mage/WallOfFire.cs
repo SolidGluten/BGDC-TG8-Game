@@ -12,7 +12,7 @@ public class WallOfFire : Card
         {
             ApplyCardEffects(from, ene);
         }
-        from.GainShield(from.stats.ATK * gainShieldMultiplier / 100);
+        from.GainShield(from.currAttackDamage * gainShieldMultiplier / 100);
         return true;
     }
 }

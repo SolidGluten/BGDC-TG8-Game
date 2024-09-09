@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 741ff0821cff69e4ba4a19eee2eda444, type: 3}
-  m_Name: ShrugItOff
+  m_Name: Shrug It Off
   m_EditorClassIdentifier: 
   cardName: Shrug It Off
   description: Knight gains 250% Shield and loses HP equal to 10% of Knight's Max
