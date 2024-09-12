@@ -282,9 +282,8 @@ GameObject:
   - component: {fileID: 1900416190265699626}
   - component: {fileID: 5478016690062370102}
   - component: {fileID: 9172723490250988055}
-  - component: {fileID: 8360456594589786086}
   m_Layer: 5
-  m_Name: InventoryCard
+  m_Name: StaticCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,26 +401,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f23f62c325395a409a29cd1f67f27d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 7e6d159f250c7a04bb3888d7891ca697, type: 2}
+  cardInstance:
+    cost: 0
+    cardDamageMultiplier: 0
+    cardHealMultiplier: 0
+    cardGainShieldMultiplier: 0
   canvas: {fileID: 353949401891016197}
   defaultSortOrder: 0
   card_name: {fileID: 270089355983325067}
   card_description: {fileID: 6204864269396527062}
   card_cost: {fileID: 4386976551486356488}
   card_image: {fileID: 0}
---- !u!114 &8360456594589786086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310802754110361015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb412da0731fbb4db995391a5a8eb69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverSizeMultiplier: 1.5
 --- !u!1 &5443088541117469098
 GameObject:
   m_ObjectHideFlags: 0

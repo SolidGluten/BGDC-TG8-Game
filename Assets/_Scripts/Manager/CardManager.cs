@@ -16,9 +16,9 @@ public class CardManager : MonoBehaviour
     public List<Card> mageDeck = new List<Card>();
     public List<Card> deck = new List<Card>();
 
-    private List<CardInstance> drawPile = new List<CardInstance>();
-    private List<CardInstance> discardPile = new List<CardInstance>();
-    private List<CardInstance> exhaustPile = new List<CardInstance>();
+    [HideInInspector] public List<CardInstance> drawPile = new List<CardInstance>();
+    [HideInInspector] public List<CardInstance> discardPile = new List<CardInstance>();
+    [HideInInspector] public List<CardInstance> exhaustPile = new List<CardInstance>();
 
     private List<CardInstance> hand = new List<CardInstance>();
 
@@ -300,6 +300,18 @@ public class CardManager : MonoBehaviour
         cards.AddRange(discardPile);
         cards.AddRange(exhaustPile);
         return cards;
+    }
+
+    public static List<Card> GetAllCards()
+    {
+        var cardList = Resources.LoadAll<Card>("Cards/").ToList();
+        return cardList;
+    }
+
+    public static List<Card> GetAllCardsByRarity(CardRarity rarity)
+    {
+        var cardList = GetAllCards();
+        return cardList.Where(x => x.cardRarity == rarity).ToList();
     }
 
     public void OnDisable()

@@ -18,6 +18,7 @@ public abstract class Card : ScriptableObject
     public bool exhaust;
     public int cost;
     public CardType cardType;
+    public CardRarity cardRarity;
     public CharacterType caster = CharacterType.Knight;
 
     [Space(15)]
