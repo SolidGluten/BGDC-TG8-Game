@@ -19,6 +19,7 @@ MonoBehaviour:
   exhaust: 0
   cost: 3
   cardType: 2
+  cardRarity: 2
   caster: 1
   rangeFromCaster: 2
   range: 0

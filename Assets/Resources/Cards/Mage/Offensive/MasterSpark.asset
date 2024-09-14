@@ -19,6 +19,7 @@ MonoBehaviour:
   exhaust: 0
   cost: 10
   cardType: 2
+  cardRarity: 2
   caster: 1
   rangeFromCaster: 0
   range: 99
@@ -32,4 +33,5 @@ MonoBehaviour:
   reduceCostOnTurn: 0
   reduceCostOnMagicCard: 1
   reduceCostOnKnightCard: 0
+  addCostOnPlay: 0
   resetCostOnPlay: 1

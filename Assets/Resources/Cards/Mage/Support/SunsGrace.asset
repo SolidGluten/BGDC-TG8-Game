@@ -18,6 +18,7 @@ MonoBehaviour:
   exhaust: 0
   cost: 3
   cardType: 0
+  cardRarity: 0
   caster: 1
   rangeFromCaster: 3
   range: 0
@@ -29,5 +30,9 @@ MonoBehaviour:
   baseDamageMultiplier: 0
   baseHealMultiplier: 0
   baseGainShieldMultiplier: 0
-  nextUpgrade: {fileID: 0}
+  nextUpgrade: {fileID: 11400000, guid: 6be2d9554422b7147bb9ea90013ce658, type: 2}
   reduceCostOnTurn: 0
+  reduceCostOnMagicCard: 0
+  reduceCostOnKnightCard: 0
+  addCostOnPlay: 0
+  resetCostOnPlay: 0
