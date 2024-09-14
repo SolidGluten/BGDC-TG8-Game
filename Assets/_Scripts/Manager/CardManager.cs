@@ -12,11 +12,12 @@ public class CardManager : MonoBehaviour
     public const int MAX_ENERGY = 5;
     public int currentEnergy;
 
+    public Deck playerDeck;
+
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
+    public List<Card> currentDeck = new List<Card>();
 
-    public Deck defaultDeck;
-    public Deck currentDeck;
 
     [HideInInspector] public List<CardInstance> drawPile = new List<CardInstance>();
     [HideInInspector] public List<CardInstance> discardPile = new List<CardInstance>();
@@ -54,8 +55,10 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        var knights = currentDeck.cards.Where(x => x.caster == CharacterType.Knight);
-        var mages = currentDeck.cards.Where(x => x.caster == CharacterType.Mage);
+        currentDeck.AddRange(playerDeck.cards);
+
+        var knights = currentDeck.Where(x => x.caster == CharacterType.Knight);
+        var mages = currentDeck.Where(x => x.caster == CharacterType.Mage);
 
         if (knights.Any()) knightDeck.AddRange(knights);
         if (mages.Any()) mageDeck.AddRange(mages);
@@ -286,7 +289,7 @@ public class CardManager : MonoBehaviour
 
     public void AddDeckToDrawPile()
     {
-        foreach (Card card in currentDeck.cards)
+        foreach (Card card in currentDeck)
         {
             var caster = CharacterManager.instance.GetCharacterByType(card.caster);
             var cardInstance = new CardInstance(card, caster);
@@ -315,7 +318,7 @@ public class CardManager : MonoBehaviour
     public static List<Card> GetAllCardsByRarity(CardRarity rarity)
     {
         var cardList = GetAllCards();
-        return cardList.Where(x => x.cardRarity == rarity).ToList();
+        return cardList.Where(x => x.cardRarity == rarity && x.cardType != CardType.Basic).ToList();
     }
 
     public void OnDisable()

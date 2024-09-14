@@ -43,7 +43,7 @@ public class RewardManager : MonoBehaviour
 
     private void OnEnable()
     {
-        characterManager.OnCharacterInitialize += InitializeRewards;
+        InitializeRewards();
     }
 
     public Card RandomCard()
@@ -115,14 +115,14 @@ public class RewardManager : MonoBehaviour
     {
         if (pickedReward.type == RewardType.RandomCard) {
             // Replace card in deck to the random card
-            CardManager.instance.currentDeck.cards.Remove(pickedCard.cardScriptable);
-            CardManager.instance.currentDeck.cards.Add(pickedReward.cardDisplay.CardInstance.cardScriptable);
+            CardManager.instance.playerDeck.cards.Remove(pickedCard.cardScriptable);
+            CardManager.instance.playerDeck.cards.Add(pickedReward.cardDisplay.CardInstance.cardScriptable);
         } else if(pickedReward.type == RewardType.Upgrade)
         {
             // Upgrade card
             var upgradedCard = pickedCard.cardScriptable.nextUpgrade;
-            CardManager.instance.currentDeck.cards.Remove(pickedCard.cardScriptable);
-            CardManager.instance.currentDeck.cards.Add(upgradedCard);
+            CardManager.instance.playerDeck.cards.Remove(pickedCard.cardScriptable);
+            CardManager.instance.playerDeck.cards.Add(upgradedCard); 
         }
 
         pickedReward.SetUse(true);

@@ -23,7 +23,7 @@ public class DeckDisplay : MonoBehaviour
         {
             case PileType.Deck:
                 {
-                    currentDeck = CardManager.instance.currentDeck.cards;
+                    currentDeck = CardManager.instance.currentDeck;
                     break;
                 }
             case PileType.Draw:
