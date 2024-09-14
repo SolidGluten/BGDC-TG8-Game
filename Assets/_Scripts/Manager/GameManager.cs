@@ -4,20 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public enum GameState { Pause, Play, Death}
+public enum GameState { Pause, Play, Death, Win}
 public class GameManager : MonoBehaviour
 {
-    public static GameState CurrentState { get; private set; }
+    public GameState currentState { get; private set; }
 
     public static Vector2 MousePos;
     public static Camera mainCam;
 
     public bool isPaused { get; private set; }
 
-    public event Action OnPause;
-    public event Action OnResume;
+    public UnityEvent OnPause;
+    public UnityEvent OnResume;
+    public UnityEvent OnDeath;
+    public UnityEvent OnWin;
 
     public static GameManager Instance;
 
@@ -47,13 +50,10 @@ public class GameManager : MonoBehaviour
 
         if (!EnemyManager.Instance.ActiveEnemies.Any())
         {
-            // Player win
-            //SceneLoader.Instance.ReloadScene();
-            currentRound++;
+            Win();
         } else if (!CharacterManager.instance.ActiveCharacters.Any())
         {
-            // Player lost
-            //SceneLoader.Instance.ReloadScene();
+            Dead();
             currentRound = 1;
         }
 
@@ -62,13 +62,32 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
-        OnPause();
+        currentState = GameState.Pause;
+        OnPause?.Invoke();
     }
 
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        OnResume();
+        currentState = GameState.Play;
+        OnResume?.Invoke();
     }
 
+    public void Dead()
+    {
+        currentState = GameState.Death;
+        OnDeath?.Invoke();
+    }
+
+    public void Win()
+    {
+        currentState = GameState.Win;
+        OnWin?.Invoke();
+    }
+
+    public void NextRound()
+    {
+        SceneLoader.Instance.ReloadScene();
+        currentRound++;
+    }
 }

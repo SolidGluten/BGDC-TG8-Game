@@ -14,6 +14,8 @@ public class CardManager : MonoBehaviour
 
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
+
+    public Deck defaultDeck;
     public Deck currentDeck;
 
     [HideInInspector] public List<CardInstance> drawPile = new List<CardInstance>();

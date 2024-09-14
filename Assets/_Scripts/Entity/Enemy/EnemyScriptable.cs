@@ -47,8 +47,6 @@ public abstract class EnemyScriptable : ScriptableObject
 
         var mainTarget = characters.Any() ? characters.First() : null;
 
-        Debug.Log(mainTarget);
-
         if (mainTarget)
         {
             var dir = CellsHighlighter.GetDirection(caster.transform.position, mainTarget.transform.position);
