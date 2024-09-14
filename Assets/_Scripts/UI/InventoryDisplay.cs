@@ -10,10 +10,10 @@ public class InventoryDisplay : MonoBehaviour
 
     private void Start()
     {
-        CardManager.instance.deck.ForEach((card) =>
-        {
-            deckDisplay.Add(card);
-            Instantiate(card, deckContainer);
-        });
+        //CardManager.instance.deck.ForEach((card) =>
+        //{
+        //    deckDisplay.Add(card);
+        //    Instantiate(card, deckContainer);
+        //});
     }
 }

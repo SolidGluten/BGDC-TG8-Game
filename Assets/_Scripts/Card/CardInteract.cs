@@ -54,14 +54,14 @@ public class CardInteract : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         CardManager.instance.OnCancelCard += UnselectCard;
 
-        yield return CardManager.instance.PlayCard(cardDisplay.cardInstance);
+        yield return CardManager.instance.PlayCard(cardDisplay.CardInstance);
 
         CardManager.instance.OnCancelCard -= UnselectCard;
     }
 
     public void SelectCard()
     {
-        Debug.Log(cardDisplay.cardInstance.cardScriptable.cardName + "is Selected");
+        Debug.Log(cardDisplay.CardInstance.cardScriptable.cardName + "is Selected");
         isSelected = true;
         selectedCard = this;
     }

@@ -14,7 +14,7 @@ public class CardManager : MonoBehaviour
 
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
-    public List<Card> deck = new List<Card>();
+    public Deck currentDeck;
 
     [HideInInspector] public List<CardInstance> drawPile = new List<CardInstance>();
     [HideInInspector] public List<CardInstance> discardPile = new List<CardInstance>();
@@ -52,9 +52,11 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (Card card in knightDeck) deck.Add(card);
-        foreach (Card card in mageDeck) deck.Add(card);
+        var knights = currentDeck.cards.Where(x => x.caster == CharacterType.Knight);
+        var mages = currentDeck.cards.Where(x => x.caster == CharacterType.Mage);
 
+        if (knights.Any()) knightDeck.AddRange(knights);
+        if (mages.Any()) mageDeck.AddRange(mages);
 
         CharacterManager.instance.OnCharacterInitialize += AddDeckToDrawPile;
         TurnController.instance.OnEndTurn += ResetHand;
@@ -282,7 +284,7 @@ public class CardManager : MonoBehaviour
 
     public void AddDeckToDrawPile()
     {
-        foreach (Card card in deck)
+        foreach (Card card in currentDeck.cards)
         {
             var caster = CharacterManager.instance.GetCharacterByType(card.caster);
             var cardInstance = new CardInstance(card, caster);
@@ -322,7 +324,6 @@ public class CardManager : MonoBehaviour
 
     public void OnDestroy()
     {
-        deck.Clear();
         hand.Clear();
         exhaustPile.Clear();
         discardPile.Clear();

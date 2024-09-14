@@ -9,7 +9,14 @@ using UnityEngine.UI;
 
 public class CardDisplay : MonoBehaviour
 {
-    public CardInstance cardInstance;
+    private CardInstance cardInstance;
+    public CardInstance CardInstance {
+        get { return cardInstance; }
+        set { 
+            cardInstance = value;
+            Rerender();
+        }
+    }
 
     public Canvas canvas;
     [HideInInspector] public int defaultSortOrder = 0;
@@ -30,11 +37,6 @@ public class CardDisplay : MonoBehaviour
         OnRerenderAll += Rerender;
     }
 
-    private void Start()
-    {
-        Rerender();
-    }
-
     public void SetSortingOrder(int i)
     {
         canvas.sortingOrder = i;
@@ -45,6 +47,7 @@ public class CardDisplay : MonoBehaviour
         canvas.sortingOrder = defaultSortOrder;
     }
 
+    [ContextMenu("Rerender")]
     public void Rerender()
     {
         if (cardInstance == null)

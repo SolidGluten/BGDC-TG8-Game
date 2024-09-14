@@ -14,7 +14,7 @@ public class CardInstance
     public int cardHealMultiplier;
     public int cardGainShieldMultiplier;
 
-    //public bool isUpgradable = false;
+    public bool isUpgradable = false;
 
     public CardInstance(Card _card, Character _caster)
     {
@@ -29,7 +29,8 @@ public class CardInstance
         cardDamageMultiplier = cardScriptable.baseDamageMultiplier;
         cardHealMultiplier = cardScriptable.baseHealMultiplier;
         cardGainShieldMultiplier = cardScriptable.baseGainShieldMultiplier;
-        //isUpgradable = cardScriptable.nextUpgrade != null;
+        isUpgradable = cardScriptable.nextUpgrade != null && cardScriptable.cardType != CardType.Basic;
+
         if (card.reduceCostOnTurn) TurnController.instance.OnEndTurn += ReduceCostOne;
         if (card.reduceCostOnMagicCard) CardManager.instance.OnPlayCard += ReduceCostOnMagicCard;
         if (card.reduceCostOnKnightCard) CardManager.instance.OnPlayCard += ReduceCostOnKnightCard;
@@ -86,10 +87,8 @@ public class CardInstance
         CardDisplay.RerenderAll();
     }
 
-    
-
-    //public void UpgradeCard()
-    //{
-    //    if(isUpgradable) SetCard(cardScriptable.nextUpgrade);
-    //}
+    public void UpgradeCard()
+    {
+        if (isUpgradable) SetCard(cardScriptable.nextUpgrade);
+    }
 }

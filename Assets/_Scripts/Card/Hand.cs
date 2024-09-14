@@ -29,7 +29,7 @@ public class Hand : MonoBehaviour
         var cardDisplay = obj.GetComponent<CardDisplay>();
         var cardInteract = obj.GetComponent<CardInteract>();
 
-        cardDisplay.cardInstance = cardInstance;
+        cardDisplay.CardInstance = cardInstance;
         cardInteract.hand = this;
 
         cardsInHand.Add(cardInteract);
@@ -39,7 +39,7 @@ public class Hand : MonoBehaviour
 
     public void RemoveCard(CardInstance cardInstance)
     {
-        CardInteract card = cardsInHand.Find((x) => x.cardDisplay.cardInstance == cardInstance);
+        CardInteract card = cardsInHand.Find((x) => x.cardDisplay.CardInstance == cardInstance);
         if (!card) return;
 
         cardsInHand.Remove(card);
