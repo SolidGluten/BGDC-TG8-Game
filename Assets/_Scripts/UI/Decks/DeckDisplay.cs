@@ -15,7 +15,7 @@ public class DeckDisplay : MonoBehaviour
 
     [HideInInspector] public List<GameObject> cardItemList = new List<GameObject>();
 
-    private void Start()
+    private void OnEnable()
     {
         List<Card> currentDeck = new List<Card>();
 
@@ -38,7 +38,8 @@ public class DeckDisplay : MonoBehaviour
                 }
         }
 
-        if (showUpgradable) currentDeck.Where(x => x.nextUpgrade);
+        ClearDisplay();
+        if (showUpgradable) currentDeck = currentDeck.Where(x => x.nextUpgrade != null).ToList();
         if (currentDeck.Any()) UpdateDisplay(currentDeck);
     }
 

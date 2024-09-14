@@ -7,12 +7,6 @@ using UnityEngine.Events;
 
 public class RewardManager : MonoBehaviour
 {
-    public List<Card> randomizedCards = new List<Card>();
-
-    private List<Card> rareCards = new List<Card>();
-    private List<Card> uncommonCards = new List<Card>();
-    private List<Card> commonCards = new List<Card>();
-
     [Space(15)]
 
     public CardDisplay firstRandomCard;
@@ -31,7 +25,11 @@ public class RewardManager : MonoBehaviour
     [Space(15)]
 
     public CharacterManager characterManager;
+    public DeckDisplay deckDisplay;
 
+    [Space(15)]
+
+    public UnityEvent OnPickReward;
     public UnityEvent OnPickCard;
 
     public List<Card> temp = new List<Card>();
@@ -42,13 +40,6 @@ public class RewardManager : MonoBehaviour
         { CardRarity.Uncommon, 30 },
         { CardRarity.Common, 45 },
     };
-
-    private void Awake()
-    {
-        rareCards = CardManager.GetAllCardsByRarity(CardRarity.Rare);
-        uncommonCards = CardManager.GetAllCardsByRarity(CardRarity.Uncommon);
-        commonCards = CardManager.GetAllCardsByRarity(CardRarity.Common);
-    }
 
     private void OnEnable()
     {
@@ -81,6 +72,12 @@ public class RewardManager : MonoBehaviour
     public void PickReward(RewardItem reward)
     {
         pickedReward = reward;
+        if(reward.type == RewardType.RandomCard)
+            deckDisplay.showUpgradable = false;
+        else if(reward.type == RewardType.Upgrade)
+            deckDisplay.showUpgradable = true;
+
+        OnPickReward?.Invoke();
     }
 
     public void PickCard(CardInstance cardInstance)

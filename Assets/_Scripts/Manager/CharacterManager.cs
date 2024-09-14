@@ -83,6 +83,8 @@ public class CharacterManager : MonoBehaviour, ITurn
         chara.GetComponent<SpriteRenderer>().sprite = characterDetails.sprite;
         chara.type = characterDetails.characterType;
 
+        chara.OnDeath += () => ActiveCharacters.Remove(chara);
+
         cell.SetEntity(chara);
 
         return chara;
