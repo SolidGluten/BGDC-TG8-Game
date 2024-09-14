@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum PileType { Deck, Draw, Discard };
+public enum PileType { All, Deck, Draw, Discard };
 
 public class DeckDisplay : MonoBehaviour
 {

@@ -15,8 +15,6 @@ public class RewardManager : MonoBehaviour
 
     [Space(15)]
 
-    public Card temp;
-
     public CardDisplay firstRandomCard;
     public CardDisplay secondRandomCard;
 
@@ -35,6 +33,8 @@ public class RewardManager : MonoBehaviour
     public CharacterManager characterManager;
 
     public UnityEvent OnPickCard;
+
+    public List<Card> temp = new List<Card>();
 
     Dictionary<CardRarity, int> rarityChances = new Dictionary<CardRarity, int>()
     {
@@ -55,10 +55,27 @@ public class RewardManager : MonoBehaviour
         characterManager.OnCharacterInitialize += InitializeRewards;
     }
 
-    public void RandomCard()
+    public Card RandomCard()
     {
         var total = rarityChances.Aggregate(0, (acc, x) => acc + x.Value);
         var rand = UnityEngine.Random.Range(0, total);
+
+        CardRarity rarityType = CardRarity.Common;
+
+        foreach (var rarity in rarityChances)
+        {
+            if(rand < rarity.Value)
+            {
+                rarityType = rarity.Key;
+                break;
+            }
+        }
+
+        var cards = CardManager.GetAllCardsByRarity(rarityType);
+        if (!cards.Any()) return null;
+
+        var randCardIdx = UnityEngine.Random.Range(0, cards.Count());
+        return cards[randCardIdx];
     }
 
     public void PickReward(RewardItem reward)
@@ -83,8 +100,9 @@ public class RewardManager : MonoBehaviour
         else if (pickedReward.type == RewardType.Upgrade)
         {
             // Upgrade card
-            Character chara = CharacterManager.instance.GetCharacterByType(temp.caster);
-            CardInstance upgradedCardInstance = new CardInstance(pickedCard.cardScriptable.nextUpgrade, chara);
+            var card = pickedCard.cardScriptable;
+            Character chara = CharacterManager.instance.GetCharacterByType(card.caster);
+            CardInstance upgradedCardInstance = new CardInstance(card.nextUpgrade, chara);
             from.CardInstance = pickedCard;
             to.CardInstance = upgradedCardInstance;
         }
@@ -116,11 +134,22 @@ public class RewardManager : MonoBehaviour
 
     private void InitializeRewards()
     {
-        Character chara = CharacterManager.instance.GetCharacterByType(temp.caster);
-        var cardInstance = new CardInstance(temp, chara);
+        var firstCard = RandomCard();
+        var secondCard = RandomCard();
 
-        firstRandomCard.CardInstance = cardInstance;
-        secondRandomCard.CardInstance = cardInstance;
+        if (firstCard)
+        {
+            Character chara = CharacterManager.instance.GetCharacterByType(firstCard.caster);
+            var cardInstance = new CardInstance(firstCard, chara);
+            firstRandomCard.CardInstance = cardInstance;
+        }  
+
+        if (secondCard)
+        {
+            Character chara = CharacterManager.instance.GetCharacterByType(secondCard.caster);
+            var cardInstance = new CardInstance(secondCard, chara);
+            secondRandomCard.CardInstance = cardInstance;
+        }
     }
 
     private void OnDisable()
