@@ -311,7 +311,7 @@ public class CardManager : MonoBehaviour
 
     public static List<Card> GetAllCards()
     {
-        var cardList = Resources.LoadAll<Card>("Cards").ToList();
+        var cardList = Resources.Load<Deck>("AllCards/Deck").cards;
         return cardList;
     }
 

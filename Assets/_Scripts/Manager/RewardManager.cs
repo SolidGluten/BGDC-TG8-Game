@@ -134,6 +134,9 @@ public class RewardManager : MonoBehaviour
         var firstCard = RandomCard();
         var secondCard = RandomCard();
 
+        Debug.Log(firstCard);
+        Debug.Log(secondCard);
+
         if (firstCard)
         {
             Character chara = CharacterManager.instance.GetCharacterByType(firstCard.caster);
