@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &9152220702316776727
 MonoBehaviour:
@@ -116,3 +116,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarObj: {fileID: 3445124548849358221, guid: 777ad51e69937cc42ad045e605529fac, type: 3}
   healthBarList: []
+  enemyManager: {fileID: 0}
+  characterManager: {fileID: 0}

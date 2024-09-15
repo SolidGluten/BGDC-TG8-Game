@@ -45,15 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa9fb29acde63845b6d59e4f6725d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 0}
+  gridSystem: {fileID: 0}
   characterObject: {fileID: 3724879488159274509, guid: 6a4bdb7f194183a4381ac6b58f3e51c2, type: 3}
   cardManager: {fileID: 0}
-  charStats:
-  - {fileID: 11400000, guid: 9e72b98f24593694584202dbbfb48c0b, type: 2}
-  - {fileID: 11400000, guid: 9a2449321df8ee149983fdb528704338, type: 2}
-  characters:
-  - {fileID: 0}
-  - {fileID: 0}
+  knightSprite: {fileID: 0}
+  mageSprite: {fileID: 0}
+  playableCharacters:
+  - name: Knight
+    sprite: {fileID: 797093039, guid: 415a2d448161da34dad20e07b4b16815, type: 3}
+    stats: {fileID: 11400000, guid: 9232931d30c5bce4dab9256afab03b54, type: 2}
+    characterType: 0
+  - name: Mage
+    sprite: {fileID: 1004732718, guid: d86863847e21cf140b654503f1dfafc5, type: 3}
+    stats: {fileID: 11400000, guid: 27a6d8c8ed4f65942983fd38340d65a8, type: 2}
+    characterType: 1
+  ActiveCharacters: []
 --- !u!114 &3003321640501706342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,10 +67,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4656365344554176385}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f7339f4570901f4d84ba2b77a4b8533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SelectedCharacter: {fileID: 0}
-  toggleSelect: 0

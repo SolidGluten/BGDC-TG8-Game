@@ -6,6 +6,7 @@ using UnityEngine;
 public class DrawPileCounter : MonoBehaviour
 {
     public TextMeshProUGUI text_counter;
+    public CardManager cardManager;
 
     private void Awake()
     {
@@ -14,6 +15,6 @@ public class DrawPileCounter : MonoBehaviour
 
     private void Update()
     {
-        text_counter.text = CardManager.instance.DrawPileCount.ToString();
+        text_counter.text = cardManager.DrawPileCount.ToString();
     }
 }

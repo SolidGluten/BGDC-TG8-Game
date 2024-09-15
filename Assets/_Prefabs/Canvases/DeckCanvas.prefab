@@ -885,8 +885,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4976408065397317420}
   - {fileID: 6018448266783041882}
+  - {fileID: 4976408065397317420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -969,9 +969,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae66fd2eaedd9b428ca3f67d298b287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardManager: {fileID: 0}
   cardItem: {fileID: 0}
   cardParent: {fileID: 0}
-  cardItemList: []
+  type: 1
+  showUpgradable: 0
+  characterType: 2
 --- !u!1 &8878169906409974520
 GameObject:
   m_ObjectHideFlags: 0

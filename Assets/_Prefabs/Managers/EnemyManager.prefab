@@ -44,3 +44,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a74aca915fd34429a07ef3a1dc7552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyObject: {fileID: 6375444940500128356, guid: 9d3119252763cac4689d757cb901f141, type: 3}
+  showAttackRange: 0
+  spawnRandom: 1
+  enemySpawnList:
+  - isSpawnable: 1
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: 1df44ab3faa2a4b44837e7788516623b, type: 2}
+  - isSpawnable: 0
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: f53c1059a9b3c9040beb6fa1a9c66c27, type: 2}
+  - isSpawnable: 0
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: 6c7bf8e71ac86604887dd4282de03cac, type: 2}
+  - isSpawnable: 0
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: 739f4b7070121d841a8534b61e582865, type: 2}
+  - isSpawnable: 0
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: 0fc5d3c5eead1ad4d8f5d27922fac5c0, type: 2}
+  - isSpawnable: 0
+    stats: {fileID: 11400000, guid: f0736309da833724b84792cab98a120a, type: 2}
+    enemyScriptable: {fileID: 11400000, guid: 124e921ea96e9284c92f1e2fd129b79c, type: 2}
+  ActiveEnemies: []
+  maxEnemyCost: 8
+  currEnemyCost: 0

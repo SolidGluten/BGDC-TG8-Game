@@ -91,8 +91,8 @@ public class RewardManager : MonoBehaviour
         if (pickedReward.type == RewardType.RandomCard)
         {
             // Replace card in deck to the random card
-            from.CardInstance = pickedReward.cardDisplay.CardInstance;
-            to.CardInstance = pickedCard;
+            from.CardInstance = pickedCard;
+            to.CardInstance = pickedReward.cardDisplay.CardInstance;
         }
         else if (pickedReward.type == RewardType.Upgrade)
         {

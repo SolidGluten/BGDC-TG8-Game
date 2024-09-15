@@ -11,7 +11,7 @@ public class CheatCardDisplay : MonoBehaviour
 
     private void Start()
     {
-        cardList = Resources.LoadAll<Card>("Cards/").ToList();
+        cardList = Resources.Load<Deck>("AllCards/Deck").cards;
 
         foreach(var card in cardList)
         {

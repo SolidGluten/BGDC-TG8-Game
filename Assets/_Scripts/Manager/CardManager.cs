@@ -27,9 +27,9 @@ public class CardManager : MonoBehaviour
 
     public bool isPlaying = false;
 
-    public int DrawPileCount => drawPile.Count;
-    public int DiscardPileCount => discardPile.Count;
-    public int ExhaustPileCount => exhaustPile.Count;
+    public int DrawPileCount => drawPile.Count();
+    public int DiscardPileCount => discardPile.Count();
+    public int ExhaustPileCount => exhaustPile.Count();
 
     public event Action OnCancelCard;
     public event Action OnDiscardHand;
@@ -311,7 +311,7 @@ public class CardManager : MonoBehaviour
 
     public static List<Card> GetAllCards()
     {
-        var cardList = Resources.LoadAll<Card>("Cards/").ToList();
+        var cardList = Resources.LoadAll<Card>("Cards").ToList();
         return cardList;
     }
 
