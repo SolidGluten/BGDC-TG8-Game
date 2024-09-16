@@ -75,7 +75,7 @@ public class Hand : MonoBehaviour
             return;
         }
 
-        for (int i = 0; i < cardCount; i++)
+        for (int i = cardCount - 1; i >= 0; i--)
         {
             //float rotationAngle = (fanSpread * (i - (cardCount - 1) / 2f));
             //cardsInHand[i].transform.localRotation = Quaternion.Euler(0f, 0f, rotationAngle);
@@ -91,6 +91,7 @@ public class Hand : MonoBehaviour
             cardsInHand[i].originalPos = newPosition;
 
             cardsInHand[i].cardDisplay.defaultSortOrder = i + 2;
+            cardsInHand[i].cardDisplay.Rerender();
         }
     }
 
