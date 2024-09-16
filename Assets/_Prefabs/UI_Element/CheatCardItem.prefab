@@ -314,4 +314,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb412da0731fbb4db995391a5a8eb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverSizeMultiplier: 2
+  hoverSizeMultiplier: 1.2

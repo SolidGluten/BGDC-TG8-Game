@@ -19,9 +19,9 @@ public class EntityDetailsDisplay : MonoBehaviour
         if (entity)
         {
             name_text.text = entity.entityName.ToString();
-            health_text.text = entity.currHealth + "/" + entity.stats.HP;
-            shield_text.text = entity.currShield.ToString();
-            stamina_text.text = entity.currMovePoints + "/" + entity.stats.MOV;
+            health_text.text = " : " + entity.currHealth + "/" + entity.stats.HP;
+            shield_text.text = " : " + entity.currShield.ToString();
+            stamina_text.text = " : " + entity.currMovePoints + "/" + entity.stats.MOV;
 
             //buffs
             var buffs_array = entity.GetBuffs().Select(x => x.effect.type + " " + x.stacks + "X");

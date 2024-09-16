@@ -31,6 +31,7 @@ public class PileCounter : MonoBehaviour
                         break;
                     }
                 case PileType.All:
+                case PileType.Deck:
                 default:
                     {
                         text_counter.text = "0";

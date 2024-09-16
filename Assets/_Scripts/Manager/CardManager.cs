@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using UnityEngine;
 
 public class CardManager : MonoBehaviour
 {
     public static CardManager instance;
+
+    public CharacterManager characterManager;
 
     public const int MAX_ENERGY = 5;
     public int currentEnergy;
@@ -17,7 +18,6 @@ public class CardManager : MonoBehaviour
     public List<Card> knightDeck = new List<Card>();
     public List<Card> mageDeck = new List<Card>();
     public List<Card> currentDeck = new List<Card>();
-
 
     [HideInInspector] public List<CardInstance> drawPile = new List<CardInstance>();
     [HideInInspector] public List<CardInstance> discardPile = new List<CardInstance>();
@@ -55,7 +55,12 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
-        currentDeck.AddRange(playerDeck.cards);
+        InitializeDeck();
+    }
+    
+    public void InitializeDeck()
+    {
+        if (playerDeck != null) currentDeck.AddRange(playerDeck.cards);
 
         var knights = currentDeck.Where(x => x.caster == CharacterType.Knight);
         var mages = currentDeck.Where(x => x.caster == CharacterType.Mage);
@@ -63,8 +68,10 @@ public class CardManager : MonoBehaviour
         if (knights.Any()) knightDeck.AddRange(knights);
         if (mages.Any()) mageDeck.AddRange(mages);
 
-        CharacterManager.instance.OnCharacterInitialize += AddDeckToDrawPile;
+        AddDeckToDrawPile();
         TurnController.instance.OnEndTurn += ResetHand;
+
+        //ResetHand();
     }
 
     public void ResetHand()
@@ -85,8 +92,8 @@ public class CardManager : MonoBehaviour
     {
         isPlaying = true;
 
-        Character caster = cardInstance.caster;
         Card card = cardInstance.cardScriptable;
+        Character caster = characterManager.GetCharacterByType(card.caster);
 
         if (cardInstance == null)
         {
@@ -291,8 +298,8 @@ public class CardManager : MonoBehaviour
     {
         foreach (Card card in currentDeck)
         {
-            var caster = CharacterManager.instance.GetCharacterByType(card.caster);
-            var cardInstance = new CardInstance(card, caster);
+            //var caster = characterManager.GetCharacterByType(card.caster);
+            var cardInstance = new CardInstance(card);
             drawPile.Add(cardInstance);
         }
 

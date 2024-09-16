@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public enum PileType { All, Draw, Discard };
+public enum PileType { Deck, All, Draw, Discard };
 
 public class DeckDisplay : MonoBehaviour
 {
@@ -37,7 +37,6 @@ public class DeckDisplay : MonoBehaviour
             Destroy(item.gameObject);
             cardItemList.RemoveAt(i);
         }
-
         currentPile.Clear();
     }
 
@@ -45,6 +44,11 @@ public class DeckDisplay : MonoBehaviour
     {
         switch (type)
         {
+            case PileType.Deck:
+                {
+                    currentPile = cardManager.currentDeck;
+                    break;
+                }
             case PileType.Draw:
                 {
                     currentPile = cardManager.drawPile.Select(x => x.cardScriptable).ToList();
@@ -86,8 +90,8 @@ public class DeckDisplay : MonoBehaviour
 
             cardItemList.Add(obj);
 
-            var caster = CharacterManager.instance.GetCharacterByType(card.caster);
-            var cardInstance = new CardInstance(card, caster);
+            //var caster = CharacterManager.instance.GetCharacterByType(card.caster);
+            var cardInstance = new CardInstance(card);
             cardDisplay.CardInstance = cardInstance;
         }
     }

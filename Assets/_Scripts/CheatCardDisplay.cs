@@ -19,7 +19,7 @@ public class CheatCardDisplay : MonoBehaviour
             var cardDisplay = obj.GetComponentInChildren<CardDisplay>();
 
             var caster = CharacterManager.instance.GetCharacterByType(card.caster);
-            var cardInstance = new CardInstance(card, caster);
+            var cardInstance = new CardInstance(card);
             cardDisplay.CardInstance = cardInstance;
         }
     }

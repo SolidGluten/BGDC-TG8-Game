@@ -72,10 +72,15 @@ public class RewardManager : MonoBehaviour
     public void PickReward(RewardItem reward)
     {
         pickedReward = reward;
-        if(reward.type == RewardType.RandomCard)
+        if (reward.type == RewardType.RandomCard)
+        {
             deckDisplay.showUpgradable = false;
-        else if(reward.type == RewardType.Upgrade)
+            deckDisplay.characterType = reward.cardDisplay.CardInstance.cardScriptable.caster;
+        }
+        else if (reward.type == RewardType.Upgrade) 
+        { 
             deckDisplay.showUpgradable = true;
+        }
 
         OnPickReward?.Invoke();
     }
@@ -99,7 +104,7 @@ public class RewardManager : MonoBehaviour
             // Upgrade card
             var card = pickedCard.cardScriptable;
             Character chara = CharacterManager.instance.GetCharacterByType(card.caster);
-            CardInstance upgradedCardInstance = new CardInstance(card.nextUpgrade, chara);
+            CardInstance upgradedCardInstance = new CardInstance(card.nextUpgrade);
             from.CardInstance = pickedCard;
             to.CardInstance = upgradedCardInstance;
         }
@@ -140,14 +145,14 @@ public class RewardManager : MonoBehaviour
         if (firstCard)
         {
             Character chara = CharacterManager.instance.GetCharacterByType(firstCard.caster);
-            var cardInstance = new CardInstance(firstCard, chara);
+            var cardInstance = new CardInstance(firstCard);
             firstRandomCard.CardInstance = cardInstance;
         }  
 
         if (secondCard)
         {
             Character chara = CharacterManager.instance.GetCharacterByType(secondCard.caster);
-            var cardInstance = new CardInstance(secondCard, chara);
+            var cardInstance = new CardInstance(secondCard);
             secondRandomCard.CardInstance = cardInstance;
         }
     }

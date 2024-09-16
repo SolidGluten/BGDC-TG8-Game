@@ -7,7 +7,7 @@ using UnityEngine;
 public class CardInstance
 {
     public Card cardScriptable { get; private set; }
-    public Character caster { get; private set; }
+    //public Character caster { get; private set; }
 
     public int cost;
     public int cardDamageMultiplier;
@@ -16,10 +16,10 @@ public class CardInstance
 
     public bool isUpgradable = false;
 
-    public CardInstance(Card _card, Character _caster)
+    public CardInstance(Card _card)
     {
         SetCard(_card);
-        caster = _caster;
+        //caster = _caster;
     }
 
     public void SetCard(Card card)
@@ -38,9 +38,16 @@ public class CardInstance
 
     public bool PlayCard(Entity[] target)
     {
-        if(!(cardScriptable || caster))
+        if(!(cardScriptable))
         {
             Debug.LogWarning("Caster or Card has not been asigned.");
+            return false;
+        }
+
+        var caster = CharacterManager.instance.GetCharacterByType(cardScriptable.caster);
+        if (!caster)
+        {
+            Debug.LogWarning("Not character found to play the card");
             return false;
         }
 
